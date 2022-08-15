@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QceeXnOixGNOiV5thKiPYsulfuoTEAI9Qb7TelvGDaA=",
+  "Hash": "VGbWwy55FbJYCLBHfJGNcg5LpJ4TGgIp9Lkoal4u3C8=",
   "Source": "My Blog Website",
   "BasePath": "_content/My Blog Website",
   "Mode": "Default",
@@ -2157,23 +2157,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\dist\\js\\adminlte.min.js.map"
-    },
-    {
-      "Identity": "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\wwwroot\\admin\\dist\\js\\demo.js",
-      "SourceId": "My Blog Website",
-      "SourceType": "Discovered",
-      "ContentRoot": "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\wwwroot\\",
-      "BasePath": "_content/My Blog Website",
-      "RelativePath": "admin/dist/js/demo.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\admin\\dist\\js\\demo.js"
     },
     {
       "Identity": "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\wwwroot\\admin\\dist\\js\\pages\\dashboard.js",
