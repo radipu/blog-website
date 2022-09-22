@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\My Blog Website.csproj": {}
+    "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj": {}
   },
   "projects": {
-    "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\My Blog Website.csproj": {
+    "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\My Blog Website.csproj",
+        "projectUniqueName": "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj",
         "projectName": "My Blog Website",
-        "projectPath": "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\My Blog Website.csproj",
-        "packagesPath": "C:\\Users\\raddu\\.nuget\\packages\\",
-        "outputPath": "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\obj\\",
+        "projectPath": "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\My Files\\blog-website\\My Blog Website\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\raddu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
