@@ -286,7 +286,8 @@ F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Micro
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.Locator.dll
+F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.dll
+F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -319,6 +320,7 @@ F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Micro
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
