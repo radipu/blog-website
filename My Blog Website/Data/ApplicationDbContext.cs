@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using My_Blog_Website.Areas.Admin.Models;
 
 namespace My_Blog_Website.Data
 {
@@ -9,5 +10,7 @@ namespace My_Blog_Website.Data
             : base(options)
         {
         }
+
+        public DbSet<Authors> authors { get; set; } = null!;
     }
 }
