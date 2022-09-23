@@ -11,64 +11,54 @@
     <div>
         <section>
             <div class="container">
-                <div>
-                    <div>
-                        <div>
-                            <div class="row g-0">
-                                <div class="col-lg-6">
-                                    <div class="card-body p-md-5 mx-md-4">
-                                        <div class="text-center">
-                                            <img src="/images/radipuLogo.png"
-                                                 style="width: 185px;" alt="logo">
-                                            @*<h4 class="mt-1 mb-5 pb-1" style="font-family: Audiowide; font-size: 12px">Think Something Different.</h4>*@
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <form id="account" method="post">
-                                            <p style="text-align:center">Please login to your account</p>
-                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                            <div class="form-floating mb-4">
-                                                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                                                <label asp-for="Input.Email" class="form-label"></label>
-                                                <span asp-validation-for="Input.Email" class="text-danger"></span>
-                                            </div>
-                                            <div class="form-floating mb-4">
-                                                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
-                                                <label asp-for="Input.Password" class="form-label"></label>
-                                                <span asp-validation-for="Input.Password" class="text-danger"></span>
-                                            </div>
-                                            <div>
-                                                <div class="checkbox">
-                                                    <label asp-for="Input.RememberMe" class="form-label">
-                                                        <input class="form-check-input" asp-for="Input.RememberMe" />
-                                                        @Html.DisplayNameFor(m => m.Input.RememberMe)
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="text-center pt-1 mb-5 pb-1">
-                                                <button id="login-submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">
-                                                    Log in
-                                                </button>
-                                                <div>
-                                                    <p>
-                                                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                                                    </p>
-                                                </div>
-                                            </div>                                        
-                                        </form>
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="card-body p-md-5 mx-md-4">
+                            <br />
+                            <br />
+                            <form id="account" method="post">
+                                <div class="text-center">
+                                <img src="/images/radipuLogo.png"
+                                style="width: 185px;" alt="logo">
+                                @*<h4 class="mt-1 mb-5 pb-1" style="font-family: Audiowide; font-size: 12px">Think Something Different.</h4>*@
+                                </div>
+                                <p>Please login to your account</p>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-floating mb-4">
+                                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                                    <label asp-for="Input.Email" class="form-label"></label>
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-floating mb-4">
+                                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                                    <label asp-for="Input.Password" class="form-label"></label>
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+                                <div>
+                                    <div class="checkbox">
+                                        <label asp-for="Input.RememberMe" class="form-label">
+                                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        </label>
+                                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 d-flex align-items-center@* gradient-custom-2*@" style="height: 400px; align-self: center">
-                                    <div class="text-black px-3 py-4 p-md-5 mx-md-4">
-                                        @*<h4 class="mb-4">It's not just a blog site</h4>
-                                        <p class="small mb-0">
-                                            We do believe, unless you can write something-means you don't know it.
-                                        </p>*@
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                                        class="img-fluid" alt="Sample image">
-                                    </div>
+                                <div class="text-center pt-1 mb-5 pb-1">
+                                    <button id="login-submit" class="btn btn-block fa-lg gradient-custom-2 mb-3" type="submit">
+                                        Log in
+                                    </button>
                                 </div>
-                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-center@* gradient-custom-2*@" style="height: 400px; align-self: center">
+                        <div class="text-black px-3 py-4 p-md-5 mx-md-4">
+                            @*<h4 class="mb-4">It's not just a blog site</h4>
+                                <p class="small mb-0">
+                                    We do believe, unless you can write something-means you don't know it.
+                                </p>*@
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                                class="img-fluid" alt="Sample image">
                         </div>
                     </div>
                 </div>
