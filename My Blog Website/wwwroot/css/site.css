@@ -117,3 +117,7 @@ footer a {
     display: flex;
     justify-content: space-between;
 }
+
+a:hover {
+    color:crimson !important;
+}
