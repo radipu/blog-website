@@ -286,7 +286,6 @@ D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.AspNetCore.I
 D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.Locator.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -810,3 +809,6 @@ F:\My Work Station\C# all\My Blog Website\My Blog Website\obj\Debug\net6.0\refin
 F:\My Work Station\C# all\My Blog Website\My Blog Website\obj\Debug\net6.0\My Blog Website.pdb
 F:\My Work Station\C# all\My Blog Website\My Blog Website\obj\Debug\net6.0\My Blog Website.genruntimeconfig.cache
 F:\My Work Station\C# all\My Blog Website\My Blog Website\obj\Debug\net6.0\ref\My Blog Website.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.Framework.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
