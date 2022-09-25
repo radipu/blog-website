@@ -1,9 +1,12 @@
-﻿namespace My_Blog_Website.Areas.Admin.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace My_Blog_Website.Areas.Admin.Models
 {
     public class Authors
     {
-        public Authors(string firstName, string lastName, string username, string email, string aboutAuth)
+        public Authors(Guid authorId, string firstName, string lastName, string username, string email, string aboutAuth)
         {
+            AuthorId = authorId;
             FirstName = firstName;
             LastName = lastName;
             Username = username;
@@ -11,6 +14,8 @@
             AboutAuth = aboutAuth;
         }
 
+        [Key]
+        public Guid AuthorId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Username { get; set; }

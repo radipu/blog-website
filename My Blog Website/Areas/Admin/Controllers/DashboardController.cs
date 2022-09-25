@@ -6,8 +6,6 @@ namespace My_Blog_Website.Areas.Admin.Controllers
     [Route("admin/dashboard")]
     public class DashboardController : Controller
     {
-        [Route("")]
-        [Route("index")]
         public IActionResult Index()
         {
             return View();
