@@ -1,15 +1,20 @@
 ﻿@model IEnumerable<My_Blog_Website.Areas.Admin.Models.Authors>
 
 @{
-    ViewData["Title"] = "Authors";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h1>The Authors</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create Author</a>
 </p>
+
+<button class="icon-btn create-author-btn" id="btnCreate" name="btnCreate" data-toggle="modal" data-target="#mdlCreate">
+    <div class="add-icon"></div>
+    <div class="btn-txt">Create Author</div>
+</button>
+
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -32,7 +37,7 @@
         </tr>
     </thead>
     <tbody>
-@*@foreach (var item in Model) {
+@foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
@@ -50,11 +55,24 @@
                 @Html.DisplayFor(modelItem => item.AboutAuth)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.AuthorId }, new {@class = "btn btn-primary"}) |
-                @Html.ActionLink("Details", "Details", new { id = item.AuthorId }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.AuthorId }, new { @class = "btn btn-danger" })
+                <a asp-action="Edit" asp-route-id="@item.AuthorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AuthorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AuthorId">Delete</a>
             </td>
         </tr>
-}*@
+}
     </tbody>
 </table>
+
+<!-- create author -->
+<div id="mdlCreate" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal Content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Add a new Author</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+        </div>
+    </div>
+</div>

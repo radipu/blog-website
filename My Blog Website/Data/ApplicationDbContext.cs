@@ -11,6 +11,6 @@ namespace My_Blog_Website.Data
         {
         }
 
-        public DbSet<Authors> authors { get; set; } = null!;
+        public DbSet<Authors> authors { get; set; }
     }
 }
