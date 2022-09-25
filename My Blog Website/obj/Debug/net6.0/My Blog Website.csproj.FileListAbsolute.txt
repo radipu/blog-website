@@ -537,6 +537,9 @@ D:\My Files\blog-website\My Blog Website\obj\Debug\net6.0\refint\My Blog Website
 D:\My Files\blog-website\My Blog Website\obj\Debug\net6.0\My Blog Website.pdb
 D:\My Files\blog-website\My Blog Website\obj\Debug\net6.0\My Blog Website.genruntimeconfig.cache
 D:\My Files\blog-website\My Blog Website\obj\Debug\net6.0\ref\My Blog Website.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.Framework.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\appsettings.Development.json
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\appsettings.json
 F:\My Work Station\C# all\My Blog Website\My Blog Website\bin\Debug\net6.0\My Blog Website.staticwebassets.runtime.json
@@ -809,6 +812,3 @@ F:\My Work Station\C# all\My Blog Website\My Blog Website\obj\Debug\net6.0\refin
 F:\My Work Station\C# all\My Blog Website\My Blog Website\obj\Debug\net6.0\My Blog Website.pdb
 F:\My Work Station\C# all\My Blog Website\My Blog Website\obj\Debug\net6.0\My Blog Website.genruntimeconfig.cache
 F:\My Work Station\C# all\My Blog Website\My Blog Website\obj\Debug\net6.0\ref\My Blog Website.dll
-D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.dll
-D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.Build.Framework.dll
-D:\My Files\blog-website\My Blog Website\bin\Debug\net6.0\Microsoft.NET.StringTools.dll

@@ -4,21 +4,15 @@ namespace My_Blog_Website.Areas.Admin.Models
 {
     public class Authors
     {
-        public Authors(Guid authorId, string firstName, string lastName, string username, string email, string aboutAuth)
-        {
-            AuthorId = authorId;
-            FirstName = firstName;
-            LastName = lastName;
-            Username = username;
-            Email = email;
-            AboutAuth = aboutAuth;
-        }
-
         [Key]
-        public Guid AuthorId { get; set; }
+        public int AuthorId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; }
+        [Required(ErrorMessage = "Password is required")]
+        public string Password { get; set; }
+        [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
         public string AboutAuth { get; set; }
     }
