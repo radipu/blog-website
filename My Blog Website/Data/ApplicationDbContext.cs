@@ -4,7 +4,7 @@ using My_Blog_Website.Areas.Admin.Models;
 
 namespace My_Blog_Website.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

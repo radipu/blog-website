@@ -10285,25 +10285,26 @@
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.7",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.9",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.9",
+      "Microsoft.EntityFrameworkCore >= 6.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.9",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.9"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\raddu\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\My Blog Website.csproj",
+      "projectUniqueName": "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj",
       "projectName": "My Blog Website",
-      "projectPath": "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\My Blog Website.csproj",
-      "packagesPath": "C:\\Users\\raddu\\.nuget\\packages\\",
-      "outputPath": "F:\\My Work Station\\C# all\\My Blog Website\\My Blog Website\\obj\\",
+      "projectPath": "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "D:\\My Files\\blog-website\\My Blog Website\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\raddu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10341,6 +10342,10 @@
             "target": "Package",
             "version": "[6.0.9, )"
           },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.9, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[6.0.9, )"
@@ -10375,7 +10380,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
