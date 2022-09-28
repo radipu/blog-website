@@ -107,3 +107,12 @@
   height: 4px;
   top: calc(50% - 2px);
 }
+
+.authcre .card {
+    left: 50%
+}
+
+.authform {
+    align-items: center;
+    left: 10%;
+}
