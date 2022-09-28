@@ -40,5 +40,64 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             }
             return View(author);
         }
+
+        [HttpGet]
+        [Route("admin/author/edit/{id}")]
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var author = _context.authors.Find(id);
+            if (author == null)
+            {
+                return NotFound();
+            }
+            return View(author);
+        }
+
+        [HttpPost]
+        [Route("admin/author/edit/{id}")]
+        public async Task<IActionResult> Edit(Authors author)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(author);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(author);
+        }
+
+        [HttpGet]
+        [Route("admin/author/delete/{id}")]
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var author = _context.authors.Find(id);
+            if (author == null)
+            {
+                return NotFound();
+            }
+            return View(author);
+        }
+
+        [HttpPost]
+        [Route("admin/author/delete/{id}")]
+        public async Task<IActionResult> DeletePost(int? id)
+        {
+            var author = _context.authors.Find(id);
+            if (author == null)
+            {
+                return NotFound();
+            }
+            _context.authors.Remove(author);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }

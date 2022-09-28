@@ -5,33 +5,24 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>The Authors</h1>
 
-<p>
-    <a asp-action="Create" asp-controller="Author">Create New</a>
-</p>
-<table class="table">
+<button class="icon-btn add-btn">
+    <div class="add-icon"></div>
+    <div class="btn-txt">
+        <a asp-action="Create" asp-controller="Author">Create Author</a>
+    </div>
+</button>
+
+<table class="table table table-bordered table-hover">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Username)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AboutAuth)
-            </th>
-            <th></th>
+        <tr class="text-center">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>About Author</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -47,9 +38,6 @@
                 @Html.DisplayFor(modelItem => item.Username)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
@@ -57,8 +45,7 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.AuthorId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AuthorId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AuthorId">Delete</a>
+               <a asp-action="Delete" asp-route-id="@item.AuthorId">Delete</a> |
             </td>
         </tr>
 }

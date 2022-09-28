@@ -5,59 +5,53 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
 
-<h4>New Authors</h4>
 <hr />
 <div class="row">
     <div class="col-md-6 authcre">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title"></h3>
+                <h1 class="card-title">Create New Author</h1>
             </div>
             <div class="card-body p-0">
                 <form asp-action="Create" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group col-md-6 authform">
-                        <label asp-for="FirstName" class="control-label"></label>
+                        <label asp-for="FirstName" class="control-label">Author First Name</label>
                         <input asp-for="FirstName" class="form-control" />
                         <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6 authform">
-                        <label asp-for="LastName" class="control-label"></label>
+                        <label asp-for="LastName" class="control-label">Author Last Name</label>
                         <input asp-for="LastName" class="form-control" />
                         <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6 authform">
-                        <label asp-for="Username" class="control-label"></label>
+                        <label asp-for="Username" class="control-label">Author Username</label>
                         <input asp-for="Username" class="form-control" />
                         <span asp-validation-for="Username" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6 authform">
-                        <label asp-for="Password" class="control-label"></label>
+                        <label asp-for="Password" class="control-label">Password</label>
                         <input asp-for="Password" class="form-control" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6 authform">
-                        <label asp-for="Email" class="control-label"></label>
+                        <label asp-for="Email" class="control-label">Author Email</label>
                         <input asp-for="Email" class="form-control" />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6 authform">
-                        <label asp-for="AboutAuth" class="control-label"></label>
+                        <label asp-for="AboutAuth" class="control-label">About Author</label>
                         <input asp-for="AboutAuth" class="form-control" />
-                        <span asp-validation-for="AboutAuth" class="text-danger"></span>
                     </div>
-                    <div class="form-group authform">
+                    <div class="form-group text-center">
                         <input type="submit" value="Create" class="btn btn-primary" />
                     </div>
                 </form>
             </div>
             <div class="authform">
                 <a asp-action="Index">Back to List</a>
-            </div>
-            <div class="card-footer text-center">
-                <a href="javascript:">View All Users</a>
             </div>
         </div>
     </div>
