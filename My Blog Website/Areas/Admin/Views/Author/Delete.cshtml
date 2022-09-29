@@ -52,7 +52,10 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="AuthorId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <button class="btn btn-warning btn-sm authback">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <a asp-action="Index">Back to List</a>
+        </button>
     </form>
 </div>
