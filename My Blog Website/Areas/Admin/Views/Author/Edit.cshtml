@@ -48,15 +48,16 @@
                         <span asp-validation-for="AboutAuth" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-8 authform">
-                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <button class="btn btn-warning">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            <a asp-action="Index">Back to List</a>
+                        </button>
+                        <button class="btn btn-primary" type="submit" value="Save">
+                            <i class="fa fa-save" aria-hidden="true"></i>
+                            Save
+                        </button>
                     </div>
                 </form>
-            </div>
-            <div class="authform">
-                <button class="btn btn-warning btn-sm">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                    <a asp-action="Index">Back to List</a>
-                </button>
             </div>
         </div>
     </div>
