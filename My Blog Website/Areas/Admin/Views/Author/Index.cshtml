@@ -44,8 +44,14 @@
                 @Html.DisplayFor(modelItem => item.AboutAuth)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.AuthorId">Edit</a> |
-               <a asp-action="Delete" asp-route-id="@item.AuthorId">Delete</a> |
+                <button class="btn btn-primary btn-sm">
+                    <i class="fa fa-edit" aria-hidden="true"></i>
+                    <a asp-action="Edit" asp-route-id="@item.AuthorId">Edit</a>
+                </button>
+                <button class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <a asp-action="Delete" asp-route-id="@item.AuthorId">Delete</a>
+                </button>
             </td>
         </tr>
 }
