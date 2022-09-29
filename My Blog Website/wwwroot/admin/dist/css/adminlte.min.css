@@ -16,6 +16,7 @@
 
 .add-btn:hover {
   width: 140px;
+  color: none;
 }
 
 .add-btn::before,
@@ -106,6 +107,10 @@
     left: 10%;
 }
 
-button a {
+button a, a:hover {
     color: white;
+}
+
+button a:hover {
+    color: white !important;
 }
