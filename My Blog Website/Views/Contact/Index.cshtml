@@ -52,7 +52,17 @@
                         <span asp-validation-for="Subject" class="text-danger"></span>
                     </div>
                     <div class="col-12 py-3">
-                        <textarea asp-for="Message" id="message" class="form-control fh5co_contacts_message" placeholder="Please write a brief message..."></textarea>
+                        <textarea asp-for="Message" id="message" class="form-control fh5co_contacts_message" placeholder="Please write a brief message..." minlength="250" maxlength="1000"></textarea>
+                        <div class="counter-container">
+                            <p>
+                              Total Charaters:
+                              <span class="total-counter" id="total-counter"></span>
+                            </p>
+                            <p>
+                              Remaining:
+                              <span class="remaining-counter" id="remaining-counter"></span>
+                            </p>
+                          </div>
                         <span asp-validation-for="Message" class="text-danger"></span>
                     </div>
                      <div class="col-12 py-3 text-center">
@@ -70,17 +80,5 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script type="text/javascript">
-        $(document).ready(function(){
-            setTimeout(function(){
-                $("#msg").fadeOut();
-            }, 5000);
-        });
-
-        $("#message").MaxLength({
-            MaxLenght: 250;
-            CharacterCountControl: $('#counter')
-        });
-    </script>
 }
 

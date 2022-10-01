@@ -17,6 +17,8 @@ namespace My_Blog_Website.Models
         public string Subject { get; set; }
 
         [Required(ErrorMessage = "What is your message?")]
+        [MaxLength(1000, ErrorMessage = "Your message is too long.")]
+        [MinLength(250, ErrorMessage = "Your message is too short.")]
         public string Message { get; set; }
     }
 }
