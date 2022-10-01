@@ -10,7 +10,7 @@ namespace My_Blog_Website.Models
         [Required(ErrorMessage = "How should I address you?")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "What is your email address?")]
+        [Required(ErrorMessage = "I need your email for further communication.")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "What is the subject?")]

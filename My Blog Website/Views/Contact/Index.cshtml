@@ -17,7 +17,7 @@
                         <div class="fh5co_contact_us_no_icon_div"> <span><i class="fa fa-phone"></i></span> </div>
                     </div>
                     <div class="col-9 align-self-center fh5co_contact_us_no_icon_difh5co_hover_2">
-                        <span class="c_g d-block">Call Us</span>
+                        <span class="c_g d-block">Call Me</span>
                         <span class="d-block c_g fh5co_contact_us_no_text">+880 167 6617846</span>
                     </div>
                     <div class="clearfix"></div>
@@ -52,12 +52,12 @@
                         <span asp-validation-for="Subject" class="text-danger"></span>
                     </div>
                     <div class="col-12 py-3">
-                        <textarea asp-for="Message" class="form-control fh5co_contacts_message" placeholder="Message"></textarea>
+                        <textarea asp-for="Message" id="message" class="form-control fh5co_contacts_message" placeholder="Please write a brief message..."></textarea>
                         <span asp-validation-for="Message" class="text-danger"></span>
                     </div>
                      <div class="col-12 py-3 text-center">
                          <input type="submit" value="Send Message" class="btn contact_btn" /><br />
-                         <span class="text-success">@ViewBag.Message</span>
+                         <span class="text-success" id="msg">@ViewBag.Message</span>
                      </div>
                 </form>
             </div>
@@ -70,5 +70,17 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            setTimeout(function(){
+                $("#msg").fadeOut();
+            }, 5000);
+        });
+
+        $("#message").MaxLength({
+            MaxLenght: 250;
+            CharacterCountControl: $('#counter')
+        });
+    </script>
 }
 
