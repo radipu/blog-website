@@ -5,8 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Message</h2>
-
 <div class="container-fluid mb-4">
     <div class="container">
         <div class="col-12 text-center contact_margin_svnit ">
@@ -58,7 +56,8 @@
                         <span asp-validation-for="Message" class="text-danger"></span>
                     </div>
                      <div class="col-12 py-3 text-center">
-                         <input type="submit" value="Send Message" class="btn contact_btn" />
+                         <input type="submit" value="Send Message" class="btn contact_btn" /><br />
+                         <span class="text-success">@ViewBag.Message</span>
                      </div>
                 </form>
             </div>
