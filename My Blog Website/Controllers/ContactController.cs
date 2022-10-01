@@ -42,7 +42,7 @@ namespace My_Blog_Website.Controllers
                 smtp.EnableSsl = true;
                 smtp.Port = 587;
                 smtp.Send(mail);
-                ViewBag.Message = "Your message has been sent successfully";
+                ViewBag.Message = "Congrats! Your message has been sent successfully...";
                 ModelState.Clear();
             }
             catch (Exception ex)
