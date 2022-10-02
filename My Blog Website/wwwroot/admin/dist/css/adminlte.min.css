@@ -114,3 +114,68 @@ button a, a:hover {
 button a:hover {
     color: white !important;
 }
+
+.input-container {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.passwordclass {
+  background-color: transparent;
+  outline: none;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.passwordclass::placeholder {
+  letter-spacing: 0px;
+}
+
+.fa-copy {
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.fa-copy:hover {
+  opacity: 0.7;
+}
+
+.generatebtn {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.generatebtn:hover {
+  background-color: green;
+}
+
+.generatebtn:active {
+  transform: scale(0.95);
+}
+
+.alert-container {
+  position: fixed;
+  width: 300px;
+  height: 50px;
+  background-color: lightgreen;
+  right: 20px;
+  bottom: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.active.alert-container {
+  right: -300px;
+}

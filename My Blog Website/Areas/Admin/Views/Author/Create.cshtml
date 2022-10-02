@@ -7,7 +7,69 @@
 
 
 <hr />
+
 <div class="row">
+    <div class="col-md-6 authcre">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Create New Author</h1>
+            </div>
+            <div class="card-body p-0">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group col-md-8 authform">
+                        <label asp-for="FirstName" class="control-label">Author First Name</label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-8 authform">
+                        <label asp-for="LastName" class="control-label">Author Last Name</label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-8 authform">
+                        <label asp-for="Username" class="control-label">Author Username</label>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-8 authform">
+                        <label asp-for="Password" class="control-label">Password</label>
+                        <div class="d-flex">
+                            <div class="input-container">
+                                <input asp-for="Password" class="form-control passwordclass" id="passwordid" />
+                                <i class="far fa-copy fa-2x"></i>
+                            </div>
+                            <button class="generatebtn">Generate</button>
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <div class="alert-container active">Password Copied</div>
+                    </div>
+                    <div class="form-group col-md-8 authform">
+                        <label asp-for="Email" class="control-label">Author Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-8 authform">
+                        <label asp-for="AboutAuth" class="control-label">About Author</label>
+                        <input asp-for="AboutAuth" class="form-control" />
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn btn-warning">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            <a asp-action="Index">Back to List</a>
+                        </button>
+                        <button class="btn btn-primary" type="submit" value="Create">
+                            <i class="fa fa-save" aria-hidden="true"></i>
+                            Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="row">
     <div class="col-md-6 authcre">
         <div class="card">
             <div class="card-header">
@@ -59,7 +121,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
