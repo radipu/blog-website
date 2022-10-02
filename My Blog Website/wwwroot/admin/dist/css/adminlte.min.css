@@ -38890,7 +38890,11 @@ button a, a:hover {
 }
 
 button a:hover {
+<<<<<<< HEAD
+    color: white !important;
+=======
     color: green !important;
+>>>>>>> main
 }
 
 .input-container {
