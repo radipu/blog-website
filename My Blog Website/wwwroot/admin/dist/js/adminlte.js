@@ -1700,7 +1700,7 @@
   var SELECTOR_PUSHMENU_BTN = '[data-widget="pushmenu"]';
   var SELECTOR_LOGIN_BOX = '.login-box';
   var SELECTOR_REGISTER_BOX = '.register-box';
-  /*var SELECTOR_PRELOADER = '.preloader';*/
+  var SELECTOR_PRELOADER = '.preloader';
   var CLASS_NAME_SIDEBAR_COLLAPSED$1 = 'sidebar-collapse';
   var CLASS_NAME_SIDEBAR_FOCUSED = 'sidebar-focused';
   var CLASS_NAME_LAYOUT_FIXED = 'layout-fixed';
@@ -1848,16 +1848,16 @@
       setTimeout(function () {
         $__default["default"]('body.hold-transition').removeClass('hold-transition');
       }, 50);
-      //setTimeout(function () {
-      //  var $preloader = $__default["default"](SELECTOR_PRELOADER);
+      setTimeout(function () {
+        var $preloader = $__default["default"](SELECTOR_PRELOADER);
 
-      //  if ($preloader) {
-      //    $preloader.css('height', 0);
-      //    setTimeout(function () {
-      //      $preloader.children().hide();
-      //    }, 200);
-      //  }
-      //}, this._config.preloadDuration);
+        if ($preloader) {
+          $preloader.css('height', 0);
+          setTimeout(function () {
+            $preloader.children().hide();
+          }, 200);
+        }
+      }, this._config.preloadDuration);
     };
 
     _proto._max = function _max(numbers) {

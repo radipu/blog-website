@@ -209,8 +209,8 @@ function updateCounter() {
     textareaEl.getAttribute("maxLength") - textareaEl.value.length;
 }
 
-$(document).ready(function () {
-    setTimeout(function () {
-        $("#msg").fadeOut();
-    }, 3000);
-});
+$(document).ready(function(){
+            setTimeout(function(){
+                $("#msg").fadeOut();
+            }, 3000);
+        });
