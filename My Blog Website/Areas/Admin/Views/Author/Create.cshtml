@@ -15,7 +15,7 @@
                 <h1 class="card-title">Create New Author</h1>
             </div>
             <div class="card-body p-0">
-                <form asp-action="Create" method="post">
+                <form asp-action="Create" class="createclass" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group col-md-8 authform">
                         <label asp-for="FirstName" class="control-label">Author First Name</label>
@@ -37,12 +37,12 @@
                         <div class="d-flex">
                             <div class="input-container">
                                 <input asp-for="Password" class="form-control passwordclass" id="passwordid" />
-                                <i class="far fa-copy fa-2x"></i>
+                                @*<i class="far fa-copy fa-2x"></i>*@
                             </div>
                             <button class="generatebtn">Generate</button>
                         </div>
                         <span asp-validation-for="Password" class="text-danger"></span>
-                        <div class="alert-container active">Password Copied</div>
+                        @*<div class="alert-container active">Password Copied</div>*@
                     </div>
                     <div class="form-group col-md-8 authform">
                         <label asp-for="Email" class="control-label">Author Email</label>

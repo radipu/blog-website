@@ -278,15 +278,15 @@ btnEl.addEventListener("click", () => {
   createPassword();
 });
 
-copyIconEl.addEventListener("click", () => {
-  copyPassword();
-  if (inputEl.value) {
-    alertContainerEl.classList.remove("active");
-    setTimeout(() => {
-      alertContainerEl.classList.add("active");
-    }, 2000);
-  }
-});
+//copyIconEl.addEventListener("click", () => {
+//  copyPassword();
+//  if (inputEl.value) {
+//    alertContainerEl.classList.remove("active");
+//    setTimeout(() => {
+//      alertContainerEl.classList.add("active");
+//    }, 2000);
+//  }
+//});
 
 function createPassword() {
   const chars =
@@ -301,8 +301,8 @@ function createPassword() {
   alertContainerEl.innerText = "Password copied to clipboard!";
 }
 
-function copyPassword() {
-  inputEl.select();
-  inputEl.setSelectionRange(0, 9999);
-  navigator.clipboard.writeText(inputEl.value);
-}
+//function copyPassword() {
+//  inputEl.select();
+//  inputEl.setSelectionRange(0, 9999);
+//  navigator.clipboard.writeText(inputEl.value);
+//}
