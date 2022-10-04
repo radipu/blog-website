@@ -63,7 +63,8 @@ body {
 	line-height: 1.5;
 	color: #212529;
 	text-align: left;
-	background-color: #fff
+	background-color: #fff;
+	overflow-x: hidden;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -55923,7 +55924,8 @@ a.text-muted:hover {
 }
 
 .authcre .card {
-	left: 50%
+	left: 50%;
+    box-shadow: 0 4px 8px 0 #dc3545;
 }
 
 .authform {
@@ -55951,28 +55953,29 @@ button a:hover {
 	outline: none;
 	font-size: 24px;
 	letter-spacing: 4px;
+    /*width: 410px;*/
 }
 
-.passwordclass::placeholder {
+/*.passwordclass::placeholder {
 	letter-spacing: 0px;
-}
+}*/
 
-.fa-copy {
+/*.fa-copy {
 	cursor: pointer;
 	opacity: 0.3;
 }
 
 .fa-copy:hover {
 	opacity: 0.7;
-}
+}*/
 
 .generatebtn {
-	background: transparent;
+	background: green;
 	color: white;
 	border: none;
-	padding: 10px 20px;
+	padding: 6px 20px;
 	border-radius: 5px;
-	margin: 10px 0;
+	margin: 10px 20px;
 	cursor: pointer;
 }
 
