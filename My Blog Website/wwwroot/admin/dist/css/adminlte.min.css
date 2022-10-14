@@ -55926,6 +55926,7 @@ a.text-muted:hover {
 .authcre .card {
 	left: 50%;
     box-shadow: 0 4px 8px 0 #dc3545;
+	width: 75%;
 }
 
 .authform {
