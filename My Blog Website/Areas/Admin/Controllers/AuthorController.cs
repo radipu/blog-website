@@ -10,7 +10,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
         private readonly ApplicationDbContext _context;
         public AuthorController(ApplicationDbContext context)
         {
-            _context = context;                
+            _context = context;
         }
 
         [HttpGet]
