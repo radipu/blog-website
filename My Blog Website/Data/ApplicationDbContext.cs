@@ -12,5 +12,6 @@ namespace My_Blog_Website.Data
 
         public DbSet<Authors> authors { get; set; }
         public DbSet<Contacts> contacts { get; set; }
+        public DbSet<Posts> posts { get; set; }
     }
 }
