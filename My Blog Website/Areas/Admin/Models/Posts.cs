@@ -16,6 +16,6 @@ namespace My_Blog_Website.Areas.Admin.Models
         [Required]
         public string Tags { get; set; }
         public string Author { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }

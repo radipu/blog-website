@@ -19,5 +19,25 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             List<Posts> posts = _db.posts.ToList();
             return View(posts);
         }
+
+        [HttpGet]
+        [Route("admin/post/create")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("admin/post/create")]
+        public async Task<IActionResult> Create(Posts posts)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Add(posts);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(posts);
+        }
     }
 }
