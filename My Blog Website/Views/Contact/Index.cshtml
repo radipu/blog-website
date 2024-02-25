@@ -8,7 +8,7 @@
 <div class="container-fluid mb-4">
     <div class="container">
         <div class="col-12 text-center contact_margin_svnit ">
-            <div class="text-center fh5co_heading py-2">Contact Us</div>
+            <div class="text-center fh5co_heading py-2">Contact Me</div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
@@ -40,11 +40,11 @@
             <div class="col-12 col-md-6">
                 <form asp-action="Index" class="row" id="fh5co_contact_form" method="post">
                     <div class="col-12 py-3">
-                        <input asp-for="Name" type="text" class="form-control fh5co_contact_text_box" placeholder="Enter Your Name" />
+                        <input asp-for="Name" type="text" class="form-control fh5co_contact_text_box" placeholder="Enter Your Full Name" />
                         <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
                     <div class="col-12 py-3">
-                        <input asp-for="Email" type="email" class="form-control fh5co_contact_text_box" placeholder="E-mail" />
+                        <input asp-for="Email" type="email" class="form-control fh5co_contact_text_box" placeholder="Enter Your Valid E-mail" />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="col-12 py-3">

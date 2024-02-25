@@ -5,112 +5,115 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = My_Blog_Website
 build_property.RootNamespace = My_Blog_Website
-build_property.ProjectDir = F:\My Work Station\C# all\My Blog Website\My Blog Website\
+build_property.ProjectDir = G:\My Work Station\C# all\blog-website\My Blog Website\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\My Work Station\C# all\My Blog Website\My Blog Website
+build_property.MSBuildProjectDirectory = G:\My Work Station\C# all\blog-website\My Blog Website
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/Author/Create.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/Author/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXV0aG9yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/Author/Delete.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/Author/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXV0aG9yXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/Author/Edit.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/Author/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXV0aG9yXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/Author/Index.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/Author/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXV0aG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/Dashboard/Index.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/Posts/Create.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/Posts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/Posts/Index.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/Posts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/Shared/_Layout.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Admin/Views/_ViewImports.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Identity/Pages/Account/Login.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Identity/Pages/Account/Logout.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Identity/Pages/_ViewImports.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Areas/Identity/Pages/_ViewStart.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Views/Contact/Index.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Views/Home/Index.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Views/Home/Privacy.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Views/Shared/Error.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Views/Shared/_LoginPartial.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Views/Shared/_ValidationScriptsPartial.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Views/_ViewImports.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Views/_ViewStart.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/My Work Station/C\# all/My Blog Website/My Blog Website/Views/Shared/_Layout.cshtml]
+[G:/My Work Station/C\# all/blog-website/My Blog Website/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-e9c4396hk2

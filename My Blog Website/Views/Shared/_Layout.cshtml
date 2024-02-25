@@ -41,10 +41,10 @@
                             <a class="fh5co_display_table" href="https://github.com/radipu" target="_blank"><div class="fh5co_verticle_middle"><i class="fa fa-github"></i></div></a>
                         </div>
                         <div class="text-center d-inline-block">
-                            <a href="https://twitter.com/radipu" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
+                            <a class="fh5co_display_table" href="https://twitter.com/radipu" target="_blank"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
                         </div>
                         <div class="text-center d-inline-block">
-                            <a href="https://fb.com/radipu13" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
+                            <a class="fh5co_display_table" href="https://fb.com/radipu13" target="_blank"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
                         </div>
                         <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
                         @*<div class="d-inline-block text-center dd_position_relative ">
@@ -75,13 +75,16 @@
                                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="single.html">How To <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="single.html">Thoughts <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="single.html">Technology <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="single.html">Ideas <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="single.html">How To <span class="sr-only">(current)</span></a>
                                 </li>
                                 @*<li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
@@ -108,7 +111,7 @@
                                     <a class="nav-link" asp-area="" asp-controller="Contact" asp-action="Index">Contact <span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
-                            <partial name="_LoginPartial" />
+                            @* <partial name="_LoginPartial" /> *@
                         </div>
                     </div>
                 </nav>
@@ -139,7 +142,7 @@
                     <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://github.com/radipu" target="_blank">
                         <div class="fh5co_verticle_middle"><i class="fa fa-github"></i></div>
                     </a></div>
-                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://twitter.com/radipu" target="_blank">
                         <div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div>
                     </a></div>
                     <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://facebook.com/radipu13" target="_blank">
@@ -182,7 +185,7 @@
             <div class="col-12 col-md-8 col-lg-7 ">
                 <div class="input-group">
                     <span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                    <input type="text" class="form-control fh5co_footer_text_box" placeholder="Enter your email..." aria-describedby="basic-addon1">
+                     <input type="email" class="form-control fh5co_footer_text_box" placeholder="Enter your email..." aria-describedby="basic-addon1">
                     <a href="#" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"> <i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</a>
                 </div>
             </div>

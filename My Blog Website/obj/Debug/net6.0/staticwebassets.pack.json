@@ -1,0 +1,1017 @@
+{
+  "Files": [
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\My Blog Website.bundle.scp.css",
+      "PackagePath": "staticwebassets\\My Blog Website.bundle.scp.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\css\\adminlte.min.css",
+      "PackagePath": "staticwebassets\\admin\\dist\\css\\adminlte.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\AdminLTELogo.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\AdminLTELogo.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar2.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar2.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar3.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar3.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar4.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar4.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar5.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar5.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\american-express.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\american-express.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\cirrus.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\cirrus.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\mastercard.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\mastercard.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\paypal.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\paypal.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\paypal2.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\paypal2.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\visa.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\visa.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\default-150x150.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\default-150x150.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\icons.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\icons.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo1.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\photo1.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo2.png",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\photo2.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo3.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\photo3.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo4.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\photo4.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-1.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-1.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-2.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-2.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-3.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-3.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-4.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-4.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-5.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-5.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user1-128x128.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\user1-128x128.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user2-160x160.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\user2-160x160.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user3-128x128.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\user3-128x128.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user4-128x128.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\user4-128x128.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user5-128x128.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\user5-128x128.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user6-128x128.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\user6-128x128.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user7-128x128.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\user7-128x128.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user8-128x128.jpg",
+      "PackagePath": "staticwebassets\\admin\\dist\\img\\user8-128x128.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\.eslintrc.json",
+      "PackagePath": "staticwebassets\\admin\\dist\\js\\.eslintrc.json"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js",
+      "PackagePath": "staticwebassets\\admin\\dist\\js\\adminlte.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js.map",
+      "PackagePath": "staticwebassets\\admin\\dist\\js\\adminlte.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.min.js",
+      "PackagePath": "staticwebassets\\admin\\dist\\js\\adminlte.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.min.js.map",
+      "PackagePath": "staticwebassets\\admin\\dist\\js\\adminlte.min.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\pages\\dashboard2.js",
+      "PackagePath": "staticwebassets\\admin\\dist\\js\\pages\\dashboard2.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.bundle.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.bundle.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.bundle.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.bundle.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\all.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\all.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\all.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\brands.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\brands.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\brands.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\fontawesome.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\regular.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\regular.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\regular.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\solid.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\solid.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\solid.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\v4-shims.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\v4-shims.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\v4-shims.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\jquery.mapael.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\jquery.mapael.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\jquery.mapael.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\jquery.mapael.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\README.txt",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\README.txt"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\france_departments.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\france_departments.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\france_departments.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\france_departments.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\usa_states.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\usa_states.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\usa_states.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\usa_states.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mousewheel\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mousewheel\\LICENSE.txt"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mousewheel\\jquery.mousewheel.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mousewheel\\jquery.mousewheel.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.min.map",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.min.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.slim.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.slim.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.slim.min.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jquery.vmap.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\jquery.vmap.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jquery.vmap.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\jquery.vmap.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jqvmap.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\jqvmap.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jqvmap.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\jqvmap.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.africa.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.africa.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.asia.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.asia.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.australia.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.australia.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.europe.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.europe.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.north-america.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.north-america.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.south-america.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.south-america.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.algeria.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.algeria.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.argentina.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.argentina.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.brazil.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.brazil.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.canada.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.canada.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.croatia.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.croatia.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.europe.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.europe.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.france.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.france.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.germany.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.germany.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.greece.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.greece.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.indonesia.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.indonesia.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iran.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iran.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iraq.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iraq.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.new_regions_france.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.new_regions_france.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.russia.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.russia.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.serbia.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.serbia.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.tunisia.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.tunisia.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.turkey.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.turkey.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.ukraine.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.ukraine.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.counties.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.counties.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.districts.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.districts.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.world.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.world.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.min.css",
+      "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\Gruntfile.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\Gruntfile.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\license.txt",
+      "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\license.txt"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\raphael.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\raphael.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.no-deps.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\raphael.no-deps.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.no-deps.min.js",
+      "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\raphael.no-deps.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\animate.css",
+      "PackagePath": "staticwebassets\\css\\animate.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\media_query.css",
+      "PackagePath": "staticwebassets\\css\\media_query.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\css\\owl.theme.default.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css",
+      "PackagePath": "staticwebassets\\css\\style_1.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css.map",
+      "PackagePath": "staticwebassets\\css\\style_1.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\10-1-1-875x500.jpg",
+      "PackagePath": "staticwebassets\\images\\10-1-1-875x500.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\32-450x260.jpg",
+      "PackagePath": "staticwebassets\\images\\32-450x260.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\39-324x235.jpg",
+      "PackagePath": "staticwebassets\\images\\39-324x235.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\abigail-keenan-65477.jpg",
+      "PackagePath": "staticwebassets\\images\\abigail-keenan-65477.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\allef-vinicius-108153.jpg",
+      "PackagePath": "staticwebassets\\images\\allef-vinicius-108153.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\ariel-lustre-208615.jpg",
+      "PackagePath": "staticwebassets\\images\\ariel-lustre-208615.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\camila-cordeiro-114636.jpg",
+      "PackagePath": "staticwebassets\\images\\camila-cordeiro-114636.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\country.png",
+      "PackagePath": "staticwebassets\\images\\country.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\download (1).jpg",
+      "PackagePath": "staticwebassets\\images\\download (1).jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\download (2).jpg",
+      "PackagePath": "staticwebassets\\images\\download (2).jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\download.jpg",
+      "PackagePath": "staticwebassets\\images\\download.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\footer_sub_tipik.png",
+      "PackagePath": "staticwebassets\\images\\footer_sub_tipik.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\joe-gardner-75333.jpg",
+      "PackagePath": "staticwebassets\\images\\joe-gardner-75333.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\logo2.png",
+      "PackagePath": "staticwebassets\\images\\logo2.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\nathan-mcbride-229637.jpg",
+      "PackagePath": "staticwebassets\\images\\nathan-mcbride-229637.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\nick-karvounis-78711.jpg",
+      "PackagePath": "staticwebassets\\images\\nick-karvounis-78711.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\office-768x512.jpg",
+      "PackagePath": "staticwebassets\\images\\office-768x512.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\person_1.jpg",
+      "PackagePath": "staticwebassets\\images\\person_1.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\photo-1449157291145-7efd050a4d0e-578x362.jpg",
+      "PackagePath": "staticwebassets\\images\\photo-1449157291145-7efd050a4d0e-578x362.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\photo-1449157291145-7efd050a4d0e-578x362.png",
+      "PackagePath": "staticwebassets\\images\\photo-1449157291145-7efd050a4d0e-578x362.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\radipu LOGO_white.png",
+      "PackagePath": "staticwebassets\\images\\radipu LOGO_white.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\radipuLogo.png",
+      "PackagePath": "staticwebassets\\images\\radipuLogo.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\ryan-moreno-98837.jpg",
+      "PackagePath": "staticwebassets\\images\\ryan-moreno-98837.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\science-578x362.jpg",
+      "PackagePath": "staticwebassets\\images\\science-578x362.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\seth-doyle-133175.jpg",
+      "PackagePath": "staticwebassets\\images\\seth-doyle-133175.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\vil-son-35490.jpg",
+      "PackagePath": "staticwebassets\\images\\vil-son-35490.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\white_logo.png",
+      "PackagePath": "staticwebassets\\images\\white_logo.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\zack-minor-15104.jpg",
+      "PackagePath": "staticwebassets\\images\\zack-minor-15104.jpg"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\js\\jquery.stellar.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.stellar.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\js\\jquery.waypoints.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.waypoints.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\js\\modernizr-3.5.0.min.js",
+      "PackagePath": "staticwebassets\\js\\modernizr-3.5.0.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.My Blog Website.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.My Blog Website.props",
+      "PackagePath": "build\\My Blog Website.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.My Blog Website.props",
+      "PackagePath": "buildMultiTargeting\\My Blog Website.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.My Blog Website.props",
+      "PackagePath": "buildTransitive\\My Blog Website.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
