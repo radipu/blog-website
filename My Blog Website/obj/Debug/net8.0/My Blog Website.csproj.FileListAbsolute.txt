@@ -183,7 +183,6 @@ G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\staticwe
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\scopedcss\bundle\My Blog Website.styles.css
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\scopedcss\projectbundle\My Blog Website.bundle.scp.css
-G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.csproj.CopyComplete
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\refint\My Blog Website.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.pdb
@@ -261,3 +260,4 @@ G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog .0B44AE49.Up2Date
