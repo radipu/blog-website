@@ -1,6 +1,7 @@
 a, a:hover
 {
-    color:#f5bc04
+    /*color:#f5bc04*/
+    color: none;
 }
 
 .fh5co_header_bg
