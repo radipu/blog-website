@@ -6,7 +6,11 @@ G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\My Blog 
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\My Blog Website.runtimeconfig.json
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\My Blog Website.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\My Blog Website.pdb
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Azure.Core.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Azure.Identity.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Humanizer.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
@@ -19,6 +23,7 @@ G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsof
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Features.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.CodeAnalysis.Elfie.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.CodeAnalysis.Features.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.CodeAnalysis.Scripting.dll
@@ -31,13 +36,21 @@ G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsof
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\dotnet-aspnet-codegenerator-design.dll
@@ -46,6 +59,7 @@ G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsof
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Mono.TextTemplating.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Newtonsoft.Json.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\NuGet.Common.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\NuGet.Configuration.dll
@@ -56,6 +70,7 @@ G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\NuGet.Pa
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\NuGet.ProjectModel.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\NuGet.Protocol.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\NuGet.Versioning.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.CodeDom.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Composition.Convention.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Composition.Hosting.dll
@@ -64,10 +79,60 @@ G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.C
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Drawing.Common.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Memory.Data.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Runtime.Caching.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Security.Permissions.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Windows.Extensions.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\af\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ar\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\az\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\bg\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\bn-BD\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\cs\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\da\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\de\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\el\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\es\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\fa\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\fi-FI\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\fr\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\fr-BE\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\he\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\hr\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\hu\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\hy\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\id\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\is\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\it\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ja\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ko-KR\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ku\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\lv\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ms-MY\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\mt\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\nb\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\nb-NO\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\nl\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\pl\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\pt\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ro\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ru\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sk\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sl\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sr\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sr-Latn\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sv\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\th-TH\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\tr\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\uk\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\uz-Cyrl-UZ\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\uz-Latn-UZ\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\vi\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\zh-CN\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\zh-Hans\Humanizer.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\zh-Hant\Humanizer.resources.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -159,10 +224,17 @@ G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ru\Micro
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
+G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.csproj.AssemblyReference.cache
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.GeneratedMSBuildEditorConfig.editorconfig
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.AssemblyInfoInputs.cache
@@ -183,81 +255,9 @@ G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\staticwe
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\scopedcss\bundle\My Blog Website.styles.css
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\scopedcss\projectbundle\My Blog Website.bundle.scp.css
+G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog .0B44AE49.Up2Date
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\refint\My Blog Website.dll
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.pdb
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.genruntimeconfig.cache
 G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\ref\My Blog Website.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Azure.Core.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Azure.Identity.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.CodeAnalysis.Elfie.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\Mono.TextTemplating.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.CodeDom.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Memory.Data.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\af\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ar\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\az\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\bg\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\bn-BD\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\cs\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\da\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\de\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\el\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\es\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\fa\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\fi-FI\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\fr\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\fr-BE\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\he\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\hr\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\hu\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\hy\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\id\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\is\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\it\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ja\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ko-KR\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ku\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\lv\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ms-MY\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\mt\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\nb\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\nb-NO\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\nl\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\pl\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\pt\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ro\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\ru\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sk\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sl\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sr\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sr-Latn\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\sv\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\th-TH\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\tr\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\uk\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\uz-Cyrl-UZ\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\uz-Latn-UZ\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\vi\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\zh-CN\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\zh-Hans\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\zh-Hant\Humanizer.resources.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
-G:\My Work Station\C# all\blog-website\My Blog Website\obj\Debug\net8.0\My Blog .0B44AE49.Up2Date

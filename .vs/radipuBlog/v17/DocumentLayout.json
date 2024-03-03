@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "G:\\My Work Station\\C# all\\blog-website\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|g:\\my work station\\c# all\\blog-website\\my blog website\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|g:\\my work station\\c# all\\blog-website\\my blog website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +42,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\appsettings.json",
+              "RelativeDocumentMoniker": "My Blog Website\\appsettings.json",
+              "ToolTip": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\appsettings.json",
+              "RelativeToolTip": "My Blog Website\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-03T12:46:30.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "bootstrap.css",
               "DocumentMoniker": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\bootstrap.css",
               "RelativeDocumentMoniker": "My Blog Website\\wwwroot\\css\\bootstrap.css",
@@ -51,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "My Blog Website\\Views\\Shared\\_Layout.cshtml",
@@ -64,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "style_1.css",
               "DocumentMoniker": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css",
               "RelativeDocumentMoniker": "My Blog Website\\wwwroot\\css\\style_1.css",
