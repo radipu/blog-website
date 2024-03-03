@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "G:\\My Work Station\\C# all\\blog-website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|g:\\my work station\\c# all\\blog-website\\my blog website\\wwwroot\\css\\style_1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\wwwroot\\css\\style_1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|g:\\my work station\\c# all\\blog-website\\my blog website\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|g:\\my work station\\c# all\\blog-website\\my blog website\\wwwroot\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\wwwroot\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|g:\\my work station\\c# all\\blog-website\\my blog website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|g:\\my work station\\c# all\\blog-website\\my blog website\\wwwroot\\admin\\dist\\css\\adminlte.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\wwwroot\\admin\\dist\\css\\adminlte.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,40 +35,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "bootstrap.css",
-              "DocumentMoniker": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\bootstrap.css",
-              "RelativeDocumentMoniker": "My Blog Website\\wwwroot\\css\\bootstrap.css",
-              "ToolTip": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\bootstrap.css",
-              "RelativeToolTip": "My Blog Website\\wwwroot\\css\\bootstrap.css",
-              "ViewState": "AQIAAL4PAAAAAAAAAAAAAMkPAAAAAAAA",
+              "Title": "adminlte.min.css",
+              "DocumentMoniker": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\css\\adminlte.min.css",
+              "RelativeDocumentMoniker": "My Blog Website\\wwwroot\\admin\\dist\\css\\adminlte.min.css",
+              "ToolTip": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\css\\adminlte.min.css",
+              "RelativeToolTip": "My Blog Website\\wwwroot\\admin\\dist\\css\\adminlte.min.css",
+              "ViewState": "AQIAAK0UAAAAAAAAAAAnwL0UAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-03-03T15:58:51.633Z",
+              "WhenOpened": "2024-03-03T16:34:44.275Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "style_1.css",
-              "DocumentMoniker": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css",
-              "RelativeDocumentMoniker": "My Blog Website\\wwwroot\\css\\style_1.css",
-              "ToolTip": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css",
-              "RelativeToolTip": "My Blog Website\\wwwroot\\css\\style_1.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-03-03T15:46:59.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "My Blog Website\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "My Blog Website\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAAAFwAAAA8AAAA",
+              "DocumentMoniker": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "My Blog Website\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "My Blog Website\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAjwCkAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-03T15:44:59.122Z",
+              "WhenOpened": "2024-03-03T16:17:37.629Z",
               "EditorCaption": ""
             }
           ]
