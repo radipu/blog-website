@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var currentPage = Context.Request.Path.Value.ToLower();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -29,7 +33,26 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-    </ul>
+                @if (currentPage.Contains("/admin/posts"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-success btn-sm btn-hasicon pull-left"><i class="fa fa-plus"></i>New</a>
+                    </li>
+                    <div class="btn-group-together pull-left">
+                        <div class="row">
+                            <div class="col">
+                                <a class="nav-link btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                            </div>
+                            <div class="col">
+                                <a class="nav-link btn btn-sm btn-warning"><i class="fa fa-archive"></i></a>
+                            </div>
+                            <div class="col">
+                                <a class="nav-link btn btn-sm btn-success"><i class="fa fa-check"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -160,7 +183,7 @@
         <a class="nav-link" href="#" role="button"><i class="fas fa-key"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" role="button"><i class="fas fa-power-off"></i></a>
+        <a class="nav-link" href="#" role="button" onmouseover="this.style.color='red'" onmouseout="this.style.color='rgba(255, 255, 255, .75)'"><i class="fas fa-power-off"></i></a>
       </li>
     </ul>
   </nav>
