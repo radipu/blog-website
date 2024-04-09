@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WF5KXeX/2EH53qLqlCI/L+S+eifK0N4i74DUcEOFzJ4=",
+  "Hash": "S1cZ/x9EJxYWqEWj8mBurX/M1NPLpZpM5uVqgX6aWHk=",
   "Source": "My Blog Website",
   "BasePath": "_content/My Blog Website",
   "Mode": "Default",
@@ -4254,6 +4254,25 @@
       "OriginalItemSpec": "wwwroot\\images\\allef-vinicius-108153.jpg"
     },
     {
+      "Identity": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\App Store.svg",
+      "SourceId": "My Blog Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\",
+      "BasePath": "_content/My Blog Website",
+      "RelativePath": "images/App Store.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\App Store.svg"
+    },
+    {
       "Identity": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\ariel-lustre-208615.jpg",
       "SourceId": "My Blog Website",
       "SourceType": "Discovered",
@@ -4385,6 +4404,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\footer_sub_tipik.png"
+    },
+    {
+      "Identity": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\google-play-badge.png",
+      "SourceId": "My Blog Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\",
+      "BasePath": "_content/My Blog Website",
+      "RelativePath": "images/google-play-badge.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\google-play-badge.png"
     },
     {
       "Identity": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\joe-gardner-75333.jpg",

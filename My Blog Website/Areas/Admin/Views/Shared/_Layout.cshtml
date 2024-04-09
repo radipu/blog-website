@@ -36,7 +36,7 @@
                 @if (currentPage.Contains("/admin/posts"))
                 {
                     <li class="nav-item">
-                        <a class="nav-link btn btn-success btn-sm btn-hasicon pull-left"><i class="fa fa-plus"></i>New</a>
+                        <a class="nav-link btn btn-success btn-sm btn-hasicon pull-left" asp-action="Create" asp-controller="Posts" asp-area="Admin"><i class="fa fa-plus"></i>   New</a>
                     </li>
                     <div class="btn-group-together pull-left">
                         <div class="row">
@@ -174,7 +174,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" role="button" asp-controller="home" asp-action="index"><i class="fas fa-globe"></i></a>
+        <a class="nav-link" role="button" asp-controller="home" asp-action="index" target="_blank"><i class="fas fa-globe"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#" role="button"><i class="fas fa-user"></i></a>
