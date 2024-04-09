@@ -4017,6 +4017,11 @@ input[type=submit].btn-block {
 	pointer-events: none
 }
 
+.btn-group-together {
+	padding-left: 15px;
+	margin-right: 10px !important
+}
+
 .input-group {
 	position: relative;
 	display: -ms-flexbox;
@@ -5276,39 +5281,6 @@ input[type=submit].btn-block {
 
 .navbar-dark .navbar-nav .nav-link {
 	color: rgba(255, 255, 255, .75)
-}
-
-/* Style for the text display */
-#logoff:hover::after {
-	content: "Log Off";
-	display: block;
-	position: absolute;
-	padding-top: 10px;
-	white-space: nowrap;
-}
-
-#passKey:hover::after {
-	content: "Change Password";
-	display: block;
-	position: absolute;
-	padding-top: 10px;
-    white-space: nowrap;
-}
-
-#user:hover::after {
-	content: "Profile";
-	display: block;
-	position: absolute;
-	padding-top: 10px;
-    white-space: nowrap;
-}
-
-#globe:hover::after {
-	content: "View my blog";
-	display: block;
-	position: absolute;
-	padding-top: 10px;
-    white-space: nowrap;
 }
 
 .navbar-dark .navbar-nav .nav-link:focus,
@@ -56040,3 +56012,165 @@ button a:hover {
 .active.alert-container {
 	right: -300px;
 }
+
+#backtolist {
+	margin-top: 10px;
+}
+
+/*new post sidebar*/
+
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+    margin-right: -1px;
+}
+
+.btn-toolbar {
+    margin-right: -0.5rem;
+}
+
+
+
+    .btn-toolbar > .btn,
+    .btn-toolbar > .btn-group,
+    .btn-toolbar > .input-group {
+        margin-right: 0.5rem;
+    }
+
+.btn-group > .btn:first-child {
+    margin-right: 0;
+}
+
+.btn-group > .btn-group {
+    float: right;
+}
+
+.btn + .dropdown-toggle-split::after {
+    margin-right: 0;
+}
+
+
+.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > .btn-group + .btn-group {
+    margin-right: 0;
+}
+
+#rightsidebar {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebarwrapper {
+    z-index: 1000;
+    position: fixed;
+    right: 250px;
+    width: 0;
+    height: 100%;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: #222;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#rightsidebar {
+    padding-right: 250px;
+}
+
+#sidebarwrapper {
+    width: 250px;
+}
+
+#publish-button {
+	width: 200px;
+	margin-left: 28px;
+	margin-top: 20px;
+}
+
+#save-button {
+	width: 200px;
+	margin-left: 28px;
+	margin-top: 5px;
+}
+
+#cancel-button {
+	width: 200px;
+	margin-left: 28px;
+	margin-top: 5px;
+}
+
+.category, .category-check, .tags, .date {
+	margin-left: 28px;
+}
+
+.tag-input-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    width: auto;
+	margin-left: 28px;
+	margin-right: 20px;
+  }
+  .tag-input-container .tag {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .tag-input-container input {
+    border: none;
+    outline: none;
+  }
+  .close-btn {
+    cursor: pointer; /* Change cursor to pointer */
+  }
+
+  .date-input-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    width: auto;
+	margin-left: 28px;
+	margin-right: 20px;
+  }
+  .date-input-container .tag {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .date-input-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+  }
+
+  /*text editor*/
+  .title-input {
+	  width: 75%;
+	  padding: 10px;
+	  border-radius: 5px;
+	  margin-bottom: 10px;
+	  margin-left: 70px;
+	  margin-top: 20px;
+  }
+
+  .title-input {
+	  height: 40px;
+  }

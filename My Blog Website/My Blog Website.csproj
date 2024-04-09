@@ -7,7 +7,10 @@
     <RootNamespace>My_Blog_Website</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <None Remove="Areas\Admin\Views\Posts\Create.cshtml~RF95df30.TMP" />
+    <None Remove="Areas\Admin\Views\Posts\t2dgsdat.kfe~" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="wwwroot\admin\" />
   </ItemGroup>
   <ItemGroup>

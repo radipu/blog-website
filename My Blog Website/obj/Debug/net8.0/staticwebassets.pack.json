@@ -641,6 +641,10 @@
       "PackagePath": "staticwebassets\\images\\39-324x235.jpg"
     },
     {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\App Store.svg",
+      "PackagePath": "staticwebassets\\images\\App Store.svg"
+    },
+    {
       "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\abigail-keenan-65477.jpg",
       "PackagePath": "staticwebassets\\images\\abigail-keenan-65477.jpg"
     },
@@ -675,6 +679,10 @@
     {
       "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\footer_sub_tipik.png",
       "PackagePath": "staticwebassets\\images\\footer_sub_tipik.png"
+    },
+    {
+      "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\google-play-badge.png",
+      "PackagePath": "staticwebassets\\images\\google-play-badge.png"
     },
     {
       "Id": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\wwwroot\\images\\joe-gardner-75333.jpg",

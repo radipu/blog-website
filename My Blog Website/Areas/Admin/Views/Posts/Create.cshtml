@@ -5,57 +5,124 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
 
-<h4>Posts</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Content" class="control-label"></label>
-                <input asp-for="Content" class="form-control" />
-                <span asp-validation-for="Content" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FeatureImage" class="control-label"></label>
-                <input asp-for="FeatureImage" class="form-control" />
-                <span asp-validation-for="FeatureImage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
-                <input asp-for="Category" class="form-control" />
-                <span asp-validation-for="Category" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Tags" class="control-label"></label>
-                <input asp-for="Tags" class="form-control" />
-                <span asp-validation-for="Tags" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
+        <link rel="stylesheet" href="~/admin/dist/css/adminlte.min.css">
+    </head>
 
+    <body>
+
+        <div id="rightsidebar">
+            <div id="sidebarwrapper">
+                <button type="button" class="btn btn-success" id="publish-button">Publish</button>
+                <button type="button" class="btn btn-primary" id="save-button">Save</button>
+                <button type="button" class="btn btn-danger" id="cancel-button">Cancel</button> <hr />
+
+                <label class="category">Categories</label>
+                <div class="category-check">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                      <label class="form-check-label" for="check1">Thoughts</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                      <label class="form-check-label" for="check2">Technology</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input">
+                      <label class="form-check-label">Ideas</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input">
+                      <label class="form-check-label">How To</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input">
+                      <label class="form-check-label">Travels</label>
+                    </div>
+                </div><hr />
+                <label class="tags">Tags</label>
+                <div id="tagContainer" class="tag-input-container">
+                  <input type="text" id="tagInput" placeholder="Enter tags" />
+                </div>
+                <hr />
+                <label class="date">Date</label>
+                <div id="dateContainer" class="date-input-container">
+                  <input type="text" id="dateInput" />
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button type="button" class="btn" id="backtolist"><a asp-action="Index"><i class="fa fa-backward"></i>  Back to List</a></button>
+        </div>
+
+        <div class="col-lg-12 page-main">
+            <div class="new-post">
+              <input type="text" class="title-input" placeholder="Post title" id="post_title" name="post_title" />
+              <!-- Create a textarea for CKEditor to replace -->
+              <textarea id="post_text" class="post-area"></textarea>
+            </div>
+          </div>
+
+        <script>
+            document.getElementById('tagInput').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    var tagInput = this.value.trim();
+                    if (tagInput !== '') {
+                        var tagElement = document.createElement('div');
+                        tagElement.className = 'tag';
+                        tagElement.innerHTML = tagInput + ' <span class="close-btn">×</span>';
+                        document.getElementById('tagContainer').insertBefore(tagElement, this);
+                        this.value = '';
+                    }
+                }
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('close-btn')) {
+                    var tag = event.target.parentNode;
+                    tag.parentNode.removeChild(tag);
+                }
+            });
+        </script>
+
+        <script>
+            // Replace the textarea with id 'post_text' with CKEditor
+            CKEDITOR.replace('post_text', {
+                language: 'en', // Set language to English
+                uiColor: '#dddddd', // Set UI color
+                height: 500, // Set initial height of the editor
+                width: '75%',
+                resize_dir: 'vertical', // Allow vertical resize
+                on: {
+                    instanceReady: function(event) {
+                        event.editor.container.$.style.marginLeft = '70px';
+                    }
+                },
+                toolbar: [
+                    { name: 'document', items: [ 'Source', '-', 'NewPage', 'Preview', '-', 'Templates' ] },
+                    { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+                    { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+                    { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
+                    '/',
+                    { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+                    { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+                    { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+                    { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+                    '/',
+                    { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+                    { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+                    { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+                    { name: 'others', items: [ '-' ] },
+                    { name: 'about', items: [ 'About' ] }
+                ]
+                });
+            </script>
+    </body>
+</html>
