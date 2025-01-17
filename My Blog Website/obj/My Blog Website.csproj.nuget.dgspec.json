@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\My Blog Website.csproj": {}
+    "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj": {}
   },
   "projects": {
-    "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\My Blog Website.csproj": {
+    "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\My Blog Website.csproj",
+        "projectUniqueName": "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj",
         "projectName": "My Blog Website",
-        "projectPath": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\My Blog Website.csproj",
-        "packagesPath": "C:\\Users\\raddu\\.nuget\\packages\\",
-        "outputPath": "G:\\My Work Station\\C# all\\blog-website\\My Blog Website\\obj\\",
+        "projectPath": "D:\\My Files\\blog-website\\My Blog Website\\My Blog Website.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\My Files\\blog-website\\My Blog Website\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\raddu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -98,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
