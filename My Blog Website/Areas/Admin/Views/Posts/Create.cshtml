@@ -52,7 +52,7 @@
                 <hr />
                 <label class="date">Date</label>
                 <div id="dateContainer" class="date-input-container">
-                  <input type="text" id="dateInput" />
+                  <input type="date" id="dateInput" />
                 </div>
             </div>
         </div>
@@ -63,11 +63,11 @@
 
         <div class="col-lg-12 page-main">
             <div class="new-post">
-              <input type="text" class="title-input" placeholder="Post title" id="post_title" name="post_title" />
-              <!-- Create a textarea for CKEditor to replace -->
-              <textarea id="post_text" class="post-area"></textarea>
+                <input type="text" class="title-input" placeholder="Post title" id="post_title" name="post_title" />
+                <!-- Create a textarea for CKEditor to replace -->
+                <textarea id="post_text" class="post-area"></textarea>
             </div>
-          </div>
+        </div>
 
         <script>
             document.getElementById('tagInput').addEventListener('keydown', function(event) {
@@ -93,36 +93,42 @@
         </script>
 
         <script>
-            // Replace the textarea with id 'post_text' with CKEditor
-            CKEDITOR.replace('post_text', {
-                language: 'en', // Set language to English
-                uiColor: '#dddddd', // Set UI color
-                height: 500, // Set initial height of the editor
-                width: '75%',
-                resize_dir: 'vertical', // Allow vertical resize
-                on: {
-                    instanceReady: function(event) {
-                        event.editor.container.$.style.marginLeft = '70px';
-                    }
+        // Replace the textarea with id 'post_text' with CKEditor
+        CKEDITOR.replace('post_text', {
+            language: 'en',
+            uiColor: '#dddddd',
+            height: 500,
+            width: '75%',
+            resize_dir: 'vertical',
+            on: {
+                instanceReady: function(event) {
+                    event.editor.container.$.style.marginLeft = '70px';
                 },
-                toolbar: [
-                    { name: 'document', items: [ 'Source', '-', 'NewPage', 'Preview', '-', 'Templates' ] },
-                    { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
-                    { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
-                    { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
-                    '/',
-                    { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-                    { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-                    { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-                    { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
-                    '/',
-                    { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-                    { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-                    { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
-                    { name: 'others', items: [ '-' ] },
-                    { name: 'about', items: [ 'About' ] }
-                ]
-                });
-            </script>
+                notificationShow: function(event) {
+                    // Suppress the specific notification about the CKEditor version
+                    if (event.data.message.indexOf('is not secure') > -1) {
+                        event.cancel();
+                    }
+                }
+            },
+            toolbar: [
+                { name: 'document', items: [ 'Source', '-', 'NewPage', 'Preview', '-', 'Templates' ] },
+                { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+                { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+                { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
+                '/',
+                { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+                { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+                { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+                { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+                '/',
+                { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+                { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+                { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+                { name: 'others', items: [ '-' ] },
+                { name: 'about', items: [ 'About' ] }
+            ]
+        });
+    </script>
     </body>
 </html>
