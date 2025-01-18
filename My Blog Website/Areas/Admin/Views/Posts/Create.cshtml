@@ -20,7 +20,7 @@
             <div id="sidebarwrapper">
                 <button type="button" class="btn btn-success" id="publish-button">Publish</button>
                 <button type="button" class="btn btn-primary" id="save-button">Save</button>
-                <button type="button" class="btn btn-danger" id="cancel-button">Cancel</button> <hr />
+                <button type="button" class="btn btn-danger" id="cancel-button"><a asp-action="Index">Cancel</a></button> <hr />
 
                 <label class="category">Categories</label>
                 <div class="category-check">
@@ -66,6 +66,27 @@
                 <input type="text" class="title-input" placeholder="Post title" id="post_title" name="post_title" />
                 <!-- Create a textarea for CKEditor to replace -->
                 <textarea id="post_text" class="post-area"></textarea>
+            </div>
+        </div>
+
+        <div id="previewModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Post Preview</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="preview-title"></h2>
+                        <div id="preview-content"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="confirm-publish">Confirm Publish</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -128,6 +149,26 @@
                 { name: 'others', items: [ '-' ] },
                 { name: 'about', items: [ 'About' ] }
             ]
+        });
+
+        // Handle Publish Button Click
+        document.getElementById('publish-button').addEventListener('click', function() {
+            var title = document.getElementById('post_title').value;
+            var content = CKEDITOR.instances.post_text.getData();
+
+            // Set the preview content
+            document.getElementById('preview-title').innerText = title;
+            document.getElementById('preview-content').innerHTML = content;
+
+            // Show the modal
+            $('#previewModal').modal('show');
+        });
+
+        // Handle Confirm Publish Button Click (if needed)
+        document.getElementById('confirm-publish').addEventListener('click', function() {
+            // Logic to save or publish the post
+            alert('Post confirmed and published!');
+            $('#previewModal').modal('hide');
         });
     </script>
     </body>
