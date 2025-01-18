@@ -667,7 +667,8 @@ a, a:hover
 
 .footer_sub_about {
 	color: #C9C8C8;
-	font-size: 14px
+	font-size: 14px;
+	text-align: justify;
 }
 
 .fh5co_display_table_footer {
