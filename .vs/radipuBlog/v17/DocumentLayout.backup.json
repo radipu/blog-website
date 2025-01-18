@@ -30,8 +30,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -92,7 +100,7 @@
               "RelativeDocumentMoniker": "My Blog Website\\Areas\\Admin\\Views\\Posts\\Create.cshtml",
               "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Views\\Posts\\Create.cshtml",
               "RelativeToolTip": "My Blog Website\\Areas\\Admin\\Views\\Posts\\Create.cshtml",
-              "ViewState": "AgIAABAAAAAAAAAAAAAUwBYAAACAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-17T17:53:55.782Z",
               "EditorCaption": ""
