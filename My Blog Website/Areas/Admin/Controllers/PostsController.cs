@@ -16,8 +16,8 @@ namespace My_Blog_Website.Areas.Admin.Controllers
         [Route("admin/posts")]
         public IActionResult Index()
         {
-            //List<Posts> posts = _db.posts.ToList();
-            //return View(posts);
+            List<Posts> posts = _db.posts.ToList();
+            return View(posts);
             return View();
         }
 
