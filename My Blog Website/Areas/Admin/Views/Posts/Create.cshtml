@@ -11,6 +11,7 @@
 <html lang="en">
     <head>
         <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
+        <script src="~/admin/dist/js/adminlte.js"></script>
         <link rel="stylesheet" href="~/admin/dist/css/adminlte.min.css">
     </head>
 
@@ -21,6 +22,15 @@
                 <button type="button" class="btn btn-success" id="publish-button">Publish</button>
                 <button type="button" class="btn btn-primary" id="save-button">Save</button>
                 <button type="button" class="btn btn-danger" id="cancel-button"><a asp-action="Index">Cancel</a></button> <hr />
+
+                <label class="featureImageLBL">Feature Image</label>
+                <div class="custom-file">
+                    <input type="file" class="feature" id="featureImage" onchange="previewImage(event)">
+                    <label class="custom-file-label" for="featureImage">Choose file</label>
+                </div>
+                <div class="mt-3">
+                    <img id="featureImagePreview" src="#" alt="Feature Image Preview">
+                </div>
 
                 <label class="category">Categories</label>
                 <div class="category-check">
@@ -47,7 +57,7 @@
                 </div><hr />
                 <label class="tags">Tags</label>
                 <div id="tagContainer" class="tag-input-container">
-                  <input type="text" id="tagInput" placeholder="Enter tags" />
+                    <input type="text" id="tagInput" placeholder="Enter tags" />
                 </div>
                 <hr />
                 <label class="date">Date</label>
@@ -170,6 +180,43 @@
             //alert('Post confirmed and published!');
             $('#previewModal').modal('hide');
         });
+
+        function previewImage(event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function() {
+            var dataURL = reader.result;
+            var output = document.getElementById('featureImagePreview');
+            output.src = dataURL;
+            output.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+        }
+
+        function validateFileInput(event) {
+        var file = event.target.files[0];
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+        if (!allowedExtensions.exec(file.name)) {
+            alert('Please upload a valid image file.');
+            event.target.value = '';
+            return false;
+        }
+        if (file.size > 2097152) { // 2MB in bytes
+            alert('File size exceeds 2 MB');
+            event.target.value = '';
+            return false;
+        }
+        previewImage(event);
+    }
+
+    //date format
+    document.getElementById("dateInput").addEventListener("change", function () {
+        const inputDate = new Date(this.value);
+        if (!isNaN(inputDate)) {
+            const options = { month: "short", day: "2-digit", year: "numeric" };
+            document.getElementById("dateInput").textContent = inputDate.toLocaleDateString("en-US", options);
+        }
+    });
     </script>
     </body>
 </html>

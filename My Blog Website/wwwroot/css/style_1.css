@@ -164,8 +164,31 @@ a, a:hover
     padding-left:20px !important;
     padding-right:20px !important;
     margin:0 20px;position:relative
-
 }
+
+/* Reduce margin and padding for navbar items */
+.navbar-nav .nav-item {
+    margin-right: -30px; /* Adjust this value to control spacing between items */
+}
+
+.navbar-nav .nav-link {
+    padding-left: 10px !important; /* Adjust this value to control left padding */
+    padding-right: 10px !important; /* Adjust this value to control right padding */
+}
+
+/*.nav-item.active > a {
+    color: #fff !important;
+    background: #f5bc04 !important;
+    padding-top: 12px !important;
+    padding-bottom: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin: 0 20px !important;
+    -webkit-clip-path: polygon(100% 0, 100% 85%, 14% 85%, 0 100%, 0% 60%, 0 0);
+    -moz-clip-path: polygon(100% 0, 100% 85%, 14% 85%, 0 100%, 0% 60%, 0 0);
+    -ms-clip-path: polygon(100% 0, 100% 85%, 14% 85%, 0 100%, 0% 60%, 0 0);
+    clip-path: polygon(100% 0, 100% 85%, 14% 85%, 0 100%, 0% 60%, 0 0);
+}*/
 
 .fh5co_padding_menu{
     padding:20px 0
@@ -668,7 +691,6 @@ a, a:hover
 .footer_sub_about {
 	color: #C9C8C8;
 	font-size: 14px;
-	text-align: justify;
 }
 
 .fh5co_display_table_footer {
@@ -974,7 +996,7 @@ a, a:hover
 	-webkit-border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
 	-ms-border-radius: 0 !important;
-	border-radius: 0 !important;
+	border-radius: 10px !important;
 	font-size: 15px !important;
 	height: 45px !important;
 	letter-spacing: 1px !important
@@ -984,7 +1006,7 @@ a, a:hover
 	-webkit-border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
 	-ms-border-radius: 0 !important;
-	border-radius: 0 !important;
+	border-radius: 10px !important;
 	height: 150px;
 	resize: none;
 	padding-top: 20px !important;
@@ -996,7 +1018,7 @@ a, a:hover
 	-webkit-border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
 	-ms-border-radius: 0 !important;
-	border-radius: 0 !important;
+	border-radius: 10px !important;
 	color: #fff !important;
 	padding: 10px 50px !important
 }
@@ -1231,4 +1253,5 @@ a, a:hover
 
 .google-play {
 	width: 150px;
+
 }
