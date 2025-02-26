@@ -25,42 +25,51 @@
             <th>Category</th>
             <th>Tags</th>
             <th>Author</th>
+            <th>Status</th>
             <th>Publish Date</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
         @{ int rowNo = 0; }
-        @foreach (var item in Model) {
+        @foreach (var post in Model) {
         <tr>
             <td style="max-width:10px; text-align: center">
                     @(rowNo += 1)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @post.Title
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Content)
+                @post.PostContent
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FeatureImage)
+                @if (post.FeatureImage != null)
+                    {
+                        var base64 = Convert.ToBase64String(post.FeatureImage);
+                        var imgSrc = $"data:image/png;base64,{base64}";
+                        <img src="@imgSrc" alt="Feature Image" style="width:100px;" />
+                    }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category)
+                @post.Categories
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Tags)
+                @post.Tags
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Author)
+                @post.Author
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @post.Status
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PostId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PostId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
+                @Html.DisplayFor(modelItem => post.Date.ToShortDateString())
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@post.PostId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@post.PostId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@post.PostId">Delete</a>
             </td>
         </tr>
 }

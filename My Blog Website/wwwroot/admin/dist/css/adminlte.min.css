@@ -4467,7 +4467,18 @@ input[type=submit].btn-block {
 	display: inline-block;
 	width: 100%;
 	height: calc(2.25rem + 2px);
-	margin-bottom: 0
+	margin-bottom: 0;
+	overflow: hidden
+}
+
+.custom-file input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 
 .custom-file-input {
@@ -4513,7 +4524,8 @@ input[type=submit].btn-block {
 	background-color: #fff;
 	border: 1px solid #ced4da;
 	border-radius: .25rem;
-	box-shadow: none
+	box-shadow: none;
+	display: inline-block
 }
 
 .custom-file-label::after {
@@ -56058,6 +56070,7 @@ button a:hover {
     margin-right: 0;
 }
 
+/* Sidebar Styles */
 #rightsidebar {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -56069,10 +56082,10 @@ button a:hover {
 #sidebarwrapper {
     z-index: 1000;
     position: fixed;
-    right: 250px;
-    width: 0;
+    right: 0;
+	top: 56px;
+    width: 250px;
     height: 82%;
-    margin-right: -250px;
     overflow-y: auto;
     background: #222;
     -webkit-transition: all 0.5s ease;
@@ -56081,12 +56094,36 @@ button a:hover {
     transition: all 0.5s ease;
 }
 
-#rightsidebar {
-    padding-right: 250px;
+#rightsidebar.collapsed #sidebarwrapper {
+    right: -250px; /* Collapse the sidebar */
 }
 
-#sidebarwrapper {
-    width: 250px;
+/* Toggle Button Styles */
+#toggleSidebarButton {
+    position: fixed;
+    right: -1px; /* Position the button outside the sidebar */
+    top: 60px;
+    z-index: 1001;
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    -webkit-transition: all 0.5s ease; /* Add transition for smooth animation */
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#toggleSidebarButton:hover {
+    background: #555;
+}
+
+/* Adjust button position when sidebar is collapsed */
+#rightsidebar.collapsed #toggleSidebarButton {
+    right: 10px; /* Move the button to the edge of the screen */
 }
 
 #publish-button {
@@ -56120,7 +56157,8 @@ button a:hover {
 	margin-left: 28px;
 	margin-right: 20px;
   }
-  .tag-input-container .tag {
+
+.tag-input-container .tag {
     background-color: #007bff;
     color: #fff;
     padding: 5px 10px;
@@ -56129,15 +56167,17 @@ button a:hover {
     display: flex;
     align-items: center;
   }
-  .tag-input-container input {
+
+.tag-input-container input {
     border: none;
     outline: none;
   }
-  .close-btn {
+
+.close-btn {
     cursor: pointer; /* Change cursor to pointer */
   }
 
-  .date-input-container {
+.date-input-container {
     display: flex;
     align-items: center;
     padding: 5px;
@@ -56147,7 +56187,8 @@ button a:hover {
 	margin-right: 20px;
 	margin-bottom: 20px;
   }
-  .date-input-container .tag {
+
+.date-input-container .tag {
     background-color: #007bff;
     color: #fff;
     padding: 5px 10px;
@@ -56156,12 +56197,14 @@ button a:hover {
     display: flex;
     align-items: center;
   }
-  .date-input-container input {
+
+.date-input-container input {
     flex: 1;
     border: none;
     outline: none;
   }
-  #dateInput {
+
+#dateInput {
 	  margin-left: 10px;
 	  font-weight: bold;
 	  color: #007bff;
@@ -56190,3 +56233,8 @@ button a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
 	}
+
+  /*delete author*/
+  .authorDetails{
+	  margin: 50px;
+  }
