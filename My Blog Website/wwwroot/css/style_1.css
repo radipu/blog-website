@@ -80,7 +80,7 @@ a, a:hover
     border-radius:50%;
     transition:1s;
     margin:0 10px;
-    color:#777 !important
+    color:#777 !important;
 
 }
 
@@ -691,6 +691,12 @@ a, a:hover
 .footer_sub_about {
 	color: #C9C8C8;
 	font-size: 14px;
+}
+
+.about-text{
+    color: #C9C8C8;
+	font-size: 14px;
+	text-align: justify
 }
 
 .fh5co_display_table_footer {

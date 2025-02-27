@@ -3069,3 +3069,174 @@
 //# sourceMappingURL=adminlte.js.map
 
 //date format for create post
+
+//sidebar
+    document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.getElementById('rightsidebar');
+    const toggleButton = document.getElementById('toggleSidebarButton');
+    const sidebarWrapper = document.getElementById('sidebarwrapper');
+
+    // Function to toggle the sidebar
+    function toggleSidebar() {
+        sidebar.classList.toggle('collapsed');
+
+        // Update the button's position based on the sidebar's state
+        if (sidebar.classList.contains('collapsed')) {
+            toggleButton.style.right = '10px'; // Move button to the edge when collapsed
+        } else {
+            toggleButton.style.right = '260px'; // Move button outside the sidebar when expanded
+        }
+    }
+
+    // Event listener for the toggle button
+    toggleButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the click from propagating to the document
+        toggleSidebar();
+    });
+
+    // Event listener to close the sidebar when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!sidebarWrapper.contains(event.target) && !toggleButton.contains(event.target)) {
+            sidebar.classList.add('collapsed');
+            toggleButton.style.right = '10px'; // Move button to the edge when collapsed
+        }
+    });
+    });
+
+//text editor
+        // Replace the textarea with id 'post_text' with CKEditor
+    CKEDITOR.replace('post_text', {
+        language: 'en',
+        uiColor: '#dddddd',
+        height: 500,
+        width: '75%',
+        resize_dir: 'vertical',
+        on: {
+            instanceReady: function(event) {
+                event.editor.container.$.style.marginLeft = '70px';
+            },
+            notificationShow: function(event) {
+                // Suppress the specific notification about the CKEditor version
+                if (event.data.message.indexOf('is not secure') > -1) {
+                    event.cancel();
+                }
+            }
+        },
+        toolbar: [
+            { name: 'document', items: [ 'Source', '-', 'NewPage', 'Preview', '-', 'Templates' ] },
+            { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+            { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+            { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
+            '/',
+            { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+            { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+            { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+            { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+            '/',
+            { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+            { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+            { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+            { name: 'others', items: [ '-' ] },
+            { name: 'about', items: [ 'About' ] }
+        ]
+    });
+
+    // Handle Publish Button Click
+    document.getElementById('publish-button').addEventListener('click', function() {
+        var title = document.getElementById('post_title').value;
+        var content = CKEDITOR.instances.post_text.getData();
+
+        // Set the preview content
+        document.getElementById('preview-title').innerText = title;
+        document.getElementById('preview-content').innerHTML = content;
+
+        // Show the modal
+        $('#previewModal').modal('show');
+    });
+
+    // Handle Confirm Publish Button Click (if needed)
+    document.getElementById('confirm-publish').addEventListener('click', function() {
+        // Logic to save or publish the post
+        //alert('Post confirmed and published!');
+        $('#previewModal').modal('hide');
+    });
+
+    function previewImage(event) {
+    var input = event.target;
+    var reader = new FileReader();
+    reader.onload = function() {
+        var dataURL = reader.result;
+        var output = document.getElementById('featureImagePreview');
+        output.src = dataURL;
+        output.style.display = 'block';
+    };
+    reader.readAsDataURL(input.files[0]);
+}
+
+function validateFileInput(event) {
+    var file = event.target.files[0];
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    if (!allowedExtensions.exec(file.name)) {
+        alert('Please upload a valid image file.');
+        event.target.value = '';
+        return false;
+    }
+    if (file.size > 2097152) { // 2MB in bytes
+        alert('File size exceeds 2 MB');
+        event.target.value = '';
+        return false;
+    }
+    previewImage(event);
+}
+
+//date format
+//document.getElementById("dateInput").addEventListener("change", function () {
+//    const inputDate = new Date(this.value);
+//    if (!isNaN(inputDate)) {
+//        const options = { month: "short", day: "2-digit", year: "numeric" };
+//        document.getElementById("dateInput").textContent = inputDate.toLocaleDateString("en-US", options);
+//    }
+//});
+document.addEventListener("DOMContentLoaded", function () {
+    const dateInput = document.getElementById("dateInput");
+
+    // Set today's date as the default value
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+    const day = String(today.getDate()).padStart(2, "0");
+
+    // Format as YYYY-MM-DD (required for input type="date")
+    const todayFormatted = `${year}-${month}-${day}`;
+    dateInput.value = todayFormatted;
+
+    // Optional: Add an event listener for date changes
+    dateInput.addEventListener("change", function () {
+        const inputDate = new Date(this.value);
+        if (!isNaN(inputDate)) {
+            console.log("Selected date:", inputDate.toLocaleDateString("en-US"));
+        }
+    });
+});
+
+//tags
+document.getElementById('tagInput').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        var tagInput = this.value.trim();
+        if (tagInput !== '') {
+            var tagElement = document.createElement('div');
+            tagElement.className = 'tag';
+            tagElement.innerHTML = tagInput + ' <span class="close-btn">×</span>';
+            document.getElementById('tagContainer').insertBefore(tagElement, this);
+            this.value = '';
+        }
+    }
+});
+
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('close-btn')) {
+        var tag = event.target.parentNode;
+        tag.parentNode.removeChild(tag);
+    }
+});

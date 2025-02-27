@@ -299,6 +299,8 @@ D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.EntityFramew
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll

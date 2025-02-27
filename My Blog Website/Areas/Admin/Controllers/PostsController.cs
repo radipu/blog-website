@@ -30,15 +30,29 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("admin/post/create")]
-        public async Task<IActionResult> Create(Posts posts)
+        public async Task<IActionResult> Create(Posts posts, IFormFile featureImage)
         {
             if (ModelState.IsValid)
             {
+                if (featureImage != null && featureImage.Length > 0)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await featureImage.CopyToAsync(memoryStream);
+                        posts.FeatureImage = memoryStream.ToArray();
+                    }
+                }
+
+                //posts.Author = User.Identity.Name; // Assuming you're using authentication
+                posts.Date = DateTime.Now;
+
                 _db.Add(posts);
                 await _db.SaveChangesAsync();
+
                 return RedirectToAction("Index");
             }
             return View(posts);
         }
+
     }
 }
