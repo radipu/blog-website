@@ -3142,24 +3142,24 @@
     });
 
     // Handle Publish Button Click
-    document.getElementById('publish-button').addEventListener('click', function() {
-        var title = document.getElementById('post_title').value;
-        var content = CKEDITOR.instances.post_text.getData();
+    //document.getElementById('publish-button').addEventListener('click', function() {
+    //    var title = document.getElementById('post_title').value;
+    //    var content = CKEDITOR.instances.post_text.getData();
 
-        // Set the preview content
-        document.getElementById('preview-title').innerText = title;
-        document.getElementById('preview-content').innerHTML = content;
+    //    // Set the preview content
+    //    document.getElementById('preview-title').innerText = title;
+    //    document.getElementById('preview-content').innerHTML = content;
 
-        // Show the modal
-        $('#previewModal').modal('show');
-    });
+    //    // Show the modal
+    //    $('#previewModal').modal('show');
+    //});
 
     // Handle Confirm Publish Button Click (if needed)
-    document.getElementById('confirm-publish').addEventListener('click', function() {
-        // Logic to save or publish the post
-        //alert('Post confirmed and published!');
-        $('#previewModal').modal('hide');
-    });
+    //document.getElementById('confirm-publish').addEventListener('click', function() {
+    //    // Logic to save or publish the post
+    //    //alert('Post confirmed and published!');
+    //    $('#previewModal').modal('hide');
+    //});
 
     function previewImage(event) {
     var input = event.target;
@@ -3198,26 +3198,26 @@ function validateFileInput(event) {
 //    }
 //});
 document.addEventListener("DOMContentLoaded", function () {
-    const dateInput = document.getElementById("dateInput");
+            const dateInput = document.getElementById("dateInput");
 
-    // Set today's date as the default value
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based
-    const day = String(today.getDate()).padStart(2, "0");
+            // Set today's date as the default value
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+            const day = String(today.getDate()).padStart(2, "0");
 
-    // Format as YYYY-MM-DD (required for input type="date")
-    const todayFormatted = `${year}-${month}-${day}`;
-    dateInput.value = todayFormatted;
+            // Format as YYYY-MM-DD (required for input type="date")
+            const todayFormatted = `${year}-${month}-${day}`;
+            dateInput.value = todayFormatted;
 
-    // Optional: Add an event listener for date changes
-    dateInput.addEventListener("change", function () {
-        const inputDate = new Date(this.value);
-        if (!isNaN(inputDate)) {
-            console.log("Selected date:", inputDate.toLocaleDateString("en-US"));
-        }
-    });
-});
+            // Optional: Add an event listener for date changes
+            dateInput.addEventListener("change", function () {
+                const inputDate = new Date(this.value);
+                if (!isNaN(inputDate)) {
+                    console.log("Selected date:", inputDate.toLocaleDateString("en-US"));
+                }
+            });
+        });
 
 //tags
 document.getElementById('tagInput').addEventListener('keydown', function(event) {
