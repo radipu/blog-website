@@ -21,10 +21,10 @@
             <th>SN.</th>
             <th>Title</th>
             <th>Content</th>
-            <th>Feature Image</th>
+            @* <th>Feature Image</th> *@
             <th>Category</th>
             <th>Tags</th>
-            <th>Author</th>
+            @* <th>Author</th> *@
             <th>Status</th>
             <th>Publish Date</th>
             <th>Action</th>
@@ -43,28 +43,28 @@
             <td>
                 @post.PostContent
             </td>
-            <td>
+            @* <td>
                 @if (post.FeatureImage != null)
                     {
                         var base64 = Convert.ToBase64String(post.FeatureImage);
                         var imgSrc = $"data:image/png;base64,{base64}";
                         <img src="@imgSrc" alt="Feature Image" style="width:100px;" />
                     }
-            </td>
+            </td> *@
             <td>
                 @post.Categories
             </td>
             <td>
                 @post.Tags
             </td>
-            <td>
+            @* <td>
                 @post.Author
+            </td> *@
+            <td>
+                @post.PostStatus
             </td>
             <td>
-                @post.Status
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => post.Date.ToShortDateString())
+                @Html.DisplayFor(modelItem => post.PublishedDate.ToShortDateString())
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@post.PostId">Edit</a> |

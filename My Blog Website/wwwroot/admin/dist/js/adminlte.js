@@ -3159,23 +3159,46 @@
     //    // Logic to save or publish the post
     //    //alert('Post confirmed and published!');
     //    $('#previewModal').modal('hide');
-    //});
+//});
 
-    function previewImage(event) {
-    var input = event.target;
-    var reader = new FileReader();
-    reader.onload = function() {
-        var dataURL = reader.result;
-        var output = document.getElementById('featureImagePreview');
-        output.src = dataURL;
-        output.style.display = 'block';
+// Handle Publish/Draft buttons
+function collectFormData() {
+    // Update CKEditor content
+    CKEDITOR.instances.post_text.updateElement();
 
-        // Clear the URL input and its preview
-        document.getElementById('featuredImageUrl').value = '';
-        document.getElementById('urlImagePreview').style.display = 'none';
-    };
-    reader.readAsDataURL(input.files[0]);
+    // Collect categories
+    const categories = Array.from(document.querySelectorAll('.category-check input:checked'))
+                              .map(cb => cb.nextElementSibling.textContent);
+    document.getElementById('selectedCategories').value = categories.join(', ');
+
+    // Collect tags correctly using .tag selector
+    const tags = Array.from(document.querySelectorAll('#tagContainer .tag'))
+                      .map(tag => tag.firstChild.textContent.trim());
+    document.getElementById('selectedTags').value = tags.join(', ');
+
+    // Handle image URL: update finalImageData if a URL is entered
+    const urlInput = document.getElementById('featuredImageUrl');
+    if (urlInput.value) {
+        document.getElementById('featuredImageUrlHidden').value = urlInput.value;
+        document.getElementById('finalImageData').value = urlInput.value;
+    }
 }
+
+document.getElementById('publish-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    CKEDITOR.instances.post_text.updateElement();
+    document.getElementById('postStatus').value = 'Published';
+    collectFormData();
+    document.getElementById('postForm').submit();
+});
+
+document.getElementById('draft-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    CKEDITOR.instances.post_text.updateElement();
+    document.getElementById('postStatus').value = 'Draft';
+    collectFormData();
+    document.getElementById('postForm').submit();
+});
 
 function validateFileInput(event) {
     var file = event.target.files[0];
@@ -3193,17 +3216,33 @@ function validateFileInput(event) {
     previewImage(event);
 }
 
+// Update previewImage() to clear file input when URL is used
+function previewImage(event) {
+    const input = event.target;
+    const reader = new FileReader();
+    reader.onload = function() {
+        document.getElementById('featureImagePreview').src = reader.result;
+        document.getElementById('featureImagePreview').style.display = 'block';
+        document.getElementById('finalImageData').value = reader.result;
+        
+        // Clear URL input
+        document.getElementById('featuredImageUrl').value = '';
+        document.getElementById('urlImagePreview').style.display = 'none';
+    };
+    if (input.files[0]) {
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Update updateImagePreview()
 function updateImagePreview(url) {
     const preview = document.getElementById('urlImagePreview');
-    const fileInput = document.getElementById('featureImage');
-
     if (url) {
         preview.src = url;
         preview.style.display = 'block';
-
-        // Clear the file input and its preview
-        fileInput.value = '';
+        document.getElementById('featureImage').value = '';
         document.getElementById('featureImagePreview').style.display = 'none';
+        document.getElementById('finalImageData').value = url;
     } else {
         preview.style.display = 'none';
     }
