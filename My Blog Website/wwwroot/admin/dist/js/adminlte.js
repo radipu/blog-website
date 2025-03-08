@@ -3169,6 +3169,10 @@
         var output = document.getElementById('featureImagePreview');
         output.src = dataURL;
         output.style.display = 'block';
+
+        // Clear the URL input and its preview
+        document.getElementById('featuredImageUrl').value = '';
+        document.getElementById('urlImagePreview').style.display = 'none';
     };
     reader.readAsDataURL(input.files[0]);
 }
@@ -3187,6 +3191,22 @@ function validateFileInput(event) {
         return false;
     }
     previewImage(event);
+}
+
+function updateImagePreview(url) {
+    const preview = document.getElementById('urlImagePreview');
+    const fileInput = document.getElementById('featureImage');
+
+    if (url) {
+        preview.src = url;
+        preview.style.display = 'block';
+
+        // Clear the file input and its preview
+        fileInput.value = '';
+        document.getElementById('featureImagePreview').style.display = 'none';
+    } else {
+        preview.style.display = 'none';
+    }
 }
 
 //date format

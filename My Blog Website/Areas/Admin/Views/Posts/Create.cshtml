@@ -29,7 +29,7 @@
             <div id="sidebarwrapper">
                 <!-- Sidebar Content -->
                 <button type="button" class="btn btn-success" id="publish-button">Publish</button>
-                <button type="button" class="btn btn-primary" id="save-button">Save</button>
+                <button type="button" class="btn btn-primary" id="draft-button">Save as Draft</button>
                 <button type="button" class="btn btn-danger" id="cancel-button"><a asp-action="Index">Cancel</a></button> <hr />
 
                 <label class="featureImageLBL">Feature Image</label>
@@ -38,8 +38,17 @@
                     <label class="custom-file-label" for="featureImage">Choose file</label>
                 </div>
                 <div class="mt-3">
+                    <label class="featureImageURL">Or</label>
+                    <input type="text" class="form-control" id="featuredImageUrl" 
+                           oninput="updateImagePreview(this.value)" placeholder="Use Image URL">
+                    <img id="urlImagePreview" src="#" alt="URL Image Preview" 
+                         style="display:none; width: 300px; margin-top: 10px;">
+                </div>
+                <div class="mt-3">
                     <img id="featureImagePreview" src="#" alt="Feature Image Preview">
                 </div>
+                <!-- Inside your sidebar div -->
+                
 
                 <label class="category">Categories</label>
                 <div class="category-check">
