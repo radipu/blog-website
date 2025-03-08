@@ -56132,7 +56132,7 @@ button a:hover {
 	margin-top: 20px;
 }
 
-#save-button {
+#draft-button {
 	width: 200px;
 	margin-left: 28px;
 	margin-top: 5px;
@@ -56146,6 +56146,16 @@ button a:hover {
 
 .featureImageLBL, .feature, .category, .category-check, .tags, .date {
 	margin-left: 28px;
+}
+
+.featureImageURL {
+	margin-left: 50%
+}
+
+#featuredImageUrl {
+	position: relative;
+	width: 90%;
+	margin-left: 12px
 }
 
 .tag-input-container {
