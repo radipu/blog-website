@@ -30,9 +30,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("admin/post/create")]
-        public async Task<IActionResult> Create(
-    Posts posts,
-    string submitType) // "Published" or "Draft"
+        public async Task<IActionResult> Create(Posts posts, string submitType) // "Published" or "Draft"
         {
             // Assign PostStatus FIRST
             posts.PostStatus = submitType; // 🚨 Move this line HERE
