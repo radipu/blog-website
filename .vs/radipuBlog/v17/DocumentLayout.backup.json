@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\My Files\\blog-website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\areas\\admin\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\areas\\admin\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\wwwroot\\admin\\dist\\js\\adminlte.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\wwwroot\\admin\\dist\\js\\adminlte.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\areas\\admin\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\areas\\admin\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\areas\\admin\\views\\posts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -65,7 +65,7 @@
               "RelativeDocumentMoniker": "My Blog Website\\Areas\\Admin\\Models\\Posts.cs",
               "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Models\\Posts.cs",
               "RelativeToolTip": "My Blog Website\\Areas\\Admin\\Models\\Posts.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAgwBYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T16:12:41.499Z",
               "EditorCaption": ""
@@ -78,20 +78,20 @@
               "RelativeDocumentMoniker": "My Blog Website\\Areas\\Admin\\Views\\Posts\\Create.cshtml",
               "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Views\\Posts\\Create.cshtml*",
               "RelativeToolTip": "My Blog Website\\Areas\\Admin\\Views\\Posts\\Create.cshtml*",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowBcAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAowBoAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-26T15:51:01.368Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "adminlte.js",
               "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js",
               "RelativeDocumentMoniker": "My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js",
-              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js*",
-              "RelativeToolTip": "My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js*",
-              "ViewState": "AgIAACEMAAAAAAAAAAAuwHYMAAABAAAAAAAAAA==",
+              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js",
+              "RelativeToolTip": "My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js",
+              "ViewState": "AgIAAF0MAAAAAAAAAAAwwHAMAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-02-24T19:13:29.432Z",
               "EditorCaption": ""
@@ -111,13 +111,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PostsController.cs",
               "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Controllers\\PostsController.cs",
               "RelativeDocumentMoniker": "My Blog Website\\Areas\\Admin\\Controllers\\PostsController.cs",
               "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Controllers\\PostsController.cs*",
               "RelativeToolTip": "My Blog Website\\Areas\\Admin\\Controllers\\PostsController.cs*",
-              "ViewState": "AgIAADcAAAAAAAAAAAAIwEMAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwD4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-22T08:11:14.178Z",
               "EditorCaption": ""

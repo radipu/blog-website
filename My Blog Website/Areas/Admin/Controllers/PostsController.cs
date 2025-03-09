@@ -32,27 +32,31 @@ namespace My_Blog_Website.Areas.Admin.Controllers
         [Route("admin/post/create")]
         public async Task<IActionResult> Create(
     Posts posts,
-    string submitType) // "Published" or "Draft" from button value
+    string submitType) // "Published" or "Draft"
         {
+            // Assign PostStatus FIRST
+            posts.PostStatus = submitType; // 🚨 Move this line HERE
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    // Set PostStatus from the button's value
-                    posts.PostStatus = submitType;
-
-                    // Set PublishedDate to current time
                     posts.PublishedDate = DateTime.Now;
-
-                    // Add to database
                     _db.Add(posts);
                     await _db.SaveChangesAsync();
-
                     return RedirectToAction("Index");
                 }
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError("", $"Error saving post: {ex.Message}");
+                    ModelState.AddModelError("", $"Error: {ex.Message}");
+                }
+            }
+            else
+            {
+                // Log validation errors
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    Console.WriteLine(error.ErrorMessage);
                 }
             }
             return View(posts);
