@@ -5,126 +5,104 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
-        <script src="~/admin/dist/js/adminlte.js"></script>
-        <link rel="stylesheet" href="~/admin/dist/css/adminlte.min.css">
-    </head>
+<head>
+    <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
+    <script src="~/admin/dist/js/adminlte.js"></script>
+    <link rel="stylesheet" href="~/admin/dist/css/adminlte.min.css">
+</head>
 
-    <body>
+<body>
+    <div>
+        <button type="button" class="btn" id="backtolist"><a asp-action="Index"><i class="fa fa-backward"></i>  Back to List</a></button>
+    </div>
 
-        <div>
-            <button type="button" class="btn" id="backtolist"><a asp-action="Index"><i class="fa fa-backward"></i>  Back to List</a></button>
-        </div>
+    <!-- Toggle Button -->
+    <button type="button" id="toggleSidebarButton">☰</button>
 
-        <!-- Toggle Button Outside the Sidebar -->
-        <button type="button" id="toggleSidebarButton">☰</button>
-
-        <!-- Sidebar -->
-        <div id="rightsidebar" class="collapsed">
-            <div id="sidebarwrapper">
-                <!-- Sidebar Content -->
-                <button type="button" class="btn btn-success" id="publish-button">Publish</button>
-                <button type="button" class="btn btn-primary" id="draft-button">Save as Draft</button>
-                <button type="button" class="btn btn-danger" id="cancel-button"><a asp-action="Index">Cancel</a></button> <hr />
-
-                <label class="featureImageLBL">Feature Image</label>
-                <div class="custom-file">
-                    <input type="file" class="feature" id="featureImage" onchange="previewImage(event)">
-                    <label class="custom-file-label" for="featureImage">Choose file</label>
-                </div>
-                <div class="mt-3">
-                    <label class="featureImageURL">Or</label>
-                    <input type="text" class="form-control" id="featuredImageUrl" 
-                           oninput="updateImagePreview(this.value)" placeholder="Use Image URL">
-                    <img id="urlImagePreview" src="#" alt="URL Image Preview" 
-                         style="display:none; width: 300px; margin-top: 10px;">
-                </div>
-                <div class="mt-3">
-                    <img id="featureImagePreview" src="#" alt="Feature Image Preview">
-                </div>
-                <!-- Inside your sidebar div -->
-                
-
-                <label class="category">Categories</label>
-                <div class="category-check">
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
-                      <label class="form-check-label" for="check1">Thoughts</label>
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
-                      <label class="form-check-label" for="check2">Technology</label>
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input">
-                      <label class="form-check-label">Ideas</label>
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input">
-                      <label class="form-check-label">How To</label>
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input">
-                      <label class="form-check-label">Travels</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input">
-                        <label class="form-check-label">C# & ASP.NET</label>
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input">
-                      <label class="form-check-label">Book Review</label>
-                    </div>
-                </div><hr />
-                <label class="tags">Tags</label>
-                <div id="tagContainer" class="tag-input-container">
-                    <input type="text" id="tagInput" placeholder="Enter tags" />
-                </div>
-                <hr />
-                <label class="date">Date</label>
-                <div id="dateContainer" class="date-input-container">
-                  <input type="date" id="dateInput" />
-                </div>
-            </div>
-        </div>
+    <form method="post" enctype="multipart/form-data" id="postForm">
+        <input type="hidden" asp-for="PostStatus" id="postStatus" />
+        <input type="hidden" asp-for="Categories" id="selectedCategories" />
+        <input type="hidden" asp-for="Tags" id="selectedTags" />
+        <input type="hidden" asp-for="FeatureImageUrl" id="featuredImageUrlHidden" />
+        <input type="hidden" id="finalImageData" name="finalImageData" />
 
         <div class="col-lg-12 page-main">
             <div class="new-post">
-                <input type="text" class="title-input" placeholder="Post title" id="post_title" name="post_title" />
-                <!-- Create a textarea for CKEditor to replace -->
-                <textarea id="post_text" class="post-area"></textarea>
+                <input type="text" class="title-input" placeholder="Post title" 
+                       asp-for="Title" id="post_title" />
+                <textarea id="post_text" asp-for="PostContent"></textarea>
             </div>
-        </div>
+            <!-- Sidebar -->
+            <div id="rightsidebar" class="collapsed">
+                <div id="sidebarwrapper">
+                    <button type="submit" class="btn btn-success" name="submitType" value="Published" id="publish-button">Publish</button>
+                    <button type="submit" class="btn btn-primary" name="submitType" value="Draft" id="draft-button">Save as Draft</button>
+                    <button type="button" class="btn btn-danger" id="cancel-button"><a asp-action="Index">Cancel</a></button>
+                    <hr />
 
-        @* <div id="previewModal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Post Preview</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <label class="featureImageLBL">Feature Image</label>
+                    <div class="custom-file">
+                        <input type="file" class="feature" id="featureImage" name="featureImage" onchange="previewImage(event)">
+                        <label class="custom-file-label" for="featureImage">Choose file</label>
                     </div>
-                    <div class="modal-body">
-                        <h2 id="preview-title"></h2>
-                        <div id="preview-content"></div>
+                    <div class="mt-3">
+                        <label class="featureImageURL">Or</label>
+                        <input type="text" class="form-control" id="featuredImageUrl" oninput="updateImagePreview(this.value)" placeholder="Use Image URL">
+                        <img id="urlImagePreview" src="#" alt="URL Image Preview" style="display:none; width: 300px; margin-top: 10px;">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="confirm-publish">Confirm Publish</button>
+                    <div class="mt-3">
+                        <img id="featureImagePreview" src="#" alt="Feature Image Preview" style="display:none; width: 300px;">
+                    </div>
+                    <hr />
+                
+                    <label class="category">Categories</label>
+                    <div class="category-check">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check1" value="Thoughts">
+                            <label class="form-check-label" for="check1">Thoughts</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check2" value="Technology">
+                            <label class="form-check-label" for="check2">Technology</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="Ideas">
+                            <label class="form-check-label">Ideas</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="How To">
+                            <label class="form-check-label">How To</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="Travels">
+                            <label class="form-check-label">Travels</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="C# & ASP.NET">
+                            <label class="form-check-label">C# & ASP.NET</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="Book Review">
+                            <label class="form-check-label">Book Review</label>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <label class="tags">Tags</label>
+                    <div id="tagContainer" class="tag-input-container">
+                        <input type="text" id="tagInput" placeholder="Enter tags" />
+                    </div>
+                    <hr />
+
+                    <label class="date">Date</label>
+                    <div id="dateContainer" class="date-input-container">
+                        <input type="date" id="dateInput" asp-for="PublishedDate" />
                     </div>
                 </div>
             </div>
-        </div> *@
-
-        <script>
-            
-        </script>
-
-    </body>
+        </div>
+    </form>
+</body>
 </html>

@@ -12,11 +12,12 @@ namespace My_Blog_Website.Areas.Admin.Models
         [Required]
         public string PostContent { get; set; }
         public byte[] FeatureImage { get; set; }
+        public string FeatureImageUrl { get; set; }
         [Required]
         public string Categories { get; set; }
         public string Tags { get; set; }
-        public string Author { get; set; }
-        public string Status { get; set; }
-        public DateTime Date { get; set; }
+        //public string Author { get; set; }
+        public string PostStatus { get; set; }
+        public DateTime PublishedDate { get; set; }
     }
 }
