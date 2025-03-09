@@ -22,11 +22,9 @@
     <button type="button" id="toggleSidebarButton">☰</button>
 
     <form method="post" enctype="multipart/form-data" id="postForm">
-        <input type="hidden" asp-for="PostStatus" id="postStatus" />
         <input type="hidden" asp-for="Categories" id="selectedCategories" />
         <input type="hidden" asp-for="Tags" id="selectedTags" />
-        <input type="hidden" asp-for="FeatureImageUrl" id="featuredImageUrlHidden" />
-        <input type="hidden" id="finalImageData" name="finalImageData" />
+        <input type="hidden" asp-for="FeatureImageUrl" id="featuredImageData" />
 
         <div class="col-lg-12 page-main">
             <div class="new-post">
@@ -68,24 +66,24 @@
                             <label class="form-check-label" for="check2">Technology</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" value="Ideas">
-                            <label class="form-check-label">Ideas</label>
+                            <input type="checkbox" class="form-check-input" id="check3" value="Ideas">
+                            <label class="form-check-label" for="check3">Ideas</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" value="How To">
-                            <label class="form-check-label">How To</label>
+                            <input type="checkbox" class="form-check-input" id="check4" value="How To">
+                            <label class="form-check-label" for="check4">How To</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" value="Travels">
-                            <label class="form-check-label">Travels</label>
+                            <input type="checkbox" class="form-check-input" id="check5" value="Tour">
+                            <label class="form-check-label" for="check5">Tour</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" value="C# & ASP.NET">
-                            <label class="form-check-label">C# & ASP.NET</label>
+                            <input type="checkbox" class="form-check-input" id="check6" value="C# & ASP.NET">
+                            <label class="form-check-label" for="check6">C# & ASP.NET</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" value="Book Review">
-                            <label class="form-check-label">Book Review</label>
+                            <input type="checkbox" class="form-check-input" id="check7" value="Book Review">
+                            <label class="form-check-label" for="check7">Book Review</label>
                         </div>
                     </div>
                     <hr />
