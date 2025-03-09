@@ -3176,18 +3176,30 @@ function collectFormData() {
     document.getElementById('selectedTags').value = tags.join(', ');
 
     // Handle image data
-    const urlInput = document.getElementById('featuredImageUrl');
     const fileInput = document.getElementById('featureImage');
-    
-    // Only set finalImageData if URL is provided and no file is selected
-    if (urlInput.value && fileInput.files.length === 0) {
-        document.getElementById('featuredImageUrlHidden').value = urlInput.value;
-        document.getElementById('finalImageData').value = urlInput.value;
-    } else if (fileInput.files.length > 0) {
-        // Clear URL data if a file is uploaded
-        document.getElementById('featuredImageUrl').value = '';
-        document.getElementById('finalImageData').value = '';
+    const urlInput = document.getElementById('featuredImageUrl');
+    const featuredImageData = document.getElementById('featuredImageData');
+
+    // Clear conflicting inputs
+    if (fileInput.files.length > 0) {
+        urlInput.value = '';
+        featuredImageData.value = document.getElementById('featureImagePreview').src;
+    } else if (urlInput.value) {
+        fileInput.value = '';
+        featuredImageData.value = urlInput.value;
     }
+}
+
+// Clear URL input and preview when a file is selected
+function clearUrlInput() {
+    document.getElementById('featuredImageUrl').value = '';
+    document.getElementById('urlImagePreview').style.display = 'none';
+}
+
+// Clear file input and preview when a URL is entered
+function clearFileInput() {
+    document.getElementById('featureImage').value = '';
+    document.getElementById('featureImagePreview').style.display = 'none';
 }
 
 //publish and draft button
@@ -3215,30 +3227,30 @@ function validateFileInput(event) {
     previewImage(event);
 }
 
-// Update previewImage() to clear file input when URL is used
-// For file upload
+// File upload preview
 function previewImage(event) {
     const input = event.target;
     const reader = new FileReader();
+    
     reader.onload = function() {
-        document.getElementById('featureImagePreview').src = reader.result;
-        document.getElementById('featureImagePreview').style.display = 'block';
-        document.getElementById('featuredImageData').value = reader.result; // Set hidden field
-        document.getElementById('featuredImageUrl').value = ''; // Clear URL input
+        const preview = document.getElementById('featureImagePreview');
+        preview.src = reader.result;
+        preview.style.display = 'block';
+        document.getElementById('featuredImageData').value = reader.result;
     };
+    
     if (input.files[0]) {
         reader.readAsDataURL(input.files[0]);
     }
 }
 
-// For URL input
+// URL input preview
 function updateImagePreview(url) {
     const preview = document.getElementById('urlImagePreview');
     if (url) {
         preview.src = url;
         preview.style.display = 'block';
-        document.getElementById('featuredImageData').value = url; // Set hidden field
-        document.getElementById('featureImage').value = ''; // Clear file input
+        document.getElementById('featuredImageData').value = url;
     } else {
         preview.style.display = 'none';
     }

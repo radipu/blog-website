@@ -1005,6 +1005,26 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\02576118-d39a-470d-a1f7-9ab9d7d92412.png",
+      "PackagePath": "staticwebassets\\uploads\\02576118-d39a-470d-a1f7-9ab9d7d92412.png"
+    },
+    {
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\72380fda-d4cd-4d58-b80e-9721b2789b5a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\72380fda-d4cd-4d58-b80e-9721b2789b5a.jpg"
+    },
+    {
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\96b8142d-a1e0-48ed-a928-1823c79c2727.png",
+      "PackagePath": "staticwebassets\\uploads\\96b8142d-a1e0-48ed-a928-1823c79c2727.png"
+    },
+    {
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\c07d26aa-f1f6-41de-ad2a-9718ecd1969e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c07d26aa-f1f6-41de-ad2a-9718ecd1969e.jpg"
+    },
+    {
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\e939c3e6-cbf4-44ca-a1bd-309e7ee9f7ef.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e939c3e6-cbf4-44ca-a1bd-309e7ee9f7ef.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.My Blog Website.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

@@ -30,23 +30,34 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("admin/post/create")]
-        public async Task<IActionResult> Create(Posts posts, IFormFile featureImage)
+        public async Task<IActionResult> Create(Posts posts)
         {
+            // Get the uploaded file from the request (if any)
+            var featureImage = Request.Form.Files["featureImage"];
+
+            // Remove validation for FeatureImageUrl to avoid conflicts
+            ModelState.Remove("FeatureImageUrl");
+
+            // Check if either file or URL is provided
+            bool hasFile = featureImage != null && featureImage.Length > 0;
+            bool hasUrl = !string.IsNullOrEmpty(posts.FeatureImageUrl);
+
+            // Add custom validation
+            if (!hasFile && !hasUrl)
+            {
+                ModelState.AddModelError("FeatureImageUrl", "You must upload an image or provide a URL.");
+            }
+
             if (ModelState.IsValid)
             {
                 try
                 {
                     // Handle file upload
-                    if (featureImage != null && featureImage.Length > 0)
+                    if (hasFile)
                     {
-                        // Ensure the uploads directory exists
                         var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
-                        if (!Directory.Exists(uploadsFolder))
-                        {
-                            Directory.CreateDirectory(uploadsFolder);
-                        }
+                        Directory.CreateDirectory(uploadsFolder);
 
-                        // Generate safe filename
                         var fileName = Guid.NewGuid().ToString() + Path.GetExtension(featureImage.FileName);
                         var filePath = Path.Combine(uploadsFolder, fileName);
 
@@ -54,10 +65,16 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                         {
                             await featureImage.CopyToAsync(stream);
                         }
-
                         posts.FeatureImageUrl = $"/uploads/{fileName}";
                     }
+                    // Validate URL format if used
+                    else if (hasUrl && !Uri.IsWellFormedUriString(posts.FeatureImageUrl, UriKind.Absolute))
+                    {
+                        ModelState.AddModelError("FeatureImageUrl", "Invalid URL format.");
+                        return View(posts);
+                    }
 
+                    // Save to database
                     posts.PublishedDate = DateTime.Now;
                     _db.Add(posts);
                     await _db.SaveChangesAsync();
@@ -66,8 +83,6 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                 catch (Exception ex)
                 {
                     ModelState.AddModelError("", $"Error: {ex.Message}");
-                    // Log the full error details
-                    Console.WriteLine($"Full error: {ex}");
                 }
             }
             return View(posts);
