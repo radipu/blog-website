@@ -23,6 +23,6 @@ namespace My_Blog_Website.Areas.Admin.Models
 
         public string PostStatus { get; set; }
 
-        public DateTime PublishedDate { get; set; }
+        public DateTime? PublishedDate { get; set; }
     }
 }
