@@ -3163,41 +3163,40 @@
 
 // Handle Publish/Draft buttons
 function collectFormData() {
-    // Update CKEditor content
     CKEDITOR.instances.post_text.updateElement();
 
     // Collect categories
     const categories = Array.from(document.querySelectorAll('.category-check input:checked'))
-                              .map(cb => cb.nextElementSibling.textContent);
+                          .map(cb => cb.nextElementSibling.textContent);
     document.getElementById('selectedCategories').value = categories.join(', ');
 
-    // Collect tags correctly using .tag selector
+    // Collect tags
     const tags = Array.from(document.querySelectorAll('#tagContainer .tag'))
-                      .map(tag => tag.firstChild.textContent.trim());
+                    .map(tag => tag.firstChild.textContent.trim());
     document.getElementById('selectedTags').value = tags.join(', ');
 
-    // Handle image URL: update finalImageData if a URL is entered
+    // Handle image data
     const urlInput = document.getElementById('featuredImageUrl');
-    if (urlInput.value) {
+    const fileInput = document.getElementById('featureImage');
+    
+    // Only set finalImageData if URL is provided and no file is selected
+    if (urlInput.value && fileInput.files.length === 0) {
         document.getElementById('featuredImageUrlHidden').value = urlInput.value;
         document.getElementById('finalImageData').value = urlInput.value;
+    } else if (fileInput.files.length > 0) {
+        // Clear URL data if a file is uploaded
+        document.getElementById('featuredImageUrl').value = '';
+        document.getElementById('finalImageData').value = '';
     }
 }
 
-document.getElementById('publish-button').addEventListener('click', function(e) {
-    e.preventDefault();
+//publish and draft button
+document.getElementById('postForm').addEventListener('submit', function(e) {
+    // Update CKEditor content
     CKEDITOR.instances.post_text.updateElement();
-    document.getElementById('postStatus').value = 'Published';
+    
+    // Collect categories and tags
     collectFormData();
-    document.getElementById('postForm').submit();
-});
-
-document.getElementById('draft-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    CKEDITOR.instances.post_text.updateElement();
-    document.getElementById('postStatus').value = 'Draft';
-    collectFormData();
-    document.getElementById('postForm').submit();
 });
 
 function validateFileInput(event) {
@@ -3217,32 +3216,29 @@ function validateFileInput(event) {
 }
 
 // Update previewImage() to clear file input when URL is used
+// For file upload
 function previewImage(event) {
     const input = event.target;
     const reader = new FileReader();
     reader.onload = function() {
         document.getElementById('featureImagePreview').src = reader.result;
         document.getElementById('featureImagePreview').style.display = 'block';
-        document.getElementById('finalImageData').value = reader.result;
-        
-        // Clear URL input
-        document.getElementById('featuredImageUrl').value = '';
-        document.getElementById('urlImagePreview').style.display = 'none';
+        document.getElementById('featuredImageData').value = reader.result; // Set hidden field
+        document.getElementById('featuredImageUrl').value = ''; // Clear URL input
     };
     if (input.files[0]) {
         reader.readAsDataURL(input.files[0]);
     }
 }
 
-// Update updateImagePreview()
+// For URL input
 function updateImagePreview(url) {
     const preview = document.getElementById('urlImagePreview');
     if (url) {
         preview.src = url;
         preview.style.display = 'block';
-        document.getElementById('featureImage').value = '';
-        document.getElementById('featureImagePreview').style.display = 'none';
-        document.getElementById('finalImageData').value = url;
+        document.getElementById('featuredImageData').value = url; // Set hidden field
+        document.getElementById('featureImage').value = ''; // Clear file input
     } else {
         preview.style.display = 'none';
     }
