@@ -1,4 +1,5 @@
-﻿@model IEnumerable<My_Blog_Website.Areas.Admin.Models.Posts>
+﻿@using My_Blog_Website.Helpers
+@model IEnumerable<My_Blog_Website.Areas.Admin.Models.Posts>
 
 @{
     ViewData["Title"] = "Posts";
@@ -41,7 +42,7 @@
                 @post.Title
             </td>
             <td>
-                @post.PostContent
+                @HtmlHelpers.StripHtmlTruncate(post.PostContent)
             </td>
             <td>
                 @if (!string.IsNullOrEmpty(post.FeatureImageUrl))
