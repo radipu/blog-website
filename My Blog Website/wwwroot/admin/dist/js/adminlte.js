@@ -3167,12 +3167,12 @@ function collectFormData() {
 
     // Collect categories
     const categories = Array.from(document.querySelectorAll('.category-check input:checked'))
-                          .map(cb => cb.nextElementSibling.textContent);
+                          .map(cb => cb.value);
     document.getElementById('selectedCategories').value = categories.join(', ');
 
     // Collect tags
     const tags = Array.from(document.querySelectorAll('#tagContainer .tag'))
-                    .map(tag => tag.firstChild.textContent.trim());
+                    .map(tag => tag.textContent.replace('×', '').trim());
     document.getElementById('selectedTags').value = tags.join(', ');
 
     // Handle image data

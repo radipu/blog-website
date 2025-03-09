@@ -22,6 +22,7 @@
     <button type="button" id="toggleSidebarButton">☰</button>
 
     <form method="post" enctype="multipart/form-data" id="postForm">
+        <div asp-validation-summary="All" class="text-danger"></div>
         <input type="hidden" asp-for="Categories" id="selectedCategories" />
         <input type="hidden" asp-for="Tags" id="selectedTags" />
         <input type="hidden" asp-for="FeatureImageUrl" id="featuredImageData" />
@@ -35,8 +36,8 @@
             <!-- Sidebar -->
             <div id="rightsidebar" class="collapsed">
                 <div id="sidebarwrapper">
-                    <button type="submit" class="btn btn-success" name="submitType" value="Published" id="publish-button">Publish</button>
-                    <button type="submit" class="btn btn-primary" name="submitType" value="Draft" id="draft-button">Save as Draft</button>
+                    <button type="submit" class="btn btn-success" name="PostStatus" value="Published" id="publish-button">Publish</button>
+                    <button type="submit" class="btn btn-primary" name="PostStatus" value="Draft" id="draft-button">Save as Draft</button>
                     <button type="button" class="btn btn-danger" id="cancel-button"><a asp-action="Index">Cancel</a></button>
                     <hr />
 

@@ -30,15 +30,34 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("admin/post/create")]
-        public async Task<IActionResult> Create(Posts posts, string submitType) // "Published" or "Draft"
+        public async Task<IActionResult> Create(Posts posts, IFormFile featureImage)
         {
-            // Assign PostStatus FIRST
-            posts.PostStatus = submitType; // 🚨 Move this line HERE
-
             if (ModelState.IsValid)
             {
                 try
                 {
+                    // Handle file upload
+                    if (featureImage != null && featureImage.Length > 0)
+                    {
+                        // Ensure the uploads directory exists
+                        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                        if (!Directory.Exists(uploadsFolder))
+                        {
+                            Directory.CreateDirectory(uploadsFolder);
+                        }
+
+                        // Generate safe filename
+                        var fileName = Guid.NewGuid().ToString() + Path.GetExtension(featureImage.FileName);
+                        var filePath = Path.Combine(uploadsFolder, fileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await featureImage.CopyToAsync(stream);
+                        }
+
+                        posts.FeatureImageUrl = $"/uploads/{fileName}";
+                    }
+
                     posts.PublishedDate = DateTime.Now;
                     _db.Add(posts);
                     await _db.SaveChangesAsync();
@@ -47,14 +66,8 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                 catch (Exception ex)
                 {
                     ModelState.AddModelError("", $"Error: {ex.Message}");
-                }
-            }
-            else
-            {
-                // Log validation errors
-                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-                {
-                    Console.WriteLine(error.ErrorMessage);
+                    // Log the full error details
+                    Console.WriteLine($"Full error: {ex}");
                 }
             }
             return View(posts);
