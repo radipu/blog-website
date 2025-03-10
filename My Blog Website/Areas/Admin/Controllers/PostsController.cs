@@ -87,5 +87,11 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             }
             return View(posts);
         }
+
+        public IActionResult Single(int id)
+        {
+            var post = _db.posts.FirstOrDefault(p => p.PostId == id);
+            return View(post);
+        }
     }
 }
