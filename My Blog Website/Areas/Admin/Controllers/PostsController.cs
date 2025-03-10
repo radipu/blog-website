@@ -17,7 +17,9 @@ namespace My_Blog_Website.Areas.Admin.Controllers
         [Route("admin/posts")]
         public IActionResult Index()
         {
-            List<Posts> posts = _db.posts.ToList();
+            List<Posts> posts = _db.posts
+                .OrderByDescending(p => p.PublishedDate)
+                .ToList();
             return View(posts);
         }
 
