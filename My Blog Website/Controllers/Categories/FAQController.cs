@@ -4,39 +4,34 @@ using My_Blog_Website.Data;
 
 namespace My_Blog_Website.Controllers.Categories
 {
-    public class ThoughtsController : Controller
+    public class FAQController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ThoughtsController(ApplicationDbContext context)
+        public FAQController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public ActionResult Index()
         {
-            var thoughtsPosts = _context.posts
-                .Where(p => p.Categories == "Thoughts")  // Adjust to your actual category property name
-                .OrderByDescending(p => p.PublishedDate)
-                .ToList();
-
-            return View(thoughtsPosts);
+            return View();
         }
 
-        // GET: ThoughtsController/Details/5
+        // GET: FAQController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: ThoughtsController/Create
+        // GET: FAQController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ThoughtsController/Create
+        // POST: FAQController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -51,13 +46,13 @@ namespace My_Blog_Website.Controllers.Categories
             }
         }
 
-        // GET: ThoughtsController/Edit/5
+        // GET: FAQController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: ThoughtsController/Edit/5
+        // POST: FAQController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -72,13 +67,13 @@ namespace My_Blog_Website.Controllers.Categories
             }
         }
 
-        // GET: ThoughtsController/Delete/5
+        // GET: FAQController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: ThoughtsController/Delete/5
+        // POST: FAQController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

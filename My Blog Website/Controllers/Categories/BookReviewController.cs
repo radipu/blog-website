@@ -4,39 +4,39 @@ using My_Blog_Website.Data;
 
 namespace My_Blog_Website.Controllers.Categories
 {
-    public class ThoughtsController : Controller
+    public class BookReviewController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ThoughtsController(ApplicationDbContext context)
+        public BookReviewController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public ActionResult Index()
         {
-            var thoughtsPosts = _context.posts
-                .Where(p => p.Categories == "Thoughts")  // Adjust to your actual category property name
+            var bookReviews = _context.posts
+                .Where(p => p.Categories == "Book Review")  // Adjust to your actual category property name
                 .OrderByDescending(p => p.PublishedDate)
                 .ToList();
 
-            return View(thoughtsPosts);
+            return View(bookReviews);
         }
 
-        // GET: ThoughtsController/Details/5
+        // GET: BookReviewController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: ThoughtsController/Create
+        // GET: BookReviewController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ThoughtsController/Create
+        // POST: BookReviewController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -51,13 +51,13 @@ namespace My_Blog_Website.Controllers.Categories
             }
         }
 
-        // GET: ThoughtsController/Edit/5
+        // GET: BookReviewController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: ThoughtsController/Edit/5
+        // POST: BookReviewController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -72,13 +72,13 @@ namespace My_Blog_Website.Controllers.Categories
             }
         }
 
-        // GET: ThoughtsController/Delete/5
+        // GET: BookReviewController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: ThoughtsController/Delete/5
+        // POST: BookReviewController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

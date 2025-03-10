@@ -90,8 +90,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/My Files/blog-website/My Blog Website/Views/BookReview/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1Jldmlld1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/My Files/blog-website/My Blog Website/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/My Files/blog-website/My Blog Website/Views/CSharpASPNET/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1NoYXJwQVNQTkVUXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/My Files/blog-website/My Blog Website/Views/FAQ/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFRXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/My Files/blog-website/My Blog Website/Views/Home/Index.cshtml]
@@ -100,6 +112,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/My Files/blog-website/My Blog Website/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/My Files/blog-website/My Blog Website/Views/HowTo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG93VG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/My Files/blog-website/My Blog Website/Views/Ideas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWRlYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/My Files/blog-website/My Blog Website/Views/Shared/Error.cshtml]
@@ -112,6 +132,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/My Files/blog-website/My Blog Website/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/My Files/blog-website/My Blog Website/Views/Technology/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5vbG9neVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/My Files/blog-website/My Blog Website/Views/Thoughts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhvdWdodHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/My Files/blog-website/My Blog Website/Views/Tour/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/My Files/blog-website/My Blog Website/Views/_ViewImports.cshtml]
