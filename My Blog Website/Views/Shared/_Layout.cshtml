@@ -72,22 +72,22 @@
                         </button>
                         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
+                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString().ToLower() == "home" ? "active" : "")">
                                     <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item ">
+                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString().ToLower() == "thoughts" ? "active" : "")">
                                     <a class="nav-link" asp-controller="Thoughts" asp-action="Index">Thoughts <span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item ">
+                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString().ToLower() == "technology" ? "active" : "")">
                                     <a class="nav-link" asp-controller="Technology" asp-action="Index">Technology <span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item ">
+                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString().ToLower() == "ideas" ? "active" : "")">
                                     <a class="nav-link" asp-controller="Ideas" asp-action="Index">Ideas <span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item ">
+                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString().ToLower() == "howto" ? "active" : "")">
                                     <a class="nav-link" asp-controller="HowTo" asp-action="Index">HowTo <span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item ">
+                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString().ToLower() == "tour" ? "active" : "")">
                                     <a class="nav-link" asp-controller="Tour" asp-action="Index">Tour <span class="sr-only">(current)</span></a>
                                 </li>
                                 <div class="dropdownmenu">
@@ -121,7 +121,7 @@
                                 @* <li class="nav-item ">
                                     <a class="nav-link" href="https://radipu.com/" target="_blank">Portfolio <span class="sr-only">(current)</span></a>
                                 </li> *@
-                                <li class="nav-item ">
+                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString().ToLower() == "contact" ? "active" : "")">
                                     <a class="nav-link" asp-area="" asp-controller="Contact" asp-action="Index">Contact <span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
