@@ -215,38 +215,38 @@ $(document).ready(function(){
             }, 3000);
 });
 
+//active navbar
+    //document.addEventListener("DOMContentLoaded", function () {
+    //    // Get all navbar items
+    //    const navItems = document.querySelectorAll('.nav-item');
 
-    document.addEventListener("DOMContentLoaded", function () {
-        // Get all navbar items
-        const navItems = document.querySelectorAll('.nav-item');
+    //    // Add click event listener to each navbar item
+    //    navItems.forEach(item => {
+    //        item.addEventListener('click', function (event) {
+    //            // Prevent default behavior if it's a dropdown toggle
+    //            if (item.classList.contains('dropdown')) {
+    //                event.preventDefault();
+    //            }
 
-        // Add click event listener to each navbar item
-        navItems.forEach(item => {
-            item.addEventListener('click', function (event) {
-                // Prevent default behavior if it's a dropdown toggle
-                if (item.classList.contains('dropdown')) {
-                    event.preventDefault();
-                }
+    //            // Remove active class from all items
+    //            navItems.forEach(navItem => navItem.classList.remove('active'));
 
-                // Remove active class from all items
-                navItems.forEach(navItem => navItem.classList.remove('active'));
+    //            // Add active class to the clicked item
+    //            item.classList.add('active');
+    //        });
+    //    });
 
-                // Add active class to the clicked item
-                item.classList.add('active');
-            });
-        });
+    //    // Highlight the active page on page load
+    //    const currentPage = window.location.pathname.split('/').pop() || 'Index'; // Default to 'Index' if no path
+    //    const activeItem = document.querySelector(`.nav-item a[href*="${currentPage}"]`);
+    //    if (activeItem) {
+    //        // Remove active class from all items
+    //        navItems.forEach(navItem => navItem.classList.remove('active'));
 
-        // Highlight the active page on page load
-        const currentPage = window.location.pathname.split('/').pop() || 'Index'; // Default to 'Index' if no path
-        const activeItem = document.querySelector(`.nav-item a[href*="${currentPage}"]`);
-        if (activeItem) {
-            // Remove active class from all items
-            navItems.forEach(navItem => navItem.classList.remove('active'));
-
-            // Add active class to the current page's nav item
-            activeItem.parentElement.classList.add('active');
-        } else {
-            // If no matching page is found, ensure 'Home' is active by default
-            document.getElementById('home').classList.add('active');
-        }
-    });
+    //        // Add active class to the current page's nav item
+    //        activeItem.parentElement.classList.add('active');
+    //    } else {
+    //        // If no matching page is found, ensure 'Home' is active by default
+    //        document.getElementById('home').classList.add('active');
+    //    }
+    //});
