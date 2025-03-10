@@ -7,67 +7,64 @@
 <html lang="en" class="no-js">
 <body>
 
-<!-- Latest Posts Section -->
 <div class="container-fluid paddding mb-5">
     <div class="row mx-0 hot_topic">
-        @if(Model.LatestPost != null && Model.LatestPost.Any())
-        {
-            <!-- Main Post -->
-            <div class="col-md-6 col-12 paddding animate-box">
-                @{
-                    var mainPost = Model.LatestPost.First();
-                }
+        <!-- Main Post -->
+        <div class="col-md-6 col-12 paddding animate-box">
+            @if(Model.LatestPost.Any())
+            {
+                var mainPost = Model.LatestPost.First();
                 <div class="fh5co_suceefh5co_height">
-                    <img src="@mainPost.FeatureImageUrl" alt="@mainPost.Title" 
-                         style="width:100%; height:650px; object-fit:cover"/>
+                    <a asp-action="Single" asp-controller="Posts" asp-route-id="@mainPost.PostId">
+                        <img src="@mainPost.FeatureImageUrl" alt="@mainPost.Title" 
+                             style="width:100%; height:650px; object-fit:cover"/>
+                    </a>
                     <div class="fh5co_suceefh5co_height_position_absolute_font">
                         <div class="color_fff">
                             <i class="fa fa-clock-o"></i> 
                             @mainPost.PublishedDate?.ToString("MMM dd, yyyy")
                         </div>
                         <div>
-                            <a asp-action="Single" asp-route-id="@mainPost.PostId" 
+                            <a asp-action="Single" asp-controller="Posts" 
+                               asp-route-id="@mainPost.PostId" 
                                class="fh5co_good_font">
                                 @mainPost.Title
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
+        </div>
 
-            <!-- 4 Other Posts -->
-            <div class="col-md-6">
-                <div class="row">
-                    @foreach(var post in Model.LatestPost.Skip(1).Take(4))
-                    {
-                        <div class="col-md-6 col-6 paddding animate-box">
-                            <div class="fh5co_suceefh5co_height_2">
+        <!-- Grid Posts -->
+        <div class="col-md-6">
+            <div class="row">
+                @foreach(var post in Model.LatestPost.Skip(1).Take(4))
+                {
+                    <div class="col-md-6 col-6 paddding animate-box">
+                        <div class="fh5co_suceefh5co_height_2">
+                            <a asp-action="Single" asp-controller="Posts" asp-route-id="@post.PostId">
                                 <img src="@post.FeatureImageUrl" alt="@post.Title" 
                                      style="width:100%; height:300px; object-fit:cover"/>
-                                <div class="fh5co_suceefh5co_height_position_absolute_font_2">
-                                    <div class="color_fff">
-                                        <i class="fa fa-clock-o"></i> 
-                                        @post.PublishedDate?.ToString("MMM dd, yyyy")
-                                    </div>
-                                    <div>
-                                        <a asp-action="Single" asp-route-id="@post.PostId" 
-                                           class="fh5co_good_font_2">
-                                            @post.Title
-                                        </a>
-                                    </div>
+                            </a>
+                            <div class="fh5co_suceefh5co_height_position_absolute_font_2">
+                                <div class="color_fff">
+                                    <i class="fa fa-clock-o"></i> 
+                                    @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                </div>
+                                <div>
+                                    <a asp-action="Single" asp-controller="Posts" 
+                                       asp-route-id="@post.PostId" 
+                                       class="fh5co_good_font_2">
+                                        @post.Title
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    }
-                </div>
+                    </div>
+                }
             </div>
-        }
-        else
-        {
-            <div class="col-12 text-center">
-                <p>No posts found!</p>
-            </div>
-        }
+        </div>
     </div>
 </div>
 
@@ -84,15 +81,20 @@
                 {
                     <div class="col-md-3 col-6 paddding animate-box">
                         <div class="fh5co_suceefh5co_height_2">
-                            <img src="@post.FeatureImageUrl" alt="@post.Title" 
-                                 style="width:100%; height:200px; object-fit:cover"/>
+                            <!-- Clickable Feature Image -->
+                            <a asp-action="Single" asp-controller="Posts" asp-route-id="@post.PostId">
+                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                     style="width:100%; height:200px; object-fit:cover"/>
+                            </a>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                                 <div class="color_fff">
                                     <i class="fa fa-clock-o"></i> 
                                     @post.PublishedDate?.ToString("MMM dd, yyyy")
                                 </div>
+                                <!-- Clickable Title -->
                                 <div>
-                                    <a asp-action="Single" asp-route-id="@post.PostId" 
+                                    <a asp-action="Single" asp-controller="Posts" 
+                                       asp-route-id="@post.PostId" 
                                        class="fh5co_good_font_2">
                                         @post.Title
                                     </a>
