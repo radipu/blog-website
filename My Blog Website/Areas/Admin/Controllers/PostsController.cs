@@ -77,9 +77,8 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                         return View(posts);
                     }
 
-                    posts.Slug = URLHelper.GeneratePostSlug(posts.Title);
-
                     // Save to database
+                    posts.Slug = URLHelper.GeneratePostSlug(posts.Title);
                     posts.PublishedDate = DateTime.Now;
                     _db.Add(posts);
                     await _db.SaveChangesAsync();
