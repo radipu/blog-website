@@ -1,1083 +1,1083 @@
 {
   "Files": [
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\My Blog Website.bundle.scp.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\My Blog Website.bundle.scp.css",
       "PackagePath": "staticwebassets\\My Blog Website.bundle.scp.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\css\\adminlte.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\css\\adminlte.min.css",
       "PackagePath": "staticwebassets\\admin\\dist\\css\\adminlte.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\AdminLTELogo.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\AdminLTELogo.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\AdminLTELogo.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar2.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar2.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar2.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar3.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar3.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar3.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar4.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar4.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar4.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar5.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\avatar5.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\avatar5.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\american-express.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\american-express.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\american-express.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\cirrus.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\cirrus.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\cirrus.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\mastercard.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\mastercard.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\mastercard.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\paypal.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\paypal.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\paypal.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\paypal2.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\paypal2.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\paypal2.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\visa.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\credit\\visa.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\credit\\visa.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\default-150x150.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\default-150x150.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\default-150x150.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\icons.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\icons.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\icons.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo1.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo1.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\photo1.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo2.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo2.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\photo2.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo3.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo3.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\photo3.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo4.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\photo4.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\photo4.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-1.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-1.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-1.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-2.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-2.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-2.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-3.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-3.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-3.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-4.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-4.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-4.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-5.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\prod-5.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\prod-5.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user1-128x128.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user1-128x128.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\user1-128x128.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user2-160x160.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user2-160x160.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\user2-160x160.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user3-128x128.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user3-128x128.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\user3-128x128.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user4-128x128.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user4-128x128.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\user4-128x128.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user5-128x128.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user5-128x128.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\user5-128x128.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user6-128x128.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user6-128x128.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\user6-128x128.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user7-128x128.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user7-128x128.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\user7-128x128.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user8-128x128.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\user8-128x128.jpg",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\user8-128x128.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\.eslintrc.json",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\.eslintrc.json",
       "PackagePath": "staticwebassets\\admin\\dist\\js\\.eslintrc.json"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js",
       "PackagePath": "staticwebassets\\admin\\dist\\js\\adminlte.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.js.map",
       "PackagePath": "staticwebassets\\admin\\dist\\js\\adminlte.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.min.js",
       "PackagePath": "staticwebassets\\admin\\dist\\js\\adminlte.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.min.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.min.js.map",
       "PackagePath": "staticwebassets\\admin\\dist\\js\\adminlte.min.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\pages\\dashboard2.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\pages\\dashboard2.js",
       "PackagePath": "staticwebassets\\admin\\dist\\js\\pages\\dashboard2.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\admin\\plugins\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.bundle.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.bundle.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.bundle.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.bundle.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.bundle.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.bundle.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\chart.js\\Chart.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\chart.js\\Chart.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\all.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\all.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\all.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\all.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\all.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\all.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\brands.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\brands.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\brands.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\brands.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\brands.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\brands.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\fontawesome.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\fontawesome.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\fontawesome.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\fontawesome.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\fontawesome.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\fontawesome.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\regular.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\regular.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\regular.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\regular.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\regular.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\regular.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\solid.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\solid.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\solid.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\solid.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\solid.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\solid.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\svg-with-js.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\v4-shims.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\v4-shims.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\v4-shims.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\v4-shims.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\css\\v4-shims.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\css\\v4-shims.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.eot",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.eot",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.eot"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.svg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.svg",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.svg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.ttf",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.ttf",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.ttf"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff2",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff2",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff2"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.eot",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.eot",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.eot"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.svg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.svg",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.svg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.ttf",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.ttf",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.ttf"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff2",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff2",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff2"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.eot",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.eot",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.eot"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.svg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.svg",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.svg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.ttf",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.ttf",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.ttf"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff2",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff2",
       "PackagePath": "staticwebassets\\admin\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff2"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\jquery.mapael.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\jquery.mapael.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\jquery.mapael.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\jquery.mapael.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\jquery.mapael.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\jquery.mapael.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\README.txt",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\README.txt",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\README.txt"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\france_departments.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\france_departments.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\france_departments.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\france_departments.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\france_departments.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\france_departments.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\usa_states.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\usa_states.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\usa_states.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\usa_states.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\usa_states.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\usa_states.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries_mercator.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mapael\\maps\\world_countries_miller.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mousewheel\\LICENSE.txt",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mousewheel\\LICENSE.txt",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mousewheel\\LICENSE.txt"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mousewheel\\jquery.mousewheel.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery-mousewheel\\jquery.mousewheel.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery-mousewheel\\jquery.mousewheel.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.min.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.min.map",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.min.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.slim.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.slim.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.slim.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.slim.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.slim.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.slim.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.slim.min.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jquery\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\admin\\plugins\\jquery\\jquery.slim.min.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jquery.vmap.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jquery.vmap.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\jquery.vmap.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jquery.vmap.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jquery.vmap.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\jquery.vmap.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jqvmap.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jqvmap.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\jqvmap.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jqvmap.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\jqvmap.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\jqvmap.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.africa.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.africa.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.africa.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.asia.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.asia.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.asia.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.australia.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.australia.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.australia.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.europe.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.europe.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.europe.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.north-america.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.north-america.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.north-america.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.south-america.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.south-america.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\continents\\jquery.vmap.south-america.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.algeria.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.algeria.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.algeria.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.argentina.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.argentina.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.argentina.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.brazil.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.brazil.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.brazil.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.canada.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.canada.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.canada.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.croatia.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.croatia.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.croatia.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.europe.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.europe.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.europe.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.france.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.france.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.france.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.germany.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.germany.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.germany.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.greece.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.greece.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.greece.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.indonesia.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.indonesia.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.indonesia.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iran.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iran.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iran.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iraq.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iraq.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.iraq.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.new_regions_france.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.new_regions_france.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.new_regions_france.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.russia.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.russia.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.russia.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.serbia.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.serbia.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.serbia.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.tunisia.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.tunisia.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.tunisia.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.turkey.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.turkey.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.turkey.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.ukraine.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.ukraine.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.ukraine.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.counties.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.counties.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.counties.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.districts.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.districts.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.districts.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.usa.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.world.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.world.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\jqvmap\\maps\\jquery.vmap.world.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.min.css",
       "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\css\\OverlayScrollbars.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\js\\OverlayScrollbars.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\overlayScrollbars\\js\\jquery.overlayScrollbars.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\Gruntfile.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\Gruntfile.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\Gruntfile.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\license.txt",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\license.txt",
       "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\license.txt"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\raphael.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\raphael.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.no-deps.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.no-deps.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\raphael.no-deps.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.no-deps.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\plugins\\raphael\\raphael.no-deps.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\raphael\\raphael.no-deps.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\css\\animate.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\animate.css",
       "PackagePath": "staticwebassets\\css\\animate.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\css\\bootstrap.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\css\\bootstrap.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\css\\media_query.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\media_query.css",
       "PackagePath": "staticwebassets\\css\\media_query.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\css\\owl.carousel.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\owl.carousel.css",
       "PackagePath": "staticwebassets\\css\\owl.carousel.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\css\\owl.theme.default.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\owl.theme.default.css",
       "PackagePath": "staticwebassets\\css\\owl.theme.default.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\css\\site.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css",
       "PackagePath": "staticwebassets\\css\\style_1.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css.map",
       "PackagePath": "staticwebassets\\css\\style_1.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\favicon.ico",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\10-1-1-875x500.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\10-1-1-875x500.jpg",
       "PackagePath": "staticwebassets\\images\\10-1-1-875x500.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\32-450x260.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\32-450x260.jpg",
       "PackagePath": "staticwebassets\\images\\32-450x260.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\39-324x235.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\39-324x235.jpg",
       "PackagePath": "staticwebassets\\images\\39-324x235.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\App Store.svg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\App Store.svg",
       "PackagePath": "staticwebassets\\images\\App Store.svg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\abigail-keenan-65477.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\abigail-keenan-65477.jpg",
       "PackagePath": "staticwebassets\\images\\abigail-keenan-65477.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\allef-vinicius-108153.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\allef-vinicius-108153.jpg",
       "PackagePath": "staticwebassets\\images\\allef-vinicius-108153.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\ariel-lustre-208615.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\ariel-lustre-208615.jpg",
       "PackagePath": "staticwebassets\\images\\ariel-lustre-208615.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\camila-cordeiro-114636.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\camila-cordeiro-114636.jpg",
       "PackagePath": "staticwebassets\\images\\camila-cordeiro-114636.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\country.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\country.png",
       "PackagePath": "staticwebassets\\images\\country.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\download (1).jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\download (1).jpg",
       "PackagePath": "staticwebassets\\images\\download (1).jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\download (2).jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\download (2).jpg",
       "PackagePath": "staticwebassets\\images\\download (2).jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\download.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\download.jpg",
       "PackagePath": "staticwebassets\\images\\download.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\footer_sub_tipik.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\footer_sub_tipik.png",
       "PackagePath": "staticwebassets\\images\\footer_sub_tipik.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\google-play-badge.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\google-play-badge.png",
       "PackagePath": "staticwebassets\\images\\google-play-badge.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\joe-gardner-75333.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\joe-gardner-75333.jpg",
       "PackagePath": "staticwebassets\\images\\joe-gardner-75333.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\logo2.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\logo2.png",
       "PackagePath": "staticwebassets\\images\\logo2.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\nathan-mcbride-229637.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\nathan-mcbride-229637.jpg",
       "PackagePath": "staticwebassets\\images\\nathan-mcbride-229637.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\nick-karvounis-78711.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\nick-karvounis-78711.jpg",
       "PackagePath": "staticwebassets\\images\\nick-karvounis-78711.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\office-768x512.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\office-768x512.jpg",
       "PackagePath": "staticwebassets\\images\\office-768x512.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\person_1.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\person_1.jpg",
       "PackagePath": "staticwebassets\\images\\person_1.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\photo-1449157291145-7efd050a4d0e-578x362.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\photo-1449157291145-7efd050a4d0e-578x362.jpg",
       "PackagePath": "staticwebassets\\images\\photo-1449157291145-7efd050a4d0e-578x362.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\photo-1449157291145-7efd050a4d0e-578x362.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\photo-1449157291145-7efd050a4d0e-578x362.png",
       "PackagePath": "staticwebassets\\images\\photo-1449157291145-7efd050a4d0e-578x362.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\radipu LOGO_white.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\radipu LOGO_white.png",
       "PackagePath": "staticwebassets\\images\\radipu LOGO_white.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\radipuLogo.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\radipuLogo.png",
       "PackagePath": "staticwebassets\\images\\radipuLogo.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\ryan-moreno-98837.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\ryan-moreno-98837.jpg",
       "PackagePath": "staticwebassets\\images\\ryan-moreno-98837.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\science-578x362.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\science-578x362.jpg",
       "PackagePath": "staticwebassets\\images\\science-578x362.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\seth-doyle-133175.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\seth-doyle-133175.jpg",
       "PackagePath": "staticwebassets\\images\\seth-doyle-133175.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\vil-son-35490.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\vil-son-35490.jpg",
       "PackagePath": "staticwebassets\\images\\vil-son-35490.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\white_logo.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\white_logo.png",
       "PackagePath": "staticwebassets\\images\\white_logo.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\images\\zack-minor-15104.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\images\\zack-minor-15104.jpg",
       "PackagePath": "staticwebassets\\images\\zack-minor-15104.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\js\\bootstrap.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\js\\jquery.stellar.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\js\\jquery.stellar.min.js",
       "PackagePath": "staticwebassets\\js\\jquery.stellar.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\js\\jquery.waypoints.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\js\\jquery.waypoints.min.js",
       "PackagePath": "staticwebassets\\js\\jquery.waypoints.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\js\\main.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\js\\modernizr-3.5.0.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\js\\modernizr-3.5.0.min.js",
       "PackagePath": "staticwebassets\\js\\modernizr-3.5.0.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\js\\owl.carousel.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\js\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\js\\site.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\02576118-d39a-470d-a1f7-9ab9d7d92412.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\02576118-d39a-470d-a1f7-9ab9d7d92412.png",
       "PackagePath": "staticwebassets\\uploads\\02576118-d39a-470d-a1f7-9ab9d7d92412.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\0cab8d7f-418e-45fa-b8c1-fa6c648809ef.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\0cab8d7f-418e-45fa-b8c1-fa6c648809ef.png",
       "PackagePath": "staticwebassets\\uploads\\0cab8d7f-418e-45fa-b8c1-fa6c648809ef.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\1020263c-fde9-4eb7-a63d-b661ffa7201b.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\1020263c-fde9-4eb7-a63d-b661ffa7201b.png",
       "PackagePath": "staticwebassets\\uploads\\1020263c-fde9-4eb7-a63d-b661ffa7201b.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\13fd7540-c2f9-40dc-9a65-c3669af2ffbe.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\13fd7540-c2f9-40dc-9a65-c3669af2ffbe.jpg",
       "PackagePath": "staticwebassets\\uploads\\13fd7540-c2f9-40dc-9a65-c3669af2ffbe.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\36c0ea77-ddea-44b7-9060-50db6aece8e2.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\36c0ea77-ddea-44b7-9060-50db6aece8e2.jpg",
       "PackagePath": "staticwebassets\\uploads\\36c0ea77-ddea-44b7-9060-50db6aece8e2.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\50266af1-aef0-47bd-85df-0b29989bf0b6.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\50266af1-aef0-47bd-85df-0b29989bf0b6.png",
       "PackagePath": "staticwebassets\\uploads\\50266af1-aef0-47bd-85df-0b29989bf0b6.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\72380fda-d4cd-4d58-b80e-9721b2789b5a.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\72380fda-d4cd-4d58-b80e-9721b2789b5a.jpg",
       "PackagePath": "staticwebassets\\uploads\\72380fda-d4cd-4d58-b80e-9721b2789b5a.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\779950e0-a8b9-438c-a51d-5b8a9c205328.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\779950e0-a8b9-438c-a51d-5b8a9c205328.png",
       "PackagePath": "staticwebassets\\uploads\\779950e0-a8b9-438c-a51d-5b8a9c205328.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\91b48287-062e-44a7-bcf4-1fee81c7748e.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\91b48287-062e-44a7-bcf4-1fee81c7748e.png",
       "PackagePath": "staticwebassets\\uploads\\91b48287-062e-44a7-bcf4-1fee81c7748e.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\96b8142d-a1e0-48ed-a928-1823c79c2727.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\96b8142d-a1e0-48ed-a928-1823c79c2727.png",
       "PackagePath": "staticwebassets\\uploads\\96b8142d-a1e0-48ed-a928-1823c79c2727.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\ad4c720f-5580-4fe1-a2d1-93bd4158b31c.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\ad4c720f-5580-4fe1-a2d1-93bd4158b31c.jpg",
       "PackagePath": "staticwebassets\\uploads\\ad4c720f-5580-4fe1-a2d1-93bd4158b31c.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\b2fd3bc1-dd35-4e0e-b8f3-1ca5b21283e2.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\b2fd3bc1-dd35-4e0e-b8f3-1ca5b21283e2.jpg",
       "PackagePath": "staticwebassets\\uploads\\b2fd3bc1-dd35-4e0e-b8f3-1ca5b21283e2.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\c07d26aa-f1f6-41de-ad2a-9718ecd1969e.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\c07d26aa-f1f6-41de-ad2a-9718ecd1969e.jpg",
       "PackagePath": "staticwebassets\\uploads\\c07d26aa-f1f6-41de-ad2a-9718ecd1969e.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\dbb013b4-1a31-421d-b447-443729c0d692.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\dbb013b4-1a31-421d-b447-443729c0d692.jpg",
       "PackagePath": "staticwebassets\\uploads\\dbb013b4-1a31-421d-b447-443729c0d692.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\e939c3e6-cbf4-44ca-a1bd-309e7ee9f7ef.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\e939c3e6-cbf4-44ca-a1bd-309e7ee9f7ef.jpg",
       "PackagePath": "staticwebassets\\uploads\\e939c3e6-cbf4-44ca-a1bd-309e7ee9f7ef.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\ec1a6417-211f-4c3c-abaf-2c34268410eb.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\ec1a6417-211f-4c3c-abaf-2c34268410eb.png",
       "PackagePath": "staticwebassets\\uploads\\ec1a6417-211f-4c3c-abaf-2c34268410eb.png"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\ee3aab65-edd5-4bc2-91db-86065fcebe75.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\ee3aab65-edd5-4bc2-91db-86065fcebe75.jpg",
       "PackagePath": "staticwebassets\\uploads\\ee3aab65-edd5-4bc2-91db-86065fcebe75.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\fa19fe69-964f-4159-8232-ac15608b1af3.jpg",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\fa19fe69-964f-4159-8232-ac15608b1af3.jpg",
       "PackagePath": "staticwebassets\\uploads\\fa19fe69-964f-4159-8232-ac15608b1af3.jpg"
     },
     {
-      "Id": "D:\\drgfghd\\blog-website\\My Blog Website\\wwwroot\\uploads\\fd5771b6-46fe-4f41-8f20-ad262d239059.png",
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\uploads\\fd5771b6-46fe-4f41-8f20-ad262d239059.png",
       "PackagePath": "staticwebassets\\uploads\\fd5771b6-46fe-4f41-8f20-ad262d239059.png"
     },
     {
