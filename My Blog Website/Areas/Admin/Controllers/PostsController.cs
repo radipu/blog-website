@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using My_Blog_Website.Areas.Admin.Models;
 using My_Blog_Website.Data;
+using My_Blog_Website.Helpers;
 
 namespace My_Blog_Website.Areas.Admin.Controllers
 {
@@ -76,6 +77,8 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                         return View(posts);
                     }
 
+                    posts.Slug = URLHelper.GeneratePostSlug(posts.Title);
+
                     // Save to database
                     posts.PublishedDate = DateTime.Now;
                     _db.Add(posts);
@@ -87,6 +90,28 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                     ModelState.AddModelError("", $"Error: {ex.Message}");
                 }
             }
+            return View(posts);
+        }
+
+        [HttpGet]
+        [Route("admin/post/published")]
+        public IActionResult Published()
+        {
+            List<Posts> posts = _db.posts
+                .Where(p => p.PostStatus == "Published")
+                .OrderByDescending(p => p.PublishedDate)
+                .ToList();
+            return View(posts);
+        }
+
+        [HttpGet]
+        [Route("admin/post/draft")]
+        public IActionResult Draft()
+        {
+            List<Posts> posts = _db.posts
+                .Where(p => p.PostStatus == "Draft")
+                .OrderByDescending(p => p.PublishedDate)
+                .ToList();
             return View(posts);
         }
 

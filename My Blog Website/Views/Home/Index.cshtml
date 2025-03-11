@@ -1,4 +1,5 @@
 ﻿@model My_Blog_Website.ViewModels.HomeViewModel
+@using My_Blog_Website.Helpers
 @{
     ViewData["Title"] = "Home";
 }
@@ -15,7 +16,7 @@
             {
                 var mainPost = Model.LatestPost.First();
                 <div class="fh5co_suceefh5co_height">
-                    <a asp-action="Single" asp-controller="Posts" asp-route-id="@mainPost.PostId">
+                    <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(mainPost.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(mainPost.Title)">
                         <img src="@mainPost.FeatureImageUrl" alt="@mainPost.Title" 
                              style="width:100%; height:650px; object-fit:cover"/>
                     </a>
@@ -25,9 +26,7 @@
                             @mainPost.PublishedDate?.ToString("MMM dd, yyyy")
                         </div>
                         <div>
-                            <a asp-action="Single" asp-controller="Posts" 
-                               asp-route-id="@mainPost.PostId" 
-                               class="fh5co_good_font">
+                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(mainPost.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(mainPost.Title)">
                                 @mainPost.Title
                             </a>
                         </div>
@@ -43,7 +42,7 @@
                 {
                     <div class="col-md-6 col-6 paddding animate-box">
                         <div class="fh5co_suceefh5co_height_2">
-                            <a asp-action="Single" asp-controller="Posts" asp-route-id="@post.PostId">
+                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
                                 <img src="@post.FeatureImageUrl" alt="@post.Title" 
                                      style="width:100%; height:300px; object-fit:cover"/>
                             </a>
@@ -53,9 +52,7 @@
                                     @post.PublishedDate?.ToString("MMM dd, yyyy")
                                 </div>
                                 <div>
-                                    <a asp-action="Single" asp-controller="Posts" 
-                                       asp-route-id="@post.PostId" 
-                                       class="fh5co_good_font_2">
+                                    <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
                                         @post.Title
                                     </a>
                                 </div>
@@ -82,7 +79,7 @@
                     <div class="col-md-3 col-6 paddding animate-box">
                         <div class="fh5co_suceefh5co_height_2">
                             <!-- Clickable Feature Image -->
-                            <a asp-action="Single" asp-controller="Posts" asp-route-id="@post.PostId">
+                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@post.Slug">
                                 <img src="@post.FeatureImageUrl" alt="@post.Title" 
                                      style="width:100%; height:200px; object-fit:cover"/>
                             </a>
@@ -93,9 +90,7 @@
                                 </div>
                                 <!-- Clickable Title -->
                                 <div>
-                                    <a asp-action="Single" asp-controller="Posts" 
-                                       asp-route-id="@post.PostId" 
-                                       class="fh5co_good_font_2">
+                                    <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@post.Slug">
                                         @post.Title
                                     </a>
                                 </div>

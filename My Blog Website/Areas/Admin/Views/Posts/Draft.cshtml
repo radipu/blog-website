@@ -1,0 +1,87 @@
+﻿@using My_Blog_Website.Helpers
+@model IEnumerable<My_Blog_Website.Areas.Admin.Models.Posts>
+
+@{
+    ViewData["Title"] = "Draft Posts";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="text-align:center">All Draft</h1>
+
+
+
+@* <button class="icon-btn add-btn">
+    <div class="add-icon"></div>
+    <div class="btn-txt">
+        <a asp-action="Create" asp-controller="Posts">Create Post</a>
+    </div>
+</button> *@
+<table class="table">
+    <thead>
+        <tr class="text-center">
+            <th>SN.</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Feature Image</th>
+            <th>Category</th>
+            <th>Tags</th>
+            @* <th>Author</th> *@
+            @* <th>Status</th> *@
+            <th>Draft Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int rowNo = 0; }
+        @foreach (var post in Model) {
+        <tr>
+            <td style="max-width:10px; text-align: center">
+                    @(rowNo += 1)
+            </td>
+            <td>
+                @post.Title
+            </td>
+            <td>
+                @HtmlHelpers.StripHtmlTruncate(post.PostContent)
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(post.FeatureImageUrl))
+                {
+                    <img src="@post.FeatureImageUrl" alt="Feature Image" style="width: 100px; height: auto;" />
+                }
+                else
+                {
+                    <span>No Image</span>
+                }
+            </td>
+            <td>
+                @post.Categories
+            </td>
+            <td>
+                @post.Tags
+            </td>
+            @* <td>
+                @post.Author
+            </td> *@
+            @* <td>
+                @post.PostStatus
+            </td> *@
+            <td>
+                @if (post.PublishedDate.HasValue)
+                {
+                    @post.PublishedDate.Value.ToShortDateString()
+                }
+                else
+                {
+                    <span>Not Published</span>
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@post.PostId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@post.PostId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@post.PostId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -19,6 +19,9 @@ namespace My_Blog_Website.Areas.Admin.Models
         [Required]
         public string Categories { get; set; }
 
+        [Required]
+        public string Slug { get; set; } // Generated from Title (e.g., "how-to-write-articles")
+
         public string Tags { get; set; }
 
         public string PostStatus { get; set; }

@@ -22,6 +22,7 @@ namespace My_Blog_Website.Controllers
         {
             // Get all posts ordered by publish date
             var allPosts = _db.posts
+                             .Where(p => p.PostStatus == "Published")
                              .OrderByDescending(p => p.PublishedDate)
                              .ToList();
 
