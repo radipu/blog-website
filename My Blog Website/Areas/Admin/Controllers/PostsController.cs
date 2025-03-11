@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using My_Blog_Website.Areas.Admin.Models;
 using My_Blog_Website.Data;
 using My_Blog_Website.Helpers;
@@ -114,10 +115,25 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             return View(posts);
         }
 
-        public IActionResult Single(int id)
+        [HttpGet]
+        [Route("{category}/{slug}")]
+        public async Task<IActionResult> Single(string category, string slug)
         {
-            var post = _db.posts.FirstOrDefault(p => p.PostId == id);
+            if (string.IsNullOrEmpty(slug))
+            {
+                return NotFound();
+            }
+
+            // Retrieve the post by slug. You can also filter by category if needed.
+            var post = await _db.posts.FirstOrDefaultAsync(p => p.Slug == slug);
+
+            if (post == null)
+            {
+                return NotFound();
+            }
+
             return View(post);
         }
+
     }
 }
