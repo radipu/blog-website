@@ -6,43 +6,19 @@
 }
 
 <!DOCTYPE html>
-<!--
-	24 News by FreeHTML5.co
-	Twitter: https://twitter.com/fh5co
-	Facebook: https://fb.com/fh5co
-	URL: https://freehtml5.co
--->
 <html lang="en" class="no-js">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>24 News — Free Website Template, Free HTML5 Template by FreeHTML5.co</title>
-    <link href="css/media_query.css" rel="stylesheet" type="text/css"/>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="css/animate.css" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet" type="text/css"/>
-    <link href="css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
-    <!-- Bootstrap CSS -->
-    <link href="css/style_1.css" rel="stylesheet" type="text/css"/>
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-3.5.0.min.js"></script>
-</head>
-<body class="single">
-<div id="fh5co-title-box" style="background-image: url(@Model.FeatureImageUrl)" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="page-title">
-        <img src="images/person_1.jpg" alt="Author Image">
-        <span>@Model.PublishedDate</span>
-        <h2>@Model.Title</h2>
-    </div>
-</div>
-<div id="fh5co-single-content" class="container-fluid pb-4 pt-4 paddding">
-    <div class="container paddding">
-        <div class="row mx-0">
+    <body class="single">
+        <div id="fh5co-title-box" style="background-image: url(@Model.FeatureImageUrl)" data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
+            <div class="page-title">
+                <img src="images/person_1.jpg" alt="Author Image">
+                <span>@Model.PublishedDate</span>
+                <h2>@Model.Title</h2>
+            </div>
+        </div>
+        <div id="fh5co-single-content" class="container-fluid pb-4 pt-4 paddding">
+            <div class="container paddding">
+            <div class="row mx-0">
             <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
                 @Html.Raw(Model.PostContent)
             </div>
@@ -97,14 +73,14 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="container-fluid pb-4 pt-5">
-    <div class="container animate-box">
-        <div>
-            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Trending</div>
         </div>
-        <div class="owl-carousel owl-theme" id="slider2">
+        </div>
+        <div class="container-fluid pb-4 pt-5">
+            <div class="container animate-box">
+            <div>
+                <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Trending</div>
+            </div>
+            <div class="owl-carousel owl-theme" id="slider2">
             <div class="item px-2">
                 <div class="fh5co_hover_news_img">
                     <div class="fh5co_news_img"><img src="images/39-324x235.jpg" alt=""/></div>
@@ -142,8 +118,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-</body>
+            </div>
+        </div>
+    </body>
 </html>
