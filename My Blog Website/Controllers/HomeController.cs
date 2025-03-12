@@ -33,7 +33,10 @@ namespace My_Blog_Website.Controllers
                 Thoughts = GetPostsByCategory(allPosts, "Thoughts"),
                 Technology = GetPostsByCategory(allPosts, "Technology"),
                 Ideas = GetPostsByCategory(allPosts, "Ideas"),
-                HowTo = GetPostsByCategory(allPosts, "How To")
+                HowTo = GetPostsByCategory(allPosts, "How To"),
+                Tour = GetPostsByCategory(allPosts, "Tour"),
+                CSharpASPNET = GetPostsByCategory(allPosts, "C # & ASP.NET"),
+                BookReview = GetPostsByCategory(allPosts, "Book Review")
             };
 
             return View(viewModel);
@@ -43,7 +46,7 @@ namespace My_Blog_Website.Controllers
         {
             return posts
                 .Where(p => SplitCategories(p.Categories).Contains(category))
-                .Take(4)
+                .OrderByDescending(p => p.PublishedDate)
                 .ToList();
         }
 
