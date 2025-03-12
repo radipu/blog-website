@@ -1,4 +1,5 @@
-﻿@model IEnumerable<My_Blog_Website.Areas.Admin.Models.Posts>  // Replace with your actual Post model type
+﻿@using My_Blog_Website.Helpers
+@model IEnumerable<My_Blog_Website.Areas.Admin.Models.Posts>  // Replace with your actual Post model type
 
 @{
     ViewData["Title"] = "Tours";
@@ -15,7 +16,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="fh5co_hover_news_img">
                         <div class="fh5co_news_img">
-                            <a asp-action="Single" asp-controller="Posts" asp-route-id="@post.Title">
+                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@post.Slug">
                                 <img src="@post.FeatureImageUrl" alt="@post.Title" 
                                      class="img-fluid" 
                                      style="height: 250px; width: 100%; object-fit: cover">
@@ -26,18 +27,16 @@
                                 <i class="fa fa-clock-o"></i> 
                                 @post.PublishedDate?.ToString("MMM dd, yyyy")
                             </div>
-                            <a asp-action="Single" asp-controller="Posts" 
-                               asp-route-id="@post.Title" 
-                               class="d-block fh5co_small_post_heading">
+                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@post.Slug">
                                 @post.Title
                             </a>
-                            <div class="mt-2">
+                            @* <div class="mt-2">
                                 <a asp-action="Single" asp-controller="Posts" 
                                    asp-route-id="@post.Title" 
                                    class="btn btn-outline-primary btn-sm">
                                     Read More
                                 </a>
-                            </div>
+                            </div> *@
                         </div>
                     </div>
                 </div>
