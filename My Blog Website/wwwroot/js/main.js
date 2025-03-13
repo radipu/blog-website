@@ -272,4 +272,18 @@ $(document).ready(function(){
     //        // If no matching page is found, ensure 'Home' is active by default
     //        document.getElementById('home').classList.add('active');
     //    }
-    //});
+//});
+
+$(document).ready(function(){
+  $('.search-txt').on('blur', function(){
+    var $this = $(this);
+    setTimeout(function(){
+      if ($this.val().trim() === "") {
+        $this.css({ width: '0', padding: '0' });
+      }
+    }, 200);
+  });
+  $('.search-txt').on('focus', function(){
+    $(this).css({ width: '500px', padding: '0 6px', border: '1px solid red', borderRadius: '40px' });
+  });
+});
