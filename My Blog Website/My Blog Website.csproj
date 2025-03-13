@@ -11,6 +11,7 @@
     <None Remove="Areas\Admin\Views\Posts\t2dgsdat.kfe~" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Search\" />
     <Folder Include="wwwroot\admin\" />
   </ItemGroup>
   <ItemGroup>
