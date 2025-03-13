@@ -11,7 +11,7 @@ namespace My_Blog_Website.ViewModels
         public List<Posts> Ideas { get; set; }
         public List<Posts> HowTo { get; set; }
         public List<Posts> Tour { get; set; }
-        public List<Posts> CSharpASPNET { get; set; }
+        public List<Posts> Developer { get; set; }
         public List<Posts> BookReview { get; set; }
     }
 }

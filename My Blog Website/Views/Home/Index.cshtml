@@ -1,7 +1,15 @@
 ﻿@model My_Blog_Website.ViewModels.HomeViewModel
 @using My_Blog_Website.Helpers
+@using My_Blog_Website.ViewModels
 @{
     ViewData["Title"] = "Home";
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
 }
 
 <!DOCTYPE html>
@@ -285,16 +293,36 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">
-                    <div class="col-12 text-center pb-4 pt-4">
-                        <a href="#" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp; Previous</a>
-                        <a href="#" class="btn_pagging">1</a>
-                        <a href="#" class="btn_pagging">2</a>
-                        <a href="#" class="btn_pagging">3</a>
-                        <a href="#" class="btn_pagging">...</a>
-                        <a href="#" class="btn_mange_pagging">Next <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>
-                     </div>
-                </div>
+                @if (pager.TotalPages > 0)
+                {
+                    <ul class="pagination justify-content-center">
+                        @if (pager.CurrentPage > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="1">First</a>
+                            </li>
+                            <li>
+                                <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="@(pager.CurrentPage - 1)">Previous</a>
+                            </li>
+                        }
+                        @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+                        {
+                            <li class="page-item @(pge==pager.CurrentPage? "active" : "")">
+                                <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="@pge">@pge</a>
+                            </li>
+                        }
+                        @if (pager.CurrentPage < pager.TotalPages)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+                            </li>
+                            <li>
+                                <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="@(pager.TotalPages)">Last</a>
+                            </li>
+                        }
+                    </ul>
+                }
+
             </div>
         </div>
     }
