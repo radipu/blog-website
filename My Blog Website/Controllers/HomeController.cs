@@ -18,13 +18,25 @@ namespace My_Blog_Website.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int pg = 1)
         {
             // Get all posts ordered by publish date
             var allPosts = _db.posts
                              .Where(p => p.PostStatus == "Published")
                              .OrderByDescending(p => p.PublishedDate)
                              .ToList();
+
+            var howtoPosts = GetPostsByCategory(allPosts, "How To");
+            int totalHowtoPosts = howtoPosts.Count;
+            const int pageSize = 4;
+            if (pg < 1)
+            {
+                pg = 1;
+            }
+
+            var pager = new Pager(totalHowtoPosts, pg, pageSize);
+            int recSkip = (pg - 1) * pageSize;
+            var paginatedHowtoPosts = howtoPosts.Skip(recSkip).Take(pageSize).ToList();
 
             var viewModel = new HomeViewModel
             {
@@ -33,12 +45,13 @@ namespace My_Blog_Website.Controllers
                 Thoughts = GetPostsByCategory(allPosts, "Thoughts"),
                 Technology = GetPostsByCategory(allPosts, "Technology"),
                 Ideas = GetPostsByCategory(allPosts, "Ideas"),
-                HowTo = GetPostsByCategory(allPosts, "How To"),
+                HowTo = paginatedHowtoPosts,
                 Tour = GetPostsByCategory(allPosts, "Tour"),
-                CSharpASPNET = GetPostsByCategory(allPosts, "C # & ASP.NET"),
+                Developer = GetPostsByCategory(allPosts, "Developer"),
                 BookReview = GetPostsByCategory(allPosts, "Book Review")
             };
 
+            this.ViewBag.Pager = pager;
             return View(viewModel);
         }
 
