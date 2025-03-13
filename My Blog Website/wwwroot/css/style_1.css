@@ -1076,33 +1076,13 @@ a, a:hover
 	position: absolute
 }
 
-.search-box{
+.search-box {
   position: relative;
   border-radius: 40px;
 }
 
-.search-box:hover > .search-txt{
-  width: 500px;
-  padding: 0 6px;
-  color: black;
-  border-style: solid;
-  border-color: red;
-  border-radius: 40px;
-}
-
-.search-box:hover > .search-btn{
-  background: white;
-}
-
-.search-btn{
-  float: right;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
-}
-
-.search-txt{
+/* Initial style for the search input */
+.search-txt {
   border: none;
   background: none;
   outline: none;
@@ -1111,7 +1091,28 @@ a, a:hover
   color: white;
   font-size: 16px;
   line-height: 40px;
-  width: 0px;
+  width: 0;
+  transition: width 0.4s, padding 0.4s;
+}
+
+/* Expand when the search box is hovered, or when the input is focused or when it’s not empty */
+.search-box:hover > .search-txt,
+.search-txt:focus,
+.search-txt:not(:placeholder-shown) {
+  width: 500px;
+  padding: 0 6px;
+  color: black;
+  border: 1px solid red;
+  border-radius: 40px;
+}
+
+/* (Optional) Style for the search button */
+.search-btn {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
 }
 
 .gototop {
