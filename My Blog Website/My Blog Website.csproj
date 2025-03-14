@@ -7,11 +7,16 @@
     <RootNamespace>My_Blog_Website</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Views\Search\**" />
+    <Content Remove="Views\Search\**" />
+    <EmbeddedResource Remove="Views\Search\**" />
+    <None Remove="Views\Search\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Areas\Admin\Views\Posts\Create.cshtml~RF95df30.TMP" />
     <None Remove="Areas\Admin\Views\Posts\t2dgsdat.kfe~" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Search\" />
     <Folder Include="wwwroot\admin\" />
   </ItemGroup>
   <ItemGroup>
