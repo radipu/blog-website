@@ -26,6 +26,13 @@ namespace My_Blog_Website.Controllers
                              .OrderByDescending(p => p.PublishedDate)
                              .ToList();
 
+            var allTags = allPosts
+                            .SelectMany(p => p.Tags.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                            .Select(t => t.Trim().ToLower())
+                            .Distinct()
+                            .OrderBy(t => t)
+                            .ToList();
+
             var howtoPosts = GetPostsByCategory(allPosts, "How To");
             int totalHowtoPosts = howtoPosts.Count;
             const int pageSize = 4;
@@ -48,7 +55,8 @@ namespace My_Blog_Website.Controllers
                 HowTo = paginatedHowtoPosts,
                 Tour = GetPostsByCategory(allPosts, "Tour"),
                 Developer = GetPostsByCategory(allPosts, "Developer"),
-                BookReview = GetPostsByCategory(allPosts, "Book-Review")
+                BookReview = GetPostsByCategory(allPosts, "Book-Review"),
+                Tags = allTags
             };
 
             this.ViewBag.Pager = pager;
