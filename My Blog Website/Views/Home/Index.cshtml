@@ -16,6 +16,7 @@
 <html lang="en" class="no-js">
 <body>
 
+<!-- Latest 5 -->
 <div class="container-fluid paddding mb-5">
     <div class="row mx-0 hot_topic">
         <!-- Main Post -->
@@ -36,6 +37,11 @@
                         <div>
                             <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(mainPost.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(mainPost.Title)">
                                 @mainPost.Title
+                            </a>
+                        </div>
+                        <div>
+                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(mainPost.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(mainPost.Title)">
+                                @mainPost.PostDescription
                             </a>
                         </div>
                     </div>
@@ -101,6 +107,11 @@
                                    class="d-block fh5co_small_post_heading">
                                     <span class="">@post.Title</span>
                                 </a>
+                                <div>
+                                    <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
+                                        @post.PostDescription
+                                    </a>
+                                </div>
                                 <div class="c_g">
                                     <i class="fa fa-clock-o"></i> 
                                     @post.PublishedDate?.ToString("MMM dd, yyyy")
@@ -142,6 +153,11 @@
                                    class="d-block fh5co_small_post_heading">
                                     <span class="">@post.Title</span>
                                 </a>
+                                <div>
+                                    <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
+                                        @post.PostDescription
+                                    </a>
+                                </div>
                                 <div class="c_g">
                                     <i class="fa fa-clock-o"></i> 
                                     @post.PublishedDate?.ToString("MMM dd, yyyy")
@@ -183,6 +199,11 @@
                                    class="d-block fh5co_small_post_heading">
                                     <span class="">@post.Title</span>
                                 </a>
+                                <div>
+                                    <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
+                                        @post.PostDescription
+                                    </a>
+                                </div>
                                 <div class="c_g">
                                     <i class="fa fa-clock-o"></i> 
                                     @post.PublishedDate?.ToString("MMM dd, yyyy")
@@ -226,6 +247,11 @@
                                        class="d-block fh5co_small_post_heading">
                                         <span class="">@post.Title</span>
                                     </a>
+                                    <div>
+                                        <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
+                                            @post.PostDescription
+                                        </a>
+                                    </div>
                                     <div class="c_g">
                                         <i class="fa fa-clock-o"></i> 
                                         @post.PublishedDate?.ToString("MMM dd, yyyy")
@@ -354,6 +380,11 @@
                                    class="d-block fh5co_small_post_heading">
                                     <span class="">@post.Title</span>
                                 </a>
+                                <div>
+                                    <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
+                                        @post.PostDescription
+                                    </a>
+                                </div>
                                 <div class="c_g">
                                     <i class="fa fa-clock-o"></i> 
                                     @post.PublishedDate?.ToString("MMM dd, yyyy")

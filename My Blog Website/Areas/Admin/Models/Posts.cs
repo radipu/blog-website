@@ -14,6 +14,8 @@ namespace My_Blog_Website.Areas.Admin.Models
         [Required]
         public string PostContent { get; set; }
 
+        public string? PostDescription { get; set; }
+
         public string FeatureImageUrl { get; set; } // Store URL or Base64
 
         [Required]

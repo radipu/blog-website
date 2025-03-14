@@ -56234,6 +56234,19 @@ button a:hover {
 	  height: 40px;
   }
 
+  .description-input {
+ width: 75%;
+ padding: 10px;
+ border-radius: 5px;
+ margin-bottom: 10px;
+ margin-left: 70px;
+ margin-top: 20px;
+}
+
+.description-input {
+ height: 40px;
+}
+
   #featureImagePreview {
     display: none;
     width: 100%;
