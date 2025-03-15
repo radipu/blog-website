@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\My Files\\blog-website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\views\\home\\postsbytag.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\views\\home\\postsbytag.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PostsByTag.cshtml",
+              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Home\\PostsByTag.cshtml",
+              "RelativeDocumentMoniker": "My Blog Website\\Views\\Home\\PostsByTag.cshtml",
+              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Home\\PostsByTag.cshtml",
+              "RelativeToolTip": "My Blog Website\\Views\\Home\\PostsByTag.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-15T11:22:57.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "My Blog Website\\Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "My Blog Website\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAANQBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANYAAAAAAAAAAAAkwA4BAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-14T14:00:23.451Z",
+              "WhenOpened": "2025-03-15T11:21:17.72Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "main.js",
-              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\js\\main.js",
-              "RelativeDocumentMoniker": "My Blog Website\\wwwroot\\js\\main.js",
-              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\js\\main.js",
-              "RelativeToolTip": "My Blog Website\\wwwroot\\js\\main.js",
-              "ViewState": "AgIAABwBAAAAAAAAAIAxwCEBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-03-14T13:59:20.214Z",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "My Blog Website\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "My Blog Website\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAwEUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T11:08:07.731Z",
               "EditorCaption": ""
             }
           ]

@@ -58,13 +58,35 @@ namespace My_Blog_Website.Controllers
             return View(viewModel);
         }
 
-
         private List<Posts> GetPostsByCategory(List<Posts> posts, string category)
         {
             return posts
                 .Where(p => SplitCategories(p.Categories).Contains(category))
                 .OrderByDescending(p => p.PublishedDate)
                 .ToList();
+        }
+
+        [HttpGet]
+        [Route("/PostsByTag/{tag}")]
+        public IActionResult PostsByTag(string tag)
+        {
+            if (string.IsNullOrWhiteSpace(tag))
+                return RedirectToAction("Index");
+
+            var normalizedTag = tag.Trim().ToLower();
+
+            var allPosts = _db.posts
+                .Where(p => p.PostStatus == "Published")
+                .ToList();
+
+            var filteredPosts = allPosts
+                .Where(p => p.Tags.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                    .Any(t => t.Trim().ToLower() == normalizedTag))
+                .OrderByDescending(p => p.PublishedDate)
+                .ToList();
+
+            ViewBag.Tag = tag; // For displaying in the view
+            return View(filteredPosts);
         }
 
         private List<string> SplitCategories(string categories)
