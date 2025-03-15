@@ -22,17 +22,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "PostsByTag.cshtml",
               "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Home\\PostsByTag.cshtml",
               "RelativeDocumentMoniker": "My Blog Website\\Views\\Home\\PostsByTag.cshtml",
-              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Home\\PostsByTag.cshtml",
-              "RelativeToolTip": "My Blog Website\\Views\\Home\\PostsByTag.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Home\\PostsByTag.cshtml*",
+              "RelativeToolTip": "My Blog Website\\Views\\Home\\PostsByTag.cshtml*",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAuwEAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-15T11:22:57.84Z",
               "EditorCaption": ""
@@ -58,7 +66,7 @@
               "RelativeDocumentMoniker": "My Blog Website\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Controllers\\HomeController.cs",
               "RelativeToolTip": "My Blog Website\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAAwEUAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwEYAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-15T11:08:07.731Z",
               "EditorCaption": ""
