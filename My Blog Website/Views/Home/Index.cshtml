@@ -268,7 +268,7 @@
                             {
                                 @foreach (var tag in Model.Tags)
                                 {
-                                    <a href="" class="fh5co_tagg">@tag</a>
+                                    <a href="@Url.Action("PostsByTag", "Home", new { tag = tag })" class="fh5co_tagg">@tag</a>
                                 }
                             }
                             else
