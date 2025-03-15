@@ -86,6 +86,8 @@ namespace My_Blog_Website.Controllers
                 .ToList();
 
             ViewBag.Tag = tag; // For displaying in the view
+            ViewBag.PageSize = 9;
+            ViewBag.TotalFilteredPosts = filteredPosts.Count;
             return View(filteredPosts);
         }
 

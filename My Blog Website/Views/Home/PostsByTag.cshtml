@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Posts Tagged: " + ViewBag.Tag;
     var pageSize = ViewBag.PageSize;
-    var totalBookReviews = ViewBag.TotalBookReviews;
+    var totalFilteredPosts = ViewBag.TotalFilteredPosts;
 }
 
 <div class="container-fluid pt-5">
@@ -12,31 +12,49 @@
             <h2>Posts tagged with: @ViewBag.Tag</h2>
         </div>
 
-        <div class="row">
-            @foreach (var post in Model)
+        <!-- Pages Container -->
+        <div class="carousel-container">
+            @{
+                int pageNumber = 1;
+                var postChunks = Model
+                    .Select((post, index) => new { Post = post, Index = index })
+                    .GroupBy(x => x.Index / pageSize)
+                    .Select(g => new { Page = pageNumber++, Posts = g.Select(x => x.Post) });
+            }
+            @foreach (var chunk in postChunks)
             {
-                <div class="col-md-4 mb-4">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img">
-                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@post.Slug">
-                                <img src="@post.FeatureImageUrl" alt="@post.Title"
-                                     class="img-fluid"
-                                     style="height: 250px; width: 100%; object-fit: cover">
-                            </a>
-                        </div>
-                        <div class="pt-2">
-                            <div class="text-muted small">
-                                <i class="fa fa-clock-o"></i>
-                                @post.PublishedDate?.ToString("MMM dd, yyyy")
+                <div class="carousel-page row" data-page="@chunk.Page" style="display: none;">
+                    @foreach (var post in chunk.Posts)
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="fh5co_hover_news_img">
+                                <div class="fh5co_news_img">
+                                    <a asp-controller="Posts" asp-action="Single" 
+                                       asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                       asp-route-slug="@post.Slug">
+                                        <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                             class="img-fluid" 
+                                             style="height: 250px; width: 100%; object-fit: cover">
+                                    </a>
+                                </div>
+                                <div class="pt-2">
+                                    <div class="text-muted small">
+                                        <i class="fa fa-clock-o"></i> 
+                                        @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                    </div>
+                                    <a asp-controller="Posts" asp-action="Single" 
+                                       asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                       asp-route-slug="@post.Slug">
+                                        @post.Title
+                                    </a>
+                                </div>
                             </div>
-                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@post.Slug">
-                                @post.Title
-                            </a>
                         </div>
-                    </div>
+                    }
                 </div>
             }
         </div>
+        <ul class="pagination justify-content-center" id="carousel-pagination"></ul>
     </div>
 </div>
 
@@ -44,7 +62,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const itemsPerPage = @pageSize;
-            const totalItems = @totalBookReviews;
+            const totalItems = @totalFilteredPosts;
             const totalPages = Math.ceil(totalItems / itemsPerPage);
             let currentPage = 1;
 
