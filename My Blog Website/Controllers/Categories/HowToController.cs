@@ -17,10 +17,12 @@ namespace My_Blog_Website.Controllers.Categories
         public ActionResult Index()
         {
             var howtoPosts = _context.posts
-                .Where(p => p.Categories == "How To")  // Adjust to your actual category property name
+                .Where(p => p.Categories == "HowTo")  // Adjust to your actual category property name
                 .OrderByDescending(p => p.PublishedDate)
                 .ToList();
 
+            ViewBag.PageSize = 9;
+            ViewBag.TotalBookReviews = howtoPosts.Count;
             return View(howtoPosts);
         }
 

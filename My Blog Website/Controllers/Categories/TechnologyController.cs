@@ -20,7 +20,9 @@ namespace My_Blog_Website.Controllers.Categories
                 .Where(p => p.Categories == "Technology")  // Adjust to your actual category property name
                 .OrderByDescending(p => p.PublishedDate)
                 .ToList();
-            
+
+            ViewBag.PageSize = 9;
+            ViewBag.TotalBookReviews = technologyPosts.Count;
             return View(technologyPosts);
         }
 
