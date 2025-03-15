@@ -30,7 +30,7 @@
                 <div class="fh5co_tags_all">
                     @foreach (var tag in Model.Tags.Split(','))
                     {
-                        <a href="#" class="fh5co_tagg">@tag.Trim()</a>
+                        <a href="@Url.Action("PostsByTag", "Home", new { tag = tag })" class="fh5co_tagg">@tag</a>
                     }
                 </div>
                 <div>
