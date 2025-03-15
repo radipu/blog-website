@@ -16,12 +16,14 @@ namespace My_Blog_Website.Controllers.Categories
         [HttpGet]
         public ActionResult Index()
         {
-            var thoughtsPosts = _context.posts
+            var ideaPosts = _context.posts
                 .Where(p => p.Categories == "Ideas")  // Adjust to your actual category property name
                 .OrderByDescending(p => p.PublishedDate)
                 .ToList();
 
-            return View(thoughtsPosts);
+            ViewBag.PageSize = 9;
+            ViewBag.TotalBookReviews = ideaPosts.Count;
+            return View(ideaPosts);
         }
 
         // GET: IdeasController/Details/5

@@ -18,14 +18,15 @@ namespace My_Blog_Website.Controllers
             _db = db;
         }
 
-        public IActionResult Index(int pg = 1)
+        public IActionResult Index()
         {
-            // Get all posts ordered by publish date
+            // Retrieve all published posts ordered by publish date
             var allPosts = _db.posts
-                             .Where(p => p.PostStatus == "Published")
-                             .OrderByDescending(p => p.PublishedDate)
-                             .ToList();
+                              .Where(p => p.PostStatus == "Published")
+                              .OrderByDescending(p => p.PublishedDate)
+                              .ToList();
 
+            // Extract and process tags
             var allTags = allPosts
                             .SelectMany(p => p.Tags.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                             .Select(t => t.Trim().ToLower())
@@ -33,35 +34,30 @@ namespace My_Blog_Website.Controllers
                             .OrderBy(t => t)
                             .ToList();
 
-            var howtoPosts = GetPostsByCategory(allPosts, "How To");
-            int totalHowtoPosts = howtoPosts.Count;
-            const int pageSize = 4;
-            if (pg < 1)
-            {
-                pg = 1;
-            }
+            // Get all How To posts (send the complete list, not just a slice)
+            var howtoPosts = GetPostsByCategory(allPosts, "HowTo");
 
-            var pager = new Pager(totalHowtoPosts, pg, pageSize);
-            int recSkip = (pg - 1) * pageSize;
-            var paginatedHowtoPosts = howtoPosts.Skip(recSkip).Take(pageSize).ToList();
-
+            // Build the view model with all necessary data
             var viewModel = new HomeViewModel
             {
                 LatestPost = allPosts.Take(5).ToList(),
-
                 Thoughts = GetPostsByCategory(allPosts, "Thoughts"),
                 Technology = GetPostsByCategory(allPosts, "Technology"),
                 Ideas = GetPostsByCategory(allPosts, "Ideas"),
-                HowTo = paginatedHowtoPosts,
+                HowTo = howtoPosts, // all items are sent to the view
                 Tour = GetPostsByCategory(allPosts, "Tour"),
                 Developer = GetPostsByCategory(allPosts, "Developer"),
                 BookReview = GetPostsByCategory(allPosts, "Book-Review"),
                 Tags = allTags
             };
 
-            this.ViewBag.Pager = pager;
+            // Pass extra information for client-side paging
+            ViewBag.PageSize = 4;
+            ViewBag.TotalHowtoPosts = howtoPosts.Count;
+
             return View(viewModel);
         }
+
 
         private List<Posts> GetPostsByCategory(List<Posts> posts, string category)
         {

@@ -21,6 +21,8 @@ namespace My_Blog_Website.Controllers.Categories
                 .OrderByDescending(p => p.PublishedDate)
                 .ToList();
 
+            ViewBag.PageSize = 9;
+            ViewBag.TotalBookReviews = thoughtsPosts.Count;
             return View(thoughtsPosts);
         }
 

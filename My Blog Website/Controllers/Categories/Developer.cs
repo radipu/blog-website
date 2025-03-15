@@ -16,12 +16,14 @@ namespace My_Blog_Website.Controllers.Categories
         [HttpGet]
         public ActionResult Index()
         {
-            var csharpPosts = _context.posts
+            var developerPosts = _context.posts
                                             .Where(p => p.Categories == "Developer")
                                             .OrderByDescending(p => p.PublishedDate)
                                             .ToList();
 
-            return View(csharpPosts);
+            ViewBag.PageSize = 9;
+            ViewBag.TotalBookReviews = developerPosts.Count;
+            return View(developerPosts);
         }
 
         // GET: Developer/Details/5

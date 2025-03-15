@@ -4,43 +4,149 @@
 @{
     ViewData["Title"] = "Tours";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var pageSize = ViewBag.PageSize;
+    var totalBookReviews = ViewBag.TotalBookReviews;
 }
 
 <div class="container-fluid pt-5">
     <div class="container animate-box">
         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">All Tours</div>
         
-        <div class="row">
-            @foreach(var post in Model)
+        <!-- Pages Container -->
+        <div class="carousel-container">
+            @{
+                int pageNumber = 1;
+                var postChunks = Model
+                    .Select((post, index) => new { Post = post, Index = index })
+                    .GroupBy(x => x.Index / pageSize)
+                    .Select(g => new { Page = pageNumber++, Posts = g.Select(x => x.Post) });
+            }
+            @foreach (var chunk in postChunks)
             {
-                <div class="col-md-4 mb-4">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img">
-                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@post.Slug">
-                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
-                                     class="img-fluid" 
-                                     style="height: 250px; width: 100%; object-fit: cover">
-                            </a>
-                        </div>
-                        <div class="pt-2">
-                            <div class="text-muted small">
-                                <i class="fa fa-clock-o"></i> 
-                                @post.PublishedDate?.ToString("MMM dd, yyyy")
+                <div class="carousel-page row" data-page="@chunk.Page" style="display: none;">
+                    @foreach (var post in chunk.Posts)
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="fh5co_hover_news_img">
+                                <div class="fh5co_news_img">
+                                    <a asp-controller="Posts" asp-action="Single" 
+                                       asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                       asp-route-slug="@post.Slug">
+                                        <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                             class="img-fluid" 
+                                             style="height: 250px; width: 100%; object-fit: cover">
+                                    </a>
+                                </div>
+                                <div class="pt-2">
+                                    <div class="text-muted small">
+                                        <i class="fa fa-clock-o"></i> 
+                                        @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                    </div>
+                                    <a asp-controller="Posts" asp-action="Single" 
+                                       asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                       asp-route-slug="@post.Slug">
+                                        @post.Title
+                                    </a>
+                                </div>
                             </div>
-                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@post.Slug">
-                                @post.Title
-                            </a>
-                            @* <div class="mt-2">
-                                <a asp-action="Single" asp-controller="Posts" 
-                                   asp-route-id="@post.Title" 
-                                   class="btn btn-outline-primary btn-sm">
-                                    Read More
-                                </a>
-                            </div> *@
                         </div>
-                    </div>
+                    }
                 </div>
             }
         </div>
+        <ul class="pagination justify-content-center" id="carousel-pagination"></ul>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const itemsPerPage = @pageSize;
+            const totalItems = @totalBookReviews;
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            let currentPage = 1;
+
+            // Function to render the pagination controls
+            function renderPager() {
+                const pagerContainer = document.getElementById('carousel-pagination');
+                pagerContainer.innerHTML = '';
+
+                if (totalItems < 10){
+                    pagerContainer.style.display = 'none';
+                    return;
+                }
+
+                // First and Previous links (only if not on first page)
+                if (currentPage > 1) {
+                    const firstItem = document.createElement('li');
+                    firstItem.className = 'page-item';
+                    firstItem.innerHTML = `<a class="page-link" href="#" data-page="1">First</a>`;
+                    pagerContainer.appendChild(firstItem);
+
+                    const prevItem = document.createElement('li');
+                    prevItem.className = 'page-item';
+                    prevItem.innerHTML = `<a class="page-link" href="#" data-page="${currentPage - 1}">Previous</a>`;
+                    pagerContainer.appendChild(prevItem);
+                }
+
+                // Numeric page links – show all if totalPages <= 10, else a sliding window
+                let startPage = 1, endPage = totalPages;
+                if (totalPages > 10) {
+                    startPage = currentPage - 4;
+                    endPage = currentPage + 5;
+                    if (startPage < 1) { startPage = 1; endPage = 10; }
+                    if (endPage > totalPages) { endPage = totalPages; startPage = totalPages - 9; }
+                }
+                for (let p = startPage; p <= endPage; p++) {
+                    const pageItem = document.createElement('li');
+                    pageItem.className = 'page-item' + (p === currentPage ? ' active' : '');
+                    pageItem.innerHTML = `<a class="page-link" href="#" data-page="${p}">${p}</a>`;
+                    pagerContainer.appendChild(pageItem);
+                }
+
+                // Next and Last links (only if not on last page)
+                if (currentPage < totalPages) {
+                    const nextItem = document.createElement('li');
+                    nextItem.className = 'page-item';
+                    nextItem.innerHTML = `<a class="page-link" href="#" data-page="${currentPage + 1}">Next</a>`;
+                    pagerContainer.appendChild(nextItem);
+
+                    const lastItem = document.createElement('li');
+                    lastItem.className = 'page-item';
+                    lastItem.innerHTML = `<a class="page-link" href="#" data-page="${totalPages}">Last</a>`;
+                    pagerContainer.appendChild(lastItem);
+                }
+            }
+
+            // Function to display a specific page of posts
+            function showPage(page) {
+                currentPage = page;
+                // Hide all pages
+                document.querySelectorAll('.carousel-page').forEach(function(el) {
+                    el.style.display = 'none';
+                    el.classList.remove('active');
+                });
+                // Show the posts for the selected page
+                document.querySelectorAll(`.carousel-page[data-page="${page}"]`).forEach(function(el) {
+                    el.style.display = 'flex';
+                    setTimeout(() => el.classList.add('active'), 50); // for smooth transition
+                });
+                renderPager();
+            }
+
+            // Initialize first page
+            showPage(currentPage);
+
+            // Handle clicks on pagination links without page refresh
+            document.getElementById('carousel-pagination').addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    const newPage = parseInt(e.target.getAttribute('data-page'));
+                    if (newPage && newPage !== currentPage) {
+                        showPage(newPage);
+                    }
+                }
+            });
+        });
+    </script>
+}
