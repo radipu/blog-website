@@ -21,6 +21,56 @@
             <div class="row mx-0">
             <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
                 @Html.Raw(Model.PostContent)
+                <div class="share-section mt-5">
+                    <h4>Share this post on:</h4>
+                    @{
+                        var postUrl = Url.Action("Single", "Posts", new { category = Model.Categories, slug = Model.Slug }, Context.Request.Scheme);
+                        var encodedUrl = Uri.EscapeDataString(postUrl);
+                        var encodedTitle = Uri.EscapeDataString(Model.Title);
+                    }
+                    <div class="d-flex flex-wrap gap-2">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=@encodedUrl" 
+                           target="_blank" 
+                           class="btn btn-sm btn-primary">
+                            <i class="fa fa-facebook"></i> Facebook
+                        </a>
+
+                        <!-- Twitter/X -->
+                        <a href="https://twitter.com/intent/tweet?text=@encodedTitle&url=@encodedUrl" 
+                           target="_blank" 
+                           class="btn btn-sm btn-info">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=@encodedUrl&title=@encodedTitle" 
+                           target="_blank" 
+                           class="btn btn-sm btn-primary" 
+                           style="background-color: #0077b5; border-color: #0077b5;">
+                            <i class="fa fa-linkedin"></i> LinkedIn
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://api.whatsapp.com/send?text=@encodedTitle%20@encodedUrl" 
+                           target="_blank" 
+                           class="btn btn-sm btn-success">
+                            <i class="fa fa-whatsapp"></i> WhatsApp
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:?subject=@encodedTitle&body=@encodedUrl" 
+                           class="btn btn-sm btn-secondary">
+                            <i class="fa fa-envelope"></i> Email
+                        </a>
+
+                        <!-- Copy Link -->
+                        <button onclick="copyToClipboard('@postUrl')" 
+                                class="btn btn-sm btn-light">
+                            <i class="fa fa-copy"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                 <div>
@@ -112,5 +162,15 @@
             </div>
             </div>
         </div>
+
+        <script>
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(function() {
+                    alert('Link copied to clipboard!');
+                }, function(err) {
+                    alert('Failed to copy link: ' + err);
+                });
+            }
+        </script>
     </body>
 </html>

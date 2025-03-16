@@ -1262,3 +1262,13 @@ a, a:hover
 	width: 150px;
 
 }
+
+.share-section h4 {
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
