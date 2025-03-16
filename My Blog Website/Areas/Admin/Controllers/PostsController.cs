@@ -145,5 +145,63 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             return View(post);
         }
 
+        [HttpGet]
+        [Route("admin/post/edit/{id}")]
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var post = _db.posts.Find(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            return View(post);
+        }
+
+        [HttpPost]
+        [Route("admin/post/edit/{id}")]
+        public async Task<IActionResult> Edit(Posts post)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Update(post);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(post);
+        }
+
+        [HttpGet]
+        [Route("admin/post/delete/{id}")]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var post = _db.posts.Find(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            return View(post);
+        }
+
+        [HttpPost]
+        [Route("admin/post/delete/{id}")]
+        public async Task<IActionResult> DeletePost(int? id)
+        {
+            var post = _db.posts.Find(id);
+
+            if (post == null)
+                return NotFound();
+
+            _db.posts.Remove(post);
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }
