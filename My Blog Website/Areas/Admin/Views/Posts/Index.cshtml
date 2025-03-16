@@ -16,72 +16,132 @@
         <a asp-action="Create" asp-controller="Posts">Create Post</a>
     </div>
 </button> *@
-<table class="table">
-    <thead>
-        <tr class="text-center">
-            <th>SN.</th>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Feature Image</th>
-            <th>Category</th>
-            <th>Tags</th>
-            @* <th>Author</th> *@
-            <th>Status</th>
-            <th>Publish Date</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{ int rowNo = 0; }
-        @foreach (var post in Model) {
-        <tr>
-            <td style="max-width:10px; text-align: center">
-                    @(rowNo += 1)
-            </td>
-            <td>
-                @post.Title
-            </td>
-            <td>
-                @HtmlHelpers.StripHtmlTruncate(post.PostContent)
-            </td>
-            <td>
-                @if (!string.IsNullOrEmpty(post.FeatureImageUrl))
-                {
-                    <img src="@post.FeatureImageUrl" alt="Feature Image" style="width: 100px; height: auto;" />
-                }
-                else
-                {
-                    <span>No Image</span>
-                }
-            </td>
-            <td>
-                @post.Categories
-            </td>
-            <td>
-                @post.Tags
-            </td>
-            @* <td>
-                @post.Author
-            </td> *@
-            <td>
-                @post.PostStatus
-            </td>
-            <td>
-                @if (post.PublishedDate.HasValue)
-                {
-                    @post.PublishedDate.Value.ToShortDateString()
-                }
-                else
-                {
-                    <span>Not Published</span>
-                }
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@post.PostId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@post.PostId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@post.PostId">Delete</a>
-            </td>
-        </tr>
+
+@using (Html.BeginForm()){
+    @Html.AntiForgeryToken()
+    <table class="table">
+        <thead>
+            <tr class="text-center">
+                <th>SN.</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Feature Image</th>
+                <th>Category</th>
+                <th>Tags</th>
+                @* <th>Author</th> *@
+                <th>Status</th>
+                <th>Publish Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int rowNo = 0; }
+            @foreach (var post in Model) {
+            <tr>
+                <td style="max-width:10px; text-align: center">
+                        @(rowNo += 1)
+                </td>
+                <td>
+                    @post.Title
+                </td>
+                <td>
+                    @HtmlHelpers.StripHtmlTruncate(post.PostContent)
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(post.FeatureImageUrl))
+                    {
+                        <img src="@post.FeatureImageUrl" alt="Feature Image" style="width: 100px; height: auto;" />
+                    }
+                    else
+                    {
+                        <span>No Image</span>
+                    }
+                </td>
+                <td>
+                    @post.Categories
+                </td>
+                <td>
+                    @post.Tags
+                </td>
+                @* <td>
+                    @post.Author
+                </td> *@
+                <td>
+                    <select class="status-dropdown" data-postid="@post.PostId">
+                        <option value="Published" selected="@(post.PostStatus == "Published")">Published</option>
+                        <option value="Draft" selected="@(post.PostStatus == "Draft")">Draft</option>
+                    </select>
+                </td>
+                <td>
+                    @if (post.PublishedDate.HasValue)
+                    {
+                        @post.PublishedDate.Value.ToShortDateString()
+                    }
+                    else
+                    {
+                        <span>Not Published</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@post.PostId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@post.PostId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@post.PostId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
 }
-    </tbody>
-</table>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle status dropdown changes
+            document.querySelectorAll('.status-dropdown').forEach(dropdown => {
+                dropdown.addEventListener('change', function() {
+                    const postId = this.dataset.postid;
+                    const newStatus = this.value;
+
+                    // Show confirmation only when publishing
+                    if (newStatus === 'Published') {
+                        if (!confirm('Are you sure you want to publish this post?')) {
+                            this.value = 'Draft'; // Reset to previous value
+                            return;
+                        }
+                    }
+
+                    updatePostStatus(postId, newStatus);
+                });
+            });
+        });
+
+        async function updatePostStatus(postId, newStatus) {
+            try {
+                console.log('Attempting to update:', { postId, newStatus });
+        
+                const response = await fetch(`/admin/post/update-status/${postId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    },
+                    body: JSON.stringify({ newStatus: newStatus })
+                });
+
+                console.log('Response status:', response.status);
+                const responseBody = await response.text();
+                console.log('Response body:', responseBody);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                console.log('Status updated successfully');
+                location.reload(); // Refresh to show changes
+            } catch (error) {
+                console.error('Full error details:', error);
+                alert(`Error updating status: ${error.message}`);
+            }
+        }
+    </script>
+}

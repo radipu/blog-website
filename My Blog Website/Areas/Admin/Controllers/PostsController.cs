@@ -25,6 +25,31 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             return View(posts);
         }
 
+        [HttpPost]
+        [Route("admin/post/update-status/{id}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateStatus(int id, [FromBody] StatusUpdateModel model)
+        {
+            var post = await _db.posts.FindAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            post.PostStatus = model.NewStatus;
+
+            // Update publish date if publishing
+            if (model.NewStatus == "Published" && !post.PublishedDate.HasValue)
+            {
+                post.PublishedDate = DateTime.Now;
+            }
+
+            _db.posts.Update(post);
+            await _db.SaveChangesAsync();
+
+            return Ok();
+        }
+
         [HttpGet]
         [Route("admin/post/create")]
         public IActionResult Create()
@@ -163,12 +188,34 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("admin/post/edit/{id}")]
-        public async Task<IActionResult> Edit(Posts post)
+        public async Task<IActionResult> Edit(int id, Posts post)
         {
+            if (id != post.PostId)
+            {
+                return NotFound();
+            }
+
             if (ModelState.IsValid)
             {
-                _db.Update(post);
+                var existingPost = await _db.posts.FindAsync(id);
+                if (existingPost == null)
+                {
+                    return NotFound();
+                }
+
+                // Update each property from the form data
+                existingPost.Title = post.Title;
+                existingPost.PostContent = post.PostContent;
+                existingPost.PostDescription = post.PostDescription;
+                existingPost.Categories = post.Categories;
+                existingPost.Tags = post.Tags;
+                existingPost.FeatureImageUrl = post.FeatureImageUrl;
+                existingPost.PostStatus = post.PostStatus;
+                existingPost.PublishedDate = post.PublishedDate;
+
+                _db.posts.Update(existingPost);
                 await _db.SaveChangesAsync();
+
                 return RedirectToAction("Index");
             }
             return View(post);

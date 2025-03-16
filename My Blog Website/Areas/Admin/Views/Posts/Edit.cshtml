@@ -21,11 +21,12 @@
     <!-- Toggle Button -->
     <button type="button" id="toggleSidebarButton">☰</button>
 
-    <form asp-action="edit" method="post" enctype="multipart/form-data" id="postForm">
+    <form asp-action="edit" method="post" enctype="multipart/form-data">
         <div asp-validation-summary="All" class="text-danger"></div>
         <input type="hidden" asp-for="Categories" id="selectedCategories" />
         <input type="hidden" asp-for="Tags" id="selectedTags" />
         <input type="hidden" asp-for="FeatureImageUrl" id="featuredImageData" />
+        <input type="hidden" asp-for="PostId" />
 
         <div class="col-lg-12 page-main">
             <div class="new-post">
