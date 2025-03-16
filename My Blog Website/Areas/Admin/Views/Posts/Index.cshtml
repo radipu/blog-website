@@ -17,6 +17,19 @@
     </div>
 </button> *@
 
+<div class="search-container mb-4">
+    <div id="searchLoading" class="spinner-border text-primary ml-2" style="display: none; margin: 10px;"></div>
+    <div class="input-group" style="width: 300px;">
+        <input type="text" class="form-control" id="liveSearchInput" 
+               placeholder="Start typing to search...">
+        <div class="input-group-append">
+            <span class="input-group-text">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
+    </div>
+</div>
+
 @using (Html.BeginForm()){
     @Html.AntiForgeryToken()
     <table class="table">
@@ -143,5 +156,98 @@
                 alert(`Error updating status: ${error.message}`);
             }
         }
+
+        //search post in admin start
+        let searchTimeout;
+        let originalPosts = [];
+
+        // Store original posts on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            originalPosts = Array.from(document.querySelectorAll('tbody tr')).map(row => row.outerHTML);
+        });
+
+        document.getElementById('liveSearchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.trim();
+            clearTimeout(searchTimeout);
+            
+            // Show loading spinner immediately
+            document.getElementById('searchLoading').style.display = 'inline-block';
+
+            searchTimeout = setTimeout(async () => {
+                try {
+                    if (searchTerm === '') {
+                        // Restore original posts immediately
+                        restoreOriginalPosts();
+                        document.getElementById('searchLoading').style.display = 'none';
+                        return;
+                    }
+
+                    const response = await fetch(`/admin/posts/search?term=${encodeURIComponent(searchTerm)}`);
+                    const posts = await response.json();
+                    
+                    updateTable(posts);
+                } catch (error) {
+                    console.error('Search error:', error);
+                    alert('Failed to search posts. Check console for details.');
+                } finally {
+                    document.getElementById('searchLoading').style.display = 'none';
+                }
+            }, 300);
+        });
+
+        function restoreOriginalPosts() {
+            const tbody = document.querySelector('tbody');
+            tbody.innerHTML = originalPosts.join('');
+        }
+
+        function updateTable(posts) {
+            const tbody = document.querySelector('tbody');
+            tbody.innerHTML = '';
+
+            posts.forEach((post, index) => {
+                const row = `
+                    <tr>
+                        <td style="max-width:10px; text-align: center">${index + 1}</td>
+                        <td>${escapeHtml(post.title)}</td>
+                        <td>${escapeHtml(truncateText(post.postContent, 100))}</td>
+                        <td>
+                            ${post.featureImageUrl ? 
+                                `<img src="${escapeHtml(post.featureImageUrl)}" style="width: 100px;">` : 
+                                '<span>No Image</span>'}
+                        </td>
+                        <td>${escapeHtml(post.categories)}</td>
+                        <td>${escapeHtml(post.tags)}</td>
+                        <td>${escapeHtml(post.postStatus)}</td>
+                        <td>
+                            ${post.publishedDate ? 
+                                new Date(post.publishedDate).toLocaleDateString() : 
+                                'Not Published'}
+                        </td>
+                        <td>
+                            <a href="/admin/post/edit/${post.postId}">Edit</a> |
+                            <a href="/admin/post/details/${post.postId}">Details</a> |
+                            <a href="/admin/post/delete/${post.postId}">Delete</a>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        // Helper functions
+        function truncateText(text, maxLength) {
+            return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+        }
+
+        function escapeHtml(unsafe) {
+            if (!unsafe) return '';
+            return unsafe.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+        //search post in admin end
     </script>
 }

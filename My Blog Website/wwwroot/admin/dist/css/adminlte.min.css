@@ -56261,3 +56261,24 @@ button a:hover {
   .authorDetails{
 	  margin: 50px;
   }
+
+  /*search post in admin*/
+  .search-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input-group {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+    margin-left: 5px;
+}
+
+.spinner-border {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 0.2em;
+}

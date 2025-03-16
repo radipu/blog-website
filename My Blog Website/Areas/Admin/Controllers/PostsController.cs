@@ -17,12 +17,56 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpGet]
         [Route("admin/posts")]
-        public IActionResult Index()
+        public IActionResult Index(string searchTerm)
         {
-            List<Posts> posts = _db.posts
-                .OrderByDescending(p => p.PublishedDate)
+            var posts = _db.posts.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                var search = searchTerm.Trim().ToLower();
+                posts = posts.Where(p =>
+                    p.Title.ToLower().Contains(search) ||
+                    p.PostDescription.ToLower().Contains(search) ||
+                    p.Categories.ToLower().Contains(search) ||
+                    p.Tags.ToLower().Contains(search)
+                );
+            }
+
+            ViewData["CurrentFilter"] = searchTerm; // Preserve search term
+            return View(posts.OrderByDescending(p => p.PublishedDate).ToList());
+        }
+
+        [HttpGet]
+        [Route("/admin/posts/search")]
+        public IActionResult SearchPosts(string term)
+        {
+            var query = _db.posts.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(term))
+            {
+                query = query.Where(p =>
+                    p.Title.Contains(term) ||
+                    p.PostDescription.Contains(term) ||
+                    p.Categories.Contains(term) ||
+                    p.Tags.Contains(term));
+            }
+
+            var results = query.OrderByDescending(p => p.PublishedDate)
+                .Select(p => new
+                {
+                    p.PostId,
+                    p.Title,
+                    PostContent = p.PostContent,
+                    p.PostDescription,
+                    FeatureImageUrl = p.FeatureImageUrl,
+                    p.Categories,
+                    p.Tags,
+                    PostStatus = p.PostStatus,
+                    p.PublishedDate
+                })
                 .ToList();
-            return View(posts);
+
+            return Json(results);
         }
 
         [HttpPost]
