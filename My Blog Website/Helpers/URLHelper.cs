@@ -8,27 +8,23 @@ namespace My_Blog_Website.Helpers
         {
             if (string.IsNullOrEmpty(title)) return string.Empty;
 
-            return Regex.Replace(title.ToLower(), @"[^a-z0-9\s-]", "")
-                       .Replace(" ", "-")
-                       .Replace(".", "")
-                       .Replace(",", "")
-                       .Replace("?", "")
-                       .Replace("!", "")
-                       .Replace("--", "-")
-                       .Trim('-');
+            return title.ToLower().Trim()
+                   .Replace(" ", "-")
+                   .Replace("--", "-")
+                   .Trim('-');
         }
 
         public static string GenerateCategorySlug(string categories)
         {
             if (string.IsNullOrEmpty(categories)) return "uncategorized";
             return Regex.Replace(categories.ToLower(), @"[^a-z0-9\s-]", "")
-                       .Replace(" ", "-")
-                       .Replace(".", "")
-                       .Replace(",", "")
-                       .Replace("?", "")
-                       .Replace("!", "")
-                       .Replace("--", "-")
-                       .Trim('-');
+                   .Replace(" ", "-")
+                   .Replace(".", "")
+                   .Replace(",", "")
+                   .Replace("?", "")
+                   .Replace("!", "")
+                   .Replace("--", "-")
+                   .Trim('-');
         }
     }
 }
