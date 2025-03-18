@@ -1171,6 +1171,29 @@ a, a:hover
   transition: 0.4s;
 }
 
+.search-results-dropdown {
+    position: absolute;
+    top: 100%; /* Places it directly below the search box */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 500px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000; /* Ensures it appears above navbar and RenderBody() */
+}
+
+.search-results-dropdown a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.search-results-dropdown a:hover {
+    background-color: #f0f0f0;
+}
+
 .gototop {
 	position: fixed;
 	bottom: 20px;

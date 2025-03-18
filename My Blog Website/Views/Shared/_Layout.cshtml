@@ -36,6 +36,9 @@
                             <a class="search-btn fh5co_display_table" id="searchBtn">
                                 <div class="fh5co_verticle_middle"><i class="fa fa-search"></i></div>
                             </a>
+                            <div id="searchResults" class="search-results-dropdown" style="display:none;">
+                                <!-- Search results will be inserted here -->
+                            </div>
                         </div>
 
                         <div class="text-center d-inline-block">
@@ -258,5 +261,43 @@
     <!-- Main -->
     <script src="~/js/main.js"></script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        var searchInput = document.getElementById('searchInput');
+        var searchResults = document.getElementById('searchResults');
+        var debounceTimeout;
+
+        searchInput.addEventListener('input', function() {
+            clearTimeout(debounceTimeout);
+            var query = this.value;
+
+            if (query.length === 0) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            debounceTimeout = setTimeout(function() {
+                fetch('@Url.Action("Search", "Search")?query=' + encodeURIComponent(query))
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        return response.json();
+                    })
+                    .then(data => {
+                        searchResults.innerHTML = '';
+                        if (data.length > 0) {
+                            data.forEach(post => {
+                                var link = document.createElement('a');
+                                link.href = '/' + post.categories + '/' + post.slug;
+                                link.textContent = post.title;
+                                searchResults.appendChild(link);
+                            });
+                            searchResults.style.display = 'block';
+                        } else {
+                            searchResults.style.display = 'none';
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }, 300);
+        });
+    </script>
 </body>
 </html>
