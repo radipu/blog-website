@@ -50,6 +50,17 @@
                         <div class="text-center d-inline-block">
                             <a class="fh5co_display_table" href="https://fb.com/radipu13" target="_blank"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
                         </div>
+
+                        <div class="flag-selector">
+                            <!-- Language selector -->
+                            <div class="selected-flag" onclick="toggleDropdown()">
+                                <img id="current-flag" src="https://flagcdn.com/w40/us.png" width="30">
+                            </div>
+                            <div class="flag-dropdown" id="flagDropdown"></div>
+                        </div>
+
+                        <!-- Google Translate Container -->
+                        <div id="google_translate_element"></div>
                         <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
                         @*<div class="d-inline-block text-center dd_position_relative ">
                             <select class="form-control fh5co_text_select_option">
@@ -97,7 +108,7 @@
                                      <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
                                      aria-haspopup="true" aria-expanded="false">Portfolio <span class="sr-only">(current)</span></a>
                                     <div class="dropdownmenu-content">
-                                        <a href="">Live Demonstration</a>
+                                        <a href="">Projects</a>
                                         <a href="https://graphics.radipu.com/" target="_blank">Graphics</a>
                                         <a href="https://cv.radipu.com/" target="_blank">Resume</a>
                                         <a href="https://radipu.com/" target="_blank">My Intro</a>
@@ -246,5 +257,6 @@
     <script src="~/js/jquery.waypoints.min.js"></script>
     <!-- Main -->
     <script src="~/js/main.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

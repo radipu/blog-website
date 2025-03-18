@@ -1052,9 +1052,65 @@ a, a:hover
 	margin: 20px 0 !important
 }
 
-.goog-te-combo {
-	padding: 10px 5px !important
+.text-center.d-inline-block {
+    display: inline-flex !important;
+    align-items: center;
+    vertical-align: middle;
 }
+
+.d-inline-block {
+    margin-right: -15px; /* Controls the gap between icons */
+}
+
+.flag-selector {
+            position: relative;
+            display: inline-block;
+            z-index: 9999;
+        }
+
+        .selected-flag {
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+
+        .flag-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .flag-item {
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+
+        .flag-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .flag-item img {
+            width: 30px;
+            height: 20px;
+            object-fit: cover;
+            border: 1px solid #eee;
+        }
+
+        /* Hide Google elements */
+        #google_translate_element, .goog-te-combo, .goog-te-banner {
+            display: none !important;
+        }
 
 .goog-logo-link {
 	display: none !important

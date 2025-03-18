@@ -211,9 +211,192 @@
 	});
 
 }());
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
+//function googleTranslateElementInit() {
+//    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+//}
+
+// Supported languages (country code, language code, name)
+        const languages = [
+            { code: 'af', country: 'za', name: 'Afrikaans' },
+            { code: 'sq', country: 'al', name: 'Albanian' },
+            { code: 'am', country: 'et', name: 'Amharic' },
+            { code: 'ar', country: 'sa', name: 'Arabic' },
+            { code: 'hy', country: 'am', name: 'Armenian' },
+            { code: 'az', country: 'az', name: 'Azerbaijani' },
+            { code: 'eu', country: 'es', name: 'Basque' },
+            { code: 'be', country: 'by', name: 'Belarusian' },
+            { code: 'bn', country: 'bd', name: 'Bengali' },
+            { code: 'bs', country: 'ba', name: 'Bosnian' },
+            { code: 'bg', country: 'bg', name: 'Bulgarian' },
+            { code: 'ca', country: 'ad', name: 'Catalan' },
+            { code: 'ceb', country: 'ph', name: 'Cebuano' },
+            { code: 'zh-CN', country: 'cn', name: 'Chinese (Simplified)' },
+            { code: 'zh-TW', country: 'tw', name: 'Chinese (Traditional)' },
+            { code: 'co', country: 'fr', name: 'Corsican' },
+            { code: 'hr', country: 'hr', name: 'Croatian' },
+            { code: 'cs', country: 'cz', name: 'Czech' },
+            { code: 'da', country: 'dk', name: 'Danish' },
+            { code: 'nl', country: 'nl', name: 'Dutch' },
+            { code: 'en', country: 'us', name: 'English' },
+            { code: 'eo', country: 'eo', name: 'Esperanto' },
+            { code: 'et', country: 'ee', name: 'Estonian' },
+            { code: 'fi', country: 'fi', name: 'Finnish' },
+            { code: 'fr', country: 'fr', name: 'French' },
+            { code: 'fy', country: 'nl', name: 'Frisian' },
+            { code: 'gl', country: 'es', name: 'Galician' },
+            { code: 'ka', country: 'ge', name: 'Georgian' },
+            { code: 'de', country: 'de', name: 'German' },
+            { code: 'el', country: 'gr', name: 'Greek' },
+            { code: 'gu', country: 'in', name: 'Gujarati' },
+            { code: 'ht', country: 'ht', name: 'Haitian Creole' },
+            { code: 'ha', country: 'ng', name: 'Hausa' },
+            { code: 'haw', country: 'us', name: 'Hawaiian' },
+            { code: 'he', country: 'il', name: 'Hebrew' },
+            { code: 'hi', country: 'in', name: 'Hindi' },
+            { code: 'hmn', country: 'cn', name: 'Hmong' },
+            { code: 'hu', country: 'hu', name: 'Hungarian' },
+            { code: 'is', country: 'is', name: 'Icelandic' },
+            { code: 'ig', country: 'ng', name: 'Igbo' },
+            { code: 'id', country: 'id', name: 'Indonesian' },
+            { code: 'ga', country: 'ie', name: 'Irish' },
+            { code: 'it', country: 'it', name: 'Italian' },
+            { code: 'ja', country: 'jp', name: 'Japanese' },
+            { code: 'jv', country: 'id', name: 'Javanese' },
+            { code: 'kn', country: 'in', name: 'Kannada' },
+            { code: 'kk', country: 'kz', name: 'Kazakh' },
+            { code: 'km', country: 'kh', name: 'Khmer' },
+            { code: 'rw', country: 'rw', name: 'Kinyarwanda' },
+            { code: 'ko', country: 'kr', name: 'Korean' },
+            { code: 'ku', country: 'iq', name: 'Kurdish' },
+            { code: 'ky', country: 'kg', name: 'Kyrgyz' },
+            { code: 'lo', country: 'la', name: 'Lao' },
+            { code: 'la', country: 'va', name: 'Latin' },
+            { code: 'lv', country: 'lv', name: 'Latvian' },
+            { code: 'lt', country: 'lt', name: 'Lithuanian' },
+            { code: 'lb', country: 'lu', name: 'Luxembourgish' },
+            { code: 'mk', country: 'mk', name: 'Macedonian' },
+            { code: 'mg', country: 'mg', name: 'Malagasy' },
+            { code: 'ms', country: 'my', name: 'Malay' },
+            { code: 'ml', country: 'in', name: 'Malayalam' },
+            { code: 'mt', country: 'mt', name: 'Maltese' },
+            { code: 'mi', country: 'nz', name: 'M?ori' },
+            { code: 'mr', country: 'in', name: 'Marathi' },
+            { code: 'mn', country: 'mn', name: 'Mongolian' },
+            { code: 'my', country: 'mm', name: 'Myanmar (Burmese)' },
+            { code: 'ne', country: 'np', name: 'Nepali' },
+            { code: 'no', country: 'no', name: 'Norwegian' },
+            { code: 'ny', country: 'mw', name: 'Nyanja' },
+            { code: 'or', country: 'in', name: 'Odia' },
+            { code: 'ps', country: 'af', name: 'Pashto' },
+            { code: 'fa', country: 'ir', name: 'Persian' },
+            { code: 'pl', country: 'pl', name: 'Polish' },
+            { code: 'pt', country: 'pt', name: 'Portuguese' },
+            { code: 'pa', country: 'in', name: 'Punjabi' },
+            { code: 'ro', country: 'ro', name: 'Romanian' },
+            { code: 'ru', country: 'ru', name: 'Russian' },
+            { code: 'sm', country: 'ws', name: 'Samoan' },
+            { code: 'gd', country: 'gb', name: 'Scottish Gaelic' },
+            { code: 'sr', country: 'rs', name: 'Serbian' },
+            { code: 'st', country: 'ls', name: 'Sesotho' },
+            { code: 'sn', country: 'zw', name: 'Shona' },
+            { code: 'sd', country: 'pk', name: 'Sindhi' },
+            { code: 'si', country: 'lk', name: 'Sinhala' },
+            { code: 'sk', country: 'sk', name: 'Slovak' },
+            { code: 'sl', country: 'si', name: 'Slovenian' },
+            { code: 'so', country: 'so', name: 'Somali' },
+            { code: 'es', country: 'es', name: 'Spanish' },
+            { code: 'su', country: 'id', name: 'Sundanese' },
+            { code: 'sw', country: 'tz', name: 'Swahili' },
+            { code: 'sv', country: 'se', name: 'Swedish' },
+            { code: 'tl', country: 'ph', name: 'Tagalog' },
+            { code: 'tg', country: 'tj', name: 'Tajik' },
+            { code: 'ta', country: 'in', name: 'Tamil' },
+            { code: 'tt', country: 'ru', name: 'Tatar' },
+            { code: 'te', country: 'in', name: 'Telugu' },
+            { code: 'th', country: 'th', name: 'Thai' },
+            { code: 'tr', country: 'tr', name: 'Turkish' },
+            { code: 'tk', country: 'tm', name: 'Turkmen' },
+            { code: 'uk', country: 'ua', name: 'Ukrainian' },
+            { code: 'ur', country: 'pk', name: 'Urdu' },
+            { code: 'ug', country: 'cn', name: 'Uyghur' },
+            { code: 'uz', country: 'uz', name: 'Uzbek' },
+            { code: 'vi', country: 'vn', name: 'Vietnamese' },
+            { code: 'cy', country: 'gb', name: 'Welsh' },
+            { code: 'xh', country: 'za', name: 'Xhosa' },
+            { code: 'yi', country: 'il', name: 'Yiddish' },
+            { code: 'yo', country: 'ng', name: 'Yoruba' },
+            { code: 'zu', country: 'za', name: 'Zulu' }
+        ];
+
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: languages.map(l => l.code).join(','),
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+            }, 'google_translate_element');
+
+            // Populate dropdown
+            const dropdown = document.getElementById('flagDropdown');
+            languages.forEach(lang => {
+                const item = document.createElement('div');
+                item.className = 'flag-item';
+                item.innerHTML = `
+                    <img src="https://flagcdn.com/w40/${lang.country}.png" 
+                         alt="${lang.name}"
+                         data-lang="${lang.code}">
+                    <span>${lang.name}</span>
+                `;
+                item.addEventListener('click', () => handleLanguageSelect(lang));
+                dropdown.appendChild(item);
+            });
+
+            // Force Google Translate to initialize
+            setTimeout(triggerGoogleTranslate, 500);
+        }
+
+        function handleLanguageSelect(lang) {
+            // Set Google Translate language
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang.code;
+                const event = new Event('change', { bubbles: true });
+                select.dispatchEvent(event);
+            }
+
+            // Update current flag
+            document.getElementById('current-flag').src = `https://flagcdn.com/w40/${lang.country}.png`;
+
+            // Close dropdown
+            toggleDropdown();
+        }
+
+        function triggerGoogleTranslate() {
+            // Ensure Google Translate is properly initialized
+            const select = document.querySelector('.goog-te-combo');
+            if (select && !select.value) {
+                select.value = 'en';
+                select.dispatchEvent(new Event('change'));
+            }
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('flagDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.flag-selector')) {
+                document.getElementById('flagDropdown').style.display = 'none';
+            }
+        });
+
+        // Handle Google Translate errors
+        window.onerror = function(msg, url, line) {
+            console.error('Translation error:', msg);
+            return true;
+        };
 
 //character counter
 const textareaEl = document.getElementById("message");
