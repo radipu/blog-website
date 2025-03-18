@@ -17,7 +17,7 @@ namespace My_Blog_Website.Controllers.Categories
         public ActionResult Index()
         {
             var developerPosts = _context.posts
-                                            .Where(p => p.Categories == "Developer")
+                                            .Where(p => p.Categories == "Developer" && p.PostStatus == "Published")
                                             .OrderByDescending(p => p.PublishedDate)
                                             .ToList();
 

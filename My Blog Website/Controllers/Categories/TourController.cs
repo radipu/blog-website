@@ -17,7 +17,7 @@ namespace My_Blog_Website.Controllers.Categories
         public ActionResult Index()
         {
             var tourPosts = _context.posts
-                .Where(p => p.Categories == "Tour")  // Adjust to your actual category property name
+                .Where(p => p.Categories == "Tour" && p.PostStatus == "Published")
                 .OrderByDescending(p => p.PublishedDate)
                 .ToList();
 

@@ -17,7 +17,7 @@ namespace My_Blog_Website.Controllers.Categories
         public ActionResult Index()
         {
             var technologyPosts = _context.posts
-                .Where(p => p.Categories == "Technology")  // Adjust to your actual category property name
+                .Where(p => p.Categories == "Technology" && p.PostStatus == "Published")
                 .OrderByDescending(p => p.PublishedDate)
                 .ToList();
 

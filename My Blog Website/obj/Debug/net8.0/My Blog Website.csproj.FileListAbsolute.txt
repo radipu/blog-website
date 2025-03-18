@@ -537,6 +537,12 @@ D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\My Blog Website.pdb
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Azure.Core.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Azure.Identity.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Humanizer.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\System.Web.Mvc.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\System.Web.Razor.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\System.Web.Helpers.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\System.Web.WebPages.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -588,6 +594,7 @@ D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.VisualStudio
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\Newtonsoft.Json.dll

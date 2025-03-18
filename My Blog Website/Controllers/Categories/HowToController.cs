@@ -17,7 +17,7 @@ namespace My_Blog_Website.Controllers.Categories
         public ActionResult Index()
         {
             var howtoPosts = _context.posts
-                .Where(p => p.Categories == "HowTo")  // Adjust to your actual category property name
+                .Where(p => p.Categories == "HowTo" && p.PostStatus == "Published")
                 .OrderByDescending(p => p.PublishedDate)
                 .ToList();
 
