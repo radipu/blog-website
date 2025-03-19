@@ -255,7 +255,8 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                 existingPost.Tags = post.Tags;
                 existingPost.FeatureImageUrl = post.FeatureImageUrl;
                 existingPost.PostStatus = post.PostStatus;
-                existingPost.PublishedDate = post.PublishedDate;
+                existingPost.PublishedDate = DateTime.Now;
+                existingPost.Slug = URLHelper.GeneratePostSlug(post.Title);
 
                 _db.posts.Update(existingPost);
                 await _db.SaveChangesAsync();
