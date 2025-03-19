@@ -29,12 +29,12 @@
                                 </div>
                                 <div>
                                     <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(mainPost.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(mainPost.Title)">
-                                        @mainPost.Title
+                                        <h2>@mainPost.Title</h2>
                                     </a>
                                 </div>
                                 <div>
                                     <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(mainPost.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(mainPost.Title)">
-                                        @mainPost.PostDescription
+                                        <h3>@mainPost.PostDescription</h3>
                                     </a>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                         </div>
                                         <div>
                                             <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
-                                                @post.Title
+                                                <h2 style="color: white">@post.Title</h2>
                                             </a>
                                         </div>
                                     </div>
