@@ -331,7 +331,7 @@
         // Initialize Google Translate
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en',
+                pageLanguage: 'auto',
                 includedLanguages: languages.map(l => l.code).join(','),
                 layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
             }, 'google_translate_element');
@@ -353,22 +353,54 @@
 
             // Force Google Translate to initialize
             setTimeout(triggerGoogleTranslate, 500);
+
+            const checkSelect = setInterval(() => {
+                const select = document.querySelector('.goog-te-combo');
+                if (select && select.value) {
+                    // Select element is ready and has a value
+                    clearInterval(checkSelect); // Stop checking
+                    const currentLangCode = select.value; // e.g., 'fr'
+                    const currentLang = languages.find(lang => lang.code === currentLangCode);
+                    if (currentLang) {
+                        // Update the flag image
+                        document.getElementById('current-flag').src = `https://flagcdn.com/w40/${currentLang.country}.png`;
+                    }
+                }
+            }, 100);
         }
 
         function handleLanguageSelect(lang) {
-            // Set Google Translate language
+            // Get Google Translate select element
             const select = document.querySelector('.goog-te-combo');
-            if (select) {
-                select.value = lang.code;
-                const event = new Event('change', { bubbles: true });
-                select.dispatchEvent(event);
-            }
+            if (!select) return;
 
-            // Update current flag
+            // Force new translation even if same language is selected
+            select.value = lang.code;
+    
+            // Create a custom event with re-translation trigger
+            const event = new Event('change', {
+                bubbles: true,
+                cancelable: true
+            });
+    
+            // Add translation promise
+            event.translationPromise = new Promise((resolve) => {
+                window.googleTranslateElementInit = () => resolve();
+            });
+    
+            select.dispatchEvent(event);
+
+            // Update UI
             document.getElementById('current-flag').src = `https://flagcdn.com/w40/${lang.country}.png`;
-
-            // Close dropdown
             toggleDropdown();
+
+            // Re-translate all content
+            if (window.google && google.translate) {
+                google.translate.TranslateService.TranslatePage(
+                    lang.code,
+                    () => console.log('Retranslation complete')
+                );
+            }
         }
 
         function triggerGoogleTranslate() {
