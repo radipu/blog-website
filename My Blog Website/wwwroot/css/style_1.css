@@ -116,6 +116,16 @@ a, a:hover
 
 }
 
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background: #f8f9fa; /* Match your navbar's background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow */
+}
+
 .navbar-light .navbar-nav .open>.nav-link,.navbar-light .navbar-nav .active>.nav-link,.navbar-light .navbar-nav .nav-link.open,.navbar-light .navbar-nav .nav-link.active{
     color:#fff !important;
     padding-top:12px !important;
@@ -1104,7 +1114,7 @@ a, a:hover
         .selected-flag {
             cursor: pointer;
             padding: 5px;
-			border: none
+			border: none !important
         }
 
         .flag-dropdown {
