@@ -257,6 +257,32 @@
     <script src="~/js/main.js"></script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
+        //fixed navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.container-fluid.bg-faded.padding_786');
+            const body = document.body;
+            let initialOffsetTop = navbar.offsetTop;
+            let navbarHeight = navbar.offsetHeight;
+
+            function updateNavbarPosition() {
+                initialOffsetTop = navbar.offsetTop;
+                navbarHeight = navbar.offsetHeight;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY >= initialOffsetTop) {
+                    navbar.classList.add('fixed-nav');
+                    body.style.paddingTop = navbarHeight + 'px';
+                } else {
+                    navbar.classList.remove('fixed-nav');
+                    body.style.paddingTop = '0';
+                }
+            });
+
+            window.addEventListener('resize', updateNavbarPosition);
+        });
+
+        //search in layout
         var searchInput = document.getElementById('searchInput');
         var searchResults = document.getElementById('searchResults');
         var debounceTimeout;
