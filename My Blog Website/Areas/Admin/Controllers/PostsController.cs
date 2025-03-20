@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using My_Blog_Website.Areas.Admin.Models;
+using My_Blog_Website.Areas.Public.Models;
 using My_Blog_Website.Data;
 using My_Blog_Website.Helpers;
 
@@ -194,7 +195,12 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             }
 
             // Retrieve the post by slug. You can also filter by category if needed.
-            var post = await _db.posts.FirstOrDefaultAsync(p => p.Slug == slug);
+            var post = await _db.posts
+                .Include(p => p.Comments)
+                .ThenInclude(c => c.Reactions) 
+                .Include(p => p.Comments)
+                .ThenInclude(c => c.Replies) 
+                .FirstOrDefaultAsync(p => p.Slug == slug);
 
             if (post == null)
             {
@@ -207,11 +213,77 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                 .OrderByDescending(p => p.PublishedDate)
                 .ToListAsync();
 
-            // Pass data to view
             ViewBag.SimilarPosts = similarPosts;
-            ViewBag.CurrentCategory = category;  // For debugging
+            ViewBag.CurrentCategory = category;
 
             return View(post);
+        }
+
+        [HttpPost]
+        [Route("AddComment")]
+        public async Task<IActionResult> AddComment(int PostId, string CommenterName, string CommentText, int? ParentCommentId)
+        {
+            if (string.IsNullOrEmpty(CommenterName) || string.IsNullOrEmpty(CommentText))
+            {
+                return BadRequest("Name and comment text are required.");
+            }
+
+            var comment = new Comment
+            {
+                PostId = PostId,
+                CommenterName = CommenterName,
+                ParentCommentId = ParentCommentId,
+                CommentText = CommentText,
+                CommentDate = DateTime.Now
+            };
+
+            _db.Comments.Add(comment);
+            await _db.SaveChangesAsync();
+
+            var post = await _db.posts.FirstOrDefaultAsync(p => p.PostId == PostId);
+            if (post != null)
+            {
+                return RedirectToAction("Single", new { category = post.Categories, slug = post.Slug });
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        [Route("React")]
+        public async Task<IActionResult> React(int commentId, string reactionType)
+        {
+            var validReactions = new[] { "like", "love", "care", "angry", "support" };
+            if (!validReactions.Contains(reactionType))
+            {
+                return BadRequest("Invalid reaction type.");
+            }
+
+            var reaction = await _db.Reactions
+                .FirstOrDefaultAsync(r => r.CommentId == commentId && r.ReactionType == reactionType);
+
+            if (reaction != null)
+            {
+                reaction.ReactionCount++;
+            }
+            else
+            {
+                reaction = new Reaction
+                {
+                    CommentId = commentId,
+                    ReactionType = reactionType,
+                    ReactionCount = 1
+                };
+                _db.Reactions.Add(reaction);
+            }
+
+            await _db.SaveChangesAsync();
+
+            var comment = await _db.Comments
+                .Include(c => c.Post)
+                .FirstOrDefaultAsync(c => c.CommentId == commentId);
+
+            return RedirectToAction("Single", new { category = comment.Post.Categories, slug = comment.Post.Slug });
         }
 
         [HttpGet]

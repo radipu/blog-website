@@ -71,6 +71,105 @@
                         </button>
                     </div>
                 </div>
+                <!-- After the share-section div -->
+                <div class="comments-section mt-5">
+                <h3>Comments</h3>
+                @if (Model.Comments != null && Model.Comments.Any())
+                {
+                    @foreach (var comment in Model.Comments.Where(c => c.ParentCommentId == null))
+                    {
+                        <div class="comment mb-3">
+                            <p><strong translate="no">@comment.CommenterName</strong> @(" on ") @comment.CommentDate.ToString("MMM dd, yyyy")</p>
+                            <p>@comment.CommentText</p>
+                            <div class="reactions">
+                                @if (comment.Reactions != null && comment.Reactions.Any())
+                                {
+                                    foreach (var reaction in comment.Reactions)
+                                    {
+                                        <span>@reaction.ReactionType: @reaction.ReactionCount </span>
+                                    }
+                                }
+                            </div>
+                            <div class="reaction-buttons mt-2">
+                                <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like</a>
+                                <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love</a>
+                                <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care</a>
+                                <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry</a>
+                                <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support</a>
+                            </div>
+                            <button class="btn btn-link" onclick="showReplyForm(@comment.CommentId)">Reply</button>
+
+                            <!-- Reply Form (Hidden by Default) -->
+                            <div id="reply-form-@comment.CommentId" style="display:none;" class="mt-3">
+                                <form asp-action="AddComment" method="post">
+                                    <input type="hidden" name="PostId" value="@Model.PostId" />
+                                    <input type="hidden" name="ParentCommentId" value="@comment.CommentId" />
+                                    <div class="form-group">
+                                        <label for="CommenterName">Your Name</label>
+                                        <input type="text" name="CommenterName" class="form-control" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="CommentText">Reply</label>
+                                        <textarea name="CommentText" class="form-control" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit Reply</button>
+                                </form>
+                            </div>
+
+                            <!-- Replies -->
+                            @if (comment.Replies != null && comment.Replies.Any())
+                            {
+                                <div class="replies ml-4 mt-3">
+                                    @foreach (var reply in comment.Replies)
+                                    {
+                                        <div class="comment mb-2">
+                                            <p><strong translate="no">@comment.CommenterName</strong> @(" on ") @comment.CommentDate.ToString("MMM dd, yyyy")</p>
+                                            <p>@reply.CommentText</p>
+                                            <div class="reactions">
+                                                @if (reply.Reactions != null && reply.Reactions.Any())
+                                                {
+                                                    foreach (var reaction in reply.Reactions)
+                                                    {
+                                                        <span>@reaction.ReactionType: @reaction.ReactionCount </span>
+                                                    }
+                                                }
+                                            </div>
+                                            <div class="reaction-buttons mt-2">
+                                                <!-- Fixed: Use reply.CommentId instead of comment.CommentId -->
+                                                <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like</a>
+                                                <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love</a>
+                                                <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care</a>
+                                                <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry</a>
+                                                <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support</a>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No comments yet. Be the first to comment!</p>
+                }
+            </div>
+
+                <div class="add-comment mt-5">
+                    <h4>Add a Comment</h4>
+                    <form asp-action="AddComment" method="post">
+                        <input type="hidden" name="PostId" value="@Model.PostId" />
+                        <div class="form-group">
+                            <label for="CommenterName">Your Name</label>
+                            <input type="text" name="CommenterName" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="CommentText">Comment</label>
+                            <textarea name="CommentText" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Comment</button>
+                    </form>
+                </div>
             </div>
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                 <div>
@@ -170,6 +269,15 @@
                 }, function(err) {
                     alert('Failed to copy link: ' + err);
                 });
+            }
+        </script>
+
+        <script>
+            function showReplyForm(commentId) {
+                var form = document.getElementById('reply-form-' + commentId);
+                if (form) {
+                    form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
+                }
             }
         </script>
     </body>
