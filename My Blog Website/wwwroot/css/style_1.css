@@ -1104,8 +1104,7 @@ a, a:hover
         .selected-flag {
             cursor: pointer;
             padding: 5px;
-            border: 1px solid #ddd;
-            background: white;
+			border: none
         }
 
         .flag-dropdown {

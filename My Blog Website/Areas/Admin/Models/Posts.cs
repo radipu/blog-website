@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using My_Blog_Website.Areas.Public.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace My_Blog_Website.Areas.Admin.Models
@@ -28,5 +29,7 @@ namespace My_Blog_Website.Areas.Admin.Models
         public string PostStatus { get; set; }
 
         public DateTime? PublishedDate { get; set; }
+
+        public ICollection<Comment>? Comments { get; set; }
     }
 }
