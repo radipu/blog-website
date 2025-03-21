@@ -43,7 +43,7 @@
                 <th>Tags</th>
                 @* <th>Author</th> *@
                 <th>Status</th>
-                <th>Publish Date</th>
+                <th>Modify Date</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -52,7 +52,7 @@
             @foreach (var post in Model) {
             <tr>
                 <td style="max-width:10px; text-align: center">
-                        @(rowNo += 1)
+                    @(rowNo += 1)
                 </td>
                 <td>
                     @post.Title
@@ -86,19 +86,19 @@
                     </select>
                 </td>
                 <td>
-                    @if (post.PublishedDate.HasValue)
+                    @if (post.LastModifiedDate.HasValue)
                     {
-                        @post.PublishedDate.Value.ToShortDateString()
+                        @post.LastModifiedDate.Value.ToShortDateString()
                     }
                     else
                     {
                         <span>Not Published</span>
                     }
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@post.PostId">Edit</a> |
-                    <a asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@post.PostId">Delete</a>
+                <td style="width: 100px">
+                    <a asp-action="Edit" asp-route-id="@post.PostId"><i class="fa fa-pen-square"></i></a> |
+                    <a asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)"><i class="fa fa-info-circle"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@post.PostId"><i class="fa fa-trash"></i></a>
                 </td>
             </tr>
     }

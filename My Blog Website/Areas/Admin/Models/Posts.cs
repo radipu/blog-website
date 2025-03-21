@@ -31,5 +31,8 @@ namespace My_Blog_Website.Areas.Admin.Models
         public DateTime? PublishedDate { get; set; }
 
         public ICollection<Comment>? Comments { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm}")]
+        public DateTime? LastModifiedDate { get; set; }
     }
 }

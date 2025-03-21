@@ -213,7 +213,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             // Retrieve the post by slug. You can also filter by category if needed.
             var post = await _db.posts
                 .Include(p => p.Comments)
-                .ThenInclude(c => c.Reactions) 
+                .ThenInclude(c => c.Reactions)
                 .Include(p => p.Comments)
                 .ThenInclude(c => c.Replies) 
                 .FirstOrDefaultAsync(p => p.Slug == slug);
@@ -335,6 +335,14 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                     return NotFound();
                 }
 
+                // Track changes
+                var hasChanges = !existingPost.Title.Equals(post.Title) ||
+                                !existingPost.PostContent.Equals(post.PostContent) ||
+                                !existingPost.PostDescription.Equals(post.PostDescription) ||
+                                !existingPost.FeatureImageUrl.Equals(post.FeatureImageUrl) ||
+                                !existingPost.Categories.Equals(post.Categories) ||
+                                !existingPost.Tags.Equals(post.Tags);
+
                 // Update each property from the form data
                 existingPost.Title = post.Title;
                 existingPost.PostContent = post.PostContent;
@@ -343,8 +351,13 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                 existingPost.Tags = post.Tags;
                 existingPost.FeatureImageUrl = post.FeatureImageUrl;
                 existingPost.PostStatus = post.PostStatus;
-                existingPost.PublishedDate = DateTime.Now;
                 existingPost.Slug = URLHelper.GeneratePostSlug(post.Title);
+
+                // Only update if changes detected
+                if (hasChanges)
+                {
+                    existingPost.LastModifiedDate = DateTime.Now;
+                }
 
                 _db.posts.Update(existingPost);
                 await _db.SaveChangesAsync();
