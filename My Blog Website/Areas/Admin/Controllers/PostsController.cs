@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using My_Blog_Website.Areas.Admin.Models;
+using My_Blog_Website.Areas.Public.Interfaces;
 using My_Blog_Website.Areas.Public.Models;
 using My_Blog_Website.Data;
 using My_Blog_Website.Helpers;
@@ -11,9 +12,12 @@ namespace My_Blog_Website.Areas.Admin.Controllers
     public class PostsController : Controller
     {
         private readonly ApplicationDbContext _db;
-        public PostsController(ApplicationDbContext db)
+        private readonly IEmailService _emailService;
+
+        public PostsController(ApplicationDbContext db, IEmailService emailService)
         {
             _db = db;
+            _emailService = emailService;
         }
 
         [HttpGet]
@@ -153,7 +157,19 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                     posts.PublishedDate = DateTime.Now;
                     _db.Add(posts);
                     await _db.SaveChangesAsync();
-                    return RedirectToAction("Index");
+
+                    // Send notifications
+                    var subscribers = await _db.subscribers
+                        .Where(s => s.IsActive)
+                        .Select(s => s.Email)
+                        .ToListAsync();
+
+                    foreach (var email in subscribers)
+                    {
+                        await _emailService.SendNewPostNotificationAsync(email, posts.Title, posts.PostDescription, posts.Categories, posts.Slug);
+                    }
+
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
                 {

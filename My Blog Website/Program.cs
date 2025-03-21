@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using My_Blog_Website.Areas.Public.Interfaces;
+using My_Blog_Website.Areas.Public.Services;
 using My_Blog_Website.Data;
 using System.Text.Json;
 
@@ -14,6 +16,13 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IEmailService, EmailService>();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(20);
+});
 
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options =>
@@ -56,3 +65,4 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+app.UseSession();
