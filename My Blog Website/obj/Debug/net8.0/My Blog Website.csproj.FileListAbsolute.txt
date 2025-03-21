@@ -798,3 +798,8 @@ D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\refint\My Blog Website
 D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.pdb
 D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.genruntimeconfig.cache
 D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\ref\My Blog Website.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\MailKit.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\MimeKit.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

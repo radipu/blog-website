@@ -218,15 +218,29 @@
                 <a href="#" class="footer_img_post_6"><img src="~/images/ryan-moreno-98837.jpg" alt="img"/></a>
             </div>
         </div>
-        <div class="row justify-content-center pt-2 pb-4">
-            <div class="col-12 col-md-8 col-lg-7 ">
-                <div class="input-group">
-                    <span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                     <input type="email" class="form-control fh5co_footer_text_box" placeholder="Enter your email..." aria-describedby="basic-addon1">
-                    <a href="#" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"> <i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</a>
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Message"]
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Error"]
+            </div>
+        }
+        <form method="post" asp-controller="Subscription" asp-action="Subscribe">
+            <div class="row justify-content-center pt-2 pb-4">
+                <div class="col-12 col-md-8 col-lg-7 ">
+                    <div class="input-group">
+                        <span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                         <input type="email" name="email" class="form-control fh5co_footer_text_box" placeholder="Enter your email for newsletter" aria-describedby="basic-addon1" required>
+                         <button type="submit" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"><i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 
