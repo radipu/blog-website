@@ -7,110 +7,194 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
-    <script src="~/admin/dist/js/adminlte.js"></script>
-    <link rel="stylesheet" href="~/admin/dist/css/adminlte.min.css">
-</head>
+    <head>
+        <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
+        <script src="~/admin/dist/js/adminlte.js"></script>
+        <link rel="stylesheet" href="~/admin/dist/css/adminlte.min.css">
+    </head>
 
-<body>
-    <div>
-        <button type="button" class="btn" id="backtolist"><a asp-action="Index"><i class="fa fa-backward"></i>  Back to List</a></button>
-    </div>
+    <body>
+        <div>
+            <button type="button" class="btn" id="backtolist"><a asp-action="Index"><i class="fa fa-backward"></i>  Back to List</a></button>
+        </div>
 
-    <!-- Toggle Button -->
-    <button type="button" id="toggleSidebarButton">☰</button>
+        <!-- Toggle Button -->
+        <button type="button" id="toggleSidebarButton">☰</button>
 
-    <form asp-action="edit" method="post" enctype="multipart/form-data">
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <input type="hidden" asp-for="Categories" id="selectedCategories" />
-        <input type="hidden" asp-for="Tags" id="selectedTags" />
-        <input type="hidden" asp-for="FeatureImageUrl" id="featuredImageData" />
-        <input type="hidden" asp-for="PostId" />
+        <form asp-action="edit" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Categories" id="selectedCategories" name="Categories" />
+            <input type="hidden" asp-for="Tags" id="selectedTags" />
+            <input type="hidden" asp-for="FeatureImageUrl" id="featuredImageData" />
+            <input type="hidden" asp-for="PostId" />
 
-        <div class="col-lg-12 page-main">
-            <div class="new-post">
-                <input type="text" class="title-input" placeholder="Post title" 
-                       asp-for="Title" id="post_title" />
-                <textarea id="post_text" asp-for="PostContent"></textarea>
-                <input type="text" class="description-input" placeholder="What the post about?" asp-for="PostDescription" id="post_title" />
-            </div>
-            <!-- Sidebar -->
-            <div id="rightsidebar" class="collapsed">
-                <div id="sidebarwrapper">
-                    <button type="submit" class="btn btn-success" name="PostStatus" value="Published" id="publish-button">Publish</button>
-                    <button type="submit" class="btn btn-primary" name="PostStatus" value="Draft" id="draft-button">Save as Draft</button>
-                    <button type="button" class="btn btn-danger" id="cancel-button"><a asp-controller="posts" asp-action="Index">Cancel</a></button>
-                    <hr />
+            <div class="col-lg-12 page-main">
+                <div class="new-post">
+                    <input type="text" class="title-input" placeholder="Post title" 
+                           asp-for="Title" id="post_title" />
+                    <textarea id="post_text" asp-for="PostContent"></textarea>
+                    <input type="text" class="description-input" placeholder="What the post about?" asp-for="PostDescription" id="post_title" />
+                </div>
+                <!-- Sidebar -->
+                <div id="rightsidebar" class="collapsed">
+                    <div id="sidebarwrapper">
+                        <button type="submit" class="btn btn-success" name="PostStatus" value="Published" id="publish-button">Publish</button>
+                        <button type="submit" class="btn btn-primary" name="PostStatus" value="Draft" id="draft-button">Save as Draft</button>
+                        <button type="button" class="btn btn-danger" id="cancel-button"><a asp-controller="posts" asp-action="Index">Cancel</a></button>
+                        <hr />
 
-                    <label class="featureImageLBL">Feature Image</label>
-                    <!--File Upload-->
-                    <div class="custom-file">
-                        <input type="file" class="feature" id="featureImage" name="featureImage" onchange="clearUrlInput(); previewImage(event)"
-                        asp-for="FeatureImageUrl">
-                        <label class="custom-file-label" for="featureImage">Choose file</label>
-                    </div>
-                    <!--URL Input-->
-                    <div class="mt-3">
-                        <label class="featureImageURL">Or</label>
-                        <input type="text" class="form-control" id="featuredImageUrl" oninput="clearFileInput(); updateImagePreview(this.value)"
-                        placeholder="Use Image URL" asp-for="FeatureImageUrl">
-                        <img id="urlImagePreview" src="#" alt="URL Image Preview" style="display:none; width: 300px; margin-top: 10px;">
-                    </div>
-                    <div class="mt-3">
+                        <label class="featureImageLBL">Feature Image</label>
+                        <!--File Upload-->
+                        <div class="custom-file">
+                            <input type="file" class="feature" id="featureImage" name="featureImage" onchange="clearUrlInput(); handleFileUpload(event)"
+                            asp-for="FeatureImageUrl">
+                            <label class="custom-file-label" for="featureImage">Choose file</label>
+                        </div>
+                        <!--URL Input-->
                         <div class="mt-3">
-                            <img id="urlImagePreview" src="#" alt="URL Preview" style="display:none; max-width: 300px; margin-top: 10px;">
-                            <img id="featureImagePreview" src="#" alt="File Preview" style="display:none; max-width: 300px; margin-top: 10px;">
+                            <label class="featureImageURL">Or</label>
+                            <input type="text" class="form-control" id="featuredImageUrl" 
+                                   oninput="handleUrlInput(this.value)" 
+                                   placeholder="Use Image URL">
                         </div>
-                    </div>
-                    <hr />
+                        <!-- Image Previews -->
+                        <div class="mt-3">
+                            <img id="imagePreview" src="@Model.FeatureImageUrl" 
+                                 alt="Preview" style="display: none; max-width: 300px; margin-top: 10px;">
+                        </div>
+                        <hr />
                 
-                    <label class="category">Categories</label>
-                    <div class="category-check">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check1" value="Thoughts">
-                            <label class="form-check-label" for="check1">Thoughts</label>
+                        <label class="category">Categories</label>
+                        <div class="category-check">
+                            @{
+                                var categories = Model.Categories?.Split(',') ?? Array.Empty<string>();
+                            }
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input category-checkbox" id="check1" value="Thoughts" @(categories.Contains("Thoughts") ? "checked" : "")>
+                                <label class="form-check-label" for="check1">Thoughts</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input category-checkbox" id="check2" value="Technology" @(categories.Contains("Technology") ? "checked" : "")>
+                                <label class="form-check-label" for="check2">Technology</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input category-checkbox" id="check3" value="Ideas" @(categories.Contains("Ideas") ? "checked" : "")>
+                                <label class="form-check-label" for="check3">Ideas</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input category-checkbox" id="check4" value="HowTo" @(categories.Contains("HowTo") ? "checked" : "")>
+                                <label class="form-check-label" for="check4">How To</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input category-checkbox" id="check5" value="Tour" @(categories.Contains("Tour") ? "checked" : "")>
+                                <label class="form-check-label" for="check5">Tour</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input category-checkbox" id="check6" value="Developer" @(categories.Contains("Developer") ? "checked" : "")>
+                                <label class="form-check-label" for="check6">Developer</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input category-checkbox" id="check7" value="Book-Review" @(categories.Contains("Book-Review") ? "checked" : "")>
+                                <label class="form-check-label" for="check7">Book Review</label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check2" value="Technology">
-                            <label class="form-check-label" for="check2">Technology</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check3" value="Ideas">
-                            <label class="form-check-label" for="check3">Ideas</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check4" value="HowTo">
-                            <label class="form-check-label" for="check4">How To</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check5" value="Tour">
-                            <label class="form-check-label" for="check5">Tour</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check6" value="Developer">
-                            <label class="form-check-label" for="check6">Developer</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check7" value="Book-Review">
-                            <label class="form-check-label" for="check7">Book Review</label>
-                        </div>
-                    </div>
-                    <hr />
+                        <hr />
 
-                    <label class="tags">Tags</label>
-                    <div id="tagContainer" class="tag-input-container">
-                        <input type="text" id="tagInput" placeholder="Enter tags" asp-for="Tags" />
-                    </div>
-                    <hr />
+                        <label class="tags">Tags</label>
+                        <div id="tagContainer" class="tag-input-container">
+                            <input type="text" id="tagInput" placeholder="Enter tags" asp-for="Tags" />
+                        </div>
+                        <hr />
 
-                    <label class="date">Date</label>
-                    <div id="dateContainer" class="date-input-container">
-                        <input type="date" id="dateInput" asp-for="PublishedDate" />
+                        <label class="date">Date</label>
+                        <div id="dateContainer" class="date-input-container">
+                            <input type="date" id="dateInput" asp-for="PublishedDate" />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-</body>
+        </form>
+
+        @section Scripts {
+            <script>
+                // Initialize categories from hidden input
+                function updateCategorySelection() {
+                    const selected = [];
+                    document.querySelectorAll('.category-checkbox:checked').forEach(checkbox => {
+                        selected.push(checkbox.value);
+                    });
+                    document.getElementById('selectedCategories').value = selected.join(',');
+                }
+
+                // Update on page load
+                document.addEventListener('DOMContentLoaded', updateCategorySelection);
+        
+                // Update on checkbox change
+                document.querySelectorAll('.category-checkbox').forEach(checkbox => {
+                    checkbox.addEventListener('change', updateCategorySelection);
+                });
+
+                // Initialize preview with existing image
+                document.addEventListener('DOMContentLoaded', function() {
+                    const currentImage = '@Model.FeatureImageUrl';
+                    if (currentImage) {
+                        const isDataURL = currentImage.startsWith('data:image');
+                        const preview = document.getElementById('imagePreview');
+        
+                        preview.style.display = 'block';
+                        preview.src = currentImage;
+        
+                        if (!isDataURL) {
+                            document.getElementById('featuredImageUrl').value = currentImage;
+                        }
+                    }
+                });
+
+                function handleFileUpload(event) {
+                    const file = event.target.files[0];
+                    const preview = document.getElementById('imagePreview');
+                    const urlInput = document.getElementById('featuredImageUrl');
+                    const hiddenInput = document.getElementById('featuredImageData');
+
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            preview.style.display = 'block';
+                            preview.src = e.target.result;
+                            hiddenInput.value = e.target.result; // Set base64 data
+                            urlInput.value = ''; // Clear URL input
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        preview.style.display = 'none';
+                        hiddenInput.value = '';
+                    }
+                }
+
+                function handleUrlInput(value) {
+                    const preview = document.getElementById('imagePreview');
+                    const fileInput = document.getElementById('featureImage');
+                    const hiddenInput = document.getElementById('featuredImageData');
+
+                    if (value) {
+                        preview.style.display = 'block';
+                        preview.src = value;
+                        hiddenInput.value = value; // Set URL directly
+                        fileInput.value = ''; // Clear file input
+                    } else {
+                        preview.style.display = 'none';
+                        hiddenInput.value = '';
+                    }
+                }
+
+                function clearFileInput() {
+                    document.getElementById('featureImage').value = '';
+                }
+
+                function clearUrlInput() {
+                    document.getElementById('featuredImageUrl').value = '';
+                }
+            </script>
+        }
+    </body>
 </html>
