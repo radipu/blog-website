@@ -24,6 +24,7 @@ namespace My_Blog_Website.Areas.Admin.Models
 
         public string? AboutAuth { get; set; }
 
-        public string AuthorImage { get; set; }
+        public byte[] AuthorImage { get; set; }
+        public string ImageContentType { get; set; }
     }
 }

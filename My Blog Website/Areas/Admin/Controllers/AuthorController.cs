@@ -30,15 +30,71 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("admin/author/create")]
-        public async Task<IActionResult> Create(Authors author)
+        public async Task<IActionResult> Create([Bind("FirstName,LastName,Username,Password,Email,AboutAuth")] Authors author, IFormFile authorImage)
         {
-            if (ModelState.IsValid)
+            // Manually clear model state for image fields
+            ModelState.Remove("AuthorImage");
+            ModelState.Remove("ImageContentType");
+
+            try
             {
-                _context.Add(author);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                // Image validation
+                if (authorImage == null || authorImage.Length == 0)
+                {
+                    ModelState.AddModelError("AuthorImage", "Author image is required");
+                    return View(author);
+                }
+
+                // Validate file type/size
+                var allowedTypes = new[] { "image/jpeg", "image/png", "image/gif" };
+                if (!allowedTypes.Contains(authorImage.ContentType.ToLower()))
+                {
+                    ModelState.AddModelError("AuthorImage", "Only JPG, PNG, or GIF allowed");
+                    return View(author);
+                }
+
+                if (authorImage.Length > 2 * 1024 * 1024) // 2MB
+                {
+                    ModelState.AddModelError("AuthorImage", "File size exceeds 2MB limit");
+                    return View(author);
+                }
+
+                var existingAuthor = _context.authors.FirstOrDefault(a => a.Username == author.Username || a.Email == author.Email);
+
+                if (existingAuthor != null)
+                {
+                    ModelState.AddModelError("Username", "Username already exists");
+                    return View(author);
+                }
+
+                // Process image
+                using var ms = new MemoryStream();
+                await authorImage.CopyToAsync(ms);
+                author.AuthorImage = ms.ToArray();
+                author.ImageContentType = authorImage.ContentType;
+
+                // Final validation
+                if (ModelState.IsValid)
+                {
+                    _context.Add(author);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
             }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"Error saving author: {ex.Message}");
+            }
+
             return View(author);
+        }
+
+        [HttpGet]
+        public IActionResult GetImage(int id)
+        {
+            var author = _context.authors.Find(id);
+            if (author?.AuthorImage == null) return NotFound();
+            return File(author.AuthorImage, author.ImageContentType);
         }
 
         [HttpGet]

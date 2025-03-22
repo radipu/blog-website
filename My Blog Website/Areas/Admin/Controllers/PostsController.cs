@@ -133,7 +133,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                     // Handle file upload
                     if (hasFile)
                     {
-                        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "FeatureImages");
                         Directory.CreateDirectory(uploadsFolder);
 
                         var fileName = Guid.NewGuid().ToString() + Path.GetExtension(featureImage.FileName);
@@ -143,7 +143,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                         {
                             await featureImage.CopyToAsync(stream);
                         }
-                        posts.FeatureImageUrl = $"/uploads/{fileName}";
+                        posts.FeatureImageUrl = $"/uploads/FeatureImages/{fileName}";
                     }
                     // Validate URL format if used
                     else if (hasUrl && !Uri.IsWellFormedUriString(posts.FeatureImageUrl, UriKind.Absolute))
