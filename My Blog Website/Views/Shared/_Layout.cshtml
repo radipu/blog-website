@@ -103,8 +103,8 @@
                                 <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "HowTo" ? "active" : "")">
                                     <a class="nav-link" asp-controller="HowTo" asp-action="Index">HowTo <span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Tour" ? "active" : "")">
-                                    <a class="nav-link" asp-controller="Tour" asp-action="Index">Tour <span class="sr-only">(current)</span></a>
+                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Developer" ? "active" : "")">
+                                    <a class="nav-link" asp-controller="Developer" asp-action="Index">Developers <span class="sr-only">(current)</span></a>
                                 </li>
                                 <div class="dropdownmenu">
                                      <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
@@ -190,7 +190,7 @@
             <div class="col-12 col-md-3 col-lg-2">
                 <div class="footer_main_title py-3"> Category</div>
                 <ul class="footer_menu">
-                    <li><a asp-controller="Developer" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; For Developers</a></li>
+                    <li><a asp-controller="Tour" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Tours</a></li>
                     <li><a asp-controller="BookReview" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Book Review</a></li>
                     <li><a asp-controller="FAQ" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; FAQ</a></li>
                 </ul>

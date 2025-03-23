@@ -1,0 +1,157 @@
+﻿@model My_Blog_Website.Models.FAQs
+
+@{
+    ViewData["Title"] = "FAQ for admin";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FAQ Creator</title>
+        <style>
+        
+            .button-container {
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            #createBtn {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                margin-top: 10px
+            }
+
+            #createBtn:hover {
+                background-color: #45a049;
+            }
+
+            #qnaForm {
+                display: none;
+                margin-top: 20px;
+                border: 1px solid #ddd;
+                padding: 20px;
+                border-radius: 5px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%
+            }
+
+            input[type="text"], 
+            textarea {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 10px;
+                background-color: transparent
+            }
+
+            #saveBtn {
+                background-color: #008CBA;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin: 0 auto;
+            }
+
+            #saveBtn:hover {
+                background-color: #007399;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HTML Content -->
+        <div class="button-container">
+            <button id="createBtn">Create New QnA</button>
+        </div>
+
+        <form id="qnaForm" method="post" asp-action="SaveQnA">
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label for="question">FAQ Question:</label>
+                <input type="text" id="question" name="question" required>
+            </div>
+
+            <div class="form-group">
+                <label for="answer">FAQ Answer:</label>
+                <textarea id="answer" name="answer" rows="4" required></textarea>
+            </div>
+
+            <div class="button-container">
+                <button type="button" id="saveBtn">Save QnA</button>
+            </div>
+        </form>
+
+        <script>
+            // JavaScript Code
+            document.addEventListener('DOMContentLoaded', function() {
+                const createBtn = document.getElementById('createBtn');
+                const qnaForm = document.getElementById('qnaForm');
+                const saveBtn = document.getElementById('saveBtn');
+                const questionInput = document.getElementById('question');
+                const answerInput = document.getElementById('answer');
+
+                // Toggle form visibility - Fixed version
+                createBtn.addEventListener('click', function() {
+                    if (window.getComputedStyle(qnaForm).display === 'none') {
+                        qnaForm.style.display = 'block';
+                        // Clear form when opening
+                        questionInput.value = '';
+                        answerInput.value = '';
+                    } else {
+                        qnaForm.style.display = 'none';
+                    }
+                });
+
+                // Replace the save button handler with this
+                saveBtn.addEventListener('click', function() {
+                    if (questionInput.value.trim() === '' || answerInput.value.trim() === '') {
+                        alert('Please fill in both fields');
+                        return;
+                    }
+
+                    // Create data object
+                    const formData = {
+                        FAQuestion: questionInput.value.trim(),
+                        FAQanswer: answerInput.value.trim()
+                    };
+
+                    // Send to server
+                    fetch('@Url.Action("SaveQnA", "FAQ")', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                        },
+                        body: JSON.stringify(formData)
+                    })
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            alert('QnA saved successfully!');
+                            qnaForm.style.display = 'none';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error saving QnA: ' + error.message);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
