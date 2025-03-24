@@ -18,7 +18,7 @@
 </button> *@
 
 <div class="search-container mb-4">
-    @* <div id="searchLoading" class="spinner-border text-primary ml-2" style="display: none; margin: 10px;"></div> *@
+    <div id="searchLoading" class="spinner-border text-primary ml-2" style="display: none; margin: 10px;"></div>
     <div class="input-group" style="width: 300px;">
         <input type="text" class="form-control" id="liveSearchInput" 
                placeholder="Start typing to search...">
@@ -171,14 +171,14 @@
             clearTimeout(searchTimeout);
             
             // Show loading spinner immediately
-            // document.getElementById('searchLoading').style.display = 'inline-block';
+            document.getElementById('searchLoading').style.display = 'inline-block';
 
             searchTimeout = setTimeout(async () => {
                 try {
                     if (searchTerm === '') {
                         // Restore original posts immediately
                         restoreOriginalPosts();
-                        //document.getElementById('searchLoading').style.display = 'none';
+                        document.getElementById('searchLoading').style.display = 'none';
                         return;
                     }
 
@@ -190,7 +190,7 @@
                     console.error('Search error:', error);
                     alert('Failed to search posts. Check console for details.');
                 } finally {
-                    //document.getElementById('searchLoading').style.display = 'none';
+                    document.getElementById('searchLoading').style.display = 'none';
                 }
             }, 300);
         });
