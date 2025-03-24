@@ -43,7 +43,7 @@
                 <th>Tags</th>
                 @* <th>Author</th> *@
                 <th>Status</th>
-                <th>Modify Date</th>
+                <th>Publish Date</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -92,7 +92,7 @@
                     }
                     else
                     {
-                        <span>Not Published</span>
+                        @post.PublishedDate.Value.ToShortDateString()
                     }
                 </td>
                 <td style="width: 100px">
@@ -219,9 +219,11 @@
                         <td>${escapeHtml(post.tags)}</td>
                         <td>${escapeHtml(post.postStatus)}</td>
                         <td>
-                            ${post.publishedDate ? 
-                                new Date(post.publishedDate).toLocaleDateString() : 
-                                'Not Published'}
+                            ${post.modifiedDate ?
+                                new Date(post.modifiedDate).toLocaleDateString() :
+                                (post.publishedDate ?
+                                    new Date(post.publishedDate).toLocaleDateString()
+                            }
                         </td>
                         <td>
                             <a href="/admin/post/edit/${post.postId}">Edit</a> |
