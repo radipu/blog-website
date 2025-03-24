@@ -28,7 +28,8 @@ builder.Services.AddSession(options =>
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Preserve PascalCase
+        options.JsonSerializerOptions.DictionaryKeyPolicy = null;
     });
 
 var app = builder.Build();
@@ -57,11 +58,6 @@ app.MapControllerRoute(
     name: "singlePost",
     pattern: "{category}/{slug}",
     defaults: new { controller = "Posts", action = "Single" }
-);
-
-app.MapControllerRoute(
-        name: "admin",
-        pattern: "Admin/{controller=FAQ}/{action=AdminIndex}/{id?}"
 );
 
 app.MapControllerRoute(

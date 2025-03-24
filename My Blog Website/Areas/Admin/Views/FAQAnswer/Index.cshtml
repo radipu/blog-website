@@ -132,36 +132,24 @@
 
                 // Toggle form visibility and reset form for new entries
                 createBtn.addEventListener('click', function() {
-                    const isVisible = qnaForm.style.display === 'block';
-                    qnaForm.style.display = isVisible ? 'none' : 'block';
-        
-                    if (!isVisible) {
-                        // Reset form for new entry
-                        document.getElementById('FAQid').value = '0';
-                        document.getElementById('question').value = '';
-                        document.getElementById('answer').value = '';
-                    }
+                    // Clear dropdown selection
+                    unansweredDropdown.value = '';
+                    // Reset form
+                    document.getElementById('FAQid').value = '0';
+                    document.getElementById('question').value = '';
+                    document.getElementById('answer').value = '';
+                    // Toggle form
+                    qnaForm.style.display = qnaForm.style.display === 'block' ? 'none' : 'block';
                 });
 
                 // Handle unanswered question selection
                 unansweredDropdown.addEventListener('change', function() {
                     const faqId = this.value;
                     if (faqId) {
-                        fetch(`/FAQ/GetFAQ?id=${faqId}`)
-                            .then(response => {
-                                if (!response.ok) throw new Error('Failed to fetch question');
-                                return response.json();
-                            })
-                            .then(data => {
-                                document.getElementById('FAQid').value = data.faqid;
-                                document.getElementById('question').value = data.faQuestion;
-                                document.getElementById('answer').value = '';
-                                qnaForm.style.display = 'block';
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                alert('Error loading question: ' + error.message);
-                            });
+                        qnaForm.style.display = 'block'; // Show form
+                        loadSelectedQuestion(faqId);
+                    } else {
+                        qnaForm.style.display = 'none'; // Hide form
                     }
                 });
 
@@ -183,7 +171,7 @@
                         return;
                     }
 
-                    fetch('/FAQ/SaveQnA', {
+                    fetch('/admin/faq/SaveQnA', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -198,7 +186,12 @@
                     .then(data => {
                         if (data.success) {
                             alert('Saved successfully!');
+                            // Reset form
+                            document.getElementById('FAQid').value = '0';
+                            document.getElementById('question').value = '';
+                            document.getElementById('answer').value = '';
                             qnaForm.style.display = 'none';
+                            // Refresh unanswered list
                             loadUnansweredQuestions();
                         }
                     })
@@ -209,40 +202,62 @@
                 });
 
                 // Load unanswered questions function
-                // In loadUnansweredQuestions function
                 function loadUnansweredQuestions() {
-    console.log('Fetching unanswered questions...');
-    
-    fetch('@Url.Action("GetUnansweredQuestions", "FAQ")')
-    .then(response => {
-        console.log('Response status:', response.status);
-        return response.json().then(data => {
-            return { status: response.status, data: data };
-        });
-    })
-    .then(result => {
-        console.log('Received data:', result.data);
-        const dropdown = document.getElementById('unansweredDropdown');
-        dropdown.innerHTML = '';
+                    const dropdown = document.getElementById('unansweredDropdown');
+                    dropdown.innerHTML = '<option value="">Loading...</option>';
 
-        if (result.status === 200 && result.data && result.data.length > 0) {
-            result.data.forEach(item => {
-                const option = document.createElement('option');
-                option.value = item.FAQid;
-                option.textContent = item.FAQuestion || 'Unnamed question';
-                dropdown.appendChild(option);
-            });
-            console.log('Dropdown populated with', result.data.length, 'items');
-        } else {
-            dropdown.innerHTML = '<option value="">No unanswered questions found</option>';
-            console.warn('No questions received');
-        }
-    })
-    .catch(error => {
-        console.error('Fetch error:', error);
-        unansweredDropdown.innerHTML = '<option value="">Error loading questions</option>';
-    });
-}
+                    fetch('@Url.Action("GetUnansweredQuestions", "FAQAnswer", new { area = "Admin" })')
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(err => { throw new Error(err.error || `HTTP error! Status: ${response.status}`) });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        dropdown.innerHTML = '';
+
+                        if (data.length > 0) {
+                            // Populate dropdown
+                            data.forEach(item => {
+                                const option = document.createElement('option');
+                                option.value = item.FAQid;
+                                option.textContent = item.FAQuestion;
+                                dropdown.appendChild(option);
+                            });
+
+                            // Automatically select first item and show form
+                            dropdown.value = data[0].FAQid;
+                            qnaForm.style.display = 'block'; // Show form
+                            loadSelectedQuestion(data[0].FAQid); // Load first question
+                        } else {
+                            dropdown.innerHTML = '<option value="">No unanswered questions</option>';
+                            qnaForm.style.display = 'none'; // Hide form
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        dropdown.innerHTML = '<option value="">Error loading questions</option>';
+                    });
+                }
+
+                // New helper function
+                function loadSelectedQuestion(faqId) {
+                    fetch(`/admin/faq/GetFAQ?id=${faqId}`)
+                    .then(response => {
+                        if (!response.ok) return response.json().then(err => { throw new Error(err.error) });
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log("DEBUG - Server Response:", data);
+        
+                        // Verify property names match what you see in the console
+                        document.getElementById('FAQid').value = data.FAQid; 
+                        document.getElementById('question').value = data.FAQuestion;
+                    })
+                    .catch(error => {
+                        alert(`Failed to load question: ${error.message}`);
+                    });
+                }
             });
             </script>
     </body>

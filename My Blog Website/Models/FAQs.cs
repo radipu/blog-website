@@ -7,6 +7,6 @@ namespace My_Blog_Website.Models
         [Key]
         public int FAQid { get; set; }
         public string FAQuestion { get; set; }
-        public string FAQanswer { get; set; }
+        public string? FAQanswer { get; set; }
     }
 }
