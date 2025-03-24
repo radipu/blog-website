@@ -74,6 +74,9 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                 {
                     FAQid = faq.FAQid,
                     FAQuestion = faq.FAQuestion
+                }, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = null
                 });
             }
             catch (Exception ex)
