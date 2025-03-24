@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using My_Blog_Website.Data;
+using My_Blog_Website.Models;
+using System.Text.Json;
 
 namespace My_Blog_Website.Controllers.Categories
 {
@@ -13,79 +16,40 @@ namespace My_Blog_Website.Controllers.Categories
             _context = context;
         }
 
+        #region client side
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            // Enhanced null filtering
+            var faqs = _context.faqs
+                .Where(f => f.FAQanswer != null && !string.IsNullOrWhiteSpace(f.FAQanswer))
+                .ToList();
+
+            return View(faqs);
         }
 
-        // GET: FAQController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: FAQController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: FAQController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> SubmitQuestion([FromBody] FAQs faq)
         {
+            if (string.IsNullOrWhiteSpace(faq.FAQuestion))
+            {
+                return BadRequest("Question cannot be empty");
+            }
+
             try
             {
-                return RedirectToAction(nameof(Index));
+                faq.FAQanswer = null; // Ensure answer is null
+                _context.faqs.Add(faq);
+                await _context.SaveChangesAsync();
+                return Json(new { success = true });
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return StatusCode(500, $"Error saving question: {ex.Message}");
             }
         }
 
-        // GET: FAQController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: FAQController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: FAQController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: FAQController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        #endregion client side
     }
 }

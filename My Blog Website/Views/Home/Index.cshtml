@@ -321,16 +321,16 @@
                 </div>
             }
 
-        <!-- Tour Section -->
+        <!-- Developer Section -->
         @if(Model.Tour != null && Model.Tour.Any())
         {
             <div class="container-fluid pb-4 pt-5">
                 <div class="container animate-box">
                     <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tour</div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">For Developers</div>
                     </div>
                     <div class="owl-carousel owl-theme" id="slider4">
-                        @foreach(var post in Model.Tour)
+                        @foreach(var post in Model.Developer)
                         {
                             <div class="item px-2">
                                 <div class="fh5co_hover_news_img">

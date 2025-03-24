@@ -1,0 +1,264 @@
+﻿@model My_Blog_Website.Models.FAQs
+
+@{
+    ViewData["Title"] = "FAQ for admin";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FAQ Creator</title>
+        <style>
+        
+            .button-container {
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            #createBtn {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                margin-top: 10px
+            }
+
+            #createBtn:hover {
+                background-color: #45a049;
+            }
+
+            #qnaForm {
+                display: none;
+                margin-top: 20px;
+                border: 1px solid #ddd;
+                padding: 20px;
+                border-radius: 5px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%
+            }
+
+            input[type="text"], 
+            textarea {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 10px;
+                background-color: transparent
+            }
+
+            #saveBtn {
+                background-color: #008CBA;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin: 0 auto;
+            }
+
+            #saveBtn:hover {
+                background-color: #007399;
+            }
+
+            .unanswered-section {
+                margin: 20px 0;
+            }
+
+            #unansweredDropdown {
+                width: 80%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #unansweredDropdown option {
+                padding: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HTML Content -->
+        <div class="button-container">
+            <button id="createBtn">Create New QnA</button>
+        </div>
+
+        <div class="unanswered-section">
+            <h3>Unanswered Questions</h3>
+            <select id="unansweredDropdown" class="form-control">
+                <option value="">Loading questions...</option>
+            </select>
+        </div>
+
+        <form id="qnaForm" method="post" style="display: none;">
+            @Html.AntiForgeryToken()
+            <input type="hidden" id="FAQid" name="FAQid" value="0" />
+    
+            <div class="form-group">
+                <label for="question">Question:</label>
+                <input type="text" id="question" name="FAQuestion" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="answer">Answer:</label>
+                <textarea id="answer" name="FAQanswer" rows="4" required></textarea>
+            </div>
+
+            <div class="button-container">
+                <button type="button" id="saveBtn">Save</button>
+            </div>
+        </form>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const unansweredDropdown = document.getElementById('unansweredDropdown');
+                const createBtn = document.getElementById('createBtn');
+                const qnaForm = document.getElementById('qnaForm');
+                const saveBtn = document.getElementById('saveBtn');
+
+                // Initial load of unanswered questions
+                loadUnansweredQuestions();
+
+                // Toggle form visibility and reset form for new entries
+                createBtn.addEventListener('click', function() {
+                    // Clear dropdown selection
+                    unansweredDropdown.value = '';
+                    // Reset form
+                    document.getElementById('FAQid').value = '0';
+                    document.getElementById('question').value = '';
+                    document.getElementById('answer').value = '';
+                    // Toggle form
+                    qnaForm.style.display = qnaForm.style.display === 'block' ? 'none' : 'block';
+                });
+
+                // Handle unanswered question selection
+                unansweredDropdown.addEventListener('change', function() {
+                    const faqId = this.value;
+                    if (faqId) {
+                        qnaForm.style.display = 'block'; // Show form
+                        loadSelectedQuestion(faqId);
+                    } else {
+                        qnaForm.style.display = 'none'; // Hide form
+                    }
+                });
+
+                // Save QnA handler
+                saveBtn.addEventListener('click', function() {
+                    const formData = {
+                        FAQid: parseInt(document.getElementById('FAQid').value),
+                        FAQuestion: document.getElementById('question').value.trim(),
+                        FAQanswer: document.getElementById('answer').value.trim()
+                    };
+
+                    // Validation
+                    if (!formData.FAQuestion) {
+                        alert('Please enter a question');
+                        return;
+                    }
+                    if (!formData.FAQanswer) {
+                        alert('Please enter an answer');
+                        return;
+                    }
+
+                    fetch('/admin/faq/SaveQnA', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                        },
+                        body: JSON.stringify(formData)
+                    })
+                    .then(response => {
+                        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            alert('Saved successfully!');
+                            // Reset form
+                            document.getElementById('FAQid').value = '0';
+                            document.getElementById('question').value = '';
+                            document.getElementById('answer').value = '';
+                            qnaForm.style.display = 'none';
+                            // Refresh unanswered list
+                            loadUnansweredQuestions();
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Save failed: ' + error.message);
+                    });
+                });
+
+                // Load unanswered questions function
+                function loadUnansweredQuestions() {
+                    const dropdown = document.getElementById('unansweredDropdown');
+                    dropdown.innerHTML = '<option value="">Loading...</option>';
+
+                    fetch('@Url.Action("GetUnansweredQuestions", "FAQAnswer", new { area = "Admin" })')
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(err => { throw new Error(err.error || `HTTP error! Status: ${response.status}`) });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        dropdown.innerHTML = '';
+
+                        if (data.length > 0) {
+                            // Populate dropdown
+                            data.forEach(item => {
+                                const option = document.createElement('option');
+                                option.value = item.FAQid;
+                                option.textContent = item.FAQuestion;
+                                dropdown.appendChild(option);
+                            });
+
+                            // Automatically select first item and show form
+                            dropdown.value = data[0].FAQid;
+                            qnaForm.style.display = 'block'; // Show form
+                            loadSelectedQuestion(data[0].FAQid); // Load first question
+                        } else {
+                            dropdown.innerHTML = '<option value="">No unanswered questions</option>';
+                            qnaForm.style.display = 'none'; // Hide form
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        dropdown.innerHTML = '<option value="">Error loading questions</option>';
+                    });
+                }
+
+                // New helper function
+                function loadSelectedQuestion(faqId) {
+                    fetch(`/admin/faq/GetFAQ?id=${faqId}`)
+                    .then(response => {
+                        if (!response.ok) return response.json().then(err => { throw new Error(err.error) });
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log("DEBUG - Server Response:", data);
+        
+                        // Verify property names match what you see in the console
+                        document.getElementById('FAQid').value = data.FAQid; 
+                        document.getElementById('question').value = data.FAQuestion;
+                    })
+                    .catch(error => {
+                        alert(`Failed to load question: ${error.message}`);
+                    });
+                }
+            });
+            </script>
+    </body>
+</html>
