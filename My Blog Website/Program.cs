@@ -15,6 +15,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IEmailService, EmailService>();
@@ -27,7 +28,7 @@ builder.Services.AddSession(options =>
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
     });
 
 var app = builder.Build();
@@ -56,6 +57,11 @@ app.MapControllerRoute(
     name: "singlePost",
     pattern: "{category}/{slug}",
     defaults: new { controller = "Posts", action = "Single" }
+);
+
+app.MapControllerRoute(
+        name: "admin",
+        pattern: "Admin/{controller=FAQ}/{action=AdminIndex}/{id?}"
 );
 
 app.MapControllerRoute(

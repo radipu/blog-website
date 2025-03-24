@@ -68,6 +68,24 @@
             #saveBtn:hover {
                 background-color: #007399;
             }
+
+            .unanswered-section {
+                margin: 20px 0;
+            }
+
+            #unansweredDropdown {
+                width: 80%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #unansweredDropdown option {
+                padding: 8px;
+            }
         </style>
     </head>
     <body>
@@ -76,59 +94,96 @@
             <button id="createBtn">Create New QnA</button>
         </div>
 
-        <form id="qnaForm" method="post" asp-action="SaveQnA">
-            @Html.AntiForgeryToken()
-            <div class="form-group">
-                <label for="question">FAQ Question:</label>
-                <input type="text" id="question" name="question" required>
-            </div>
+        <div class="unanswered-section">
+            <h3>Unanswered Questions</h3>
+            <select id="unansweredDropdown" class="form-control">
+                <option value="">Loading questions...</option>
+            </select>
+        </div>
 
+        <form id="qnaForm" method="post" style="display: none;">
+            @Html.AntiForgeryToken()
+            <input type="hidden" id="FAQid" name="FAQid" value="0" />
+    
             <div class="form-group">
-                <label for="answer">FAQ Answer:</label>
-                <textarea id="answer" name="answer" rows="4" required></textarea>
+                <label for="question">Question:</label>
+                <input type="text" id="question" name="FAQuestion" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="answer">Answer:</label>
+                <textarea id="answer" name="FAQanswer" rows="4" required></textarea>
             </div>
 
             <div class="button-container">
-                <button type="button" id="saveBtn">Save QnA</button>
+                <button type="button" id="saveBtn">Save</button>
             </div>
         </form>
 
         <script>
-            // JavaScript Code
             document.addEventListener('DOMContentLoaded', function() {
+                const unansweredDropdown = document.getElementById('unansweredDropdown');
                 const createBtn = document.getElementById('createBtn');
                 const qnaForm = document.getElementById('qnaForm');
                 const saveBtn = document.getElementById('saveBtn');
-                const questionInput = document.getElementById('question');
-                const answerInput = document.getElementById('answer');
 
-                // Toggle form visibility - Fixed version
+                // Initial load of unanswered questions
+                loadUnansweredQuestions();
+
+                // Toggle form visibility and reset form for new entries
                 createBtn.addEventListener('click', function() {
-                    if (window.getComputedStyle(qnaForm).display === 'none') {
-                        qnaForm.style.display = 'block';
-                        // Clear form when opening
-                        questionInput.value = '';
-                        answerInput.value = '';
-                    } else {
-                        qnaForm.style.display = 'none';
+                    const isVisible = qnaForm.style.display === 'block';
+                    qnaForm.style.display = isVisible ? 'none' : 'block';
+        
+                    if (!isVisible) {
+                        // Reset form for new entry
+                        document.getElementById('FAQid').value = '0';
+                        document.getElementById('question').value = '';
+                        document.getElementById('answer').value = '';
                     }
                 });
 
-                // Replace the save button handler with this
+                // Handle unanswered question selection
+                unansweredDropdown.addEventListener('change', function() {
+                    const faqId = this.value;
+                    if (faqId) {
+                        fetch(`/FAQ/GetFAQ?id=${faqId}`)
+                            .then(response => {
+                                if (!response.ok) throw new Error('Failed to fetch question');
+                                return response.json();
+                            })
+                            .then(data => {
+                                document.getElementById('FAQid').value = data.faqid;
+                                document.getElementById('question').value = data.faQuestion;
+                                document.getElementById('answer').value = '';
+                                qnaForm.style.display = 'block';
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                alert('Error loading question: ' + error.message);
+                            });
+                    }
+                });
+
+                // Save QnA handler
                 saveBtn.addEventListener('click', function() {
-                    if (questionInput.value.trim() === '' || answerInput.value.trim() === '') {
-                        alert('Please fill in both fields');
+                    const formData = {
+                        FAQid: parseInt(document.getElementById('FAQid').value),
+                        FAQuestion: document.getElementById('question').value.trim(),
+                        FAQanswer: document.getElementById('answer').value.trim()
+                    };
+
+                    // Validation
+                    if (!formData.FAQuestion) {
+                        alert('Please enter a question');
+                        return;
+                    }
+                    if (!formData.FAQanswer) {
+                        alert('Please enter an answer');
                         return;
                     }
 
-                    // Create data object
-                    const formData = {
-                        FAQuestion: questionInput.value.trim(),
-                        FAQanswer: answerInput.value.trim()
-                    };
-
-                    // Send to server
-                    fetch('@Url.Action("SaveQnA", "FAQ")', {
+                    fetch('/FAQ/SaveQnA', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -137,21 +192,58 @@
                         body: JSON.stringify(formData)
                     })
                     .then(response => {
-                        if (!response.ok) throw new Error('Network response was not ok');
+                        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                         return response.json();
                     })
                     .then(data => {
                         if (data.success) {
-                            alert('QnA saved successfully!');
+                            alert('Saved successfully!');
                             qnaForm.style.display = 'none';
+                            loadUnansweredQuestions();
                         }
                     })
                     .catch(error => {
                         console.error('Error:', error);
-                        alert('Error saving QnA: ' + error.message);
+                        alert('Save failed: ' + error.message);
                     });
                 });
+
+                // Load unanswered questions function
+                // In loadUnansweredQuestions function
+                function loadUnansweredQuestions() {
+    console.log('Fetching unanswered questions...');
+    
+    fetch('@Url.Action("GetUnansweredQuestions", "FAQ")')
+    .then(response => {
+        console.log('Response status:', response.status);
+        return response.json().then(data => {
+            return { status: response.status, data: data };
+        });
+    })
+    .then(result => {
+        console.log('Received data:', result.data);
+        const dropdown = document.getElementById('unansweredDropdown');
+        dropdown.innerHTML = '';
+
+        if (result.status === 200 && result.data && result.data.length > 0) {
+            result.data.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.FAQid;
+                option.textContent = item.FAQuestion || 'Unnamed question';
+                dropdown.appendChild(option);
             });
-        </script>
+            console.log('Dropdown populated with', result.data.length, 'items');
+        } else {
+            dropdown.innerHTML = '<option value="">No unanswered questions found</option>';
+            console.warn('No questions received');
+        }
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+        unansweredDropdown.innerHTML = '<option value="">Error loading questions</option>';
+    });
+}
+            });
+            </script>
     </body>
 </html>
