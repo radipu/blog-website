@@ -11,6 +11,19 @@ namespace My_Blog_Website.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.Post)
+                .WithMany(p => p.Comments)
+                .OnDelete(DeleteBehavior.Cascade); // Auto-deletes comments when post is deleted
+            
+            modelBuilder.Entity<Reaction>()
+                .HasOne(r => r.Comment)
+                .WithMany(p => p.Reactions)
+                .OnDelete(DeleteBehavior.Cascade); // Auto-deletes reactions
+        }
+
         public DbSet<Authors> authors { get; set; }
         public DbSet<Contacts> contacts { get; set; }
         public DbSet<Posts> posts { get; set; }
