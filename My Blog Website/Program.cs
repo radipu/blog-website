@@ -28,7 +28,7 @@ builder.Services.AddSession(options =>
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Preserve PascalCase
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; // Preserve PascalCase
         options.JsonSerializerOptions.DictionaryKeyPolicy = null;
     });
 
