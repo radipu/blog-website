@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\My Files\\blog-website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\models\\faqs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\models\\faqs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\areas\\admin\\views\\posts\\single.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\areas\\admin\\views\\posts\\single.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\controllers\\categories\\faqcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\controllers\\categories\\faqcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\areas\\admin\\controllers\\faqanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\areas\\admin\\controllers\\faqanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\areas\\admin\\views\\faqanswer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\areas\\admin\\views\\faqanswer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,67 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Views\\FAQAnswer\\Index.cshtml",
-              "RelativeDocumentMoniker": "My Blog Website\\Areas\\Admin\\Views\\FAQAnswer\\Index.cshtml",
-              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Views\\FAQAnswer\\Index.cshtml",
-              "RelativeToolTip": "My Blog Website\\Areas\\Admin\\Views\\FAQAnswer\\Index.cshtml",
-              "ViewState": "AgIAAO4AAAAAAAAAAAAtwPQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-24T13:10:56.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FAQAnswer.cs",
-              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Controllers\\FAQAnswer.cs",
-              "RelativeDocumentMoniker": "My Blog Website\\Areas\\Admin\\Controllers\\FAQAnswer.cs",
-              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Controllers\\FAQAnswer.cs",
-              "RelativeToolTip": "My Blog Website\\Areas\\Admin\\Controllers\\FAQAnswer.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAswFoAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T13:10:14.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Program.cs",
-              "RelativeDocumentMoniker": "My Blog Website\\Program.cs",
-              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Program.cs",
-              "RelativeToolTip": "My Blog Website\\Program.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAWwAwAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T19:34:39.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FAQs.cs",
-              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Models\\FAQs.cs",
-              "RelativeDocumentMoniker": "My Blog Website\\Models\\FAQs.cs",
-              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Models\\FAQs.cs",
-              "RelativeToolTip": "My Blog Website\\Models\\FAQs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwkAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T14:11:15.708Z",
+              "Title": "Single.cshtml",
+              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Views\\Posts\\Single.cshtml",
+              "RelativeDocumentMoniker": "My Blog Website\\Areas\\Admin\\Views\\Posts\\Single.cshtml",
+              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Areas\\Admin\\Views\\Posts\\Single.cshtml*",
+              "RelativeToolTip": "My Blog Website\\Areas\\Admin\\Views\\Posts\\Single.cshtml*",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAuwDYAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T16:34:44.239Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FAQController.cs",
-              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Controllers\\Categories\\FAQController.cs",
-              "RelativeDocumentMoniker": "My Blog Website\\Controllers\\Categories\\FAQController.cs",
-              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Controllers\\Categories\\FAQController.cs",
-              "RelativeToolTip": "My Blog Website\\Controllers\\Categories\\FAQController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAywBMAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T13:24:39.418Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "My Blog Website\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "My Blog Website\\Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALkAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T16:26:18.157Z",
               "EditorCaption": ""
             }
           ]
