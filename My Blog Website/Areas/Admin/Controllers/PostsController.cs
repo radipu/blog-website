@@ -324,6 +324,11 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            // Increment view count
+            post.ViewCount++;
+            _db.Update(post);
+            await _db.SaveChangesAsync();
+
             // Get similar posts from the same category (excluding current post)
             var similarPosts = await _db.posts
                 .Where(p => p.Categories == category && p.Slug != slug)

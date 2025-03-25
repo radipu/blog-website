@@ -1,0 +1,14 @@
+﻿@using My_Blog_Website.Helpers
+@model List<My_Blog_Website.Areas.Admin.Models.Posts>
+
+@foreach (var post in Model)
+{
+    <div class="footer_makes_sub_font">@post.PublishedDate?.ToString("MMM dd, yyyy")</div>
+    <a asp-controller="Posts" 
+       asp-action="Single" 
+       asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+       asp-route-slug="@post.Slug"
+       class="footer_post pb-4">
+        @post.Title
+    </a>
+}
