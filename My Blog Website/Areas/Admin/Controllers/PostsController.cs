@@ -20,6 +20,8 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             _emailService = emailService;
         }
 
+        #region admin
+
         [HttpGet]
         [Route("admin/posts")]
         public IActionResult Index(string searchTerm)
@@ -202,6 +204,105 @@ namespace My_Blog_Website.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Route("admin/post/edit/{id}")]
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var post = _db.posts.Find(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            return View(post);
+        }
+
+        [HttpPost]
+        [Route("admin/post/edit/{id}")]
+        public async Task<IActionResult> Edit(int id, Posts post)
+        {
+            if (id != post.PostId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var existingPost = await _db.posts.FindAsync(id);
+                if (existingPost == null)
+                {
+                    return NotFound();
+                }
+
+                // Track changes
+                var hasChanges = !existingPost.Title.Equals(post.Title) ||
+                                !existingPost.PostContent.Equals(post.PostContent) ||
+                                !existingPost.PostDescription.Equals(post.PostDescription) ||
+                                !existingPost.FeatureImageUrl.Equals(post.FeatureImageUrl) ||
+                                !existingPost.Categories.Equals(post.Categories) ||
+                                !existingPost.Tags.Equals(post.Tags);
+
+                // Update each property from the form data
+                existingPost.Title = post.Title;
+                existingPost.PostContent = post.PostContent;
+                existingPost.PostDescription = post.PostDescription;
+                existingPost.Categories = post.Categories;
+                existingPost.Tags = post.Tags;
+                existingPost.FeatureImageUrl = post.FeatureImageUrl;
+                existingPost.PostStatus = post.PostStatus;
+                existingPost.Slug = URLHelper.GeneratePostSlug(post.Title);
+
+                // Only update if changes detected
+                if (hasChanges)
+                {
+                    existingPost.LastModifiedDate = DateTime.Now;
+                }
+
+                _db.posts.Update(existingPost);
+                await _db.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+            return View(post);
+        }
+
+        [HttpGet]
+        [Route("admin/post/delete/{id}")]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var post = _db.posts.Find(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            return View(post);
+        }
+
+        [HttpPost]
+        [Route("admin/post/delete/{id}")]
+        public async Task<IActionResult> DeletePost(int? id)
+        {
+            var post = _db.posts.Find(id);
+
+            if (post == null)
+                return NotFound();
+
+            _db.posts.Remove(post);
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        #endregion
+
+        #region public
+
+        [HttpGet]
         [Route("{category}/{slug}")]
         public async Task<IActionResult> Single(string category, string slug)
         {
@@ -302,99 +403,6 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             return RedirectToAction("Single", new { category = comment.Post.Categories, slug = comment.Post.Slug });
         }
 
-        [HttpGet]
-        [Route("admin/post/edit/{id}")]
-        public IActionResult Edit(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-            var post = _db.posts.Find(id);
-            if (post == null)
-            {
-                return NotFound();
-            }
-            return View(post);
-        }
-
-        [HttpPost]
-        [Route("admin/post/edit/{id}")]
-        public async Task<IActionResult> Edit(int id, Posts post)
-        {
-            if (id != post.PostId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                var existingPost = await _db.posts.FindAsync(id);
-                if (existingPost == null)
-                {
-                    return NotFound();
-                }
-
-                // Track changes
-                var hasChanges = !existingPost.Title.Equals(post.Title) ||
-                                !existingPost.PostContent.Equals(post.PostContent) ||
-                                !existingPost.PostDescription.Equals(post.PostDescription) ||
-                                !existingPost.FeatureImageUrl.Equals(post.FeatureImageUrl) ||
-                                !existingPost.Categories.Equals(post.Categories) ||
-                                !existingPost.Tags.Equals(post.Tags);
-
-                // Update each property from the form data
-                existingPost.Title = post.Title;
-                existingPost.PostContent = post.PostContent;
-                existingPost.PostDescription = post.PostDescription;
-                existingPost.Categories = post.Categories;
-                existingPost.Tags = post.Tags;
-                existingPost.FeatureImageUrl = post.FeatureImageUrl;
-                existingPost.PostStatus = post.PostStatus;
-                existingPost.Slug = URLHelper.GeneratePostSlug(post.Title);
-
-                // Only update if changes detected
-                if (hasChanges)
-                {
-                    existingPost.LastModifiedDate = DateTime.Now;
-                }
-
-                _db.posts.Update(existingPost);
-                await _db.SaveChangesAsync();
-
-                return RedirectToAction("Index");
-            }
-            return View(post);
-        }
-
-        [HttpGet]
-        [Route("admin/post/delete/{id}")]
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-            var post = _db.posts.Find(id);
-            if (post == null)
-            {
-                return NotFound();
-            }
-            return View(post);
-        }
-
-        [HttpPost]
-        [Route("admin/post/delete/{id}")]
-        public async Task<IActionResult> DeletePost(int? id)
-        {
-            var post = _db.posts.Find(id);
-
-            if (post == null)
-                return NotFound();
-
-            _db.posts.Remove(post);
-            await _db.SaveChangesAsync();
-            return RedirectToAction("Index");
-        }
+        #endregion
     }
 }

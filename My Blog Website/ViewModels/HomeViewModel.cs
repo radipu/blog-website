@@ -7,12 +7,19 @@ namespace My_Blog_Website.ViewModels
         public List<Posts> LatestPost { get; set; }
 
         public List<Posts> Thoughts { get; set; }
+
         public List<Posts> Technology { get; set; }
+        
         public List<Posts> Ideas { get; set; }
+        
         public List<Posts> HowTo { get; set; }
+        
         public List<Posts> Tour { get; set; }
+        
         public List<Posts> Developer { get; set; }
+        
         public List<Posts> BookReview { get; set; }
+        
         public List<string> Tags { get; set; }
     }
 }
