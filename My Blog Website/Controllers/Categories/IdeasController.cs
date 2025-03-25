@@ -18,7 +18,7 @@ namespace My_Blog_Website.Controllers.Categories
         {
             var ideaPosts = _context.posts
                 .Where(p => p.Categories == "Ideas" && p.PostStatus == "Published")
-                .OrderByDescending(p => p.PublishedDate)
+                .OrderByDescending(p => p.LastModifiedDate ?? p.PublishedDate)
                 .ToList();
 
             ViewBag.PageSize = 9;

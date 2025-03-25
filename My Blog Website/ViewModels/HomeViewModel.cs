@@ -19,6 +19,8 @@ namespace My_Blog_Website.ViewModels
         public List<Posts> Developer { get; set; }
         
         public List<Posts> BookReview { get; set; }
+
+        public List<Posts> Project { get; set; }
         
         public List<string> Tags { get; set; }
     }

@@ -18,7 +18,7 @@ namespace My_Blog_Website.Controllers.Categories
         {
             var technologyPosts = _context.posts
                 .Where(p => p.Categories == "Technology" && p.PostStatus == "Published")
-                .OrderByDescending(p => p.PublishedDate)
+                .OrderByDescending(p => p.LastModifiedDate ?? p.PublishedDate)
                 .ToList();
 
             ViewBag.PageSize = 9;

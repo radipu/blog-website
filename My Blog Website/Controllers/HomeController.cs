@@ -23,7 +23,7 @@ namespace My_Blog_Website.Controllers
             // Retrieve all published posts ordered by publish date
             var allPosts = _db.posts
                               .Where(p => p.PostStatus == "Published")
-                              .OrderByDescending(p => p.PublishedDate)
+                              .OrderByDescending(p => p.LastModifiedDate ?? p.PublishedDate)
                               .ToList();
 
             // Extract and process tags
