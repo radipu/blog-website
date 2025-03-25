@@ -1,0 +1,16 @@
+﻿@using My_Blog_Website.Helpers
+@model List<My_Blog_Website.Areas.Admin.Models.Posts>
+
+<div class="row">
+    @foreach (var post in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <a asp-controller="Posts" 
+               asp-action="Single" 
+               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+               asp-route-slug="@post.Slug">
+                <img src="@post.FeatureImageUrl" alt="@post.Title" class="img-fluid">
+            </a>
+        </div>
+    }
+</div>
