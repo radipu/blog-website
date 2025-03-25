@@ -34,5 +34,7 @@ namespace My_Blog_Website.Areas.Admin.Models
 
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm}")]
         public DateTime? LastModifiedDate { get; set; }
+
+        public int? ViewCount { get; set; } = 0;
     }
 }
