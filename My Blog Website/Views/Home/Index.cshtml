@@ -72,140 +72,252 @@
             </div>
         </div>
 
-        <!-- Thoughts Section -->
-        @if(Model.Thoughts != null && Model.Thoughts.Any())
+        <!-- Thoughts Section (Max 4 items) -->
+        @if (Model.Thoughts != null && Model.Thoughts.Any())
         {
+            var itemCount = Model.Thoughts.Count;
             <div class="container-fluid pb-4 pt-5">
                 <div class="container animate-box">
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Thoughts</div>
                     </div>
-                    <div class="owl-carousel owl-theme" id="slider1">
-                        @foreach(var post in Model.Thoughts)
-                        {
-                            <div class="item px-2">
-                                <div class="fh5co_hover_news_img">
-                                    <div class="fh5co_news_img">
-                                        <a asp-controller="Posts" asp-action="Single" 
-                                           asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
-                                           asp-route-slug="@post.Slug">
-                                            <img src="@post.FeatureImageUrl" alt="@post.Title" 
-                                                 style="width:100%; height:200px; object-fit:cover"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a asp-controller="Posts" asp-action="Single" 
-                                           asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
-                                           asp-route-slug="@post.Slug" 
-                                           class="d-block fh5co_small_post_heading">
-                                            <span class="">@post.Title</span>
-                                        </a>
-                                        <div>
-                                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
-                                                @post.PostDescription
+            
+                    @if (itemCount > 4)
+                    {
+                        <div class="owl-carousel owl-theme" id="slider1">
+                            @foreach (var post in Model.Thoughts)
+                            {
+                                <div class="item px-2">
+                                    <div class="fh5co_hover_news_img">
+                                        <div class="fh5co_news_img">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug">
+                                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                                     class="img-fluid" style="height: 200px; object-fit: cover;">
                                             </a>
                                         </div>
-                                        <div class="c_g">
-                                            <i class="fa fa-clock-o"></i> 
-                                            @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                        <div class="pt-2">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug" 
+                                               class="d-block fh5co_small_post_heading">
+                                                <span class="">@post.Title</span>
+                                            </a>
+                                            <div class="c_g">
+                                                <i class="fa fa-clock-o"></i> 
+                                                @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
-                    </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row g-4">
+                            @foreach (var post in Model.Thoughts)
+                            {
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="fh5co_hover_news_img">
+                                        <div class="fh5co_news_img">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug">
+                                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                                     class="img-fluid" style="height: 200px; object-fit: cover;">
+                                            </a>
+                                        </div>
+                                        <div class="pt-2">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug" 
+                                               class="d-block fh5co_small_post_heading">
+                                                <span class="">@post.Title</span>
+                                            </a>
+                                            <div class="c_g">
+                                                <i class="fa fa-clock-o"></i> 
+                                                @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         }
 
-        <!-- Technology Section -->
-        @if(Model.Technology != null && Model.Technology.Any())
+        <!-- Technology Section (Max 3 items) -->
+        @if (Model.Technology != null && Model.Technology.Any())
         {
+            var itemCount = Model.Technology.Count;
             <div class="container-fluid pb-4 pt-5">
                 <div class="container animate-box">
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Technology</div>
                     </div>
-                    <div class="owl-carousel owl-theme" id="slider2">
-                        @foreach(var post in Model.Technology)
-                        {
-                            <div class="item px-2">
-                                <div class="fh5co_hover_news_img">
-                                    <div class="fh5co_news_img">
-                                        <a asp-controller="Posts" asp-action="Single" 
-                                           asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
-                                           asp-route-slug="@post.Slug">
-                                            <img src="@post.FeatureImageUrl" alt="@post.Title" 
-                                                 style="width:100%; height:200px; object-fit:cover"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a asp-controller="Posts" asp-action="Single" 
-                                           asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
-                                           asp-route-slug="@post.Slug" 
-                                           class="d-block fh5co_small_post_heading">
-                                            <span class="">@post.Title</span>
-                                        </a>
-                                        <div>
-                                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
-                                                @post.PostDescription
+            
+                    @if (itemCount > 3)
+                    {
+                        <div class="owl-carousel owl-theme" id="slider2">
+                            @foreach (var post in Model.Technology)
+                            {
+                                <div class="item px-2">
+                                    <div class="fh5co_hover_news_img h-100 d-flex flex-column">
+                                        <div class="fh5co_news_img flex-grow-1">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug"
+                                               class="h-100 d-block">
+                                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                                     class="img-fluid h-100 w-100" 
+                                                     style="object-fit: cover;">
                                             </a>
                                         </div>
-                                        <div class="c_g">
-                                            <i class="fa fa-clock-o"></i> 
-                                            @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                        <div class="pt-2">
+                                            <div class="pt-2">
+                                                <a asp-controller="Posts" asp-action="Single" 
+                                                   asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                                   asp-route-slug="@post.Slug" 
+                                                   class="d-block fh5co_small_post_heading">
+                                                    <span class="">@post.Title</span>
+                                                </a>
+                                                <div class="c_g">
+                                                    <i class="fa fa-clock-o"></i> 
+                                                    @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
-                    </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row g-4">
+                            @foreach (var post in Model.Technology)
+                            {
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="fh5co_hover_news_img h-100 d-flex flex-column">
+                                        <div class="fh5co_news_img flex-grow-1">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug"
+                                               class="h-100 d-block">
+                                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                                     class="img-fluid h-100 w-100" 
+                                                     style="object-fit: cover;">
+                                            </a>
+                                        </div>
+                                        <div class="pt-2">
+                                            <div class="pt-2">
+                                                <a asp-controller="Posts" asp-action="Single" 
+                                                   asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                                   asp-route-slug="@post.Slug" 
+                                                   class="d-block fh5co_small_post_heading">
+                                                    <span class="">@post.Title</span>
+                                                </a>
+                                                <div class="c_g">
+                                                    <i class="fa fa-clock-o"></i> 
+                                                    @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         }
 
-        <!-- Ideas Section -->
-        @if(Model.Ideas != null && Model.Ideas.Any())
+        <!-- Ideas Section (Max 3 items) -->
+        @if (Model.Ideas != null && Model.Ideas.Any())
         {
+            var itemCount = Model.Ideas.Count;
             <div class="container-fluid pb-4 pt-5">
                 <div class="container animate-box">
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Ideas</div>
                     </div>
-                    <div class="owl-carousel owl-theme" id="slider3">
-                        @foreach(var post in Model.Ideas)
-                        {
-                            <div class="item px-2">
-                                <div class="fh5co_hover_news_img">
-                                    <div class="fh5co_news_img">
-                                        <a asp-controller="Posts" asp-action="Single" 
-                                           asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
-                                           asp-route-slug="@post.Slug">
-                                            <img src="@post.FeatureImageUrl" alt="@post.Title" 
-                                                 style="width:100%; height:200px; object-fit:cover"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a asp-controller="Posts" asp-action="Single" 
-                                           asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
-                                           asp-route-slug="@post.Slug" 
-                                           class="d-block fh5co_small_post_heading">
-                                            <span class="">@post.Title</span>
-                                        </a>
-                                        <div>
-                                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
-                                                @post.PostDescription
+            
+                    @if (itemCount > 3)
+                    {
+                        <div class="owl-carousel owl-theme" id="slider3">
+                            @foreach (var post in Model.Ideas)
+                            {
+                                <div class="item px-2">
+                                    <div class="fh5co_hover_news_img h-100 d-flex flex-column">
+                                        <div class="fh5co_news_img flex-grow-1">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug"
+                                               class="h-100 d-block">
+                                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                                     class="img-fluid h-100 w-100" 
+                                                     style="object-fit: cover;">
                                             </a>
                                         </div>
-                                        <div class="c_g">
-                                            <i class="fa fa-clock-o"></i> 
-                                            @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                        <div class="pt-2">
+                                            <div class="pt-2">
+                                                <a asp-controller="Posts" asp-action="Single" 
+                                                   asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                                   asp-route-slug="@post.Slug" 
+                                                   class="d-block fh5co_small_post_heading">
+                                                    <span class="">@post.Title</span>
+                                                </a>
+                                                <div class="c_g">
+                                                    <i class="fa fa-clock-o"></i> 
+                                                    @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
-                    </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row g-4">
+                            @foreach (var post in Model.Ideas)
+                            {
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="fh5co_hover_news_img h-100 d-flex flex-column">
+                                        <div class="fh5co_news_img flex-grow-1">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug"
+                                               class="h-100 d-block">
+                                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                                     class="img-fluid h-100 w-100" 
+                                                     style="object-fit: cover;">
+                                            </a>
+                                        </div>
+                                        <div class="pt-2">
+                                            <div class="pt-2">
+                                                <a asp-controller="Posts" asp-action="Single" 
+                                                   asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                                   asp-route-slug="@post.Slug" 
+                                                   class="d-block fh5co_small_post_heading">
+                                                    <span class="">@post.Title</span>
+                                                </a>
+                                                <div class="c_g">
+                                                    <i class="fa fa-clock-o"></i> 
+                                                    @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         }
@@ -321,48 +433,88 @@
                 </div>
             }
 
-        <!-- Developer Section -->
-        @if(Model.Tour != null && Model.Tour.Any())
+        <!-- Developer Section (Max 3 items) -->
+        @if (Model.Developer != null && Model.Developer.Any())
         {
+            var itemCount = Model.Developer.Count;
             <div class="container-fluid pb-4 pt-5">
                 <div class="container animate-box">
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">For Developers</div>
                     </div>
-                    <div class="owl-carousel owl-theme" id="slider4">
-                        @foreach(var post in Model.Developer)
-                        {
-                            <div class="item px-2">
-                                <div class="fh5co_hover_news_img">
-                                    <div class="fh5co_news_img">
-                                        <a asp-controller="Posts" asp-action="Single" 
-                                           asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
-                                           asp-route-slug="@post.Slug">
-                                            <img src="@post.FeatureImageUrl" alt="@post.Title" 
-                                                 style="width:100%; height:200px; object-fit:cover"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a asp-controller="Posts" asp-action="Single" 
-                                           asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
-                                           asp-route-slug="@post.Slug" 
-                                           class="d-block fh5co_small_post_heading">
-                                            <span class="">@post.Title</span>
-                                        </a>
-                                        <div>
-                                            <a asp-controller="Posts" asp-action="Single" asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" asp-route-slug="@URLHelper.GeneratePostSlug(post.Title)">
-                                                @post.PostDescription
+            
+                    @if (itemCount > 3)
+                    {
+                        <div class="owl-carousel owl-theme" id="slider4">
+                            @foreach (var post in Model.Developer)
+                            {
+                                <div class="item px-2">
+                                    <div class="fh5co_hover_news_img h-100 d-flex flex-column">
+                                        <div class="fh5co_news_img flex-grow-1">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug"
+                                               class="h-100 d-block">
+                                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                                     class="img-fluid h-100 w-100" 
+                                                     style="object-fit: cover;">
                                             </a>
                                         </div>
-                                        <div class="c_g">
-                                            <i class="fa fa-clock-o"></i> 
-                                            @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                        <div class="pt-2">
+                                            <div class="pt-2">
+                                                <a asp-controller="Posts" asp-action="Single" 
+                                                   asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                                   asp-route-slug="@post.Slug" 
+                                                   class="d-block fh5co_small_post_heading">
+                                                    <span class="">@post.Title</span>
+                                                </a>
+                                                <div class="c_g">
+                                                    <i class="fa fa-clock-o"></i> 
+                                                    @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
-                    </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row g-4">
+                            @foreach (var post in Model.Developer)
+                            {
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="fh5co_hover_news_img h-100 d-flex flex-column">
+                                        <div class="fh5co_news_img flex-grow-1">
+                                            <a asp-controller="Posts" asp-action="Single" 
+                                               asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                               asp-route-slug="@post.Slug"
+                                               class="h-100 d-block">
+                                                <img src="@post.FeatureImageUrl" alt="@post.Title" 
+                                                     class="img-fluid h-100 w-100" 
+                                                     style="object-fit: cover;">
+                                            </a>
+                                        </div>
+                                        <div class="pt-2">
+                                            <div class="pt-2">
+                                                <a asp-controller="Posts" asp-action="Single" 
+                                                   asp-route-category="@URLHelper.GenerateCategorySlug(post.Categories)" 
+                                                   asp-route-slug="@post.Slug" 
+                                                   class="d-block fh5co_small_post_heading">
+                                                    <span class="">@post.Title</span>
+                                                </a>
+                                                <div class="c_g">
+                                                    <i class="fa fa-clock-o"></i> 
+                                                    @post.PublishedDate?.ToString("MMM dd, yyyy")
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         }
