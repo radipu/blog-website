@@ -40,7 +40,10 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             }
 
             ViewData["CurrentFilter"] = searchTerm; // Preserve search term
-            return View(posts.OrderByDescending(p => p.PublishedDate).ToList());
+
+            var orderedPost = posts.OrderByDescending(p => p.LastModifiedDate ?? p.PublishedDate).ToList();
+
+            return View(orderedPost);
         }
 
         [HttpGet]
