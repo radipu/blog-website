@@ -18,9 +18,9 @@ namespace My_Blog_Website.Data
                 .WithMany(p => p.Comments)
                 .OnDelete(DeleteBehavior.Cascade); // Auto-deletes comments when post is deleted
             
-            modelBuilder.Entity<Reaction>()
+            modelBuilder.Entity<ReactionVote>()
                 .HasOne(r => r.Comment)
-                .WithMany(p => p.Reactions)
+                .WithMany(p => p.ReactionVotes)
                 .OnDelete(DeleteBehavior.Cascade); // Auto-deletes reactions
         }
 
@@ -29,6 +29,8 @@ namespace My_Blog_Website.Data
         public DbSet<Posts> posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Reaction> Reactions { get; set; }
+        public DbSet<ReactionVote> ReactionVotes { get; set; }
+        public DbSet<PostReaction> postReactions { get; set; }
         public DbSet<Subscriber> subscribers { get; set; }
         public DbSet<FAQs> faqs { get; set; }
     }

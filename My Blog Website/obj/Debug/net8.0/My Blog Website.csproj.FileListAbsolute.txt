@@ -526,16 +526,6 @@ D:\drgfghd\blog-website\My Blog Website\obj\Debug\net8.0\scopedcss\projectbundle
 D:\drgfghd\blog-website\My Blog Website\obj\Debug\net8.0\My Blog .0B44AE49.Up2Date
 D:\drgfghd\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.genruntimeconfig.cache
 D:\drgfghd\blog-website\My Blog Website\obj\Debug\net8.0\ref\My Blog Website.dll
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.csproj.AssemblyReference.cache
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.GeneratedMSBuildEditorConfig.editorconfig
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.AssemblyInfoInputs.cache
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.AssemblyInfo.cs
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.csproj.CoreCompileInputs.cache
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.MvcApplicationPartsAssemblyInfo.cs
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.MvcApplicationPartsAssemblyInfo.cache
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.RazorAssemblyInfo.cache
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.RazorAssemblyInfo.cs
-D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.sourcelink.json
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\appsettings.Development.json
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\appsettings.json
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\My Blog Website.staticwebassets.runtime.json
@@ -787,6 +777,16 @@ D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net6.
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\My Files\blog-website\My Blog Website\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.csproj.AssemblyReference.cache
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.AssemblyInfoInputs.cache
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.AssemblyInfo.cs
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.csproj.CoreCompileInputs.cache
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.MvcApplicationPartsAssemblyInfo.cs
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.MvcApplicationPartsAssemblyInfo.cache
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.RazorAssemblyInfo.cache
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.RazorAssemblyInfo.cs
+D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\My Blog Website.sourcelink.json
 D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\staticwebassets.build.json
 D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\staticwebassets.development.json
 D:\My Files\blog-website\My Blog Website\obj\Debug\net8.0\staticwebassets\msbuild.My Blog Website.Microsoft.AspNetCore.StaticWebAssets.props

@@ -61,7 +61,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                     p.Tags.Contains(term));
             }
 
-            var results = query.OrderByDescending(p => p.PublishedDate)
+            var results = query.OrderByDescending(p => p.LastModifiedDate ?? p.PublishedDate)
                 .Select(p => new
                 {
                     p.PostId,
@@ -317,7 +317,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             // Retrieve the post by slug. You can also filter by category if needed.
             var post = await _db.posts
                 .Include(p => p.Comments)
-                .ThenInclude(c => c.Reactions)
+                .ThenInclude(c => c.ReactionVotes)
                 .Include(p => p.Comments)
                 .ThenInclude(c => c.Replies) 
                 .FirstOrDefaultAsync(p => p.Slug == slug);
@@ -338,8 +338,25 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                 .OrderByDescending(p => p.PublishedDate)
                 .ToListAsync();
 
+            // Get Most Popular Posts (Updated with Score Calculation)
+            var popularPosts = await _db.posts
+                .Select(p => new
+                {
+                    Post = p,
+                    Score = p.ViewCount
+                        + p.Comments.Count // Total comments
+                        + p.Comments.SelectMany(c => c.Replies).Count() // Total replies
+                        + p.Comments.SelectMany(c => c.ReactionVotes).Count() // Total comment reactions
+                        + p.PostReactions.Sum(pr => pr.ReactionCount) // Total post reactions
+                })
+                .OrderByDescending(x => x.Score)
+                .Take(4)
+                .Select(x => x.Post)
+                .ToListAsync();
+
             ViewBag.SimilarPosts = similarPosts;
             ViewBag.CurrentCategory = category;
+            ViewBag.PopularPosts = popularPosts;
 
             return View(post);
         }
@@ -378,32 +395,58 @@ namespace My_Blog_Website.Areas.Admin.Controllers
         [Route("React")]
         public async Task<IActionResult> React(int commentId, string reactionType)
         {
+            // Validate reaction type
             var validReactions = new[] { "like", "love", "care", "angry", "support" };
             if (!validReactions.Contains(reactionType))
             {
                 return BadRequest("Invalid reaction type.");
             }
 
-            var reaction = await _db.Reactions
-                .FirstOrDefaultAsync(r => r.CommentId == commentId && r.ReactionType == reactionType);
-
-            if (reaction != null)
+            // Get or create user identifier from cookie
+            string userIdentifier = Request.Cookies["UserIdentifier"];
+            if (string.IsNullOrEmpty(userIdentifier))
             {
-                reaction.ReactionCount++;
+                userIdentifier = Guid.NewGuid().ToString();
+                Response.Cookies.Append("UserIdentifier", userIdentifier, new CookieOptions
+                {
+                    Expires = DateTime.Now.AddYears(1)
+                });
+            }
+
+            // Check existing vote
+            var existingVote = await _db.ReactionVotes
+                .FirstOrDefaultAsync(rv => rv.CommentId == commentId && rv.UserIdentifier == userIdentifier);
+
+            if (existingVote != null)
+            {
+                // Remove if same reaction clicked again (toggle)
+                if (existingVote.ReactionType == reactionType)
+                {
+                    _db.ReactionVotes.Remove(existingVote);
+                }
+                else // Update to new reaction
+                {
+                    existingVote.ReactionType = reactionType;
+                    existingVote.VoteDate = DateTime.Now;
+                    _db.Update(existingVote);
+                }
             }
             else
             {
-                reaction = new Reaction
+                // Add new vote
+                var newVote = new ReactionVote
                 {
                     CommentId = commentId,
+                    UserIdentifier = userIdentifier,
                     ReactionType = reactionType,
-                    ReactionCount = 1
+                    VoteDate = DateTime.Now
                 };
-                _db.Reactions.Add(reaction);
+                _db.ReactionVotes.Add(newVote);
             }
 
             await _db.SaveChangesAsync();
 
+            // Redirect back to post
             var comment = await _db.Comments
                 .Include(c => c.Post)
                 .FirstOrDefaultAsync(c => c.CommentId == commentId);

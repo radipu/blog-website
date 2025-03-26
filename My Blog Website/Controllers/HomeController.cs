@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using My_Blog_Website.Areas.Admin.Models;
 using My_Blog_Website.Data;
 using My_Blog_Website.Models;
@@ -18,7 +19,7 @@ namespace My_Blog_Website.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             // Retrieve all published posts ordered by publish date
             var allPosts = _db.posts
@@ -33,6 +34,21 @@ namespace My_Blog_Website.Controllers
                             .Distinct()
                             .OrderBy(t => t)
                             .ToList();
+
+            var popularPosts = await _db.posts
+                            .Select(p => new
+                            {
+                                Post = p,
+                                Score = p.ViewCount
+                                    + p.Comments.Count // Total comments
+                                    + p.Comments.SelectMany(c => c.Replies).Count() // Total replies
+                                    + p.Comments.SelectMany(c => c.ReactionVotes).Count() // Total comment reactions
+                                    + p.PostReactions.Sum(pr => pr.ReactionCount) // Total post reactions
+                            })
+                            .OrderByDescending(x => x.Score)
+                            .Take(4)
+                            .Select(x => x.Post)
+                            .ToListAsync();
 
             // Get all How To posts (send the complete list, not just a slice)
             var howtoPosts = GetPostsByCategory(allPosts, "HowTo");
@@ -54,6 +70,7 @@ namespace My_Blog_Website.Controllers
             // Pass extra information for client-side paging
             ViewBag.PageSize = 4;
             ViewBag.TotalHowtoPosts = howtoPosts.Count;
+            ViewBag.PopularPosts = popularPosts;
 
             return View(viewModel);
         }
