@@ -220,10 +220,7 @@
                         <td>${escapeHtml(post.postStatus)}</td>
                         <td>
                             ${post.modifiedDate ?
-                                new Date(post.modifiedDate).toLocaleDateString() :
-                                (post.publishedDate ?
-                                    new Date(post.publishedDate).toLocaleDateString()
-                            }
+                                new Date(post.modifiedDate).toLocaleDateString() : post.publishedDate}
                         </td>
                         <td>
                             <a href="/admin/post/edit/${post.postId}">Edit</a> |

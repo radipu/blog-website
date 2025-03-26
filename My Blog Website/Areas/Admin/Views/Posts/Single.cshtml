@@ -1,4 +1,5 @@
 ﻿@model My_Blog_Website.Areas.Admin.Models.Posts
+@using System.Linq
 
 @{
     ViewData["Title"] = Model.Title;
@@ -22,212 +23,216 @@
         </div>
         <div id="fh5co-single-content" class="container-fluid pb-4 pt-4 paddding">
             <div class="container paddding">
-            <div class="row mx-0">
-            <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-                @Html.Raw(Model.PostContent)
-                <div class="share-section mt-5">
-                    <h4>Share this post on:</h4>
-                    @{
-                        var postUrl = Url.Action("Single", "Posts", new { category = Model.Categories, slug = Model.Slug }, Context.Request.Scheme);
-                        var encodedUrl = Uri.EscapeDataString(postUrl);
-                        var encodedTitle = Uri.EscapeDataString(Model.Title);
-                    }
-                    <div class="d-flex flex-wrap gap-2">
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=@encodedUrl" 
-                           target="_blank" 
-                           class="btn btn-sm btn-primary">
-                            <i class="fa-brands fa-facebook"></i> Facebook
-                        </a>
+                <div class="row mx-0">
+                    <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
+                        @Html.Raw(Model.PostContent)
+                        <!--Post Reactions-->
+                    
+                        <!--Share the post-->
+                        <div class="share-section mt-5">
+                            <h4>Share this post on:</h4>
+                            @{
+                                var postUrl = Url.Action("Single", "Posts", new { category = Model.Categories, slug = Model.Slug }, Context.Request.Scheme);
+                                var encodedUrl = Uri.EscapeDataString(postUrl);
+                                var encodedTitle = Uri.EscapeDataString(Model.Title);
+                            }
+                            <div class="d-flex flex-wrap gap-2">
+                                <!-- Facebook -->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=@encodedUrl" 
+                                   target="_blank" 
+                                   class="btn btn-sm btn-primary">
+                                    <i class="fa-brands fa-facebook"></i> Facebook
+                                </a>
 
-                        <!-- Twitter/X -->
-                        <a href="https://twitter.com/intent/tweet?text=@encodedTitle&url=@encodedUrl" 
-                           target="_blank" 
-                           class="btn btn-sm btn-info">
-                            <i class="fa-brands fa-x-twitter"></i> Twitter
-                        </a>
+                                <!-- Twitter/X -->
+                                <a href="https://twitter.com/intent/tweet?text=@encodedTitle&url=@encodedUrl" 
+                                   target="_blank" 
+                                   class="btn btn-sm btn-info">
+                                    <i class="fa-brands fa-x-twitter"></i> Twitter
+                                </a>
 
-                        <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=@encodedUrl&title=@encodedTitle" 
-                           target="_blank" 
-                           class="btn btn-sm btn-primary" 
-                           style="background-color: #0077b5; border-color: #0077b5;">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn
-                        </a>
+                                <!-- LinkedIn -->
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=@encodedUrl&title=@encodedTitle" 
+                                   target="_blank" 
+                                   class="btn btn-sm btn-primary" 
+                                   style="background-color: #0077b5; border-color: #0077b5;">
+                                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                                </a>
 
-                        <!-- WhatsApp -->
-                        <a href="https://api.whatsapp.com/send?text=@encodedTitle%20@encodedUrl" 
-                           target="_blank" 
-                           class="btn btn-sm btn-success">
-                            <i class="fa fa-whatsapp"></i> WhatsApp
-                        </a>
+                                <!-- WhatsApp -->
+                                <a href="https://api.whatsapp.com/send?text=@encodedTitle%20@encodedUrl" 
+                                   target="_blank" 
+                                   class="btn btn-sm btn-success">
+                                    <i class="fa fa-whatsapp"></i> WhatsApp
+                                </a>
 
-                        <!-- Email -->
-                        <a href="mailto:?subject=@encodedTitle&body=@encodedUrl" 
-                           class="btn btn-sm btn-secondary">
-                            <i class="fa fa-envelope"></i> Email
-                        </a>
+                                <!-- Email -->
+                                <a href="mailto:?subject=@encodedTitle&body=@encodedUrl" 
+                                   class="btn btn-sm btn-secondary">
+                                    <i class="fa fa-envelope"></i> Email
+                                </a>
 
-                        <!-- Copy Link -->
-                        <button onclick="copyToClipboard('@postUrl')" 
-                                class="btn btn-sm btn-light">
-                            <i class="fa fa-copy"></i> Copy Link
-                        </button>
-                    </div>
-                </div>
-                <!-- After the share-section div -->
-                <div class="comments-section mt-5">
-                    <h3>Comments</h3>
-                    @if (Model.Comments != null && Model.Comments.Any())
-                    {
-                        @foreach (var comment in Model.Comments.Where(c => c.ParentCommentId == null))
-                        {
-                            <div class="comment mb-3">
-                                <p><strong translate="no">@comment.CommenterName</strong> @(" on ") @comment.CommentDate.ToString("MMM dd, yyyy")</p>
-                                <p>@comment.CommentText</p>
-                                <div class="reactions">
-                                    @if (comment.Reactions != null && comment.Reactions.Any())
-                                    {
-                                        foreach (var reaction in comment.Reactions)
-                                        {
-                                            <span>@reaction.ReactionType: @reaction.ReactionCount </span>
-                                        }
-                                    }
-                                </div>
-                                <div class="reaction-buttons mt-2">
-                                    <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like</a>
-                                    <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love</a>
-                                    <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care</a>
-                                    <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry</a>
-                                    <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support</a>
-                                </div>
-                                <button class="btn btn-link" onclick="showReplyForm(@comment.CommentId)">Reply</button>
-
-                                <!-- Reply Form (Hidden by Default) -->
-                                <div id="reply-form-@comment.CommentId" style="display:none;" class="mt-3">
-                                    <form asp-action="AddComment" method="post">
-                                        <input type="hidden" name="PostId" value="@Model.PostId" />
-                                        <input type="hidden" name="ParentCommentId" value="@comment.CommentId" />
-                                        <div class="form-group">
-                                            <label for="CommenterName">Your Name</label>
-                                            <input type="text" name="CommenterName" class="form-control" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="CommentText">Reply</label>
-                                            <textarea name="CommentText" class="form-control" rows="3" required></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Submit Reply</button>
-                                    </form>
-                                </div>
-
-                                <!-- Replies -->
-                                @if (comment.Replies != null && comment.Replies.Any())
+                                <!-- Copy Link -->
+                                <button onclick="copyToClipboard('@postUrl')" 
+                                        class="btn btn-sm btn-light">
+                                    <i class="fa fa-copy"></i> Copy Link
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Comments and Replies -->
+                        <div class="comments-section mt-5">
+                            <h3>Comments</h3>
+                            @if (Model.Comments != null && Model.Comments.Any())
+                            {
+                                @foreach (var comment in Model.Comments.Where(c => c.ParentCommentId == null))
                                 {
-                                    <div class="replies ml-4 mt-3">
-                                        @foreach (var reply in comment.Replies)
+                                    <div class="comment mb-3">
+                                        <p><strong translate="no">@comment.CommenterName</strong> @(" on ") @comment.CommentDate.ToString("MMM dd, yyyy")</p>
+                                        <p>@comment.CommentText</p>
+                                        <div class="reactions">
+                                            @{
+                                                var reactionGroups = comment.ReactionVotes?
+                                                    .GroupBy(r => r.ReactionType)
+                                                    .Select(g => new { Type = g.Key, Count = g.Count() });
+                                            }
+                                            @if (reactionGroups != null)
+                                            {
+                                                foreach (var group in reactionGroups)
+                                                {
+                                                    <span>@group.Type: @group.Count</span>
+                                                }
+                                            }
+                                        </div>
+                                        <div class="reaction-buttons mt-2">
+                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like</a>
+                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love</a>
+                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care</a>
+                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry</a>
+                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support</a>
+                                        </div>
+                                        <button class="btn btn-link" onclick="showReplyForm(@comment.CommentId)">Reply</button>
+
+                                        <!-- Reply Form (Hidden by Default) -->
+                                        <div id="reply-form-@comment.CommentId" style="display:none;" class="mt-3">
+                                            <form asp-action="AddComment" method="post">
+                                                <input type="hidden" name="PostId" value="@Model.PostId" />
+                                                <input type="hidden" name="ParentCommentId" value="@comment.CommentId" />
+                                                <div class="form-group">
+                                                    <label for="CommenterName">Your Name</label>
+                                                    <input type="text" name="CommenterName" class="form-control" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="CommentText">Reply</label>
+                                                    <textarea name="CommentText" class="form-control" rows="3" required></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Submit Reply</button>
+                                            </form>
+                                        </div>
+
+                                        <!-- Replies -->
+                                        @if (comment.Replies != null && comment.Replies.Any())
                                         {
-                                            <div class="comment mb-2">
-                                                <p><strong translate="no">@comment.CommenterName</strong> @(" on ") @comment.CommentDate.ToString("MMM dd, yyyy")</p>
-                                                <p>@reply.CommentText</p>
-                                                <div class="reactions">
-                                                    @if (reply.Reactions != null && reply.Reactions.Any())
-                                                    {
-                                                        foreach (var reaction in reply.Reactions)
-                                                        {
-                                                            <span>@reaction.ReactionType: @reaction.ReactionCount </span>
-                                                        }
-                                                    }
-                                                </div>
-                                                <div class="reaction-buttons mt-2">
-                                                    <!-- Fixed: Use reply.CommentId instead of comment.CommentId -->
-                                                    <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like</a>
-                                                    <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love</a>
-                                                    <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care</a>
-                                                    <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry</a>
-                                                    <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support</a>
-                                                </div>
+                                            <div class="replies ml-4 mt-3">
+                                                @foreach (var reply in comment.Replies)
+                                                {
+                                                    <div class="comment mb-2">
+                                                        <!-- Fixed: Use reply's properties instead of parent comment's -->
+                                                        <p><strong translate="no">@reply.CommenterName</strong> @(" on ") @reply.CommentDate.ToString("MMM dd, yyyy")</p>
+                                                        <p>@reply.CommentText</p>
+                                                        <div class="reactions">
+                                                            @{
+                                                                var replyReactionGroups = reply.ReactionVotes?
+                                                                    .GroupBy(r => r.ReactionType)
+                                                                    .Select(g => new { Type = g.Key, Count = g.Count() });
+                                                            }
+                                                            @if (replyReactionGroups != null)
+                                                            {
+                                                                foreach (var group in replyReactionGroups)
+                                                                {
+                                                                    <span>@group.Type: @group.Count </span>
+                                                                }
+                                                            }
+                                                        </div>
+                                                        <div class="reaction-buttons mt-2">
+                                                            <!-- Keep these links as they are - they now use the new system -->
+                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like</a>
+                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love</a>
+                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care</a>
+                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry</a>
+                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support</a>
+                                                        </div>
+                                                    </div>
+                                                }
                                             </div>
                                         }
                                     </div>
                                 }
-                            </div>
-                        }
-                    }
-                    else
-                    {
-                        <p>No comments yet. Be the first to comment!</p>
-                    }
-                </div>
+                            }
+                            else
+                            {
+                                <p>No comments yet. Be the first to comment!</p>
+                            }
+                        </div>
 
-                <div class="add-comment mt-5">
-                    <h4>Add a Comment</h4>
-                    <form asp-action="AddComment" method="post">
-                        <input type="hidden" name="PostId" value="@Model.PostId" />
-                        <div class="form-group">
-                            <label for="CommenterName">Your Name</label>
-                            <input type="text" name="CommenterName" class="form-control" required />
+                        <div class="add-comment mt-5">
+                            <h4>Add a Comment</h4>
+                            <form asp-action="AddComment" method="post">
+                                <input type="hidden" name="PostId" value="@Model.PostId" />
+                                <div class="form-group">
+                                    <label for="CommenterName">Your Name</label>
+                                    <input type="text" name="CommenterName" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="CommentText">Comment</label>
+                                    <textarea name="CommentText" class="form-control" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Comment</button>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="CommentText">Comment</label>
-                            <textarea name="CommentText" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <!--Tags and mose popular-->
+                    <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
+                        <div>
+                            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit Comment</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-                <div>
-                    <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="fh5co_tags_all">
-                    @foreach (var tag in Model.Tags.Split(','))
-                    {
-                        <a href="@Url.Action("PostsByTag", "Home", new { tag = tag })" class="fh5co_tagg">@tag</a>
-                    }
-                </div>
-                <div>
-                    <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
-                </div>
-                <div class="row pb-3">
-                    <div class="col-5 align-self-center">
-                        <img src="images/download (1).jpg" alt="img" class="fh5co_most_trading"/>
-                    </div>
-                    <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                    </div>
-                </div>
-                <div class="row pb-3">
-                    <div class="col-5 align-self-center">
-                        <img src="images/allef-vinicius-108153.jpg" alt="img" class="fh5co_most_trading"/>
-                    </div>
-                    <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Enim ad minim veniam nostrud xercitation ullamco.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                    </div>
-                </div>
-                <div class="row pb-3">
-                    <div class="col-5 align-self-center">
-                        <img src="images/download (2).jpg" alt="img" class="fh5co_most_trading"/>
-                    </div>
-                    <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                    </div>
-                </div>
-                <div class="row pb-3">
-                    <div class="col-5 align-self-center"><img src="images/seth-doyle-133175.jpg" alt="img"
-                                                              class="fh5co_most_trading"/></div>
-                    <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+                        <div class="clearfix"></div>
+                        <div class="fh5co_tags_all">
+                            @foreach (var tag in Model.Tags.Split(','))
+                            {
+                                <a href="@Url.Action("PostsByTag", "Home", new { tag = tag })" class="fh5co_tagg">@tag</a>
+                            }
+                        </div>
+                        <div>
+                            <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
+                        </div>
+                        @if (ViewBag.PopularPosts != null && ViewBag.PopularPosts.Count > 0)
+                        {
+                            foreach (var popularPost in ViewBag.PopularPosts)
+                            {
+                                <div class="row pb-3">
+                                    <div class="col-5 align-self-center">
+                                        <img src="@popularPost.FeatureImageUrl" alt="img" class="fh5co_most_trading"/>
+                                    </div>
+                                    <div class="col-7 paddding">
+                                        <a href="/@popularPost.Categories/@popularPost.Slug" class="d-block most_fh5co_treding_font">
+                                            @popularPost.Title
+                                        </a>
+                                        <div class="most_fh5co_treding_font_123">
+                                            @popularPost.PublishedDate?.ToString("MMM dd, yyyy")
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p>No popular posts found.</p>
+                        }
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-        </div>
+        <!--You may like-->
         <div class="container-fluid pb-4 pt-5">
             <div class="container animate-box">
                 <div>

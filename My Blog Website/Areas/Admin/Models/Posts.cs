@@ -36,5 +36,7 @@ namespace My_Blog_Website.Areas.Admin.Models
         public DateTime? LastModifiedDate { get; set; }
 
         public int? ViewCount { get; set; } = 0;
+
+        public ICollection<PostReaction>? PostReactions { get; set; }
     }
 }
