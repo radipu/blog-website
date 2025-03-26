@@ -43,7 +43,8 @@ namespace My_Blog_Website.Controllers
                                     + p.Comments.Count // Total comments
                                     + p.Comments.SelectMany(c => c.Replies).Count() // Total replies
                                     + p.Comments.SelectMany(c => c.ReactionVotes).Count() // Total comment reactions
-                                    + p.PostReactions.Sum(pr => pr.ReactionCount) // Total post reactions
+                                    //+ p.PostReactions.Sum(pr => pr.ReactionCount) // Total post reactions
+                                    + p.PostReactionVotes.Count()
                             })
                             .OrderByDescending(x => x.Score)
                             .Take(4)

@@ -316,6 +316,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
             // Retrieve the post by slug. You can also filter by category if needed.
             var post = await _db.posts
+                .Include(p => p.PostReactionVotes)
                 .Include(p => p.Comments)
                 .ThenInclude(c => c.ReactionVotes)
                 .Include(p => p.Comments)
@@ -347,7 +348,8 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                         + p.Comments.Count // Total comments
                         + p.Comments.SelectMany(c => c.Replies).Count() // Total replies
                         + p.Comments.SelectMany(c => c.ReactionVotes).Count() // Total comment reactions
-                        + p.PostReactions.Sum(pr => pr.ReactionCount) // Total post reactions
+                        //+ p.PostReactions.Sum(pr => pr.ReactionCount) // Total post reactions
+                        + p.PostReactionVotes.Count()
                 })
                 .OrderByDescending(x => x.Score)
                 .Take(4)
@@ -359,6 +361,68 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             ViewBag.PopularPosts = popularPosts;
 
             return View(post);
+        }
+
+        [HttpGet]
+        [Route("PostReact")]
+        public async Task<IActionResult> PostReact(int postId, string reactionType)
+        {
+            // Validate reaction type
+            var validReactions = new[] { "like", "love", "care", "angry", "support" };
+            if (!validReactions.Contains(reactionType))
+            {
+                return BadRequest("Invalid reaction type.");
+            }
+
+            // Get or create user identifier from cookie
+            string userIdentifier = Request.Cookies["UserIdentifier"];
+            if (string.IsNullOrEmpty(userIdentifier))
+            {
+                userIdentifier = Guid.NewGuid().ToString();
+                Response.Cookies.Append("UserIdentifier", userIdentifier, new CookieOptions
+                {
+                    Expires = DateTime.Now.AddYears(1)
+                });
+            }
+
+            // Check existing vote
+            var existingVote = await _db.postReactionVotes
+                .FirstOrDefaultAsync(pr => pr.PostId == postId && pr.UserIdentifier == userIdentifier);
+
+            if (existingVote != null)
+            {
+                // Remove if same reaction clicked again (toggle)
+                if (existingVote.ReactionType == reactionType)
+                {
+                    _db.postReactionVotes.Remove(existingVote);
+                }
+                else // Update to new reaction
+                {
+                    existingVote.ReactionType = reactionType;
+                    existingVote.VoteDate = DateTime.Now;
+                    _db.Update(existingVote);
+                }
+            }
+            else
+            {
+                // Add new vote
+                var newVote = new PostReactionVote
+                {
+                    PostId = postId,
+                    UserIdentifier = userIdentifier,
+                    ReactionType = reactionType,
+                    VoteDate = DateTime.Now
+                };
+                _db.postReactionVotes.Add(newVote);
+            }
+
+            await _db.SaveChangesAsync();
+
+            // Redirect back to post
+            var post = await _db.posts
+                .FirstOrDefaultAsync(p => p.PostId == postId);
+
+            return RedirectToAction("Single", new { category = post.Categories, slug = post.Slug });
         }
 
         [HttpPost]

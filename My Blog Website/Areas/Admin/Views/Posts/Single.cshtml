@@ -27,7 +27,16 @@
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
                         @Html.Raw(Model.PostContent)
                         <!--Post Reactions-->
-                    
+                        <div class="post-reactions mb-4">
+                            <h4>React to this post:</h4>
+                            <div class="reaction-buttons mt-2">
+                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like (@Model.PostReactionVotes.Count(r => r.ReactionType == "like"))</a>
+                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love (@Model.PostReactionVotes.Count(r => r.ReactionType == "love"))</a>
+                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care (@Model.PostReactionVotes.Count(r => r.ReactionType == "care"))</a>
+                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry (@Model.PostReactionVotes.Count(r => r.ReactionType == "angry"))</a>
+                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support (@Model.PostReactionVotes.Count(r => r.ReactionType == "support"))</a>
+                            </div>
+                        </div>
                         <!--Share the post-->
                         <div class="share-section mt-5">
                             <h4>Share this post on:</h4>
@@ -63,7 +72,7 @@
                                 <a href="https://api.whatsapp.com/send?text=@encodedTitle%20@encodedUrl" 
                                    target="_blank" 
                                    class="btn btn-sm btn-success">
-                                    <i class="fa fa-whatsapp"></i> WhatsApp
+                                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
                                 </a>
 
                                 <!-- Email -->
@@ -283,6 +292,7 @@
             }
         </script>
 
+        <!--Comment Reply-->
         <script>
             function showReplyForm(commentId) {
                 var form = document.getElementById('reply-form-' + commentId);

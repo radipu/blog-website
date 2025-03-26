@@ -38,5 +38,7 @@ namespace My_Blog_Website.Areas.Admin.Models
         public int? ViewCount { get; set; } = 0;
 
         public ICollection<PostReaction>? PostReactions { get; set; }
+
+        public ICollection<PostReactionVote> PostReactionVotes { get; set; } = new List<PostReactionVote>();
     }
 }
