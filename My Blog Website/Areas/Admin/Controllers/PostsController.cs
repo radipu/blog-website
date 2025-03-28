@@ -159,7 +159,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
                     // Save to database
                     posts.Slug = URLHelper.GeneratePostSlug(posts.Title);
-                    //posts.PublishedDate = DateTime.Now;
+                    posts.PublishedDate = DateTime.Now;
                     _db.Add(posts);
                     await _db.SaveChangesAsync();
 

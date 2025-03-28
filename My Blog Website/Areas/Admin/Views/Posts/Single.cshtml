@@ -247,28 +247,61 @@
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">You may like</div>
                 </div>
-                <div class="owl-carousel owl-theme" id="slider2">
+
                 @if (ViewBag.SimilarPosts != null && ViewBag.SimilarPosts.Count > 0)
                 {
-                    foreach (var similarPost in ViewBag.SimilarPosts)
+                    var similarPostCount = ViewBag.SimilarPosts.Count;
+
+                    @if (similarPostCount > 3)
                     {
-                        <div class="item px-2">
-                            <div class="fh5co_hover_news_img">
-                                <a href="/@similarPost.Categories/@similarPost.Slug" class="d-block fh5co_small_post_heading">
-                                    <div class="fh5co_news_img">
-                                        <img src="@similarPost.FeatureImageUrl" alt="@similarPost.Title" />
-                                    </div>
-                                </a>
-                                <div>
-                                    <a href="/@similarPost.Categories/@similarPost.Slug" class="d-block fh5co_small_post_heading">
-                                        <span>@similarPost.Title</span>
-                                    </a>
-                                    <div class="c_g">
-                                        <i class="fa fa-clock-o"></i> 
-                                        @similarPost.PublishedDate.ToString("MMM dd, yyyy")
+                        <div class="owl-carousel owl-theme" id="slider2">
+                            @foreach (var similarPost in ViewBag.SimilarPosts)
+                            {
+                                <div class="item px-2">
+                                    <div class="fh5co_hover_news_img">
+                                        <a href="/@similarPost.Categories/@similarPost.Slug" class="d-block fh5co_small_post_heading">
+                                            <div class="fh5co_news_img">
+                                                <img src="@similarPost.FeatureImageUrl" alt="@similarPost.Title" />
+                                            </div>
+                                        </a>
+                                        <div>
+                                            <a href="/@similarPost.Categories/@similarPost.Slug" class="d-block fh5co_small_post_heading">
+                                                <span>@similarPost.Title</span>
+                                            </a>
+                                            <div class="c_g">
+                                                <i class="fa fa-clock-o"></i> 
+                                                @similarPost.PublishedDate.ToString("MMM dd, yyyy")
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row g-4">
+                            @foreach (var similarPost in ViewBag.SimilarPosts)
+                            {
+                                <div class="col-xl-4 col-md-6 col-sm-12">
+                                    <div class="fh5co_hover_news_img">
+                                        <a href="/@similarPost.Categories/@similarPost.Slug" class="d-block fh5co_small_post_heading">
+                                            <div class="fh5co_news_img">
+                                                <img src="@similarPost.FeatureImageUrl" alt="@similarPost.Title" />
+                                            </div>
+                                        </a>
+                                        <div>
+                                            <a href="/@similarPost.Categories/@similarPost.Slug" class="d-block fh5co_small_post_heading">
+                                                <span>@similarPost.Title</span>
+                                            </a>
+                                            <div class="c_g">
+                                                <i class="fa fa-clock-o"></i> 
+                                                @similarPost.PublishedDate.ToString("MMM dd, yyyy")
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         </div>
                     }
                 }
@@ -278,7 +311,6 @@
                         <p>No related posts found in @ViewBag.CurrentCategory category.</p>
                     </div>
                 }
-            </div>
             </div>
         </div>
 
