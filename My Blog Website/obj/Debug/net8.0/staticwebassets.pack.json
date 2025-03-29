@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\admin\\dist\\css\\adminlte.min.css"
     },
     {
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\css\\ckeditor.css",
+      "PackagePath": "staticwebassets\\admin\\dist\\css\\ckeditor.css"
+    },
+    {
       "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\AdminLTELogo.png",
       "PackagePath": "staticwebassets\\admin\\dist\\img\\AdminLTELogo.png"
     },
@@ -151,6 +155,10 @@
     {
       "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\adminlte.min.js.map",
       "PackagePath": "staticwebassets\\admin\\dist\\js\\adminlte.min.js.map"
+    },
+    {
+      "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\ckeditor.js",
+      "PackagePath": "staticwebassets\\admin\\dist\\js\\ckeditor.js"
     },
     {
       "Id": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\pages\\dashboard2.js",

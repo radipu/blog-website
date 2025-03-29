@@ -8,9 +8,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
+    @* <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script> *@
     <script src="~/admin/dist/js/adminlte.js"></script>
     <link rel="stylesheet" href="~/admin/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/admin/dist/css/ckeditor.css">
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.3.0/ckeditor5.css" crossorigin>
 </head>
 
 <body>
@@ -31,7 +33,15 @@
             <!--Main Content-->
             <div class="new-post">
                 <input type="text" class="title-input" placeholder="Post title" asp-for="Title" id="post_title" />
-                <textarea id="post_text" asp-for="PostContent"></textarea>
+                @* <textarea id="post_text" asp-for="PostContent"></textarea> *@
+                <div class="main-container">
+		            <div
+			            class="editor-container editor-container_classic-editor editor-container_include-style editor-container_include-block-toolbar editor-container_include-word-count"
+			            id="editor-container" style="color: black; width: 75%; margin-bottom: 10px; margin-left: 70px;">
+			            <div class="editor-container__editor"><textarea id="editor" asp-for="PostContent"></textarea></div>
+			            <div class="editor_container__word-count" id="editor-word-count"></div>
+		            </div>
+	            </div>
                 <input type="text" class="description-input" placeholder="What the post about?" asp-for="PostDescription" id="post_title" />
             </div>
             <!-- Sidebar -->
@@ -113,5 +123,7 @@
             </div>
         </div>
     </form>
+		<script src="https://cdn.ckeditor.com/ckeditor5/44.3.0/ckeditor5.umd.js" crossorigin></script>
+		<script src="~/admin/dist/js/ckeditor.js"></script>
 </body>
 </html>

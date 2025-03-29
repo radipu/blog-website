@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eK/G9cPd8HZ6H/y9A0jnrgK9HIw5DOvw/eyzgtYcGsg=",
+  "Hash": "jiL9dK3TGrrNtJ0LAn8s7eN1YgcdhPL9avjxaQUhvxk=",
   "Source": "My Blog Website",
   "BasePath": "_content/My Blog Website",
   "Mode": "Default",
@@ -1214,6 +1214,25 @@
       "OriginalItemSpec": "wwwroot\\admin\\dist\\css\\adminlte.min.css"
     },
     {
+      "Identity": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\css\\ckeditor.css",
+      "SourceId": "My Blog Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\",
+      "BasePath": "_content/My Blog Website",
+      "RelativePath": "admin/dist/css/ckeditor.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\dist\\css\\ckeditor.css"
+    },
+    {
       "Identity": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\img\\AdminLTELogo.png",
       "SourceId": "My Blog Website",
       "SourceType": "Discovered",
@@ -1896,6 +1915,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\dist\\js\\adminlte.min.js.map"
+    },
+    {
+      "Identity": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\ckeditor.js",
+      "SourceId": "My Blog Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\",
+      "BasePath": "_content/My Blog Website",
+      "RelativePath": "admin/dist/js/ckeditor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\dist\\js\\ckeditor.js"
     },
     {
       "Identity": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\admin\\dist\\js\\pages\\dashboard2.js",

@@ -3070,8 +3070,8 @@
 
 //date format for create post
 
-//sidebar
-    document.addEventListener('DOMContentLoaded', function() {
+// Sidebar functionality
+document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('rightsidebar');
     const toggleButton = document.getElementById('toggleSidebarButton');
     const sidebarWrapper = document.getElementById('sidebarwrapper');
@@ -3101,78 +3101,95 @@
             toggleButton.style.right = '10px'; // Move button to the edge when collapsed
         }
     });
-    });
 
-//text editor
-        // Replace the textarea with id 'post_text' with CKEditor
-    CKEDITOR.replace('post_text', {
-        language: 'en',
-        uiColor: '#dddddd',
-        height: 500,
-        width: '75%',
-        resize_dir: 'vertical',
-        on: {
-            instanceReady: function(event) {
-                event.editor.container.$.style.marginLeft = '70px';
-            },
-            notificationShow: function(event) {
-                // Suppress the specific notification about the CKEditor version
-                if (event.data.message.indexOf('is not secure') > -1) {
-                    event.cancel();
-                }
+    // Initialize date picker with today's date
+    const dateInput = document.getElementById("dateInput");
+    if (dateInput) {
+        // Set today's date as the default value
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+        const day = String(today.getDate()).padStart(2, "0");
+
+        // Format as YYYY-MM-DD (required for input type="date")
+        const todayFormatted = `${year}-${month}-${day}`;
+        dateInput.value = todayFormatted;
+
+        // Optional: Add an event listener for date changes
+        dateInput.addEventListener("change", function () {
+            const inputDate = new Date(this.value);
+            if (!isNaN(inputDate)) {
+                console.log("Selected date:", inputDate.toLocaleDateString("en-US"));
             }
-        },
-        toolbar: [
-            { name: 'document', items: [ 'Source', '-', 'NewPage', 'Preview', '-', 'Templates' ] },
-            { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
-            { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
-            { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
-            '/',
-            { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-            { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-            { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-            { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
-            '/',
-            { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-            { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-            { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
-            { name: 'others', items: [ '-' ] },
-            { name: 'about', items: [ 'About' ] }
-        ]
+        });
+    }
+
+    // Setup tag input
+    const tagInput = document.getElementById('tagInput');
+    if (tagInput) {
+        tagInput.addEventListener('keydown', function(event) {
+            // Prevent form submission when pressing Enter in the tag input
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                addTag(this.value.trim());
+                return false;
+            }
+            
+            // Also add tag when pressing space or comma
+            if (event.key === ' ' || event.key === ',') {
+                event.preventDefault();
+                addTag(this.value.trim());
+                return false;
+            }
+        });
+    }
+
+    // Handle clicks on tag close buttons
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('close-btn')) {
+            var tag = event.target.parentNode;
+            tag.parentNode.removeChild(tag);
+        }
     });
 
-    // Handle Publish Button Click
-    //document.getElementById('publish-button').addEventListener('click', function() {
-    //    var title = document.getElementById('post_title').value;
-    //    var content = CKEDITOR.instances.post_text.getData();
+    // Setup form submission
+    const postForm = document.getElementById('postForm');
+    if (postForm) {
+        postForm.addEventListener('submit', function(e) {
+            // Collect all form data before submission
+            collectFormData();
+        });
+    }
+});
 
-    //    // Set the preview content
-    //    document.getElementById('preview-title').innerText = title;
-    //    document.getElementById('preview-content').innerHTML = content;
+// Function to add a new tag
+function addTag(tagText) {
+    if (tagText !== '') {
+        var tagContainer = document.getElementById('tagContainer');
+        var tagInput = document.getElementById('tagInput');
+        
+        var tagElement = document.createElement('div');
+        tagElement.className = 'tag';
+        tagElement.innerHTML = tagText + ' <span class="close-btn">×</span>';
+        
+        tagContainer.insertBefore(tagElement, tagInput);
+        tagInput.value = '';
+    }
+}
 
-    //    // Show the modal
-    //    $('#previewModal').modal('show');
-    //});
-
-    // Handle Confirm Publish Button Click (if needed)
-    //document.getElementById('confirm-publish').addEventListener('click', function() {
-    //    // Logic to save or publish the post
-    //    //alert('Post confirmed and published!');
-    //    $('#previewModal').modal('hide');
-//});
-
-// Handle Publish/Draft buttons
+// Function to collect all form data before submission
 function collectFormData() {
-    CKEDITOR.instances.post_text.updateElement();
-
+    // For CKEditor 5, we don't need to explicitly update the element
+    // as it updates the associated textarea automatically
+    
     // Collect categories
     const categories = Array.from(document.querySelectorAll('.category-check input:checked'))
-                          .map(cb => cb.value);
+                         .map(cb => cb.value);
     document.getElementById('selectedCategories').value = categories.join(', ');
 
     // Collect tags
     const tags = Array.from(document.querySelectorAll('#tagContainer .tag'))
-                    .map(tag => tag.textContent.replace('×', '').trim());
+                   .map(tag => tag.textContent.replace('×', '').trim());
     document.getElementById('selectedTags').value = tags.join(', ');
 
     // Handle image data
@@ -3181,38 +3198,40 @@ function collectFormData() {
     const featuredImageData = document.getElementById('featuredImageData');
 
     // Clear conflicting inputs
-    if (fileInput.files.length > 0) {
-        urlInput.value = '';
-        featuredImageData.value = document.getElementById('featureImagePreview').src;
-    } else if (urlInput.value) {
-        fileInput.value = '';
-        featuredImageData.value = urlInput.value;
+    if (fileInput && fileInput.files.length > 0) {
+        if (urlInput) urlInput.value = '';
+        if (featuredImageData && document.getElementById('featureImagePreview')) {
+            featuredImageData.value = document.getElementById('featureImagePreview').src;
+        }
+    } else if (urlInput && urlInput.value) {
+        if (fileInput) fileInput.value = '';
+        if (featuredImageData) featuredImageData.value = urlInput.value;
     }
 }
 
 // Clear URL input and preview when a file is selected
 function clearUrlInput() {
-    document.getElementById('featuredImageUrl').value = '';
-    document.getElementById('urlImagePreview').style.display = 'none';
+    const urlInput = document.getElementById('featuredImageUrl');
+    const urlPreview = document.getElementById('urlImagePreview');
+    
+    if (urlInput) urlInput.value = '';
+    if (urlPreview) urlPreview.style.display = 'none';
 }
 
 // Clear file input and preview when a URL is entered
 function clearFileInput() {
-    document.getElementById('featureImage').value = '';
-    document.getElementById('featureImagePreview').style.display = 'none';
+    const fileInput = document.getElementById('featureImage');
+    const filePreview = document.getElementById('featureImagePreview');
+    
+    if (fileInput) fileInput.value = '';
+    if (filePreview) filePreview.style.display = 'none';
 }
 
-//publish and draft button
-document.getElementById('postForm').addEventListener('submit', function(e) {
-    // Update CKEditor content
-    CKEDITOR.instances.post_text.updateElement();
-    
-    // Collect categories and tags
-    collectFormData();
-});
-
+// Validate file input (size and type)
 function validateFileInput(event) {
     var file = event.target.files[0];
+    if (!file) return;
+    
     var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
     if (!allowedExtensions.exec(file.name)) {
         alert('Please upload a valid image file.');
@@ -3230,80 +3249,35 @@ function validateFileInput(event) {
 // File upload preview
 function previewImage(event) {
     const input = event.target;
-    const reader = new FileReader();
+    if (!input.files || !input.files[0]) return;
     
+    const reader = new FileReader();
     reader.onload = function() {
         const preview = document.getElementById('featureImagePreview');
-        preview.src = reader.result;
-        preview.style.display = 'block';
-        document.getElementById('featuredImageData').value = reader.result;
+        if (preview) {
+            preview.src = reader.result;
+            preview.style.display = 'block';
+            
+            const featuredImageData = document.getElementById('featuredImageData');
+            if (featuredImageData) featuredImageData.value = reader.result;
+        }
     };
     
-    if (input.files[0]) {
-        reader.readAsDataURL(input.files[0]);
-    }
+    reader.readAsDataURL(input.files[0]);
 }
 
 // URL input preview
 function updateImagePreview(url) {
     const preview = document.getElementById('urlImagePreview');
+    if (!preview) return;
+    
     if (url) {
         preview.src = url;
         preview.style.display = 'block';
-        document.getElementById('featuredImageData').value = url;
+        
+        const featuredImageData = document.getElementById('featuredImageData');
+        if (featuredImageData) featuredImageData.value = url;
     } else {
         preview.style.display = 'none';
     }
 }
-
-//date format
-//document.getElementById("dateInput").addEventListener("change", function () {
-//    const inputDate = new Date(this.value);
-//    if (!isNaN(inputDate)) {
-//        const options = { month: "short", day: "2-digit", year: "numeric" };
-//        document.getElementById("dateInput").textContent = inputDate.toLocaleDateString("en-US", options);
-//    }
-//});
-document.addEventListener("DOMContentLoaded", function () {
-            const dateInput = document.getElementById("dateInput");
-
-            // Set today's date as the default value
-            const today = new Date();
-            const year = today.getFullYear();
-            const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based
-            const day = String(today.getDate()).padStart(2, "0");
-
-            // Format as YYYY-MM-DD (required for input type="date")
-            const todayFormatted = `${year}-${month}-${day}`;
-            dateInput.value = todayFormatted;
-
-            // Optional: Add an event listener for date changes
-            dateInput.addEventListener("change", function () {
-                const inputDate = new Date(this.value);
-                if (!isNaN(inputDate)) {
-                    console.log("Selected date:", inputDate.toLocaleDateString("en-US"));
-                }
-            });
-        });
-
-//tags
-document.getElementById('tagInput').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        var tagInput = this.value.trim();
-        if (tagInput !== '') {
-            var tagElement = document.createElement('div');
-            tagElement.className = 'tag';
-            tagElement.innerHTML = tagInput + ' <span class="close-btn">×</span>';
-            document.getElementById('tagContainer').insertBefore(tagElement, this);
-            this.value = '';
-        }
-    }
-});
-
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('close-btn')) {
-        var tag = event.target.parentNode;
-        tag.parentNode.removeChild(tag);
-    }
-});
