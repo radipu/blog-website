@@ -1507,3 +1507,15 @@ a, a:hover
     width: 0%;
     transition: width 0.3s ease;
 }
+
+.voice-recitation-section {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #dee2e6;
+    }
+
+    .highlight-speech {
+        background-color: #fff3cd;
+        transition: background-color 0.3s ease;
+    }

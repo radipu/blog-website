@@ -26,7 +26,24 @@
             <div class="container paddding">
                 <div class="row mx-0">
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-                        @Html.Raw(Model.PostContent)
+                        <div class="voice-recitation-section mb-4">
+                            <h4>Listen to this post:</h4>
+                            <div class="d-flex align-items-center gap-3">
+                                <button id="playPauseBtn" class="btn btn-primary"><i class="fas fa-play"></i></button>
+                                <button id="stopBtn" class="btn btn-secondary"><i class="fas fa-stop"></i></button>
+                                <select id="voiceSelect" class="form-select" style="max-width: 200px;">
+                                    <option value="">Default Voice</option>
+                                </select>
+                                <div class="speed-control">
+                                    <label>Speed:</label>
+                                    <input type="range" id="rateControl" min="0.5" max="2" step="0.25" value="1">
+                                    <span id="rateValue">1x</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="post-content">
+                            @Html.Raw(Model.PostContent)
+                        </div>
                         <!--Post Reactions-->
                         <div class="post-reactions mb-4">
                             <h4>React to this post:</h4>
@@ -333,6 +350,164 @@
                     form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
                 }
             }
+        </script>
+
+        <!--text-to-speech-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (!('speechSynthesis' in window)) {
+                    alert('Text-to-speech is not supported in your browser');
+                    return;
+                }
+
+                const synth = window.speechSynthesis;
+                let utterance = null;
+                let isPlaying = false;
+                let isPaused = false;
+                let defaultVoice = null;
+
+                // DOM elements
+                const playPauseBtn = document.getElementById('playPauseBtn');
+                const stopBtn = document.getElementById('stopBtn');
+                const voiceSelect = document.getElementById('voiceSelect');
+                const rateControl = document.getElementById('rateControl');
+                const rateValue = document.getElementById('rateValue');
+                const postContentEl = document.getElementById('post-content');
+                const postContent = postContentEl.innerText || postContentEl.textContent;
+
+                // Voice setup
+                function populateVoices() {
+                    const voices = synth.getVoices();
+                    voiceSelect.innerHTML = '<option value="">Default Voice</option>';
+            
+                    // Find Microsoft Zira
+                    const ziraVoice = voices.find(voice => 
+                        voice.name.toLowerCase().includes('zira') && 
+                        voice.lang === 'en-US'
+                    );
+
+                    defaultVoice = ziraVoice || null;
+
+                    voices.forEach(voice => {
+                        const option = document.createElement('option');
+                        option.value = voice.name;
+                        option.textContent = `${voice.name} (${voice.lang})`;
+                
+                        if (ziraVoice && voice.name === ziraVoice.name) {
+                            option.selected = true;
+                        }
+                
+                        voiceSelect.appendChild(option);
+                    });
+                }
+
+                // Initialize voices with retry
+                function initVoices() {
+                    if (synth.getVoices().length > 0) {
+                        populateVoices();
+                    } else {
+                        synth.onvoiceschanged = populateVoices;
+                        setTimeout(populateVoices, 1000);
+                    }
+                }
+
+                initVoices();
+
+                // Event handlers
+                playPauseBtn.addEventListener('click', () => {
+                    if (!isPlaying && !isPaused) {
+                        startSpeech();
+                    } else if (isPaused) {
+                        resumeSpeech();
+                    } else {
+                        pauseSpeech();
+                    }
+                });
+
+                stopBtn.addEventListener('click', stopSpeech);
+
+                rateControl.addEventListener('input', (e) => {
+                    const value = parseFloat(e.target.value);
+                    rateValue.textContent = `${value}x`;
+                    if (utterance) utterance.rate = value;
+                });
+
+                function startSpeech() {
+                    if (synth.speaking) synth.cancel();
+
+                    utterance = new SpeechSynthesisUtterance(postContent);
+            
+                    // Set voice
+                    const selectedVoice = voiceSelect.value 
+                        ? synth.getVoices().find(v => v.name === voiceSelect.value)
+                        : defaultVoice;
+
+                    if (selectedVoice) {
+                        utterance.voice = selectedVoice;
+                    }
+
+                    utterance.rate = parseFloat(rateControl.value);
+                    utterance.pitch = 1;
+
+                    utterance.onend = () => {
+                        isPlaying = false;
+                        isPaused = false;
+                        updateButtonState();
+                    };
+
+                    utterance.onpause = () => {
+                        isPlaying = false;
+                        isPaused = true;
+                        updateButtonState();
+                    };
+
+                    utterance.onresume = () => {
+                        isPlaying = true;
+                        isPaused = false;
+                        updateButtonState();
+                    };
+
+                    synth.speak(utterance);
+                    isPlaying = true;
+                    isPaused = false;
+                    updateButtonState();
+                }
+
+                function pauseSpeech() {
+                    if (synth.speaking && !synth.paused) {
+                        synth.pause();
+                        isPlaying = false;
+                        isPaused = true;
+                        updateButtonState();
+                    }
+                }
+
+                function resumeSpeech() {
+                    if (synth.paused) {
+                        synth.resume();
+                        isPlaying = true;
+                        isPaused = false;
+                        updateButtonState();
+                    }
+                }
+
+                function stopSpeech() {
+                    synth.cancel();
+                    isPlaying = false;
+                    isPaused = false;
+                    updateButtonState();
+                }
+
+                function updateButtonState() {
+                    if (isPlaying) {
+                        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else if (isPaused) {
+                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    } else {
+                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                }
+            });
         </script>
     </body>
 </html>
