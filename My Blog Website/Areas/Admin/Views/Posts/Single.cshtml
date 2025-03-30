@@ -26,19 +26,13 @@
             <div class="container paddding">
                 <div class="row mx-0">
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-                        <div class="voice-recitation-section mb-4">
-                            <h4>Listen to this post:</h4>
-                            <div class="d-flex align-items-center gap-3">
-                                <button id="playPauseBtn" class="btn btn-primary"><i class="fas fa-play"></i></button>
-                                <button id="stopBtn" class="btn btn-secondary"><i class="fas fa-stop"></i></button>
-                                <select id="voiceSelect" class="form-select" style="max-width: 200px;">
-                                    <option value="">Default Voice</option>
-                                </select>
-                                <div class="speed-control">
-                                    <label>Speed:</label>
-                                    <input type="range" id="rateControl" min="0.5" max="2" step="0.25" value="1">
-                                    <span id="rateValue">1x</span>
-                                </div>
+                        <div class="voice-controls">
+                            <button id="playPauseBtn" class="btn"><i class="fas fa-play"></i></button>
+                            <button id="stopBtn" class="btn"><i class="fas fa-stop"></i></button>
+                            <select id="voiceSelect" class="dropdown"></select>
+                            <div class="speed-control">
+                                <input type="range" id="rateControl" min="0.5" max="2" step="0.1" value="1">
+                                <span id="rateValue">1x</span>
                             </div>
                         </div>
                         <div id="post-content">
