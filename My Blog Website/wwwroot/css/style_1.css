@@ -1491,3 +1491,19 @@ a, a:hover
   font-weight: 300;
   margin: 2em 0;
 }
+
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: #f0f0f0;
+    position: fixed;
+    top: 60px; /* Adjust this to match your navbar's height */
+    left: 0;
+    z-index: 9999;
+}
+
+.progress-bar {
+    background: #007bff; /* Blue color, change as needed */
+    width: 0%;
+    transition: width 0.3s ease;
+}

@@ -145,6 +145,13 @@
                         </div>
                     </div>
                 </nav>
+                @if (ViewData["ShowProgressBar"] as bool? == true)
+                {
+                    <!-- Progress Bar -->
+                    <div class="progress-container">
+                        <div class="progress-bar" id="myBar" style="height: 2px; width: 100%;"></div>
+                    </div>
+                }
             </div>
         </div>
     </header>
@@ -320,6 +327,38 @@
                     })
                     .catch(error => console.error('Error:', error));
             }, 300);
+        });
+
+        //progress bar
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.getElementById('myBar');
+        
+            if (progressBar) {
+                // Initialize at 0%
+                progressBar.style.width = "0%";
+
+                // Update progress immediately in case of initial scroll position
+                updateProgress();
+
+                // Update on scroll
+                window.addEventListener('scroll', updateProgress);
+
+                // Update on window resize (in case content height changes)
+                window.addEventListener('resize', updateProgress);
+
+                function updateProgress() {
+                    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                
+                    // Only update if there's scrollable height
+                    if (height > 0) {
+                        const scrolled = (winScroll / height) * 100;
+                        progressBar.style.width = scrolled + "%";
+                    } else {
+                        progressBar.style.width = "0%";
+                    }
+                }
+            }
         });
     </script>
 </body>
