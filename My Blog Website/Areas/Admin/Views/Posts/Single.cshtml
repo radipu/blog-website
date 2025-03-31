@@ -367,35 +367,33 @@
                 const rateControl = document.getElementById('rateControl');
                 const rateValue = document.getElementById('rateValue');
                 const postContentEl = document.getElementById('post-content');
-                const postContent = postContentEl.innerText || postContentEl.textContent;
 
-                // Voice setup
+                // Voice setup: populate dropdown with all voices and set a default if available.
                 function populateVoices() {
                     const voices = synth.getVoices();
-                    voiceSelect.innerHTML = '<option value="">Default Voice</option>';
-    
-                    // Find Microsoft Zira
-                    const ziraVoice = voices.find(voice => 
-                        voice.name.toLowerCase().includes('zira') && 
+                    voiceSelect.innerHTML = '<option value="">Default Voice (Auto-detect)</option>';
+
+                    // Find Microsoft Zira for English if available
+                    const ziraVoice = voices.find(voice =>
+                        voice.name.toLowerCase().includes('zira') &&
                         voice.lang === 'en-US'
                     );
-
                     defaultVoice = ziraVoice || null;
 
                     voices.forEach(voice => {
                         const option = document.createElement('option');
                         option.value = voice.name;
                         option.textContent = `${voice.name} (${voice.lang})`;
-        
+
                         if (ziraVoice && voice.name === ziraVoice.name) {
                             option.selected = true;
                         }
-        
+
                         voiceSelect.appendChild(option);
                     });
                 }
 
-                // Initialize voices with retry
+                // Initialize voices with retry in case voices are not yet loaded
                 function initVoices() {
                     if (synth.getVoices().length > 0) {
                         populateVoices();
@@ -404,7 +402,6 @@
                         setTimeout(populateVoices, 1000);
                     }
                 }
-
                 initVoices();
 
                 // Event handlers
@@ -423,19 +420,41 @@
                 rateControl.addEventListener('input', (e) => {
                     const value = parseFloat(e.target.value);
                     rateValue.textContent = `${value}x`;
-                    if (utterance) utterance.rate = value;
+                    if (utterance) {
+                        utterance.rate = value;
+                    }
                 });
 
+                // When starting speech, get the current text and language so that any translation changes are included.
                 function startSpeech() {
-                    if (synth.speaking) synth.cancel();
+                    if (synth.speaking) {
+                        synth.cancel();
+                    }
+                    // Get updated content from the DOM element
+                    const postContent = postContentEl.innerText || postContentEl.textContent;
+
+                    // Detect language: try the post element's lang attribute, or document's, or fallback to English.
+                    const detectedLang = postContentEl.getAttribute('lang') || document.documentElement.lang || 'en-US';
 
                     utterance = new SpeechSynthesisUtterance(postContent);
-    
-                    // Set voice
-                    const selectedVoice = voiceSelect.value 
-                        ? synth.getVoices().find(v => v.name === voiceSelect.value)
-                        : defaultVoice;
+                    // Set the language of the utterance so that TTS uses correct pronunciation.
+                    utterance.lang = detectedLang;
 
+                    // Determine voice:
+                    // If the user has manually selected a voice, use that.
+                    // Otherwise, try to find a voice that supports the detected language.
+                    let selectedVoice;
+                    if (voiceSelect.value) {
+                        selectedVoice = synth.getVoices().find(v => v.name === voiceSelect.value);
+                    } else {
+                        selectedVoice = synth.getVoices().find(voice => 
+                            voice.lang.toLowerCase().startsWith(detectedLang.toLowerCase())
+                        );
+                        // Fallback to defaultVoice if no matching voice is found.
+                        if (!selectedVoice) {
+                            selectedVoice = defaultVoice;
+                        }
+                    }
                     if (selectedVoice) {
                         utterance.voice = selectedVoice;
                     }
@@ -495,8 +514,6 @@
                 function updateButtonState() {
                     if (isPlaying) {
                         playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                    } else if (isPaused) {
-                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
                     } else {
                         playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
                     }
