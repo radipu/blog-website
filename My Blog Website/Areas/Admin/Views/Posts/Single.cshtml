@@ -41,12 +41,24 @@
                         <!--Post Reactions-->
                         <div class="post-reactions mb-4">
                             <h4>React to this post:</h4>
-                            <div class="reaction-buttons mt-2">
-                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like (@Model.PostReactionVotes.Count(r => r.ReactionType == "like"))</a>
-                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love (@Model.PostReactionVotes.Count(r => r.ReactionType == "love"))</a>
-                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care (@Model.PostReactionVotes.Count(r => r.ReactionType == "care"))</a>
-                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry (@Model.PostReactionVotes.Count(r => r.ReactionType == "angry"))</a>
-                                <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support (@Model.PostReactionVotes.Count(r => r.ReactionType == "support"))</a>
+                            <div class="reaction-buttons mt-2 d-flex gap-2">
+                                @foreach (var reaction in new[] { ("like", "fa-thumbs-up", "primary"), 
+                                                                ("love", "fa-heart", "danger"), 
+                                                                ("care", "fa-hand-holding-heart", "success"), 
+                                                                ("angry", "fa-angry", "warning"), 
+                                                                ("support", "fa-hands-helping", "info") })
+                                {
+                                    <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = reaction.Item1 })" 
+                                       class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative">
+                                        <span class="reaction-icon">
+                                            <i class="fas @reaction.Item2"></i>
+                                        </span>
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
+                                            @Model.PostReactionVotes.Count(r => r.ReactionType == reaction.Item1)
+                                            <span class="visually-hidden">@reaction.Item1 reactions</span>
+                                        </span>
+                                    </a>
+                                }
                             </div>
                         </div>
                         <!--Share the post-->
@@ -110,7 +122,7 @@
                                     <div class="comment mb-3">
                                         <p><strong translate="no">@comment.CommenterName</strong> @(" on ") @comment.CommentDate.ToString("MMM dd, yyyy")</p>
                                         <p>@comment.CommentText</p>
-                                        <div class="reactions">
+                                        <div class="reactions d-flex gap-2 align-items-center mb-2">
                                             @{
                                                 var reactionGroups = comment.ReactionVotes?
                                                     .GroupBy(r => r.ReactionType)
@@ -120,16 +132,35 @@
                                             {
                                                 foreach (var group in reactionGroups)
                                                 {
-                                                    <span>@group.Type: @group.Count</span>
+                                                    var (icon, color) = GetReactionInfo(group.Type);
+                                                    <div class="reaction-badge position-relative">
+                                                        <i class="fas @icon text-@color"></i>
+                                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@color">
+                                                            @group.Count
+                                                            <span class="visually-hidden">@group.Type reactions</span>
+                                                        </span>
+                                                    </div>
                                                 }
                                             }
                                         </div>
-                                        <div class="reaction-buttons mt-2">
-                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like</a>
-                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love</a>
-                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care</a>
-                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry</a>
-                                            <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support</a>
+                                        <div class="reaction-buttons mt-2 d-flex gap-1">
+                                            @foreach (var reaction in new[] { ("like", "fa-thumbs-up", "primary"), 
+                                                                ("love", "fa-heart", "danger"), 
+                                                                ("care", "fa-hand-holding-heart", "success"), 
+                                                                ("angry", "fa-angry", "warning"), 
+                                                                ("support", "fa-hands-helping", "info") })
+                                            {
+                                                <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = reaction.Item1 })" 
+                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative">
+                                                    <span class="reaction-icon">
+                                                        <i class="fas @reaction.Item2"></i>
+                                                    </span>
+                                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
+                                                        @(comment.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
+                                                        <span class="visually-hidden">@reaction.Item1 reactions</span>
+                                                    </span>
+                                                </a>
+                                            }
                                         </div>
                                         <button class="btn btn-link" onclick="showReplyForm(@comment.CommentId)">Reply</button>
 
@@ -157,10 +188,9 @@
                                                 @foreach (var reply in comment.Replies)
                                                 {
                                                     <div class="comment mb-2">
-                                                        <!-- Fixed: Use reply's properties instead of parent comment's -->
                                                         <p><strong translate="no">@reply.CommenterName</strong> @(" on ") @reply.CommentDate.ToString("MMM dd, yyyy")</p>
                                                         <p>@reply.CommentText</p>
-                                                        <div class="reactions">
+                                                        <div class="reactions d-flex gap-2 align-items-center mb-2">
                                                             @{
                                                                 var replyReactionGroups = reply.ReactionVotes?
                                                                     .GroupBy(r => r.ReactionType)
@@ -170,17 +200,35 @@
                                                             {
                                                                 foreach (var group in replyReactionGroups)
                                                                 {
-                                                                    <span>@group.Type: @group.Count </span>
+                                                                    var (icon, color) = GetReactionInfo(group.Type);
+                                                                    <div class="reaction-badge position-relative">
+                                                                        <i class="fas @icon text-@color"></i>
+                                                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@color">
+                                                                            @group.Count
+                                                                            <span class="visually-hidden">@group.Type reactions</span>
+                                                                        </span>
+                                                                    </div>
                                                                 }
                                                             }
                                                         </div>
-                                                        <div class="reaction-buttons mt-2">
-                                                            <!-- Keep these links as they are - they now use the new system -->
-                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "like" })" class="btn btn-sm btn-outline-primary">Like</a>
-                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "love" })" class="btn btn-sm btn-outline-danger">Love</a>
-                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "care" })" class="btn btn-sm btn-outline-success">Care</a>
-                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "angry" })" class="btn btn-sm btn-outline-warning">Angry</a>
-                                                            <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = "support" })" class="btn btn-sm btn-outline-info">Support</a>
+                                                        <div class="reaction-buttons mt-2 d-flex gap-1">
+                                                            @foreach (var reaction in new[] { ("like", "fa-thumbs-up", "primary"), 
+                                                                                ("love", "fa-heart", "danger"), 
+                                                                                ("care", "fa-hand-holding-heart", "success"), 
+                                                                                ("angry", "fa-angry", "warning"), 
+                                                                                ("support", "fa-hands-helping", "info") })
+                                                            {
+                                                                <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = reaction.Item1 })" 
+                                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative">
+                                                                    <span class="reaction-icon">
+                                                                        <i class="fas @reaction.Item2"></i>
+                                                                    </span>
+                                                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
+                                                                        @(reply.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
+                                                                        <span class="visually-hidden">@reaction.Item1 reactions</span>
+                                                                    </span>
+                                                                </a>
+                                                            }
                                                         </div>
                                                     </div>
                                                 }
@@ -194,6 +242,21 @@
                                 <p>No comments yet. Be the first to comment!</p>
                             }
                         </div>
+
+                        @functions {
+                            private (string Icon, string Color) GetReactionInfo(string reactionType)
+                            {
+                                return reactionType switch
+                                {
+                                    "like" => ("fa-thumbs-up", "primary"),
+                                    "love" => ("fa-heart", "danger"),
+                                    "care" => ("fa-hand-holding-heart", "success"),
+                                    "angry" => ("fa-angry", "warning"),
+                                    "support" => ("fa-hands-helping", "info"),
+                                    _ => ("fa-question", "secondary")
+                                };
+                            }
+                        }
 
                         <div class="add-comment mt-5">
                             <h4>Add a Comment</h4>
