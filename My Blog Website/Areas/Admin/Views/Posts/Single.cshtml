@@ -48,8 +48,10 @@
                                                                 ("angry", "fa-angry", "warning"), 
                                                                 ("support", "fa-hands-helping", "info") })
                                 {
-                                    <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = reaction.Item1 })" 
-                                       class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative">
+                                    <a href="#" 
+                                       data-post-id="@Model.PostId" 
+                                       data-reaction-type="@reaction.Item1" 
+                                       class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative react-link">
                                         <span class="reaction-icon">
                                             <i class="fas @reaction.Item2"></i>
                                         </span>
@@ -389,6 +391,7 @@
             </div>
         </div>
 
+        <!--Copy link-->
         <script>
             function copyToClipboard(text) {
                 navigator.clipboard.writeText(text).then(function() {
@@ -397,6 +400,35 @@
                     alert('Failed to copy link: ' + err);
                 });
             }
+        </script>
+
+        <!--Post Reactions no page reload-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.react-link').on('click', function (e) {
+                    e.preventDefault();
+                    const $button = $(this);
+        
+                    $.ajax({
+                        url: '@Url.Action("PostReact", "Posts")',
+                        data: {
+                            postId: $button.data('post-id'),
+                            reactionType: $button.data('reaction-type')
+                        },
+                        success: (data) => {
+                            // Update ALL reaction counts
+                            $('.react-link').each(function () {
+                                const type = $(this).data('reaction-type');
+                                $(this).find('.badge').text(data.reactionCounts[type]);
+                            });
+                        },
+                        error: (xhr) => {
+                            console.error('Error:', xhr.responseText);
+                        }
+                    });
+                });
+            });
         </script>
 
         <!--Comment Reply-->

@@ -418,12 +418,22 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
             await _db.SaveChangesAsync();
 
-            // Redirect back to post
+            // Return JSON response
             var post = await _db.posts
+                .Include(p => p.PostReactionVotes)
                 .FirstOrDefaultAsync(p => p.PostId == postId);
+            var reactionCounts = new Dictionary<string, int>
+            {
+                {"like", post.PostReactionVotes.Count(r => r.ReactionType == "like")},
+                {"love", post.PostReactionVotes.Count(r => r.ReactionType == "love")},
+                {"care", post.PostReactionVotes.Count(r => r.ReactionType == "care")},
+                {"angry", post.PostReactionVotes.Count(r => r.ReactionType == "angry")},
+                {"support", post.PostReactionVotes.Count(r => r.ReactionType == "support")},
+            };
 
-            return RedirectToAction("Single", new { category = post.Categories, slug = post.Slug });
+            return Json(new { reactionCounts });
         }
+
 
         [HttpPost]
         [Route("AddComment")]
