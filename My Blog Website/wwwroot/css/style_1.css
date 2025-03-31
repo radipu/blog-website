@@ -1508,14 +1508,24 @@ a, a:hover
     transition: width 0.3s ease;
 }
 
-.voice-recitation-section {
-        background: #f8f9fa;
-        padding: 1.5rem;
-        border-radius: 8px;
-        border: 1px solid #dee2e6;
-    }
+.voice-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
 
-    .highlight-speech {
-        background-color: #fff3cd;
-        transition: background-color 0.3s ease;
-    }
+.speed-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
