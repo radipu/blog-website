@@ -1529,3 +1529,34 @@ a, a:hover
     border-radius: 4px;
     border: 1px solid #ddd;
 }
+
+.reaction-button {
+        padding: 0.5rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50% !important;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .reaction-icon {
+        font-size: 1.2rem;
+    }
+
+    .reaction-button:hover {
+        transform: scale(1.15);
+    }
+
+    .badge {
+        font-size: 0.6rem;
+        padding: 0.25em 0.4em;
+        min-width: 1.5em;
+    }
+
+    .reaction-badge {
+        font-size: 1.2rem;
+        line-height: 1;
+        padding: 0.2rem;
+    }
