@@ -26,13 +26,19 @@
             <div class="container paddding">
                 <div class="row mx-0">
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-                        <div class="voice-controls">
-                            <button id="playPauseBtn" class="btn"><i class="fas fa-play"></i></button>
-                            <button id="stopBtn" class="btn"><i class="fas fa-stop"></i></button>
-                            <select id="voiceSelect" class="dropdown"></select>
-                            <div class="speed-control">
-                                <input type="range" id="rateControl" min="0.5" max="2" step="0.1" value="1">
-                                <span id="rateValue">1x</span>
+                        <div class="voice-recitation-section mb-4">
+                            <h4>Listen to this post:</h4>
+                            <div class="d-flex align-items-center gap-3">
+                                <button id="playPauseBtn" class="btn btn-primary"><i class="fas fa-play"></i></button>
+                                <button id="stopBtn" class="btn btn-secondary"><i class="fas fa-stop"></i></button>
+                                <select id="voiceSelect" class="form-select" style="max-width: 200px;">
+                                    <option value="">Default Voice</option>
+                                </select>
+                                <div class="speed-control">
+                                    <label>Speed:</label>
+                                    <input type="range" id="rateControl" min="0.5" max="2" step="0.25" value="1">
+                                    <span id="rateValue">1x</span>
+                                </div>
                             </div>
                         </div>
                         <div id="post-content">
@@ -367,33 +373,35 @@
                 const rateControl = document.getElementById('rateControl');
                 const rateValue = document.getElementById('rateValue');
                 const postContentEl = document.getElementById('post-content');
+                const postContent = postContentEl.innerText || postContentEl.textContent;
 
                 // Voice setup
                 function populateVoices() {
                     const voices = synth.getVoices();
                     voiceSelect.innerHTML = '<option value="">Default Voice</option>';
-
-                    // Find Microsoft Zira if available
-                    const ziraVoice = voices.find(voice =>
-                        voice.name.toLowerCase().includes('zira') &&
+            
+                    // Find Microsoft Zira
+                    const ziraVoice = voices.find(voice => 
+                        voice.name.toLowerCase().includes('zira') && 
                         voice.lang === 'en-US'
                     );
+
                     defaultVoice = ziraVoice || null;
 
                     voices.forEach(voice => {
                         const option = document.createElement('option');
                         option.value = voice.name;
                         option.textContent = `${voice.name} (${voice.lang})`;
-
+                
                         if (ziraVoice && voice.name === ziraVoice.name) {
                             option.selected = true;
                         }
-
+                
                         voiceSelect.appendChild(option);
                     });
                 }
 
-                // Initialize voices with retry in case voices are not yet loaded
+                // Initialize voices with retry
                 function initVoices() {
                     if (synth.getVoices().length > 0) {
                         populateVoices();
@@ -402,6 +410,7 @@
                         setTimeout(populateVoices, 1000);
                     }
                 }
+
                 initVoices();
 
                 // Event handlers
@@ -420,24 +429,19 @@
                 rateControl.addEventListener('input', (e) => {
                     const value = parseFloat(e.target.value);
                     rateValue.textContent = `${value}x`;
-                    if (utterance) {
-                        utterance.rate = value;
-                    }
+                    if (utterance) utterance.rate = value;
                 });
 
-                // When starting speech, get the current text so that any translation changes are included
                 function startSpeech() {
-                    if (synth.speaking) {
-                        synth.cancel();
-                    }
-                    // Get the updated content from the DOM element
-                    const postContent = postContentEl.innerText || postContentEl.textContent;
-                    utterance = new SpeechSynthesisUtterance(postContent);
+                    if (synth.speaking) synth.cancel();
 
-                    // Set voice based on selection or default (Microsoft Zira if available)
+                    utterance = new SpeechSynthesisUtterance(postContent);
+            
+                    // Set voice
                     const selectedVoice = voiceSelect.value 
                         ? synth.getVoices().find(v => v.name === voiceSelect.value)
                         : defaultVoice;
+
                     if (selectedVoice) {
                         utterance.voice = selectedVoice;
                     }
@@ -497,6 +501,8 @@
                 function updateButtonState() {
                     if (isPlaying) {
                         playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else if (isPaused) {
+                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
                     } else {
                         playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
                     }
