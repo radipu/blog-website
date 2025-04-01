@@ -119,7 +119,7 @@
                             <h3>Comments</h3>
                             @if (Model.Comments != null && Model.Comments.Any())
                             {
-                                @foreach (var comment in Model.Comments.Where(c => c.ParentCommentId == null))
+                                @foreach (var comment in Model.Comments.Where(c => c.ParentCommentId == null).OrderByDescending(c => c.CommentDate))
                                 {
                                     <div class="comment mb-3">
                                         <p><strong translate="no">@comment.CommenterName</strong> @(" on ") @comment.CommentDate.ToString("MMM dd, yyyy")</p>
@@ -151,20 +151,20 @@
                                                             ("care", "fa-hand-holding-heart", "success"), 
                                                             ("angry", "fa-angry", "warning"), 
                                                             ("support", "fa-hands-helping", "info") })
-                                            {
-                                                <a href="#" 
-                                                   data-comment-id="@comment.CommentId" 
-                                                   data-reaction-type="@reaction.Item1" 
-                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
-                                                    <span class="reaction-icon">
-                                                        <i class="fas @reaction.Item2"></i>
-                                                    </span>
-                                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
-                                                        @(comment.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
-                                                        <span class="visually-hidden">@reaction.Item1 reactions</span>
-                                                    </span>
-                                                </a>
-                                            }
+                                                            {
+                                                                <a href="#" 
+                                                                   data-comment-id="@comment.CommentId" 
+                                                                   data-reaction-type="@reaction.Item1" 
+                                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
+                                                                    <span class="reaction-icon">
+                                                                        <i class="fas @reaction.Item2"></i>
+                                                                    </span>
+                                                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
+                                                                        @(comment.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
+                                                                        <span class="visually-hidden">@reaction.Item1 reactions</span>
+                                                                    </span>
+                                                                </a>
+                                                            }
                                         </div>
                                         <button class="btn btn-link" onclick="showReplyForm(@comment.CommentId)">Reply</button>
 
@@ -221,20 +221,20 @@
                                                                                 ("care", "fa-hand-holding-heart", "success"), 
                                                                                 ("angry", "fa-angry", "warning"), 
                                                                                 ("support", "fa-hands-helping", "info") })
-                                                            {
-                                                                <a href="#" 
-                                                                   data-comment-id="@reply.CommentId" 
-                                                                   data-reaction-type="@reaction.Item1" 
-                                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
-                                                                    <span class="reaction-icon">
-                                                                        <i class="fas @reaction.Item2"></i>
-                                                                    </span>
-                                                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
-                                                                        @(reply.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
-                                                                        <span class="visually-hidden">@reaction.Item1 reactions</span>
-                                                                    </span>
-                                                                </a>
-                                                            }
+                                                                                {
+                                                                                    <a href="#" 
+                                                                                       data-comment-id="@reply.CommentId" 
+                                                                                       data-reaction-type="@reaction.Item1" 
+                                                                                       class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
+                                                                                        <span class="reaction-icon">
+                                                                                            <i class="fas @reaction.Item2"></i>
+                                                                                        </span>
+                                                                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
+                                                                                            @(reply.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
+                                                                                            <span class="visually-hidden">@reaction.Item1 reactions</span>
+                                                                                        </span>
+                                                                                    </a>
+                                                                                }
                                                         </div>
                                                     </div>
                                                 }
@@ -475,7 +475,7 @@
                                     <div class="replies ml-4 mt-3"></div>
                                 </div>
                             `;
-                            $('.comments-section').append(commentHtml);
+                            $('.comments-section').prepend(commentHtml);
                             $('.comments-section p:contains("No comments yet")').remove();
                             $form.trigger('reset');
                         }
