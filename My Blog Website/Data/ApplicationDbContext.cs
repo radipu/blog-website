@@ -29,9 +29,7 @@ namespace My_Blog_Website.Data
         public DbSet<Posts> posts { get; set; }
         public DbSet<PostReactionVote> postReactionVotes { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<Reaction> Reactions { get; set; }
         public DbSet<ReactionVote> ReactionVotes { get; set; }
-        public DbSet<PostReaction> postReactions { get; set; }
         public DbSet<Subscriber> subscribers { get; set; }
         public DbSet<FAQs> faqs { get; set; }
     }
