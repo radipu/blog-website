@@ -1,365 +1,353 @@
 ﻿﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Think Something Different</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    @*<link rel="stylesheet" href="~/My_Blog_Website.styles.css" asp-append-version="true" />*@
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="~/css/media_query.css" rel="stylesheet" type="text/css"/>
-    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="~/css/animate.css" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href="~/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
-    <link href="~/css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
-    <!-- Bootstrap CSS -->
-    <link href="~/css/style_1.css" rel="stylesheet" type="text/css"/>
-    <!-- Modernizr JS -->
-    <script src="~/js/modernizr-3.5.0.min.js"></script>
-</head>
-<body>
-    <header>
-        <div class="container-fluid">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-3 fh5co_padding_menu">
-                        <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/radipuLogo.png" alt="img" class="fh5co_logo_width"/></a>
-                    </div>
-                    <div class="col-12 col-md-9 align-self-center fh5co_mediya_right">
-                        <div class="search-box text-center d-inline-block">
-                            <input class="search-txt" id="searchInput" type="text" placeholder="Type to search" />
-                            <a class="search-btn fh5co_display_table" id="searchBtn">
-                                <div class="fh5co_verticle_middle"><i class="fa fa-search"></i></div>
-                            </a>
-                            <div id="searchResults" class="search-results-dropdown" style="display:none;">
-                                <!-- Search results will be inserted here -->
-                            </div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Think Something Different</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        @*<link rel="stylesheet" href="~/My_Blog_Website.styles.css" asp-append-version="true" />*@
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="~/css/media_query.css" rel="stylesheet" type="text/css"/>
+        <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="~/css/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link href="~/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+        <link href="~/css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
+        <!-- Bootstrap CSS -->
+        <link href="~/css/style_1.css" rel="stylesheet" type="text/css"/>
+        <!-- Modernizr JS -->
+        <script src="~/js/modernizr-3.5.0.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-3 fh5co_padding_menu">
+                            <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/radipuLogo.png" alt="img" class="fh5co_logo_width"/></a>
                         </div>
-
-                        <div class="text-center d-inline-block">
-                            <a class="fh5co_display_table" href="https://www.linkedin.com/in/radipu/" target="_blank"><div class="fh5co_verticle_middle"><i class="fa-brands fa-linkedin"></i></div></a>
-                        </div>
-                        <div class="text-center d-inline-block">
-                            <a class="fh5co_display_table" href="https://github.com/radipu" target="_blank"><div class="fh5co_verticle_middle"><i class="fa-brands fa-github"></i></div></a>
-                        </div>
-                        <div class="text-center d-inline-block">
-                            <a class="fh5co_display_table" href="https://twitter.com/radipu" target="_blank"><div class="fh5co_verticle_middle"><i class="fa-brands fa-x-twitter"></i></div></a>
-                        </div>
-                        <div class="text-center d-inline-block">
-                            <a class="fh5co_display_table" href="https://fb.com/radipu13" target="_blank"><div class="fh5co_verticle_middle"><i class="fa-brands fa-facebook"></i></div></a>
-                        </div>
-
-                        <div class="flag-selector">
-                            <!-- Language selector -->
-                            <div class="selected-flag" onclick="toggleDropdown()">
-                                <img id="current-flag" src="https://flagcdn.com/w40/us.png" width="30">
-                            </div>
-                            <div class="flag-dropdown" id="flagDropdown"></div>
-                        </div>
-
-                        <!-- Google Translate Container -->
-                        <div id="google_translate_element"></div>
-                        <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
-                        @*<div class="d-inline-block text-center dd_position_relative ">
-                            <select class="form-control fh5co_text_select_option">
-                                <option>English </option>
-                                <option>French </option>
-                                <option>German </option>
-                                <option>Spanish </option>
-                            </select>
-                        </div>*@
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid bg-faded padding_786">
-            <div class="container padding_786">
-                <nav class="navbar navbar-toggleable-md navbar-light ">
-                    <div class="container-fluid">
-                        @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">My_Blog_Website</a>*@
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString()== "Home" ? "active" : "")">
-                                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Thoughts" ? "active" : "")">
-                                    <a class="nav-link" asp-controller="Thoughts" asp-action="Index">Thoughts <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Technology" ? "active" : "")">
-                                    <a class="nav-link" asp-controller="Technology" asp-action="Index">Technology <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Ideas" ? "active" : "")">
-                                    <a class="nav-link" asp-controller="Ideas" asp-action="Index">Ideas <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "HowTo" ? "active" : "")">
-                                    <a class="nav-link" asp-controller="HowTo" asp-action="Index">HowTo <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Developer" ? "active" : "")">
-                                    <a class="nav-link" asp-controller="Developer" asp-action="Index">Developers <span class="sr-only">(current)</span></a>
-                                </li>
-                                <div class="dropdownmenu">
-                                     <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
-                                     aria-haspopup="true" aria-expanded="false">Portfolio <span class="sr-only">(current)</span></a>
-                                    <div class="dropdownmenu-content">
-                                        <a asp-controller="Project" asp-action="Index">Projects</a>
-                                        <a href="https://graphics.radipu.com/" target="_blank">Graphics</a>
-                                        <a href="https://cv.radipu.com/" target="_blank">Resume</a>
-                                        <a href="https://intro.radipu.com/" target="_blank">My Intro</a>
-                                    </div>
+                        <div class="col-12 col-md-9 align-self-center fh5co_mediya_right">
+                            <div class="search-box text-center d-inline-block">
+                                <input class="search-txt" id="searchInput" type="text" placeholder="Type to search" />
+                                <a class="search-btn fh5co_display_table" id="searchBtn">
+                                    <div class="fh5co_verticle_middle"><i class="fa fa-search"></i></div>
+                                </a>
+                                <div id="searchResults" class="search-results-dropdown" style="display:none;">
+                                    <!-- Search results will be inserted here -->
                                 </div>
-                                @*<li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">World <span class="sr-only">(current)</span></a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                                        <a class="dropdown-item" href="#">Action in</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">Community<span class="sr-only">(current)</span></a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                                        <a class="dropdown-item" href="#">Action in</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>*@
-                                @* <li class="nav-item ">
-                                    <a class="nav-link" href="https://radipu.com/" target="_blank">Portfolio <span class="sr-only">(current)</span></a>
-                                </li> *@
-                                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Contact" ? "active" : "")">
-                                    <a class="nav-link" asp-area="" asp-controller="Contact" asp-action="Index">Contact <span class="sr-only">(current)</span></a>
-                                </li>
-                            </ul>
-                            @* <partial name="_LoginPartial" /> *@
+                            </div>
+
+                            <div class="text-center d-inline-block">
+                                <a class="fh5co_display_table" href="https://www.linkedin.com/in/radipu/" target="_blank"><div class="fh5co_verticle_middle"><i class="fa-brands fa-linkedin"></i></div></a>
+                            </div>
+                            <div class="text-center d-inline-block">
+                                <a class="fh5co_display_table" href="https://github.com/radipu" target="_blank"><div class="fh5co_verticle_middle"><i class="fa-brands fa-github"></i></div></a>
+                            </div>
+                            <div class="text-center d-inline-block">
+                                <a class="fh5co_display_table" href="https://twitter.com/radipu" target="_blank"><div class="fh5co_verticle_middle"><i class="fa-brands fa-x-twitter"></i></div></a>
+                            </div>
+                            <div class="text-center d-inline-block">
+                                <a class="fh5co_display_table" href="https://fb.com/radipu13" target="_blank"><div class="fh5co_verticle_middle"><i class="fa-brands fa-facebook"></i></div></a>
+                            </div>
+
+                            <div class="flag-selector">
+                                <!-- Language selector -->
+                                <div class="selected-flag" onclick="toggleDropdown()">
+                                    <img id="current-flag" src="https://flagcdn.com/w40/us.png" width="30">
+                                </div>
+                                <div class="flag-dropdown" id="flagDropdown"></div>
+                            </div>
+
+                            <!-- Google Translate Container -->
+                            <div id="google_translate_element"></div>
+                            <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
+                            @*<div class="d-inline-block text-center dd_position_relative ">
+                                <select class="form-control fh5co_text_select_option">
+                                    <option>English </option>
+                                    <option>French </option>
+                                    <option>German </option>
+                                    <option>Spanish </option>
+                                </select>
+                            </div>*@
+                            <div class="clearfix"></div>
                         </div>
                     </div>
-                </nav>
-                @if (ViewData["ShowProgressBar"] as bool? == true)
-                {
-                    <!-- Progress Bar -->
-                    <div class="progress-container">
-                        <div class="progress-bar" id="myBar" style="height: 2px; width: 100%;"></div>
+                </div>
+            </div>
+            <div class="container-fluid bg-faded padding_786">
+                <div class="container padding_786">
+                    <nav class="navbar navbar-toggleable-md navbar-light ">
+                        <div class="container-fluid">
+                            @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">My_Blog_Website</a>*@
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString()== "Home" ? "active" : "")">
+                                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Thoughts" ? "active" : "")">
+                                        <a class="nav-link" asp-controller="Thoughts" asp-action="Index">Thoughts <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Technology" ? "active" : "")">
+                                        <a class="nav-link" asp-controller="Technology" asp-action="Index">Technology <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Ideas" ? "active" : "")">
+                                        <a class="nav-link" asp-controller="Ideas" asp-action="Index">Ideas <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "HowTo" ? "active" : "")">
+                                        <a class="nav-link" asp-controller="HowTo" asp-action="Index">HowTo <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Developer" ? "active" : "")">
+                                        <a class="nav-link" asp-controller="Developer" asp-action="Index">Developers <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <div class="dropdownmenu">
+                                         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
+                                         aria-haspopup="true" aria-expanded="false">Portfolio <span class="sr-only">(current)</span></a>
+                                        <div class="dropdownmenu-content">
+                                            <a asp-controller="Project" asp-action="Index">Projects</a>
+                                            <a href="https://graphics.radipu.com/" target="_blank">Graphics</a>
+                                            <a href="https://cv.radipu.com/" target="_blank">Resume</a>
+                                            <a href="https://intro.radipu.com/" target="_blank">My Intro</a>
+                                        </div>
+                                    </div>
+                                    @*<li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false">World <span class="sr-only">(current)</span></a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
+                                            <a class="dropdown-item" href="#">Action in</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false">Community<span class="sr-only">(current)</span></a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
+                                            <a class="dropdown-item" href="#">Action in</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>*@
+                                    @* <li class="nav-item ">
+                                        <a class="nav-link" href="https://radipu.com/" target="_blank">Portfolio <span class="sr-only">(current)</span></a>
+                                    </li> *@
+                                    <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Contact" ? "active" : "")">
+                                        <a class="nav-link" asp-area="" asp-controller="Contact" asp-action="Index">Contact <span class="sr-only">(current)</span></a>
+                                    </li>
+                                </ul>
+                                @* <partial name="_LoginPartial" /> *@
+                            </div>
+                        </div>
+                    </nav>
+                    @if (ViewData["ShowProgressBar"] as bool? == true)
+                    {
+                        <!-- Progress Bar -->
+                        <div class="progress-container">
+                            <div class="progress-bar" id="myBar" style="height: 2px; width: 100%;"></div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <div class="container-fluid fh5co_footer_bg pb-3">
+            <div class="container animate-box">
+                <div class="row">
+                    @* <div class="col-12 spdp_right py-5"><img src="~/images/radipu LOGO_white.png" alt="img" class="footer_logo"/></div> *@
+                    <div class="clearfix"></div>
+                    <div class="col-12 spdp_right py-3">
+                        @* <div class="footer_main_title py-3"> Download Now</div> *@
+                        <div class="footer_main_title py-3"> </div> @* remove it when app is ready *@
+                        <div class="footer_sub_about pb-3">
+                            <a href="https://facebook.com/rad.pb13" target="_blank">@* <img src="~/images/google-play-badge.png" alt="img" class="google-play" /> *@</a>
+                            <a href="https://facebook.com/radipu13" target="_blank">@* <img src="~/images/App Store.svg" alt="img" class="app-store"/> *@</a>
+                        </div>
                     </div>
-                }
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <div class="container-fluid fh5co_footer_bg pb-3">
-    <div class="container animate-box">
-        <div class="row">
-            @* <div class="col-12 spdp_right py-5"><img src="~/images/radipu LOGO_white.png" alt="img" class="footer_logo"/></div> *@
-            <div class="clearfix"></div>
-            <div class="col-12 spdp_right py-3">
-                @* <div class="footer_main_title py-3"> Download Now</div> *@
-                <div class="footer_main_title py-3"> </div> @* remove it when app is ready *@
-                <div class="footer_sub_about pb-3">
-                    <a href="https://facebook.com/rad.pb13" target="_blank">@* <img src="~/images/google-play-badge.png" alt="img" class="google-play" /> *@</a>
-                    <a href="https://facebook.com/radipu13" target="_blank">@* <img src="~/images/App Store.svg" alt="img" class="app-store"/> *@</a>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="footer_main_title py-3"> About</div>
-                <div class="footer_sub_about about-text pb-3"> Welcome! A hub for exploring thoughts, technology, ideas, how-to guides, and travel adventures.
-                    Here, you'll find reflections on life, the latest tech trends, innovative ideas, practical tech tips, and stories from around the world. 
-                    Join me on this journey of discovery, learning, and inspiration!
-                </div>
-                <div class="footer_mediya_icon">
-                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://linkedin.com/in/radipu" target="_blank">
-                        <div class="fh5co_verticle_middle"><i class="fa-brands fa-linkedin"></i></div>
-                    </a></div>
-                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://github.com/radipu" target="_blank">
-                        <div class="fh5co_verticle_middle"><i class="fa-brands fa-github"></i></div>
-                    </a></div>
-                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://twitter.com/radipu" target="_blank">
-                        <div class="fh5co_verticle_middle"><i class="fa-brands fa-x-twitter"></i></div>
-                    </a></div>
-                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://facebook.com/radipu13" target="_blank">
-                        <div class="fh5co_verticle_middle"><i class="fa-brands fa-facebook"></i></div>
-                    </a></div>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2">
-                <div class="footer_main_title py-3"> Category</div>
-                <ul class="footer_menu">
-                    <li><a asp-controller="Tour" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Tours</a></li>
-                    <li><a asp-controller="BookReview" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Book Review</a></li>
-                    <li><a asp-controller="FAQ" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; FAQ</a></li>
-                </ul>
-            </div>
-            <div class="col-12 col-md-5 col-lg-3 position_footer_relative">
-                <div class="footer_main_title py-3"> Most Viewed Posts</div>
-                @await Component.InvokeAsync("MostViewedPosts")
-                <div class="footer_position_absolute"><img src="~/images/footer_sub_tipik.png" alt="img" class="width_footer_sub_img"/></div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-4 ">
-                <div class="footer_main_title py-3"> Last Modified Posts</div>
-                @await Component.InvokeAsync("LastModifiedPosts")
-            </div>
-        </div>
-        @if (TempData["Message"] != null)
-        {
-            <div class="alert alert-success">
-                @TempData["Message"]
-            </div>
-        }
-        @if (TempData["Error"] != null)
-        {
-            <div class="alert alert-danger">
-                @TempData["Error"]
-            </div>
-        }
-        <form method="post" asp-controller="Subscription" asp-action="Subscribe">
-            <div class="row justify-content-center pt-2 pb-4">
-                <div class="col-12 col-md-8 col-lg-7 ">
-                    <div class="input-group">
-                        <span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                         <input type="email" name="email" class="form-control fh5co_footer_text_box" placeholder="Enter your email for newsletter" aria-describedby="basic-addon1" required>
-                         <button type="submit" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"><i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</button>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="footer_main_title py-3"> About</div>
+                        <div class="footer_sub_about about-text pb-3"> Welcome! A hub for exploring thoughts, technology, ideas, how-to guides, and travel adventures.
+                            Here, you'll find reflections on life, the latest tech trends, innovative ideas, practical tech tips, and stories from around the world. 
+                            Join me on this journey of discovery, learning, and inspiration!
+                        </div>
+                        <div class="footer_mediya_icon">
+                            <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://linkedin.com/in/radipu" target="_blank">
+                                <div class="fh5co_verticle_middle"><i class="fa-brands fa-linkedin"></i></div>
+                            </a></div>
+                            <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://github.com/radipu" target="_blank">
+                                <div class="fh5co_verticle_middle"><i class="fa-brands fa-github"></i></div>
+                            </a></div>
+                            <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://twitter.com/radipu" target="_blank">
+                                <div class="fh5co_verticle_middle"><i class="fa-brands fa-x-twitter"></i></div>
+                            </a></div>
+                            <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://facebook.com/radipu13" target="_blank">
+                                <div class="fh5co_verticle_middle"><i class="fa-brands fa-facebook"></i></div>
+                            </a></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 col-lg-2">
+                        <div class="footer_main_title py-3"> Category</div>
+                        <ul class="footer_menu">
+                            <li><a asp-controller="Tour" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Tours</a></li>
+                            <li><a asp-controller="BookReview" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Book Review</a></li>
+                            <li><a asp-controller="FAQ" asp-action="Index"><i class="fa fa-angle-right"></i>&nbsp;&nbsp; FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-5 col-lg-3 position_footer_relative">
+                        <div class="footer_main_title py-3"> Most Viewed Posts</div>
+                        @await Component.InvokeAsync("MostViewedPosts")
+                        <div class="footer_position_absolute"><img src="~/images/footer_sub_tipik.png" alt="img" class="width_footer_sub_img"/></div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-4 ">
+                        <div class="footer_main_title py-3"> Last Modified Posts</div>
+                        @await Component.InvokeAsync("LastModifiedPosts")
                     </div>
                 </div>
+                <form method="post" asp-controller="Subscription" asp-action="Subscribe">
+                    <div class="row justify-content-center pt-2 pb-4">
+                        <div class="col-12 col-md-8 col-lg-7 ">
+                            <div class="input-group">
+                                <span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                                 <input type="email" name="email" class="form-control fh5co_footer_text_box" placeholder="Enter your email for newsletter" aria-describedby="basic-addon1" required>
+                                 <button type="submit" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"><i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-</div>
-
-<div class="container-fluid fh5co_footer_right_reserved">
-    <div class="container">
-        <div class="row  ">
-            <div class="py-4 Reserved" style="text-align:center"> &copy; <script>document.write(new Date().getFullYear())</script>. All rights reserved. Developed by <a href="https://cv.radipu.com" target="_blank">radipu</a>. </div>
         </div>
-    </div>
-</div>
 
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
-</div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        <div class="container-fluid fh5co_footer_right_reserved">
+            <div class="container">
+                <div class="row  ">
+                    <div class="py-4 Reserved" style="text-align:center"> &copy; <script>document.write(new Date().getFullYear())</script>. All rights reserved. Developed by <a href="https://cv.radipu.com" target="_blank">radipu</a>. </div>
+                </div>
+            </div>
+        </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="~/js/owl.carousel.min.js"></script>
-    <!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- Waypoints -->
-    <script src="~/js/jquery.waypoints.min.js"></script>
-    <!-- Main -->
-    <script src="~/js/main.js"></script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
-        //fixed navbar
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.querySelector('.container-fluid.bg-faded.padding_786');
-            const body = document.body;
-            let initialOffsetTop = navbar.offsetTop;
-            let navbarHeight = navbar.offsetHeight;
+        <div class="gototop js-top">
+            <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+        </div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
 
-            function updateNavbarPosition() {
-                initialOffsetTop = navbar.offsetTop;
-                navbarHeight = navbar.offsetHeight;
-            }
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="~/js/owl.carousel.min.js"></script>
+        <!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <!-- Waypoints -->
+        <script src="~/js/jquery.waypoints.min.js"></script>
+        <!-- Main -->
+        <script src="~/js/main.js"></script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script>
+            //fixed navbar
+            document.addEventListener('DOMContentLoaded', function() {
+                const navbar = document.querySelector('.container-fluid.bg-faded.padding_786');
+                const body = document.body;
+                let initialOffsetTop = navbar.offsetTop;
+                let navbarHeight = navbar.offsetHeight;
 
-            window.addEventListener('scroll', function() {
-                if (window.scrollY >= initialOffsetTop) {
-                    navbar.classList.add('fixed-nav');
-                    body.style.paddingTop = navbarHeight + 'px';
-                } else {
-                    navbar.classList.remove('fixed-nav');
-                    body.style.paddingTop = '0';
+                function updateNavbarPosition() {
+                    initialOffsetTop = navbar.offsetTop;
+                    navbarHeight = navbar.offsetHeight;
                 }
+
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY >= initialOffsetTop) {
+                        navbar.classList.add('fixed-nav');
+                        body.style.paddingTop = navbarHeight + 'px';
+                    } else {
+                        navbar.classList.remove('fixed-nav');
+                        body.style.paddingTop = '0';
+                    }
+                });
+
+                window.addEventListener('resize', updateNavbarPosition);
             });
 
-            window.addEventListener('resize', updateNavbarPosition);
-        });
+            //search in layout
+            var searchInput = document.getElementById('searchInput');
+            var searchResults = document.getElementById('searchResults');
+            var debounceTimeout;
 
-        //search in layout
-        var searchInput = document.getElementById('searchInput');
-        var searchResults = document.getElementById('searchResults');
-        var debounceTimeout;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(debounceTimeout);
+                var query = this.value;
 
-        searchInput.addEventListener('input', function() {
-            clearTimeout(debounceTimeout);
-            var query = this.value;
+                if (query.length === 0) {
+                    searchResults.style.display = 'none';
+                    return;
+                }
 
-            if (query.length === 0) {
-                searchResults.style.display = 'none';
-                return;
-            }
+                debounceTimeout = setTimeout(function() {
+                    fetch('@Url.Action("Search", "Search")?query=' + encodeURIComponent(query))
+                        .then(response => {
+                            if (!response.ok) throw new Error('Network response was not ok');
+                            return response.json();
+                        })
+                        .then(data => {
+                            searchResults.innerHTML = '';
+                            if (data.length > 0) {
+                                data.forEach(post => {
+                                    var link = document.createElement('a');
+                                    link.href = '/' + post.categories + '/' + post.slug;
+                                    link.textContent = post.title;
+                                    searchResults.appendChild(link);
+                                });
+                                searchResults.style.display = 'block';
+                            } else {
+                                searchResults.style.display = 'none';
+                            }
+                        })
+                        .catch(error => console.error('Error:', error));
+                }, 300);
+            });
 
-            debounceTimeout = setTimeout(function() {
-                fetch('@Url.Action("Search", "Search")?query=' + encodeURIComponent(query))
-                    .then(response => {
-                        if (!response.ok) throw new Error('Network response was not ok');
-                        return response.json();
-                    })
-                    .then(data => {
-                        searchResults.innerHTML = '';
-                        if (data.length > 0) {
-                            data.forEach(post => {
-                                var link = document.createElement('a');
-                                link.href = '/' + post.categories + '/' + post.slug;
-                                link.textContent = post.title;
-                                searchResults.appendChild(link);
-                            });
-                            searchResults.style.display = 'block';
-                        } else {
-                            searchResults.style.display = 'none';
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
-            }, 300);
-        });
-
-        //progress bar
-        document.addEventListener('DOMContentLoaded', function() {
-            const progressBar = document.getElementById('myBar');
+            //progress bar
+            document.addEventListener('DOMContentLoaded', function() {
+                const progressBar = document.getElementById('myBar');
         
-            if (progressBar) {
-                // Initialize at 0%
-                progressBar.style.width = "0%";
+                if (progressBar) {
+                    // Initialize at 0%
+                    progressBar.style.width = "0%";
 
-                // Update progress immediately in case of initial scroll position
-                updateProgress();
+                    // Update progress immediately in case of initial scroll position
+                    updateProgress();
 
-                // Update on scroll
-                window.addEventListener('scroll', updateProgress);
+                    // Update on scroll
+                    window.addEventListener('scroll', updateProgress);
 
-                // Update on window resize (in case content height changes)
-                window.addEventListener('resize', updateProgress);
+                    // Update on window resize (in case content height changes)
+                    window.addEventListener('resize', updateProgress);
 
-                function updateProgress() {
-                    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    function updateProgress() {
+                        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 
-                    // Only update if there's scrollable height
-                    if (height > 0) {
-                        const scrolled = (winScroll / height) * 100;
-                        progressBar.style.width = scrolled + "%";
-                    } else {
-                        progressBar.style.width = "0%";
+                        // Only update if there's scrollable height
+                        if (height > 0) {
+                            const scrolled = (winScroll / height) * 100;
+                            progressBar.style.width = scrolled + "%";
+                        } else {
+                            progressBar.style.width = "0%";
+                        }
                     }
                 }
-            }
-        });
-    </script>
-</body>
+            });
+        </script>
+    </body>
 </html>
