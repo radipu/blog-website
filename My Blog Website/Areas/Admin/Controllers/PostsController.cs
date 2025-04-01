@@ -456,13 +456,16 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             _db.Comments.Add(comment);
             await _db.SaveChangesAsync();
 
-            var post = await _db.posts.FirstOrDefaultAsync(p => p.PostId == PostId);
-            if (post != null)
+            return Json(new
             {
-                return RedirectToAction("Single", new { category = post.Categories, slug = post.Slug });
-            }
-
-            return RedirectToAction("Index", "Home");
+                success = true,
+                commentId = comment.CommentId,
+                commenterName = comment.CommenterName,
+                commentText = comment.CommentText,
+                commentDate = comment.CommentDate.ToString("MMM dd, yyyy"),
+                parentCommentId = ParentCommentId,
+                isReply = ParentCommentId.HasValue
+            });
         }
 
         [HttpGet]
