@@ -48,8 +48,10 @@
                                                                 ("angry", "fa-angry", "warning"), 
                                                                 ("support", "fa-hands-helping", "info") })
                                 {
-                                    <a href="@Url.Action("PostReact", "Posts", new { postId = Model.PostId, reactionType = reaction.Item1 })" 
-                                       class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative">
+                                    <a href="#" 
+                                       data-post-id="@Model.PostId" 
+                                       data-reaction-type="@reaction.Item1" 
+                                       class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative react-link">
                                         <span class="reaction-icon">
                                             <i class="fas @reaction.Item2"></i>
                                         </span>
@@ -128,7 +130,7 @@
                                                     .GroupBy(r => r.ReactionType)
                                                     .Select(g => new { Type = g.Key, Count = g.Count() });
                                             }
-                                            @if (reactionGroups != null)
+                                            @* @if (reactionGroups != null)
                                             {
                                                 foreach (var group in reactionGroups)
                                                 {
@@ -141,17 +143,19 @@
                                                         </span>
                                                     </div>
                                                 }
-                                            }
+                                            } *@
                                         </div>
                                         <div class="reaction-buttons mt-2 d-flex gap-1">
                                             @foreach (var reaction in new[] { ("like", "fa-thumbs-up", "primary"), 
-                                                                ("love", "fa-heart", "danger"), 
-                                                                ("care", "fa-hand-holding-heart", "success"), 
-                                                                ("angry", "fa-angry", "warning"), 
-                                                                ("support", "fa-hands-helping", "info") })
+                                                            ("love", "fa-heart", "danger"), 
+                                                            ("care", "fa-hand-holding-heart", "success"), 
+                                                            ("angry", "fa-angry", "warning"), 
+                                                            ("support", "fa-hands-helping", "info") })
                                             {
-                                                <a href="@Url.Action("React", "Posts", new { commentId = comment.CommentId, reactionType = reaction.Item1 })" 
-                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative">
+                                                <a href="#" 
+                                                   data-comment-id="@comment.CommentId" 
+                                                   data-reaction-type="@reaction.Item1" 
+                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
                                                     <span class="reaction-icon">
                                                         <i class="fas @reaction.Item2"></i>
                                                     </span>
@@ -196,7 +200,7 @@
                                                                     .GroupBy(r => r.ReactionType)
                                                                     .Select(g => new { Type = g.Key, Count = g.Count() });
                                                             }
-                                                            @if (replyReactionGroups != null)
+                                                            @* @if (replyReactionGroups != null)
                                                             {
                                                                 foreach (var group in replyReactionGroups)
                                                                 {
@@ -209,7 +213,7 @@
                                                                         </span>
                                                                     </div>
                                                                 }
-                                                            }
+                                                            } *@
                                                         </div>
                                                         <div class="reaction-buttons mt-2 d-flex gap-1">
                                                             @foreach (var reaction in new[] { ("like", "fa-thumbs-up", "primary"), 
@@ -218,8 +222,10 @@
                                                                                 ("angry", "fa-angry", "warning"), 
                                                                                 ("support", "fa-hands-helping", "info") })
                                                             {
-                                                                <a href="@Url.Action("React", "Posts", new { commentId = reply.CommentId, reactionType = reaction.Item1 })" 
-                                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative">
+                                                                <a href="#" 
+                                                                   data-comment-id="@reply.CommentId" 
+                                                                   data-reaction-type="@reaction.Item1" 
+                                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
                                                                     <span class="reaction-icon">
                                                                         <i class="fas @reaction.Item2"></i>
                                                                     </span>
@@ -389,6 +395,7 @@
             </div>
         </div>
 
+        <!--Copy link-->
         <script>
             function copyToClipboard(text) {
                 navigator.clipboard.writeText(text).then(function() {
@@ -399,6 +406,35 @@
             }
         </script>
 
+        <!--Post Reactions no page reload-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.react-link').on('click', function (e) {
+                    e.preventDefault();
+                    const $button = $(this);
+        
+                    $.ajax({
+                        url: '@Url.Action("PostReact", "Posts")',
+                        data: {
+                            postId: $button.data('post-id'),
+                            reactionType: $button.data('reaction-type')
+                        },
+                        success: (data) => {
+                            // Update ALL reaction counts
+                            $('.react-link').each(function () {
+                                const type = $(this).data('reaction-type');
+                                $(this).find('.badge').text(data.reactionCounts[type]);
+                            });
+                        },
+                        error: (xhr) => {
+                            console.error('Error:', xhr.responseText);
+                        }
+                    });
+                });
+            });
+        </script>
+
         <!--Comment Reply-->
         <script>
             function showReplyForm(commentId) {
@@ -407,6 +443,55 @@
                     form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
                 }
             }
+        </script>
+
+        <!--Comment/reply reaction no page reload-->
+        <script>
+            $(document).ready(function () {
+                $('.react-link, .comment-react-link').on('click', function (e) {
+                    e.preventDefault();
+                    const $button = $(this);
+                    const postId = $button.data('post-id');
+                    const commentId = $button.data('comment-id');
+                    const reactionType = $button.data('reaction-type');
+
+                    let url;
+                    let data = { reactionType: reactionType };
+
+                    if (postId) {
+                        url = '@Url.Action("PostReact", "Posts")';
+                        data.postId = postId;
+                    } else if (commentId) {
+                        url = '@Url.Action("React", "Posts")';
+                        data.commentId = commentId;
+                    } else {
+                        return;
+                    }
+
+                    $.ajax({
+                        url: url,
+                        data: data,
+                        success: (data) => {
+                            if (postId) {
+                                // Update all post reaction counts
+                                $('.react-link[data-post-id="' + postId + '"]').each(function () {
+                                    const type = $(this).data('reaction-type');
+                                    $(this).find('.badge').text(data.reactionCounts[type]);
+                                });
+                            } else if (commentId) {
+                                // Update all comment/reply reaction counts for this commentId
+                                $('.comment-react-link[data-comment-id="' + commentId + '"]').each(function () {
+                                    const type = $(this).data('reaction-type');
+                                    $(this).find('.badge').text(data.reactionCounts[type]);
+                                });
+                            }
+                        },
+                        error: (xhr) => {
+                            console.error('Error:', xhr.responseText);
+                        }
+                    });
+                });
+            });
         </script>
 
         <!--text-to-speech-->

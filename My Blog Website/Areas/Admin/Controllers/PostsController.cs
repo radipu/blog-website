@@ -418,12 +418,22 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
             await _db.SaveChangesAsync();
 
-            // Redirect back to post
+            // Return JSON response
             var post = await _db.posts
+                .Include(p => p.PostReactionVotes)
                 .FirstOrDefaultAsync(p => p.PostId == postId);
+            var reactionCounts = new Dictionary<string, int>
+            {
+                {"like", post.PostReactionVotes.Count(r => r.ReactionType == "like")},
+                {"love", post.PostReactionVotes.Count(r => r.ReactionType == "love")},
+                {"care", post.PostReactionVotes.Count(r => r.ReactionType == "care")},
+                {"angry", post.PostReactionVotes.Count(r => r.ReactionType == "angry")},
+                {"support", post.PostReactionVotes.Count(r => r.ReactionType == "support")},
+            };
 
-            return RedirectToAction("Single", new { category = post.Categories, slug = post.Slug });
+            return Json(new { reactionCounts });
         }
+
 
         [HttpPost]
         [Route("AddComment")]
@@ -510,12 +520,27 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
             await _db.SaveChangesAsync();
 
-            // Redirect back to post
+            // Fetch the updated comment with its reaction votes
             var comment = await _db.Comments
-                .Include(c => c.Post)
+                .Include(c => c.ReactionVotes)
                 .FirstOrDefaultAsync(c => c.CommentId == commentId);
 
-            return RedirectToAction("Single", new { category = comment.Post.Categories, slug = comment.Post.Slug });
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            // Prepare reaction counts
+            var reactionCounts = new Dictionary<string, int>
+            {
+                {"like", comment.ReactionVotes.Count(r => r.ReactionType == "like")},
+                {"love", comment.ReactionVotes.Count(r => r.ReactionType == "love")},
+                {"care", comment.ReactionVotes.Count(r => r.ReactionType == "care")},
+                {"angry", comment.ReactionVotes.Count(r => r.ReactionType == "angry")},
+                {"support", comment.ReactionVotes.Count(r => r.ReactionType == "support")},
+            };
+
+            return Json(new { reactionCounts });
         }
 
         #endregion
