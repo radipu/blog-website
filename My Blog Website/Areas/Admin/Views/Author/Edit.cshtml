@@ -1,7 +1,7 @@
 ﻿@model My_Blog_Website.Areas.Admin.Models.Authors
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Author";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,9 +14,10 @@
                 <h1 class="card-title">Update the Author</h1>
             </div>
             <div class="card-body p-0">
-                <form asp-action="Edit">
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="AuthorId" />
+
                     <div class="form-group col-md-8 authform">
                         <label asp-for="FirstName" class="control-label">Author First Name</label>
                         <input asp-for="FirstName" class="form-control" />
@@ -37,12 +38,10 @@
                         <div class="d-flex">
                             <div class="input-container">
                                 <input asp-for="Password" class="form-control passwordclass" id="passwordid" />
-                                @*<i class="far fa-copy fa-2x"></i>*@
                             </div>
-                            <button class="generatebtn">Generate</button>
+                            <button type="button" class="generatebtn">Generate</button>
                         </div>
                         <span asp-validation-for="Password" class="text-danger"></span>
-                        @*<div class="alert-container active">Password Copied</div>*@
                     </div>
                     <div class="form-group col-md-8 authform">
                         <label asp-for="Email" class="control-label">Author Email</label>
@@ -54,6 +53,24 @@
                         <input asp-for="AboutAuth" class="form-control" />
                         <span asp-validation-for="AboutAuth" class="text-danger"></span>
                     </div>
+                    
+                    <!-- Image Upload Field -->
+                    <div class="form-group col-md-8 authform">
+                        <label class="control-label">Author Image</label>
+                        <input type="file" name="authorImage" class="form-control" />
+                        <span asp-validation-for="AuthorImage" class="text-danger"></span>
+                    </div>
+                    
+                    <!-- Image Preview if available -->
+                    @if (Model.AuthorImage != null && Model.AuthorImage.Length > 0)
+                    {
+                        var base64 = Convert.ToBase64String(Model.AuthorImage);
+                        <div class="form-group col-md-8 authform">
+                            <label class="control-label">Current Image</label>
+                            <img src="data:@Model.ImageContentType;base64,@base64" alt="Current Image" style="max-width:200px; display:block; margin-bottom:10px;" />
+                        </div>
+                    }
+                    
                     <div class="form-group text-center">
                         <button class="btn btn-warning">
                             <i class="fa fa-arrow-left" aria-hidden="true"></i>
