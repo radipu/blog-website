@@ -72,7 +72,6 @@ a, a:hover
     display:table;
     color:#777;
     font-size:18px;
-    border:1px solid #fff !important;
     cursor:pointer;
     -webkit-border-radius:50%;
     -moz-border-radius:50%;
@@ -343,7 +342,6 @@ a, a:hover
 
 .fh5co_heading {
 	font-size: 20px;
-	color: #424040
 }
 
 .fh5co_heading_border_bottom {
@@ -507,7 +505,6 @@ a, a:hover
 
 .fh5co_small_post_heading {
 	font-size: 17px;
-	color: #424040;
 	-moz-transition: all all 0.5s ease;
 	-o-transition: all all 0.5s ease;
 	-webkit-transition: all all 0.5s ease;
@@ -928,7 +925,6 @@ a, a:hover
 
 .fh5co_heading {
 	font-size: 24px;
-	color: #222
 }
 
 .fh5co_contact_us_no_icon_div {
@@ -1199,7 +1195,6 @@ a, a:hover
 .search-txt:not(:placeholder-shown) {
   width: 500px;
   padding: 0 6px;
-  color: black;
   border: 1px solid red;
   border-radius: 40px;
 }
@@ -1351,7 +1346,6 @@ a, a:hover
 
 #fh5co-single-content {
 	z-index: 999;
-	background: white
 }
 
 #fh5co-single-content p,
@@ -1386,7 +1380,6 @@ a, a:hover
 
 .share-section h4 {
     margin-bottom: 15px;
-    color: #333;
     font-weight: 600;
 }
 
@@ -1495,15 +1488,14 @@ a, a:hover
 .progress-container {
     width: 100%;
     height: 4px;
-    background: #f0f0f0;
     position: fixed;
-    top: 60px; /* Adjust this to match your navbar's height */
+    top: 65px; /* Adjust this to match your navbar's height */
     left: 0;
     z-index: 9999;
 }
 
 .progress-bar {
-    background: #007bff; /* Blue color, change as needed */
+    background: #ff0000;
     width: 0%;
     transition: width 0.3s ease;
 }
@@ -1601,4 +1593,105 @@ a, a:hover
   100% {
     opacity: 1;
   }
+}
+
+:root[data-theme="light"] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --bg-faded: #f8f9fa;
+  --navbar-text: #212529;
+}
+
+:root[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --bg-faded: #343a40;
+  --navbar-text: #ffffff;
+}
+
+/* Apply the variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* From Uiverse.io by juanpabl0svn */ 
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: fixed;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  cursor: pointer;
+  top: 65px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #20262c;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #ececd9, -4px 1px 4px 0px #dadada;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+.decoration {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  right: 20%;
+  top: 15%;
+  background: #e5f041e6;
+  backdrop-filter: blur(10px);
+  transition: all 0.5s;
+  box-shadow: -7px 10px 0 #e5f041e6, 8px 15px 0 #e5f041e6, -17px 1px 0 #e5f041e6,
+    -20px 10px 0 #e5f041e6, -7px 23px 0 #e5f041e6, -15px 25px 0 #e5f041e6;
+}
+
+input:checked ~ .decoration {
+  transform: translateX(-20px);
+  width: 10px;
+  height: 10px;
+  background: white;
+  box-shadow: -12px 0 0 white, -6px 0 0 1.6px white, 5px 15px 0 1px white,
+    1px 17px 0 white, 10px 17px 0 white;
+}
+
+input:checked + .slider {
+  background-color: #5494de;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #efdf2b, 0 0 10px 0px #efdf2b;
 }

@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\My Files\\blog-website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|d:\\my files\\blog-website\\my blog website\\wwwroot\\css\\style_1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4ED7495E-A4C4-400F-BB10-E865A6222F66}|My Blog Website\\My Blog Website.csproj|solutionrelative:my blog website\\wwwroot\\css\\style_1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "style_1.css",
+              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css",
+              "RelativeDocumentMoniker": "My Blog Website\\wwwroot\\css\\style_1.css",
+              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\wwwroot\\css\\style_1.css",
+              "RelativeToolTip": "My Blog Website\\wwwroot\\css\\style_1.css",
+              "ViewState": "AgIAAJwGAAAAAAAAAAAAAKAGAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-01T17:51:15.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Contact\\Index.cshtml",
-              "RelativeDocumentMoniker": "My Blog Website\\Views\\Contact\\Index.cshtml",
-              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Contact\\Index.cshtml",
-              "RelativeToolTip": "My Blog Website\\Views\\Contact\\Index.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADQBAAAJAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "My Blog Website\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\My Files\\blog-website\\My Blog Website\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "My Blog Website\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAGcBAAAAAAAAAAAAAG4BAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-01T13:15:53.223Z",
+              "WhenOpened": "2025-04-01T17:47:56.017Z",
               "EditorCaption": ""
             }
           ]
