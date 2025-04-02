@@ -77,6 +77,12 @@
                     </div>
                 </div>
             </div>
+            <!--theme button-->
+            <label for="switch" class="switch">
+                <input id="switch" type="checkbox" />
+                <span class="slider"></span>
+                <span class="decoration"></span>
+            </label>
             <div class="container-fluid bg-faded padding_786">
                 <div class="container padding_786">
                     <nav class="navbar navbar-toggleable-md navbar-light ">
@@ -348,6 +354,66 @@
                     }
                 }
             });
+        </script>
+        <!--theme changer-->
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve saved theme or default to system
+            let theme = localStorage.getItem("theme") || "system";
+
+            // Define colors for light and dark themes
+            const colors = {
+              light: { background: "#f8f9fa", text: "#212529" },
+              dark: { background: "#495057", text: "#ffffff" }
+            };
+
+            // Function to apply the selected theme, update the switch, and update navbar styles
+            function applyTheme(selectedTheme) {
+              if (selectedTheme === "system") {
+                selectedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+              }
+
+              // Update the root attribute (useful if you use CSS variables elsewhere)
+              document.documentElement.setAttribute("data-theme", selectedTheme);
+
+              // Update the switch state: checked means dark mode
+              const toggle = document.getElementById("switch");
+              if (toggle) {
+                toggle.checked = (selectedTheme === "dark");
+              }
+
+              // Update inline styles for the navbar background and text color
+              const navbar = document.querySelector('.container-fluid.bg-faded');
+              if (navbar) {
+                navbar.style.backgroundColor = colors[selectedTheme].background;
+                navbar.style.color = colors[selectedTheme].text;
+              }
+
+              // Update inline styles for all nav links in the navbar
+              const navLinks = document.querySelectorAll('.navbar .nav-link');
+              navLinks.forEach(link => {
+                link.style.color = colors[selectedTheme].text;
+              });
+            }
+
+            // Initially apply the saved theme
+            applyTheme(theme);
+
+            // Listen for changes on the toggle switch
+            document.getElementById("switch").addEventListener("change", function (e) {
+              // Set theme to dark if checked; otherwise, set to light
+              theme = e.target.checked ? "dark" : "light";
+              localStorage.setItem("theme", theme);
+              applyTheme(theme);
+            });
+
+            // Listen for system theme changes if the user has set the theme to "system"
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+              if (localStorage.getItem("theme") === "system") {
+                applyTheme("system");
+              }
+            });
+          });
         </script>
     </body>
 </html>
