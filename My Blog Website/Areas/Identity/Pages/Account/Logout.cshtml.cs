@@ -10,7 +10,6 @@ using Microsoft.Extensions.Logging;
 
 namespace My_Blog_Website.Areas.Identity.Pages.Account
 {
-    [AllowAnonymous]
     public class LogoutModel : PageModel
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -22,22 +21,33 @@ namespace My_Blog_Website.Areas.Identity.Pages.Account
             _logger = logger;
         }
 
-        public void OnGet()
+        public async Task<IActionResult> OnGet()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                await _signInManager.SignOutAsync();
+                _logger.LogInformation("User logged out.");
+            }
+            return RedirectToPage("/Login");
         }
 
         public async Task<IActionResult> OnPost(string returnUrl = null)
         {
+            // Sign out
             await _signInManager.SignOutAsync();
+
+            // Delete all cookies (nuclear option)
+            foreach (var cookie in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookie, new CookieOptions
+                {
+                    Secure = true,
+                    SameSite = SameSiteMode.Lax
+                });
+            }
+
             _logger.LogInformation("User logged out.");
-            if (returnUrl != null)
-            {
-                return LocalRedirect(returnUrl);
-            }
-            else
-            {
-                return RedirectToPage();
-            }
+            return LocalRedirect(returnUrl ?? "/Login");
         }
     }
 }

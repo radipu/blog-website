@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using My_Blog_Website.Areas.Admin.Models;
 using My_Blog_Website.Data;
@@ -8,6 +9,7 @@ using System.Text;
 namespace My_Blog_Website.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AuthorController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -85,7 +87,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     // Hash the plain text password before saving
-                    author.Password = HashPassword(author.Password);
+                    author.Password = BCrypt.Net.BCrypt.HashPassword(author.Password);
 
                     _context.Add(author);
                     await _context.SaveChangesAsync();
@@ -100,15 +102,15 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             return View(author);
         }
 
-        private string HashPassword(string password)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                var passwordBytes = Encoding.UTF8.GetBytes(password);
-                var hashBytes = sha256.ComputeHash(passwordBytes);
-                return Convert.ToBase64String(hashBytes);
-            }
-        }
+        //private string HashPassword(string password)
+        //{
+        //    using (var sha256 = SHA256.Create())
+        //    {
+        //        var passwordBytes = Encoding.UTF8.GetBytes(password);
+        //        var hashBytes = sha256.ComputeHash(passwordBytes);
+        //        return Convert.ToBase64String(hashBytes);
+        //    }
+        //}
 
         [HttpGet]
         public IActionResult GetImage(int id)
@@ -152,7 +154,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             // Handle password: hash the new password if provided; otherwise, keep the old hashed password.
             if (!string.IsNullOrWhiteSpace(author.Password))
             {
-                author.Password = HashPassword(author.Password);
+                author.Password = BCrypt.Net.BCrypt.HashPassword(author.Password);
             }
             else
             {

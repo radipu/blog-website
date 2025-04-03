@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using My_Blog_Website.Areas.Admin.Models;
 using My_Blog_Website.Areas.Public.Interfaces;
@@ -9,6 +10,7 @@ using My_Blog_Website.Helpers;
 namespace My_Blog_Website.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class PostsController : Controller
     {
         private readonly ApplicationDbContext _db;

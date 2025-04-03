@@ -102,6 +102,7 @@ footer a {
     inset: 2px;
     border-radius: 8px;
     background: white;
+    color: crimson;
     z-index: 10;
     padding: 50px 40px;
     display: flex;
