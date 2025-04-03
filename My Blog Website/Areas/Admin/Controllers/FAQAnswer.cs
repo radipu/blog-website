@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using My_Blog_Website.Data;
 using My_Blog_Website.Models;
@@ -7,6 +8,7 @@ using System.Text.Json;
 namespace My_Blog_Website.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class FAQAnswer : Controller
     {
         private readonly ApplicationDbContext _context;
