@@ -13,12 +13,21 @@
         <div id="fh5co-title-box" style="background-image: url(@Model.FeatureImageUrl)" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="page-title">
-                <img src="images/person_1.jpg" alt="Author Image">
-                <span>@Model.PublishedDate</span>
+                @if (Model.Author?.AuthorImage != null)
+                {
+                    <img src="@Url.Action("GetAuthorImage", "Author", new { id = Model.Author.AuthorId, area = "Admin" })" 
+                         alt="@Model.Author.FullName" />
+                }
+                else
+                {
+                    <img src="~/images/default-avatar.jpg" alt="Default Author Image" />
+                }
+                <span class="author-name">@Model.Author?.FirstName @Model.Author?.LastName</span>
+                <span>First Published: @Model.PublishedDate?.ToString("MMM dd, yyyy")</span>
                 @if (Model.LastModifiedDate != null)
                 {
-                    <span>Last Updated: @Model.LastModifiedDate</span>
-                })
+                    <span>Last Update: @Model.LastModifiedDate?.ToString("MMM dd, yyyy")</span>
+                }
                 <h2>@Model.Title</h2>
             </div>
         </div>

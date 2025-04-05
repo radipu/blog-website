@@ -113,7 +113,9 @@ namespace My_Blog_Website.Areas.Admin.Controllers
         //}
 
         [HttpGet]
-        public IActionResult GetImage(int id)
+        [AllowAnonymous]
+        [Route("admin/author/getauthorimage/{id}")]
+        public IActionResult GetAuthorImage(int id)
         {
             var author = _context.authors.Find(id);
             if (author?.AuthorImage == null) return NotFound();
