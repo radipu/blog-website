@@ -38,5 +38,12 @@ namespace My_Blog_Website.Areas.Admin.Models
         public int? ViewCount { get; set; } = 0;
 
         public ICollection<PostReactionVote> PostReactionVotes { get; set; } = new List<PostReactionVote>();
+
+        [Required]
+        [Display(Name = "Author")]
+        public int AuthorId { get; set; }
+
+        [ForeignKey("AuthorId")]
+        public Authors Author { get; set; }
     }
 }

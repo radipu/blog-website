@@ -10,7 +10,6 @@ using My_Blog_Website.Helpers;
 namespace My_Blog_Website.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
     public class PostsController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -26,6 +25,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpGet]
         [Route("admin/posts")]
+        [Authorize]
         public IActionResult Index(string searchTerm)
         {
             var posts = _db.posts.AsQueryable();
@@ -50,6 +50,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpGet]
         [Route("/admin/posts/search")]
+        [Authorize]
         public IActionResult SearchPosts(string term)
         {
             var query = _db.posts.AsQueryable();
@@ -84,6 +85,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
         [HttpPost]
         [Route("admin/post/update-status/{id}")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> UpdateStatus(int id, [FromBody] StatusUpdateModel model)
         {
             var post = await _db.posts.FindAsync(id);
@@ -108,6 +110,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpGet]
         [Route("admin/post/create")]
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -115,8 +118,26 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("admin/post/create")]
+        [Authorize]
         public async Task<IActionResult> Create(Posts posts)
         {
+            // Get current user's username
+            var currentUsername = User.Identity.Name;
+
+            // Get author from database
+            var author = await _db.authors
+                .FirstOrDefaultAsync(a => a.Username == currentUsername);
+
+            if (author == null)
+            {
+                return Unauthorized("No author found for current user");
+            }
+
+            // Assign author to post
+            posts.AuthorId = author.AuthorId;
+            ModelState.Remove("AuthorId");
+            ModelState.Remove("Author");
+
             // Get the uploaded file from the request (if any)
             var featureImage = Request.Form.Files["featureImage"];
 
@@ -131,6 +152,11 @@ namespace My_Blog_Website.Areas.Admin.Controllers
             if (!hasFile && !hasUrl)
             {
                 ModelState.AddModelError("FeatureImageUrl", "You must upload an image or provide a URL.");
+            }
+
+            if (posts.AuthorId <= 0)
+            {
+                ModelState.AddModelError("", "Author information is missing.");
             }
 
             if (ModelState.IsValid)
@@ -188,6 +214,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpGet]
         [Route("admin/post/published")]
+        [Authorize]
         public IActionResult Published()
         {
             List<Posts> posts = _db.posts
@@ -199,6 +226,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpGet]
         [Route("admin/post/draft")]
+        [Authorize]
         public IActionResult Draft()
         {
             List<Posts> posts = _db.posts
@@ -210,6 +238,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpGet]
         [Route("admin/post/edit/{id}")]
+        [Authorize]
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
@@ -226,6 +255,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("admin/post/edit/{id}")]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, Posts post)
         {
             if (id != post.PostId)
@@ -275,6 +305,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpGet]
         [Route("admin/post/delete/{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || id == 0)
@@ -291,6 +322,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("admin/post/delete/{id}")]
+        [Authorize]
         public async Task<IActionResult> DeletePost(int? id)
         {
             var post = _db.posts.Find(id);
@@ -318,6 +350,7 @@ namespace My_Blog_Website.Areas.Admin.Controllers
 
             // Retrieve the post by slug. You can also filter by category if needed.
             var post = await _db.posts
+                .Include(p => p.Author)
                 .Include(p => p.PostReactionVotes)
                 .Include(p => p.Comments)
                 .ThenInclude(c => c.ReactionVotes)

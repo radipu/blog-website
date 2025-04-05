@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace My_Blog_Website.Areas.Admin.Models
 {
@@ -26,5 +27,11 @@ namespace My_Blog_Website.Areas.Admin.Models
 
         public byte[] AuthorImage { get; set; }
         public string ImageContentType { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime? LastLogin { get; set; }
+
+        [NotMapped]
+        public string FullName => $"{FirstName} {LastName}";
     }
 }
