@@ -125,169 +125,115 @@
                         </div>
                         <!-- Comments and Replies -->
                         <div class="comments-section mt-5">
-                            <h3>Comments</h3>
-                            @if (Model.Comments != null && Model.Comments.Any())
+                        <h3>Comments</h3>
+                        @if (Model.Comments != null && Model.Comments.Any())
+                        {
+                            @foreach (var comment in Model.Comments.Where(c => c.ParentCommentId == null).OrderByDescending(c => c.CommentDate))
                             {
-                                @foreach (var comment in Model.Comments.Where(c => c.ParentCommentId == null).OrderByDescending(c => c.CommentDate))
-                                {
-                                    <div class="comment mb-3">
-                                        <p><strong translate="no">@comment.CommenterName</strong> @(" on ") @comment.CommentDate.ToString("MMM dd, yyyy")</p>
-                                        <p>@comment.CommentText</p>
-                                        <div class="reactions d-flex gap-2 align-items-center mb-2">
-                                            @{
-                                                var reactionGroups = comment.ReactionVotes?
-                                                    .GroupBy(r => r.ReactionType)
-                                                    .Select(g => new { Type = g.Key, Count = g.Count() });
-                                            }
-                                            @* @if (reactionGroups != null)
-                                            {
-                                                foreach (var group in reactionGroups)
-                                                {
-                                                    var (icon, color) = GetReactionInfo(group.Type);
-                                                    <div class="reaction-badge position-relative">
-                                                        <i class="fas @icon text-@color"></i>
-                                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@color">
-                                                            @group.Count
-                                                            <span class="visually-hidden">@group.Type reactions</span>
-                                                        </span>
-                                                    </div>
-                                                }
-                                            } *@
-                                        </div>
-                                        <div class="reaction-buttons mt-2 d-flex gap-1">
-                                            @foreach (var reaction in new[] { ("like", "fa-thumbs-up", "primary"), 
-                                                            ("love", "fa-heart", "danger"), 
-                                                            ("care", "fa-hand-holding-heart", "success"), 
-                                                            ("angry", "fa-angry", "warning"), 
-                                                            ("support", "fa-hands-helping", "info") })
-                                                            {
-                                                                <a href="#" 
-                                                                   data-comment-id="@comment.CommentId" 
-                                                                   data-reaction-type="@reaction.Item1" 
-                                                                   class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
-                                                                    <span class="reaction-icon">
-                                                                        <i class="fas @reaction.Item2"></i>
-                                                                    </span>
-                                                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
-                                                                        @(comment.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
-                                                                        <span class="visually-hidden">@reaction.Item1 reactions</span>
-                                                                    </span>
-                                                                </a>
-                                                            }
-                                        </div>
-                                        <button class="btn btn-link" onclick="showReplyForm(@comment.CommentId)">Reply</button>
-
-                                        <!-- Reply Form (Hidden by Default) -->
-                                        <div id="reply-form-${data.commentId}" style="display:none;" class="mt-3">
-                                            <form asp-action="AddComment" method="post">
-                                                <input type="hidden" name="PostId" value="@Model.PostId" />
-                                                <input type="hidden" name="ParentCommentId" value="@comment.CommentId" />
-                                                <div class="form-group">
-                                                    <label for="CommenterName">Your Name</label>
-                                                    <input type="text" name="CommenterName" class="form-control" required />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="CommentText">Reply</label>
-                                                    <textarea name="CommentText" class="form-control" rows="3" required></textarea>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Submit Reply</button>
-                                            </form>
-                                        </div>
-
-                                        <!-- Replies -->
-                                        @if (comment.Replies != null && comment.Replies.Any())
+                                <div class="comment mb-3" data-comment-id="@comment.CommentId">
+                                    <p><strong translate="no">@comment.CommenterName</strong> @(" on ") @comment.CommentDate.ToString("MMM dd, yyyy")</p>
+                                    <p>@comment.CommentText</p>
+                                    <div class="reactions d-flex gap-2 align-items-center mb-2">
+                                    </div>
+                                    <div class="reaction-buttons mt-2 d-flex gap-1">
+                                        @foreach (var reaction in new[] { ("like", "fa-thumbs-up", "primary"),
+                                                        ("love", "fa-heart", "danger"),
+                                                        ("care", "fa-hand-holding-heart", "success"),
+                                                        ("angry", "fa-angry", "warning"),
+                                                        ("support", "fa-hands-helping", "info") })
                                         {
-                                            <div class="replies ml-4 mt-3">
-                                                @foreach (var reply in comment.Replies)
-                                                {
-                                                    <div class="comment mb-2">
-                                                        <p><strong translate="no">@reply.CommenterName</strong> @(" on ") @reply.CommentDate.ToString("MMM dd, yyyy")</p>
-                                                        <p>@reply.CommentText</p>
-                                                        <div class="reactions d-flex gap-2 align-items-center mb-2">
-                                                            @{
-                                                                var replyReactionGroups = reply.ReactionVotes?
-                                                                    .GroupBy(r => r.ReactionType)
-                                                                    .Select(g => new { Type = g.Key, Count = g.Count() });
-                                                            }
-                                                            @* @if (replyReactionGroups != null)
-                                                            {
-                                                                foreach (var group in replyReactionGroups)
-                                                                {
-                                                                    var (icon, color) = GetReactionInfo(group.Type);
-                                                                    <div class="reaction-badge position-relative">
-                                                                        <i class="fas @icon text-@color"></i>
-                                                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@color">
-                                                                            @group.Count
-                                                                            <span class="visually-hidden">@group.Type reactions</span>
-                                                                        </span>
-                                                                    </div>
-                                                                }
-                                                            } *@
-                                                        </div>
-                                                        <div class="reaction-buttons mt-2 d-flex gap-1">
-                                                            @foreach (var reaction in new[] { ("like", "fa-thumbs-up", "primary"), 
-                                                                                ("love", "fa-heart", "danger"), 
-                                                                                ("care", "fa-hand-holding-heart", "success"), 
-                                                                                ("angry", "fa-angry", "warning"), 
-                                                                                ("support", "fa-hands-helping", "info") })
-                                                                                {
-                                                                                    <a href="#" 
-                                                                                       data-comment-id="@reply.CommentId" 
-                                                                                       data-reaction-type="@reaction.Item1" 
-                                                                                       class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
-                                                                                        <span class="reaction-icon">
-                                                                                            <i class="fas @reaction.Item2"></i>
-                                                                                        </span>
-                                                                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
-                                                                                            @(reply.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
-                                                                                            <span class="visually-hidden">@reaction.Item1 reactions</span>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                }
-                                                        </div>
-                                                    </div>
-                                                }
-                                            </div>
+                                            <a href="#"
+                                               data-comment-id="@comment.CommentId"
+                                               data-reaction-type="@reaction.Item1"
+                                               class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas @reaction.Item2"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
+                                                    @(comment.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
+                                                    <span class="visually-hidden">@reaction.Item1 reactions</span>
+                                                </span>
+                                            </a>
                                         }
                                     </div>
-                                }
-                            }
-                            else
-                            {
-                                <p>No comments yet. Be the first to comment!</p>
-                            }
-                        </div>
+                                    <button class="btn btn-link show-reply-form" data-comment-id="@comment.CommentId">Reply</button>
 
-                        @functions {
-                            private (string Icon, string Color) GetReactionInfo(string reactionType)
-                            {
-                                return reactionType switch
-                                {
-                                    "like" => ("fa-thumbs-up", "primary"),
-                                    "love" => ("fa-heart", "danger"),
-                                    "care" => ("fa-hand-holding-heart", "success"),
-                                    "angry" => ("fa-angry", "warning"),
-                                    "support" => ("fa-hands-helping", "info"),
-                                    _ => ("fa-question", "secondary")
-                                };
+                                    <!-- Reply Form (Hidden by Default) -->
+                                    <div id="reply-form-@comment.CommentId" style="display:none;" class="mt-3 reply-form">
+                                        <form method="post">
+                                            <input type="hidden" name="PostId" value="@Model.PostId" />
+                                            <input type="hidden" name="ParentCommentId" value="@comment.CommentId" />
+                                            <div class="form-group">
+                                                <label for="CommenterName">Your Name</label>
+                                                <input type="text" name="CommenterName" class="form-control" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="CommentText">Reply</label>
+                                                <textarea name="CommentText" class="form-control" rows="3" required></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary submit-reply">Submit Reply</button>
+                                        </form>
+                                    </div>
+
+                                    <!-- Replies -->
+                                    <div class="replies ml-4 mt-3">
+                                        @if (comment.Replies != null && comment.Replies.Any())
+                                        {
+                                            @foreach (var reply in comment.Replies.OrderBy(r => r.CommentDate))
+                                            {
+                                                <div class="comment mb-2" data-comment-id="@reply.CommentId">
+                                                    <p><strong translate="no">@reply.CommenterName</strong> @(" on ") @reply.CommentDate.ToString("MMM dd, yyyy")</p>
+                                                    <p>@reply.CommentText</p>
+                                                    <div class="reactions d-flex gap-2 align-items-center mb-2">
+                                                    </div>
+                                                    <div class="reaction-buttons mt-2 d-flex gap-1">
+                                                        @foreach (var reaction in new[] { ("like", "fa-thumbs-up", "primary"),
+                                                                            ("love", "fa-heart", "danger"),
+                                                                            ("care", "fa-hand-holding-heart", "success"),
+                                                                            ("angry", "fa-angry", "warning"),
+                                                                            ("support", "fa-hands-helping", "info") })
+                                                        {
+                                                            <a href="#"
+                                                               data-comment-id="@reply.CommentId"
+                                                               data-reaction-type="@reaction.Item1"
+                                                               class="btn btn-sm btn-outline-@reaction.Item3 reaction-button position-relative comment-react-link">
+                                                                <span class="reaction-icon">
+                                                                    <i class="fas @reaction.Item2"></i>
+                                                                </span>
+                                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-@reaction.Item3">
+                                                                    @(reply.ReactionVotes?.Count(r => r.ReactionType == reaction.Item1) ?? 0)
+                                                                    <span class="visually-hidden">@reaction.Item1 reactions</span>
+                                                                </span>
+                                                            </a>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
                             }
                         }
-
-                        <div class="add-comment mt-5">
-                            <h4>Add a Comment</h4>
-                            <form id="mainCommentForm" asp-action="AddComment" method="post">
-                                <input type="hidden" name="PostId" value="@Model.PostId" />
-                                <div class="form-group">
-                                    <label for="CommenterName">Your Name</label>
-                                    <input type="text" name="CommenterName" class="form-control" required />
-                                </div>
-                                <div class="form-group">
-                                    <label for="CommentText">Comment</label>
-                                    <textarea name="CommentText" class="form-control" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit Comment</button>
-                            </form>
-                        </div>
+                        else
+                        {
+                            <p>No comments yet. Be the first to comment!</p>
+                        }
+                    </div>
+                    <div class="add-comment mt-5">
+                        <h4>Add a Comment</h4>
+                        <form id="mainCommentForm" method="post">
+                            <input type="hidden" name="PostId" value="@Model.PostId" />
+                            <div class="form-group">
+                                <label for="CommenterName">Your Name</label>
+                                <input type="text" name="CommenterName" class="form-control" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="CommentText">Comment</label>
+                                <textarea name="CommentText" class="form-control" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit-comment">Submit Comment</button>
+                        </form>
+                    </div>
                     </div>
                     <!--Tags and mose popular-->
                     <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
@@ -444,205 +390,232 @@
             });
         </script>
 
-        <!--Comment and Reply-->
+        <!--Comment, Reply and Reaction-->
         <script>
-            const postId = @Model.PostId;
+            $(document).ready(function () {
+                const postId = @Model.PostId;
 
-            $('#mainCommentForm').on('submit', function(e) {
-                e.preventDefault();
-                const $form = $(this);
-
-                $.ajax({
-                    url: $form.attr('action'),
-                    method: 'POST',
-                    data: $form.serialize(),
-                    success: function(data) {
-                        if (data.success) {
-                            const commentHtml = `
-                                <div class="comment mb-3" data-comment-id="${data.commentId}">
-                                    <p><strong>${data.commenterName}</strong> on ${data.commentDate}</p>
-                                    <p>${data.commentText}</p>
-                                    <div class="reaction-buttons mt-2 d-flex gap-1">
-                                        ${generateReactionButtons(data.commentId)}
-                                    </div>
-                                    <button class="btn btn-link" onclick="showReplyForm(${data.commentId})">Reply</button>
-                                    <div id="reply-form-${data.commentId}" style="display:none;" class="mt-3">
-                                        <form method="post">
-                                            <input type="hidden" name="PostId" value="${postId}" />
-                                            <input type="hidden" name="ParentCommentId" value="${data.commentId}" />
-                                            <div class="form-group">
-                                                <label for="CommenterName">Your Name</label>
-                                                <input type="text" name="CommenterName" class="form-control" required />
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="CommentText">Reply</label>
-                                                <textarea name="CommentText" class="form-control" rows="3" required></textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Submit Reply</button>
-                                        </form>
-                                    </div>
-                                    <div class="replies ml-4 mt-3"></div>
-                                </div>
-                            `;
-                            $('.comments-section').prepend(commentHtml);
-                            $('.comments-section p:contains("No comments yet")').remove();
-                            $form.trigger('reset');
-                        }
-                    },
-                    error: function(xhr) {
-                        console.error('Error:', xhr.responseText);
-                    }
-                });
-            });
-
-            function handleReplyForm(commentId) {
-                const $form = $(`#reply-form-${commentId} form`);
-                $form.off('submit').on('submit', function(e) {
+                // Handle comment submissions
+                $(document).on('submit', '#mainCommentForm', function (e) {
                     e.preventDefault();
+                    const $form = $(this);
+
                     $.ajax({
                         url: '@Url.Action("AddComment", "Posts")',
                         method: 'POST',
-                        data: $form.serialize() + `&ParentCommentId=${commentId}`,
-                        success: function(data) {
+                        data: $form.serialize(),
+                        success: function (data) {
+                            if (data.success) {
+                                const commentHtml = `
+                                    <div class="comment mb-3" data-comment-id="${data.commentId}">
+                                        <p><strong>${data.commenterName}</strong> on ${data.commentDate}</p>
+                                        <p>${data.commentText}</p>
+                                        <div class="reaction-buttons mt-2 d-flex gap-1">
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="like" 
+                                               class="btn btn-sm btn-outline-primary reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-thumbs-up"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                                                    0
+                                                    <span class="visually-hidden">like reactions</span>
+                                                </span>
+                                            </a>
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="love" 
+                                               class="btn btn-sm btn-outline-danger reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-heart"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                    0
+                                                    <span class="visually-hidden">love reactions</span>
+                                                </span>
+                                            </a>
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="care" 
+                                               class="btn btn-sm btn-outline-success reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-hand-holding-heart"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                                                    0
+                                                    <span class="visually-hidden">care reactions</span>
+                                                </span>
+                                            </a>
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="angry" 
+                                               class="btn btn-sm btn-outline-warning reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-angry"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                                    0
+                                                    <span class="visually-hidden">angry reactions</span>
+                                                </span>
+                                            </a>
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="support" 
+                                               class="btn btn-sm btn-outline-info reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-hands-helping"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                                                    0
+                                                    <span class="visually-hidden">support reactions</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <button class="btn btn-link show-reply-form" data-comment-id="${data.commentId}">Reply</button>
+                                        <div id="reply-form-${data.commentId}" style="display:none;" class="mt-3 reply-form">
+                                            <form method="post">
+                                                <input type="hidden" name="PostId" value="${postId}" />
+                                                <input type="hidden" name="ParentCommentId" value="${data.commentId}" />
+                                                <div class="form-group">
+                                                    <label for="CommenterName">Your Name</label>
+                                                    <input type="text" name="CommenterName" class="form-control" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="CommentText">Reply</label>
+                                                    <textarea name="CommentText" class="form-control" rows="3" required></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary submit-reply">Submit Reply</button>
+                                            </form>
+                                        </div>
+                                        <div class="replies ml-4 mt-3"></div>
+                                    </div>
+                                `;
+                                $('.comments-section').append(commentHtml);
+                                $('.comments-section p:contains("No comments yet")').remove();
+                                $form.trigger('reset');
+                            }
+                        },
+                        error: function (xhr) {
+                            console.error('Error:', xhr.responseText);
+                        }
+                    });
+                });
+
+                // Show reply form
+                $(document).on('click', '.show-reply-form', function (e) {
+                    e.preventDefault();
+                    const commentId = $(this).data('comment-id');
+                    $(`#reply-form-${commentId}`).toggle();
+                });
+
+                // Handle reply submissions
+                $(document).on('submit', '.reply-form form', function (e) {
+                    e.preventDefault();
+                    const $form = $(this);
+                    const commentId = $form.find('input[name="ParentCommentId"]').val();
+
+                    $.ajax({
+                        url: '@Url.Action("AddComment", "Posts")',
+                        method: 'POST',
+                        data: $form.serialize(),
+                        success: function (data) {
                             if (data.success) {
                                 const replyHtml = `
                                     <div class="comment mb-2" data-comment-id="${data.commentId}">
                                         <p><strong>${data.commenterName}</strong> on ${data.commentDate}</p>
                                         <p>${data.commentText}</p>
                                         <div class="reaction-buttons mt-2 d-flex gap-1">
-                                            ${generateReactionButtons(data.commentId)}
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="like" 
+                                               class="btn btn-sm btn-outline-primary reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-thumbs-up"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                                                    0
+                                                    <span class="visually-hidden">like reactions</span>
+                                                </span>
+                                            </a>
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="love" 
+                                               class="btn btn-sm btn-outline-danger reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-heart"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                    0
+                                                    <span class="visually-hidden">love reactions</span>
+                                                </span>
+                                            </a>
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="care" 
+                                               class="btn btn-sm btn-outline-success reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-hand-holding-heart"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                                                    0
+                                                    <span class="visually-hidden">care reactions</span>
+                                                </span>
+                                            </a>
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="angry" 
+                                               class="btn btn-sm btn-outline-warning reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-angry"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                                    0
+                                                    <span class="visually-hidden">angry reactions</span>
+                                                </span>
+                                            </a>
+                                            <a href="#" 
+                                               data-comment-id="${data.commentId}" 
+                                               data-reaction-type="support" 
+                                               class="btn btn-sm btn-outline-info reaction-button position-relative comment-react-link">
+                                                <span class="reaction-icon">
+                                                    <i class="fas fa-hands-helping"></i>
+                                                </span>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                                                    0
+                                                    <span class="visually-hidden">support reactions</span>
+                                                </span>
+                                            </a>
                                         </div>
                                     </div>
                                 `;
                                 $(`.comment[data-comment-id="${commentId}"] .replies`).append(replyHtml);
+                                $form.closest('.reply-form').hide();
                                 $form.trigger('reset');
-                                $(`#reply-form-${commentId}`).hide();
                             }
+                        },
+                        error: function (xhr) {
+                            console.error('Error:', xhr.responseText);
                         }
                     });
                 });
-            }
 
-            function generateReactionButtons(commentId) {
-                const reactions = [
-                    {type: 'like', icon: 'fa-thumbs-up', color: 'primary'},
-                    {type: 'love', icon: 'fa-heart', color: 'danger'},
-                    {type: 'care', icon: 'fa-hand-holding-heart', color: 'success'},
-                    {type: 'angry', icon: 'fa-angry', color: 'warning'},
-                    {type: 'support', icon: 'fa-hands-helping', color: 'info'}
-                ];
-                return reactions.map(reaction => `
-                    <a href="#" 
-                       data-comment-id="${commentId}" 
-                       data-reaction-type="${reaction.type}" 
-                       class="btn btn-sm btn-outline-${reaction.color} reaction-button position-relative comment-react-link">
-                        <span class="reaction-icon">
-                            <i class="fas ${reaction.icon}"></i>
-                        </span>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-${reaction.color}">
-                            0
-                            <span class="visually-hidden">${reaction.type} reactions</span>
-                        </span>
-                    </a>
-                `).join('');
-            }
-
-            function showReplyForm(commentId) {
-                const formContainer = document.getElementById(`reply-form-${commentId}`);
-                if (formContainer) {
-                    formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
-                    handleReplyForm(commentId);
-                }
-            }
-        </script>
-
-        <script>
-            $(document).on('click', '.react-link, .comment-react-link', function (e) {
-                e.preventDefault();
-                const $button = $(this);
-                const postId = $button.data('post-id');
-                const commentId = $button.data('comment-id');
-                const reactionType = $button.data('reaction-type');
-
-                let url;
-                let data = { reactionType: reactionType };
-
-                if (postId) {
-                    url = '@Url.Action("PostReact", "Posts")';
-                    data.postId = postId;
-                } else if (commentId) {
-                    url = '@Url.Action("React", "Posts")';
-                    data.commentId = commentId;
-                } else {
-                    return;
-                }
-
-                $.ajax({
-                    url: url,
-                    data: data,
-                    success: (data) => {
-                        if (postId) {
-                            $('.react-link[data-post-id="' + postId + '"]').each(function () {
-                                const type = $(this).data('reaction-type');
-                                $(this).find('.badge').text(data.reactionCounts[type]);
-                            });
-                        } else if (commentId) {
-                            $('.comment-react-link[data-comment-id="' + commentId + '"]').each(function () {
-                                const type = $(this).data('reaction-type');
-                                $(this).find('.badge').text(data.reactionCounts[type]);
-                            });
-                        }
-                    },
-                    error: (xhr) => {
-                        console.error('Error:', xhr.responseText);
-                    }
-                });
-            });
-        </script>
-
-        <!--Comment/reply reaction no page reload-->
-        <script>
-            $(document).ready(function () {
-                $('.react-link, .comment-react-link').on('click', function (e) {
+                // Handle reactions
+                $(document).on('click', '.comment-react-link', function (e) {
                     e.preventDefault();
                     const $button = $(this);
-                    const postId = $button.data('post-id');
                     const commentId = $button.data('comment-id');
                     const reactionType = $button.data('reaction-type');
 
-                    let url;
-                    let data = { reactionType: reactionType };
-
-                    if (postId) {
-                        url = '@Url.Action("PostReact", "Posts")';
-                        data.postId = postId;
-                    } else if (commentId) {
-                        url = '@Url.Action("React", "Posts")';
-                        data.commentId = commentId;
-                    } else {
-                        return;
-                    }
-
                     $.ajax({
-                        url: url,
-                        data: data,
-                        success: (data) => {
-                            if (postId) {
-                                // Update all post reaction counts
-                                $('.react-link[data-post-id="' + postId + '"]').each(function () {
-                                    const type = $(this).data('reaction-type');
-                                    $(this).find('.badge').text(data.reactionCounts[type]);
-                                });
-                            } else if (commentId) {
-                                // Update all comment/reply reaction counts for this commentId
-                                $('.comment-react-link[data-comment-id="' + commentId + '"]').each(function () {
-                                    const type = $(this).data('reaction-type');
-                                    $(this).find('.badge').text(data.reactionCounts[type]);
-                                });
-                            }
-                        },
-                        error: (xhr) => {
-                            console.error('Error:', xhr.responseText);
+                        url: '@Url.Action("React", "Posts")',
+                        data: { commentId: commentId, reactionType: reactionType },
+                        success: function (data) {
+                            // Update only the clicked comment's reactions
+                            $(`.comment[data-comment-id="${commentId}"] .comment-react-link`).each(function () {
+                                const type = $(this).data('reaction-type');
+                                $(this).find('.badge').text(data.reactionCounts[type] || 0);
+                            });
                         }
                     });
                 });
